@@ -1,0 +1,17 @@
+﻿<!-- <top-nav stick stickMin="60"></top-nav> -->
+<top-nav></top-nav>
+<div class="row flex-nowrap no-gutters lf-content-leftnav-wrapper" [ngClass]="{'lf-collapsed-leftnav': collapseMenu}"
+ (transitionend)="onTransitionEnd($event)">
+	<div class="col-md-4 col-12 lf-leftnav ui-widget-content lf-leftnav-fixed">
+		<left-nav (slideEvent)="onSlideLeftNavMenu($event)"></left-nav>
+	</div>
+	<div class="col-md col-12">
+		<div class='body-content'>
+			<main-tabview></main-tabview>
+		</div>
+	</div>
+	<toaster [value]="toasterMessages" [life]="toasterMessageLife"></toaster>
+	<toaster [value]="stickyToasterMessages" [sticky]="true"></toaster>
+	<scroll-up></scroll-up>
+	<block-ui [blocked]="busy" [target]="thisComponent" baseZIndex="1"></block-ui>
+</div>

@@ -1,0 +1,8 @@
+﻿<form #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="col">
+        <lf-form-input [control]="scratch_pad" label="">
+            <lf-inputtextarea #scratch_pad name="scratch_pad" [(ngModel)]="data.ScratchPadNote" rows="10" stateId="scratch_pad"
+                [state]="componentsState.get('scratch_pad')" [style]="{width: '100%'}" secureComponent></lf-inputtextarea>
+        </lf-form-input>
+    </div>
+</form>

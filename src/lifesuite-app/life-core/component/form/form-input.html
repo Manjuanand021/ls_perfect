@@ -1,0 +1,14 @@
+<div [ngClass]="wrapperClass">
+	<label *ngIf="!hidden && labelPosition!=='right'" for="labelFor" [title]="label" [ngClass]="labelClass">
+		{{label}}
+		<span *ngIf="showRequiredMark" class="lf-form-input-reqiured">*</span>
+	</label>
+	<div [ngClass]="contentClass">
+		<ng-content></ng-content>
+		<div *ngIf="showError" class="lf-form-input-alert">{{errorMessage}}</div>
+	</div>
+	<label *ngIf="!hidden && labelPosition=='right'" for="labelFor" [ngClass]="labelClass">
+		{{label}}
+		<span *ngIf="showRequiredMark" class="lf-form-input-reqiured">*</span>
+	</label>
+</div>

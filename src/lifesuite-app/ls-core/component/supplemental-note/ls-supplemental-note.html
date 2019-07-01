@@ -1,0 +1,38 @@
+﻿<div class="row">
+    <div class="col-12 note-title">
+        <div class="form-group">
+            <label for="title"></label>
+            <div name="title">
+                <b>{{noteTitle}}</b>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4 col-sm-6">
+        <div class="form-group">
+            <label for="createdOn" i18n="@@policy.notes.detail.createdon">Created On</label>
+            <div name="createdOn">{{noteCreatedOn}}</div>
+        </div>
+    </div>
+    <div class="col-4 col-sm-6">
+        <div class="form-group">
+            <label for="createdBy" i18n="@@policy.notes.detail.createdby">Created By</label>
+            <div name="createdBy">{{noteCreatedBy}}</div>
+        </div>
+    </div>
+    <div class="col-4 col-sm-6">
+        <div class="form-group">
+            <label for="referredTo" i18n="@@policy.notes.detail.referredto">Referred To</label>
+            <div name="referredTo">{{noteReferredTo}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <label for="note" i18n="@@policy.notes.addnotes.note">Note</label>
+            <div name="note" [innerText]="note"></div>
+        </div>
+    </div>
+</div>

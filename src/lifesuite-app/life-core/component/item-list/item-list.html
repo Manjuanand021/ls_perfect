@@ -1,0 +1,31 @@
+﻿<div *ngIf="!hidden">
+	<ul class="lf-item-list">
+		<li>
+			<div *ngIf="(oItems | async)?.length == 0" class="row lf-item-buttonbar justify-content-end">
+				<div class="row lf-item-buttonbar justify-content-end">
+					<span *ngFor="let button of buttons">
+						<lf-button [label]="button.label" [disabled]="disabled || isButtonDisabledWhenNoItems(button.type)" [authorizationLevel]="button.authorizationLevel"
+						 styleClass="btn-primary lf-item-button" [ngClass]="button.buttonClass" (onClick)="onButtonClick(button)"></lf-button>
+					</span>
+				</div>
+			</div>
+		</li>
+		<li *ngFor="let item of (oItems | async); let isLast=last; let index=index">
+			<div #refItemElement id="{{item.sequenceId}}" class="lf-item" [@fadeInOut]="item.visible">
+				<div class="row lf-item-buttonbar justify-content-end">
+					<span *ngFor="let button of buttons">
+						<lf-button *ngIf="isButtonVisible(button.type, index)" [label]="button.label" [disabled]="disabled" [authorizationLevel]="button.authorizationLevel"
+						 styleClass="btn-primary lf-item-button" [ngClass]="button.buttonClass" (onClick)="onButtonClick(button, item)"></lf-button>
+					</span>
+				</div>
+				<div [class.lf-item-selected]="item.selected" [class.lf-item-unselected]="!item.selected" (click)="editItem(item)">
+					<compose [model]="item" [componentType]="item.viewModelType"></compose>
+				</div>
+			</div>
+			<hr *ngIf="!isLast" />
+		</li>
+		<li *ngIf="(oItems | async)?.length == 0">
+			<div class="row justify-content-center">No Data Exists</div>
+		</li>
+	</ul>
+</div>

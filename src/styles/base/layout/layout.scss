@@ -1,0 +1,87 @@
+html {
+    position: relative;
+    min-height: 100%;
+    //specify in percentage if the browser's default font-size should be used
+    font-size: 18px;
+}
+
+body {
+    background-color: $body-bg;
+    /* Margin bottom by footer height */
+    margin: 0 0 $footer-height 0;
+    font-size: $font-size-base;
+    //font-weight: 500;
+}
+
+body .lf-background-image {
+    background-image: $body-bg-img;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right top;
+}
+
+.lf-full-width-grid {
+    width: 100%;
+}
+
+/* Not sure where these border rules should go: so temporarily placed in layout */
+
+.lf-dashed-bottom-border {
+    @include border(bottom, 1px, dashed);
+    margin-bottom: 0.5rem;
+}
+
+.lf-solid-bottom-border {
+    @include border(bottom, 1px, solid);
+    margin-bottom: 0.5rem;
+}
+
+.lf-dashed-left-border {
+    @include border(left, 1px, dashed);
+    margin-bottom: 0.5rem;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@include media-breakpoint-up(sm) {
+    body .lf-background-image {
+        background-position: 100% 80%;
+    }
+
+    body > .container {
+        padding: 0 0.9375rem 0;
+    }
+}
+
+/* Since top nav is fixed position: this has to be adjusted */
+.lf-content-leftnav-wrapper {
+    margin-top: $navbar-height;
+
+    .body-content {
+        margin-left: $leftnav-max-width;
+    }
+}
+
+.lf-content-leftnav-wrapper.lf-collapsed-leftnav .body-content {
+    margin-left: $leftnav-icons-only-width;
+}
+
+.lf-panel-section {
+    padding-bottom: 0.5rem;
+}
+
+@include media-breakpoint-up(xl) {
+    .lf-content-leftnav-wrapper .body-content {
+        margin-left: $leftnav-max-width-xl;
+    }
+}
+
+.lf-grid-nowrap {
+    .ag-header,
+    .ag-header-row,
+    .ag-header-cell-label .ag-header-cell-text {
+        white-space: nowrap !important;
+    }
+}

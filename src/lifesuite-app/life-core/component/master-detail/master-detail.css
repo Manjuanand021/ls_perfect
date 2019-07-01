@@ -1,0 +1,9 @@
+.lf-master-detail {
+    width: 100%;
+}
+.lf-master-detail-divider {
+    border: none;
+    height: 1px;
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}

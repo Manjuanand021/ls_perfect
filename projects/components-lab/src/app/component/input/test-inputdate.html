@@ -1,0 +1,84 @@
+<form #form="ngForm">
+    <br />
+    <label>InputDate and InputTime</label> <br />
+    <div id="view1" class="col-sm-9">
+        <div class="row">
+            <div class="col-2">
+                <label>Required</label>
+                <lf-select name="required" [items]="trueFalseList" [(ngModel)]="required" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-2">
+                <label>Disabled</label>
+                <lf-select name="disabled" [items]="trueFalseList" [(ngModel)]="disabled" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-2">
+                <label>Hidden</label>
+                <lf-select name="hidden" [items]="trueFalseList" [(ngModel)]="hidden" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-2">
+                <label>Actions</label>
+                <lf-button label="Reset Values" (onClick)="onButtonResetClick($event)">
+                </lf-button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label>Minimum</label> <input name="min" [(ngModel)]="minDate" style="width:100px;" />
+            </div>
+            <div class="col-2">
+                <label>Maximum</label> <input name="max" [(ngModel)]="maxDate" style="width:100px;" />
+            </div>
+        </div>
+        <br />
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input label="Sr InputDate" [control]="srDateField">
+                    <lf-inputdate #srDateField name="srDateField" [required]="toBoolean(required)" [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)" [minDate]="minDate" [maxDate]="maxDate"
+                        [(ngModel)]="fields.srDateField.value"></lf-inputdate>
+                </lf-form-input>
+                <pre>Selected value: {{ fields.srDateField.value || 'none' }}</pre>
+            </div>
+
+            <div class="col-3">
+                <lf-form-input label="Sr InputTime" [control]="srTimeField">
+                    <lf-inputtime #srTimeField name="srTimeField" [required]="toBoolean(required)" [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)" [(ngModel)]="fields.srDateField.value"></lf-inputtime>
+                </lf-form-input>
+                <pre>Selected value: {{ fields.srDateField.value || 'none' }}</pre>
+            </div>
+            <div class="col-3">
+                <lf-form-input label="Sr InputDate - String Model" [control]="stringDateField">
+                    <lf-inputdate #stringDateField name="stringDateField" [required]="toBoolean(required)" [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)" [minDate]="minDate" [maxDate]="maxDate"
+                        [(ngModel)]="fields.stringDateField.value" [modelAsString]="true" [stripTime]="true"></lf-inputdate>
+                </lf-form-input>
+                <pre>Selected value: {{ fields.stringDateField.value || 'none' }}</pre>
+            </div>
+            <div class="col-3">
+                <lf-form-input label="LPLA InputDate" [control]="lplaDateField">
+                    <lpla-inputdate #lplaDateField name="lplaDateField" [required]="toBoolean(required)" [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)" [minDate]="minDate" [maxDate]="maxDate" [(ngModel)]="fields.lplaDateField.value"
+                        [fieldModel]="fields.lplaDateField.model"></lpla-inputdate>
+                </lf-form-input>
+                <pre>Selected value: {{ fields.lplaDateField.value || 'none' }}</pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input label="lf-inputdaterange" [control]="dateRangeField">
+                    <lf-inputdaterange #dateRangeField name="dateRangeField" [(ngModel)]="daterange"></lf-inputdaterange>
+                </lf-form-input>
+                <pre>DateRange value: {{daterange | json}}</pre>
+            </div>
+        </div>
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-3">
+                <pre>Form valid: {{form.valid}}</pre>
+            </div>
+        </div>
+
+    </div>
+</form>

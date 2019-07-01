@@ -1,0 +1,19 @@
+.lf-infobutton .ui-button {
+    background-color: #4776b9;
+}
+
+.lf-infobutton.lf-state-selected .ui-button {
+    background-color: #384c8b;
+}
+
+.lf-infobutton:hover .ui-button {
+    background-color: #384c8b;
+}
+
+.lf-infobutton .ui-button-text {
+    color: #fff;
+}
+
+.lf-infobutton .ui-info-text {
+    color: yellow;
+}

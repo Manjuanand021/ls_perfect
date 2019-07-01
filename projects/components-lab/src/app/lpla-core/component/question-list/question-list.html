@@ -1,0 +1,11 @@
+<div>
+	<section class="au-animate panel">
+		<div class="panel-body">
+            <ul class="section-list">
+                <li *ngFor="let sectionData of data.sectionList" class="au-animate">
+                    <question-section [data]="sectionData"></question-section>
+                </li>
+            </ul>
+		</div>
+	</section>
+</div>

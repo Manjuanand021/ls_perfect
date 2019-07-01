@@ -1,0 +1,16 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off" style="height: 200px">
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Name" [control]="fundName" i18n-label="@@applicant.coverage.funds.name">
+                <lf-select #fundName name="fundName" [(ngModel)]="data.FundCode" [items]="resolvedData.listData | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:150px" [disabled]="isFundSelectionDisabled" container="dialog" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input label="%Allocation" [control]="allocation" i18n-label="@@applicant.coverage.funds.allocation">
+                <lf-inputnumber format="n2" #allocation [max]="100" name="allocation" [(ngModel)]="data.PercentAllocation"
+                    [allowNegative]="false" secureComponent required></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

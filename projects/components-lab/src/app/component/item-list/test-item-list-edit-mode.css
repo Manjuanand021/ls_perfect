@@ -1,0 +1,21 @@
+/* test-item-list.css */
+
+.item .itemContent {
+	border: 2px solid; 
+	padding: 5px;
+	border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.item .itemContent.typeA {
+	color: green; 
+}
+
+.item .itemContent.typeB {
+	color: blue;
+}
+
+.item .itemContent.invalid {
+	color: red; 
+}

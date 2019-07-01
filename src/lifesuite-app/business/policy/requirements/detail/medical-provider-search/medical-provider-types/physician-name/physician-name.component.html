@@ -1,0 +1,31 @@
+<div class="row">
+        <div class="col-2">
+        <lf-form-input [control]="physicianCountry" label="Country" i18n-label="@@policy.requirement.providersearch.country">
+            <lf-select #physicianCountry name="physicianCountry" [items]="data.resolvedData.listData.CountryId | listItems: 'value':'Id' | emptyItem" 
+            [(ngModel)]="data.searchFilter.countryID" style="width:120px" required ></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input label="State" [control]="state" i18n-label="@@policy.requirement.providersearch.state">
+            <lf-select #state name="state" [items]="data.resolvedData.metaData | stateListPicker: data.searchFilter.countryID | emptyItem | sortList"
+                [(ngModel)]="data.searchFilter.state" secureComponent style="width:120px" required></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input label="City" [control]="city" i18n-label="@@policy.requirement.providersearch.city">
+            <lf-inputtext #city name="city" [(ngModel)]="data.searchFilter.city" secureComponent [style]="{width:'120px'}" required [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Last Name" i18n-label="@@policy.requirement.providersearch.lastname" [control]="lastName">
+            <lf-inputtext #lastName name="lastName" [(ngModel)]="data.searchFilter.lastName" secureComponent [style]="{width:'150px'}"
+                required [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="First Name" i18n-label="@@policy.requirement.providersearch.firstname" [control]="firstName">
+            <lf-inputtext #firstName name="firstName" [(ngModel)]="data.searchFilter.firstName" secureComponent [style]="{width:'150px'}"
+                ngModel [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>

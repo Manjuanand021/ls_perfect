@@ -1,0 +1,20 @@
+{
+    "xliffmergeOptions": {
+        "srcDir": "projects/components-lab/src/locale",
+        "genDir": "projects/components-lab/src/locale",
+        "i18nFile": "messages.xlf",
+        "i18nFormat": "xlf",
+        "encoding": "UTF-8",
+        "defaultLanguage": "en-US",
+        "languages": ["en-US", "fr-CA"],
+        "removeUnusedIds": true,
+        "useSourceAsTarget": true,
+        "targetPraefix": "",
+        "targetSuffix": "",
+        "beautifyOutput": true,
+        "allowIdChange": false,
+        "autotranslate": false,
+        "verbose": true,
+        "quiet": false
+    }
+}

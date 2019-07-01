@@ -1,0 +1,5 @@
+<input #textInput pInputText type="text" [class]="inputStyleClass" autocomplete="off" [value]="value||''" [disabled]="disabled"
+    [hidden]="hidden" [readonly]="readonly" [ngStyle]="style" [ngClass]="'ui-inputtext ui-widget'" [name]="name"
+    [attr.placeholder]="placeholder" (focus)="onFocus($event)" (blur)="onBlur($event)" (keydown)="onKeyDown($event)"
+    (keypress)="onKeyPress($event)" (input)="handleInputChange($event)" (paste)="handleInputChange($event)"
+    [attr.maxlength]="maxLength" style="width: 150px">

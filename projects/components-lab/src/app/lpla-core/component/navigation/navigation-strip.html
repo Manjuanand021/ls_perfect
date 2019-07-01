@@ -1,0 +1,10 @@
+﻿<section>
+    <div class="clearfix">
+        <div class="pull-left">
+            <button id="backButton" *ngIf="back_button_visible" [disabled]="!back_button_enabled" (click)="onBackClick()" class="app-btn"><span class="fa fa-chevron-left image-back"></span>Back</button>
+        </div>
+        <div class="pull-right">
+            <button id="continueButton" *ngIf="next_button_visible" [disabled]="!next_button_enabled" (click)="onContinueClick()" class="app-btn">Next<span class="fa fa-chevron-right image-next"></span></button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+﻿<lf-panel header="Employer" i18n-header="@@policy.case.employer.title" panelType="primary" [toggleable]="true" stateId="panel_employer"
+    [state]="componentsState.get('panel_employer')" [initCollapsed]=true secureComponent>
+    <optional-section [dataExists]="dataExists" [item]="item" [itemComponentType]="itemComponentType" (createItem)="createItem()"
+        (removeItem)="removeItem()" secureComponent>
+    </optional-section>
+</lf-panel>

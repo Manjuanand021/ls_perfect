@@ -1,0 +1,60 @@
+$icons-path: '~ag-grid-community/src/styles/icons/';
+
+// Fonts
+$font-family: inherit;
+$font-size: 10pt !default;
+
+$secondary-font-size: 10pt !default;
+$header-font-weight: 600 !default;
+
+$cell-horizontal-padding: 2px !default;
+
+// changes the default icon color
+$icon-color: #fff !default;
+
+$border-color: #9bc2e6;
+$hover-color: #d5ebf7 !default;
+$selected-color: #0275d8 !default;
+
+$focused-cell-border-color: transparent !default;
+
+// Important - don't move these import files;
+// they should stay here to work correctly with SASS variables
+// and css classes defined before and after them.
+@import '~ag-grid-community/src/styles/ag-grid.scss';
+@import '~ag-grid-community/src/styles/ag-theme-blue.scss';
+
+.ag-theme-blue {
+    font-size: $font-size;
+}
+
+.ag-theme-blue .ag-header {
+    font-size: $font-size;
+    font-weight: $header-font-weight;
+}
+
+.ag-theme-blue .ag-header-cell {
+    line-height: 20px;
+    padding-top: 2px;
+}
+
+.ag-theme-blue .ag-ltr .ag-cell-focus {
+    border-top: 2px solid transparent;
+    border-bottom: 1px dotted $border-color;
+    border-right: 1px dotted $border-color;
+    border-left: 2px solid transparent;
+}
+
+.ag-theme-blue .ag-row-selected,
+.ag-theme-blue .ag-row-selected.ag-row-hover {
+    background-color: #90caf9;
+}
+
+.ag-theme-blue .ag-row-hover {
+    background-color: #d5ebf7;
+}
+
+.ag-theme-blue .ag-overlay-no-rows-center {
+    padding: 0.1875rem 1.25rem;
+    border-radius: 3px;
+}

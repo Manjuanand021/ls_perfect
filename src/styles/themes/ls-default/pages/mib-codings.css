@@ -1,0 +1,24 @@
+.mib-validation-result-pending-icon {
+    background: url('../../styles/images/form/mib-validation-pending-icon.png');
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+}
+
+.mib-validation-result-valid-icon {
+    background: url('../../styles/images/form/mib-validation-result-1-icon.png');
+
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+}
+
+.mib-validation-result-valid-not-reported-icon {
+    background: url('../../styles/images/form/mib-validation-result-2-icon.png');
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+}
+
+.mib-validation-result-invalid-icon {
+    background: url('../../styles/images/form/mib-validation-result-5-icon.png');
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+}

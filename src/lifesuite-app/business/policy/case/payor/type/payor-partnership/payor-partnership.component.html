@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="title" label="Title" i18n-label="@@policy.case.payor.title.title">
+            <lf-select #title name="payor_title" [items]="listData.Title | listItems: 'value':'Id' | emptyItem" [(ngModel)]="data.Title" [disabled]="data.isPrimaryInsured" 
+            secureComponent style="width:150px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="firstName" label="First Name" i18n-label="@@policy.case.payor.firstname">
+            <lf-inputtext #firstName name="payor_firstName" required [(ngModel)]="data.FirstName" maxLength="250" [disabled]="data.isPrimaryInsured" secureComponent 
+            required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="middleName" label="Middle Name" i18n-label="@@policy.case.payor.middlename">
+            <lf-inputtext #middleName name="payor_middleName" [(ngModel)]="data.MiddleName" maxLength="100" [disabled]="data.isPrimaryInsured" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input [control]="lastName" label="Last Name" i18n-label="@@policy.case.payor.lastname">
+            <lf-inputtext #lastName name="payor_lastName" required [(ngModel)]="data.LastName" maxLength="250" [disabled]="data.isPrimaryInsured" secureComponent 
+            required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-1">
+        <lf-form-input [control]="suffix" label="Suffix" i18n-label="@@policy.case.payor.suffix">
+            <lf-select #suffix name="payor_suffix" [items]="listData.Suffix | listItems: 'value':'Id' | emptyItem" [(ngModel)]="data.Suffix" [disabled]="data.isPrimaryInsured" 
+            secureComponent style="width:70px"></lf-select>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="birthDate" label="Birth Date" i18n-label="@@policy.case.payor.birthdate">
+            <ls-inputdatecrypted #birthDate name="payor_birthDate" [(ngModel)]="data.BirthDate" [maxDate]="maxBirthDate" [disabled]="data.isPrimaryInsured" secureComponent></ls-inputdatecrypted>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="relation" label="Relationship to Insured" i18n-label="@@policy.case.payor.relation">
+            <lf-select #relation name="payor_relation" [items]="listData.RelationshipToInsured | listItems: 'value':'Id' | emptyItem" [(ngModel)]="data.RelationshipToInsured" 
+            [disabled]="data.isPrimaryInsured" secureComponent style="width:150px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="taxId" label="Tax ID" i18n-label="@@policy.case.payor.taxid">
+            <lf-inputtaxid #taxId name="payor_taxId" [(ngModel)]="data.TaxId" [disabled]="data.isPrimaryInsured" secureComponent></lf-inputtaxid>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="clientId" label="Client ID" i18n-label="@@policy.case.payor.clientid">
+            <lf-inputtext #clientId name="payor_clientId" [(ngModel)]="data.ClientId" [disabled]="data.isPrimaryInsured" [maxLength]="11" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row" *ngIf="residentAddress">
+    <div class="col-3">
+        <lf-form-input [control]="address1" label="Address" i18n-label="@@policy.case.payor.address">
+            <lf-inputtext #address1 name="payor_address1" [(ngModel)]="residentAddress.AddressLine1" maxLength="100" [disabled]="data.isPrimaryInsured" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="address2" label="&nbsp;">
+            <lf-inputtext #address2 name="payor_address2" [(ngModel)]="residentAddress.AddressLine2" maxLength="100" [disabled]="data.isPrimaryInsured" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="address3" label="&nbsp;">
+            <lf-inputtext #address3 name="payor_address3" [(ngModel)]="residentAddress.AddressLine3" maxLength="100" [disabled]="data.isPrimaryInsured" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row" *ngIf="residentAddress">
+    <div class="col-3">
+        <lf-form-input [control]="city" label="City" i18n-label="@@policy.case.payor.city">
+            <lf-inputtext #city name="payor_city" [(ngModel)]="residentAddress.City" [disabled]="data.isPrimaryInsured" maxLength="30" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="country" label="Country" i18n-label="@@policy.case.payor.country">
+            <lf-select #country name="payor_country" [items]="listData.CountryId | listItems: 'value':'Id' | emptyItem" [(ngModel)]="residentAddress.CountryId" 
+            [disabled]="data.isPrimaryInsured" secureComponent style="width:220px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="state" label="State" i18n-label="@@policy.case.payor.state">
+            <lf-select #state name="payor_state" [items]="listData | stateListPicker: residentAddress.CountryId | emptyItem | sortList" [(ngModel)]="residentAddress.CountryStateId" 
+            [disabled]="data.isPrimaryInsured" secureComponent style="width:150px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="postalCode" label="Postal Code" i18n-label="@@policy.case.payor.postalcode">
+            <lf-inputzipcode #postalCode name="payor_postalCode" [zipCodeType]="residentAddress.CountryId | getZipCodeType" [(ngModel)]="residentAddress.PostalCode" 
+            [disabled]="data.isPrimaryInsured" secureComponent></lf-inputzipcode>
+        </lf-form-input>
+    </div>
+</div>

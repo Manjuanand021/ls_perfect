@@ -1,0 +1,40 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off" (click)="$event.stopPropagation()"
+    (submit)="onApplyClick()">
+    <div *ngFor="let message of messages" class="alert alert-danger">
+        {{message}}
+    </div>
+    <div class="row">
+        <lf-form-input [control]="filteringTypeControl" label="Filter Type:"
+            i18n-label="@@component.grid.filter.label.filtertype">
+            <lf-select #filteringTypeControl name="filteringType" [(ngModel)]="filteringType"
+                [items]="filteringTypeList | emptyItem" style="width:200px" (change)="onFilteringTypeChange()" required>
+            </lf-select>
+        </lf-form-input>
+    </div>
+    <div class="row">
+        <lf-form-input [control]="filterText" [label]="filterValueLabel">
+            <lf-inputnumber #filterText name="filterText" [(ngModel)]="filterValue" format="n0" decimals="0"
+                [allowNegative]="false" required></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="row" *ngIf="!isSingleFilter">
+        <lf-form-input [control]="filterToText" label="To:" i18n-label="@@component.grid.filter.label.to">
+            <lf-inputnumber #filterToText name="filterToText" [(ngModel)]="filterToValue" format="n0" decimals="0"
+                [allowNegative]="false" required></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="row">
+        <span>
+            <lf-button type="submit" id="applyButton" label="Apply" i18n-label="@@component.grid.filter.button.apply"
+                (onClick)="onApplyClick()" styleClass="btn btn-primary" class="mr-2"></lf-button>
+        </span>
+        <span>
+            <lf-button id="cancelButton" label="Cancel" i18n-label="@@component.grid.filter.button.cancel"
+                (onClick)="onCancelClick()" styleClass="btn btn-primary"></lf-button>
+        </span>
+        <span>
+            <lf-button id="clearButton" label="Remove" i18n-label="@@component.grid.filter.button.remove"
+                (onClick)="onClearClick()" styleClass="btn btn-primary"></lf-button>
+        </span>
+    </div>
+</form>

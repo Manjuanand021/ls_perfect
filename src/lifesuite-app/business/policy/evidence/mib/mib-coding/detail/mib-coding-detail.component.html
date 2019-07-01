@@ -1,0 +1,21 @@
+<div ngForm #form="ngForm">
+    <div class="row">
+        <div class="col-sm-6">
+            <lf-form-input [control]="mibCoding" label="MIB Coding" i18n-label="@@policy.evidence.tab.label.mibcoding">
+                <lf-inputtext #mibCoding name="mibCoding" [(ngModel)]="data.MibCodes" required secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <lf-form-input [control]="createdBy" label="Created By" i18n-label="@@policy.mib.submitted.codes.gridheader.createdby">
+                <lf-statictext #createdBy name="createdBy" [value]="data.AddedBy | username : resolvedData.metaData.aus_users" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-6">
+            <lf-form-input [control]="inquiryDate" label="Created On" i18n-label="@@policy.mib.submitted.codes.gridheader.createdon">
+                <lf-statictext #inquiryDate name="inquiryDate" [value]="data.DateAdded | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+</div>

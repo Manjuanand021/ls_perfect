@@ -1,0 +1,30 @@
+﻿<div>
+    <div class="clearfix">
+        <div class="row">
+            <div class="col-xs-10 col-sm-11 col-lg-8" data-role="textelement">{{data.questionText}}</div>
+            <div class="col-xs-2 col-sm-1">
+                <button class="detailLink lf-secondary-btn fa fa-pencil" *ngIf="displayDetailLink" (click)="showDetail()"></button>
+            </div>
+            <div class="col-xs-12 col-lg-3">
+                <fieldset data-role="radiogroup" class="row">
+                    <span class="col-xs-3 col-lg-6 radio_block">
+                        <input type="radio" [name]="data.questionId" value="1" [(ngModel)]="data.answer" (change)="onAnswerChanged('1')" />
+                        <label>Yes</label>
+                    </span>
+                    <span class="col-xs-3 col-lg-6 radio_block">
+                        <input type="radio" [name]="data.questionId" value="2" [(ngModel)]="data.answer" (change)="onAnswerChanged('2')" />
+                        <label>No</label>
+                    </span>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div #refDOMDetail class="col-xs-10 col-sm-9 col-lg-8 detail-content" *ngIf="isDetailVisible">
+                <compose [componentType]="data.detailPageViewModelType" [model]="data"></compose>
+                <div class="row">
+                    <button id="save" (click)="saveDetail()" class="lf-secondary-btn"> Save </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

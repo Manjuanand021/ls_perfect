@@ -1,0 +1,51 @@
+<div class="lf-page-header" i18n="@@policy.case.info.title">Case Information</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <case-information></case-information>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <owner-list *ngIf="sectionsVisibleMap.OwnerSection"></owner-list>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <payor-list *ngIf="sectionsVisibleMap.PayorSection"></payor-list>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <case-payment></case-payment>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <case-distribution></case-distribution>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <case-association *ngIf="sectionsVisibleMap.AssociationSection"></case-association>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <case-employer *ngIf="sectionsVisibleMap.EmployerSection"></case-employer>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <agency *ngIf="sectionsVisibleMap.AgencySection"></agency>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <case-agent-list *ngIf="sectionsVisibleMap.AgentSection"></case-agent-list>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 lf-panel-section">
+        <tpa *ngIf="sectionsVisibleMap.TPASection"></tpa>
+    </div>
+</div>

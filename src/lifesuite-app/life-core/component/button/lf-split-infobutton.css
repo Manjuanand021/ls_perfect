@@ -1,0 +1,31 @@
+.ui-fluid .ui-splitbutton .ui-button:first-child {
+    width: calc(100% - 2em);
+}
+
+.lf-split-infobutton .ui-button {
+    padding: 0.1rem;
+    height: 3.125rem;
+    vertical-align: top;
+    border-radius: 3px;
+}
+
+.lf-split-infobutton .ui-button-text {
+    font-size: 0.75rem;
+}
+
+.lf-split-infobutton.lf-state-selected .ui-button-text,
+.lf-split-infobutton.lf-state-selected .ui-info-text {
+    font-weight: bold;
+}
+
+.lf-split-infobutton .ui-info-text {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.ui-splitbutton {
+    white-space: nowrap;
+    top: 2px;
+}

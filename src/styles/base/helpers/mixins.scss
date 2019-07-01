@@ -1,0 +1,29 @@
+@mixin transition-effects($transition_type) {
+    -webkit-transition: $transition_type;
+    -moz-transition: $transition_type;
+    -o-transition: $transition_type;
+    transition: $transition_type;
+}
+
+@mixin transform-effects($transformation_type) {
+    -webkit-transition: $transformation_type;
+    -moz-transition: $transformation_type;
+    -o-transition: $transformation_type;
+    transition: $transformation_type;
+}
+
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    animation: $animation;
+}
+
+@mixin position-fixed {
+    position: fixed;
+    /* fixed position for IE */
+    position: -ms-device-fixed;
+}
+
+@mixin border($direction, $width, $style, $color: black) {
+    border-#{$direction}: $width $style $color;
+}

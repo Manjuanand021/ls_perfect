@@ -1,0 +1,31 @@
+﻿<div class="lf-page-header" i18n="@@policy.notes.casenotetitle">Case Notes</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="applicant" label="Applicant" i18n-label="@@policy.notes.label.applicant">
+			<!-- Use 'ngModelOption.standalone' to not add this control to NgForm to avoid saving data when applicant selection changes -->
+			<lf-select #applicant name="applicant" [(ngModel)]="activeApplicantId" [ngModelOptions]="{standalone: true}" [items]="applicantList"
+			 (change)="onApplicantChange($event)" [actionType]="filterDropdownActionType" secureComponent [clearable]="false"
+			 style="width:200px"></lf-select>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="sortByOption" label="Order By" i18n-label="@@policy.requirement.detail.orderedby">
+			<!-- Use 'ngModelOption.standalone' to not add this control to NgForm to avoid saving data when note type selection changes -->
+			<lf-select #sortByOption name="sortByOption" [(ngModel)]="selectedSortByOption" [ngModelOptions]="{standalone: true}"
+			 [items]="listData.SortByOption" (change)="onSortByOptionChange($event)" [actionType]="filterDropdownActionType"
+			 [clearable]="false" secureComponent style="width:200px"></lf-select>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row col-12 justify-content-end pb-4">
+	<lf-button id="addCaseNote" name="addCaseNote" label="Add Note" i18n-label="@@policy.evidence.notes.addnotes.title"
+	 (onClick)="addCaseNote()" [actionType]="addCaseNoteButtonActionType" secureComponent styleClass="btn btn-primary"></lf-button>
+	<lf-button id="printCaseNotes" label="Print Case Notes" i18n-label="@@policy.evidence.notes.printnotes.title"
+	 (onClick)="printNotes('case')" secureComponent styleClass="btn btn-primary"></lf-button>
+</div>
+<div *ngIf="activeApplicantId" class="row">
+	<div class="col-12">
+		<note-list [selectedApplicantId]="activeApplicantId" selectedNoteTypeCategory="Case" [sortByOption]="selectedSortByOption"
+		 [title]="title" [activeNoteId]="activeNoteId"></note-list>
+	</div>
+</div>

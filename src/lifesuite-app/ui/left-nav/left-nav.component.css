@@ -1,0 +1,31 @@
+.ls-left-nav {
+    height: 100vh;
+}
+
+.lf-sliding-menu-btn {
+    float: right;
+    border: none;
+    background-color: transparent;
+    color: #00467f;
+    margin-right: 0.5em;
+    margin-top: 0.075em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+}
+
+.lf-sliding-menu-btn.expanded:active {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+
+.lf-sliding-menu-btn.collapsed:active {
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+}

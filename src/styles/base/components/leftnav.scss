@@ -1,0 +1,46 @@
+.lf-leftnav {
+    transition: max-width 0.4s ease;
+    max-width: $leftnav-max-width;
+}
+
+.lf-collapsed-leftnav {
+    .lf-leftnav {
+        transition: max-width 0.4s ease;
+        max-width: $leftnav-icons-only-width;
+        .ui-panelmenu .ui-menuitem-link {
+            padding: 0.5em;
+        }
+        .ui-menuitem-text {
+            display: none !important;
+        }
+        .ls-left-nav-info-panel {
+            display: none !important;
+        }
+    }
+}
+
+.ls-left-nav-info-panel {
+    background-color: $left-nav-info-panel-bg;
+}
+
+.ls-left-nav-info-panel label {
+    font-size: 0.7rem;
+}
+
+.lf-leftnav-fixed {
+    @include position-fixed;
+    /* bootstrap's z-index value for fixed elements */
+    z-index: $zindex-fixed - 1;
+}
+
+.lf-leftnav-menuitemicon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+@include media-breakpoint-up(xl) {
+    .lf-leftnav {
+        max-width: $leftnav-max-width-xl;
+    }
+}

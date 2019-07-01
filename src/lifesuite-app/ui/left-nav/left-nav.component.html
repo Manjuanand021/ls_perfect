@@ -1,0 +1,9 @@
+<section class="ls-left-nav">
+    <section>
+        <div title="Slide Menu" [class]="slidingMenuButtonClass" (click)="onSlideLeftNavClick()"></div>
+        <panel-menu [model]="menuData" lfPopover [popoverParams]="autoCollapseLeftNavPopoverParams" (menuItemClick)="onMenuItemClick($event)"></panel-menu>
+    </section>
+    <section>
+        <quick-info-panel></quick-info-panel>
+    </section>
+</section>

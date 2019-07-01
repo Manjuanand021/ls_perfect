@@ -1,0 +1,4 @@
+<div class="row">
+    <data-grid #dataGrid [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)" [ngStyle]="{width: '100%', height: gridOptions.height}"></data-grid>
+</div>
+<data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>

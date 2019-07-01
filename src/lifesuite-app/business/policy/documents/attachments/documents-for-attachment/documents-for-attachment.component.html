@@ -1,0 +1,17 @@
+<div class="row" style="flex-direction:  column;">
+    <div class="row" style="justify-content: space-between;">
+        <label i18n="@@policy.documents.attachments.section.docsforattachment">Documents for Attachment</label>
+        <div class="pb-1">
+            <lf-button id="editDocumentButton" name="editDocumentButton" (onClick)="editDocument()" label="Edit"
+                i18n-label="@@general.button.label.edit" secureComponent styleClass="btn btn-primary" [disabled]="disableEditButton"></lf-button>
+            <lf-button id="attachDocumentButton" name="attachDocumentButton" (onClick)="attachDocument()" label="Attach"
+                i18n-label="@@policy.documents.attachments.button.attach" secureComponent styleClass="btn btn-primary"
+                [disabled]="disableAttachButton"></lf-button>
+            <lf-button id="deleteDocumentButton" name="deleteDocumentButton" (onClick)="deleteDocument()" label="Delete"
+                i18n-label="@@general.button.label.delete" secureComponent styleClass="btn btn-primary" [disabled]="disableDeleteButton"></lf-button>
+        </div>
+    </div>
+    <data-grid #dataGrid [ngStyle]="{width: '100%', height: '180px'}" (rowClicked)="onRowClicked($event)" [gridOptions]="gridOptions"
+        rowSelection="single"></data-grid>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

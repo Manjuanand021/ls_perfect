@@ -1,0 +1,8 @@
+﻿<form #form="ngForm" role="form" class="form" autocomplete="off">
+	<div class="row">
+		<lf-form-input [control]="requirement" label="Requirement" i18n-label="@@policy.requirement.detail.requirement">
+			<lf-select #requirement name="requirement" [items]="listData.RequirementCode | listItems:'value':'Id'| sortList"
+			[clearable]="false"  secureComponent required style="width:300px " (change)="onRequirementChange($event) "></lf-select>
+		</lf-form-input>
+	</div>
+</form>

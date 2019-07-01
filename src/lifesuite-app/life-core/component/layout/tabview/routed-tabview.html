@@ -1,0 +1,22 @@
+<!-- 
+	This html is copied from corresponding PrimeNg component.
+    
+    Custom changes:
+    Added 'ui-tabview-' + tabViewType
+    Added <lf-tabPanel *ngFor="let tabData of tabsData ..>
+    Added <lf-tabPanel .. leftIcon=..>
+-->
+
+<div [ngClass]="['ui-tabview','ui-widget','ui-widget-content','ui-corner-all','ui-tabview-' + orientation, 'ui-tabview-' + tabViewType]"
+    [ngStyle]="style" [class]="styleClass">
+    <ul lf-tabViewNav role="tablist" *ngIf="orientation!='bottom'" [tabs]="tabs" [orientation]="orientation"
+        (onTabClick)="open($event.originalEvent, $event.tab)" (onTabCloseClick)="close($event.originalEvent, $event.tab)"></ul>
+    <div class="ui-tabview-panels">
+        <lf-tabPanel *ngFor="let tabData of tabsData | async" header="{{tabData.title}}" leftIcon="{{tabData.leftIcon}}"
+            [closable]="tabData.closable" [disabled]="tabData.disabled">
+        </lf-tabPanel>
+        <ng-content></ng-content>
+    </div>
+    <ul lf-tabViewNav role="tablist" *ngIf="orientation=='bottom'" [tabs]="tabs" [orientation]="orientation"
+        (onTabClick)="open($event.originalEvent, $event.tab)" (onTabCloseClick)="close($event.originalEvent, $event.tab)"></ul>
+</div>

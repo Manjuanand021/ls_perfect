@@ -1,0 +1,62 @@
+﻿/* login view styles */
+
+.ls-login-container {
+    height: 90vh;
+    border: 1px solid lightgray;
+    background-color: #e4eeed;
+    opacity: 0.8;
+}
+
+.ls-signin-form {
+    width: 360px;
+    padding: 0.95rem;
+    font-size: 0.825rem;
+    float: left;
+}
+
+.ls-signin-form .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.625rem;
+    /* font-size: $font-size-large; */
+}
+
+.ls-image-carousel {
+    background-color: white;
+    border: 1px solid lightgray;
+    margin: 0.95rem 0.75rem 0.95rem 0px;
+    padding-left: 0px;
+    width: calc(95% - 360px);
+    float: left;
+    height: calc(90vh - 30px);
+    overflow-y: hidden;
+}
+
+input[type='text'] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+input[type='password'] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.ls-signin-form .card-block {
+    padding: 0.25rem 0.75rem;
+}
+
+.ls-signin-form .alert {
+    padding: 0.75rem 1rem;
+}
+
+.ls-signin-form .links {
+    margin-top: -0.3rem;
+}
+
+/* not currently used
+.checkbox {
+    margin-bottom: 10px;
+} */

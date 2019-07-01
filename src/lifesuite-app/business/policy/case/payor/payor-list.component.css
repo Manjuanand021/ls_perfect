@@ -1,0 +1,24 @@
+/* test-item-list.css */
+
+.item .itemContent {
+    padding: 0.3125rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+.item .itemContent.invalid {
+    border-color: red;
+}
+
+.bottom-margin {
+    margin: 0.3125rem;
+}
+
+.owner:hover {
+    border-color: #00467f;
+}
+
+.owner #validation-messages {
+    margin: 0 0.625rem 0.9375rem 0.625rem;
+}

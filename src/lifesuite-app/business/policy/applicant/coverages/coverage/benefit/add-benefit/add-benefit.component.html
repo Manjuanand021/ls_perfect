@@ -1,0 +1,10 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Benefit" i18n-label="@@applicant.covearge.benefit.benefit" [control]="benefit">
+                <lf-select #benefit name="benefit" [(ngModel)]="benefitId" [items]="resolvedData.listData?.BenefitId | listItems:'value':'Id' | emptyItem"
+                    style="width: 200px" container="dialog" secureComponent required></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

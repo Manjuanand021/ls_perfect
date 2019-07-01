@@ -1,0 +1,69 @@
+<br />
+<br />
+<form #form="ngForm">
+	<div id="view1" class="col-sm-12">
+		<div>
+			<h5>Labels on top</h5>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<lf-form-input [control]="newNumericField" label="Sr InputNumber 1">
+					<lf-inputnumber #newNumericField name="newNumericField" required></lf-inputnumber>
+				</lf-form-input>
+			</div>
+			<div class="col-sm-3">
+				<lf-form-input [control]="newNumericField2" label="Sr InputNumber 2">
+					<lf-inputnumber #newNumericField2 name="newNumericField2"></lf-inputnumber>
+				</lf-form-input>
+			</div>
+		</div>
+		<hr />
+		<div>
+			<h5>Horizontal - labels on the left</h5>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<lf-form-input [control]="srTextField1" label="Label Left" labelClass="col-sm-3" labelPosition="left">
+					<lf-inputtext #srTextField1 name="srTextField" required></lf-inputtext>
+				</lf-form-input>
+			</div>
+			<div class="col-4">
+				<lf-form-input [control]="srTextField2" label="Label Right" labelClass="col-sm-3" labelPosition="right">
+					<lf-inputtext #srTextField2 name="srTextField" required></lf-inputtext>
+				</lf-form-input>
+			</div>
+			<div class="col-4">
+				<lf-form-input [control]="staticTextField" label="StaticText" labelClass="col-sm-3" labelPosition="left">
+					<lf-statictext #staticTextField name="staticTextField" value="Static value"></lf-statictext>
+				</lf-form-input>
+			</div>
+		</div>
+		<hr />
+		<div>
+			<h5>Labels with checkbox</h5>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<label>PrimeNG CheckBox</label>
+				<p-checkbox name="checkboxField" binary="true"></p-checkbox>
+			</div>
+
+			<div class="col-sm-6">
+				<lf-form-input [control]="checkboxField1" label="Sr CheckBox" [labelPosition]="'left'">
+					<lf-checkbox #checkboxField1 name="checkboxField1" binary="true"></lf-checkbox>
+				</lf-form-input>
+			</div>
+		</div>
+		<hr />
+		<div>
+			<h5>Form Inputs inside ngFor Loop</h5>
+		</div>
+		<div class="row">
+			<div *ngFor="let item of data; let i=index">
+				<lf-form-input [control]="textField" label="Text blah blah" labelPosition="left">
+					<lf-inputtext #textField name="textField{{i}}" [(ngModel)]="item.value" required></lf-inputtext>
+				</lf-form-input>
+			</div>
+		</div>
+	</div>
+</form>

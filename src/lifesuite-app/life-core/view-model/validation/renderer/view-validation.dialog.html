@@ -1,0 +1,13 @@
+<div *ngFor="let serverMessage of serverMessages" class="lf-validation-message">
+	<span class="lf-validation-message-type-icon"></span>
+	<span class="lf-validation-message-name">{{serverMessage.name}}:</span>
+	<span class="lf-validation-message-description" [innerHTML]="serverMessage.message"></span>
+</div>
+<div *ngFor="let formMessage of formMessages">
+	<a [id]="formMessage.controlName" href="#" (click)="onMessageClick($event)">
+		<span class="lf-validation-message-type-icon"></span>
+		<span class="lf-validation-message-name">{{formMessage.controlDescription}}:</span>
+		<span class="lf-validation-message-description">{{formMessage.message}}</span>
+		<span class="lf-validation-message-action-icon fa fa-search-plus"></span>
+	</a>
+</div>

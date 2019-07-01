@@ -1,0 +1,16 @@
+﻿<div class="row lf-dashed-bottom-border">
+    <div class="col-12">
+        <master-detail [gridOptions]="gridOptions" [buttons]="buttons" [showDetailAsPopup]="showDetailAsPopup"
+            secureComponent>
+        </master-detail>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <lf-form-input [control]="otherMedication" label="Total" i18n-label="@@policy.medication.grid.totalpoints"
+            labelPosition="left">
+            <lf-statictext #otherMedication name="otherMedication" [value]="otherMedicationTotalPoints | lfDecimal:'1.0-0'"
+                secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<lf-panel header="Item B" [toggleable]="true" panelType="secondary">
+	<div [hidden]="!item.visible" [@fadeInOut]="item.visible">
+		<div #refDOMContext class="itemContent {{itemType}}" [class.invalid]="item.invalid">
+			<div>Type B editor - {{data.name}}</div>
+			<span>Name: <input ref="name" id="name" [(ngModel)]="data.name" style="width: 50%;" /></span>
+		</div>
+	</div>
+</lf-panel>

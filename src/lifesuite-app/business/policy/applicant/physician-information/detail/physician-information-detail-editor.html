@@ -1,0 +1,119 @@
+﻿<form ngForm #form="ngForm" role="form" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-sm-4">
+            <lf-form-input label="First Name" i18n-label="@@policy.applicant.physicianInfo.firstname" [control]="firstName">
+                <lf-inputtext #firstName name="firstName" [(ngModel)]="data.FirstName" maxLength="20" secureComponent
+                    required [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="Last Name" i18n-label="@@policy.applicant.physicianInfo.lastname" [control]="lastName">
+                <lf-inputtext #lastName name="lastName" [(ngModel)]="data.LastName" maxLength="50" secureComponent
+                    required [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="Primary Physician" i18n-label="@@policy.applicant.physicianInfo.primaryphysician"
+                [control]="primaryPhysician">
+                <lf-radiobuttongroup #primaryPhysician name="primaryPhysician" [(ngModel)]="data.IsPrimaryPhysician"
+                    (change)="setPrimaryPhysician()" secureComponent>
+                    <span>
+                        <lf-radiobutton name="primaryPhysician" [value]=true label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="primaryPhysician" [value]=false label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <lf-form-input label="Address" i18n-label="@@policy.applicant.physicianInfo.address" [control]="addressLine1">
+                <lf-inputtext #addressLine1 name="addressLine1" [(ngModel)]="businessAddress.AddressLine1" maxLength="100"
+                    secureComponent required [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input [control]="addressLine2">
+                <lf-inputtext #addressLine2 name="addressLine2" [(ngModel)]="businessAddress.AddressLine2" maxLength="100"
+                    secureComponent [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="City" i18n-label="@@policy.applicant.physicianInfo.city" [control]="city">
+                <lf-inputtext #city name="city" [(ngModel)]="businessAddress.City" maxLength="30" secureComponent
+                    required [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <lf-form-input label="Country" i18n-label="@@policy.applicant.physicianInfo.country" [control]="countryId">
+                <lf-select #countryId name="countryId" [(ngModel)]="businessAddress.CountryId" [items]="resolvedData.listData.CountryId | listItems:'value':'Id' | emptyItem"
+                    container="dialog" secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="State/Province" i18n-label="@@policy.applicant.physicianInfo.state" [control]="countryStateId">
+                <lf-select #countryStateId name="countryStateId" [(ngModel)]="businessAddress.CountryStateId" [items]="resolvedData.metaData | stateListPicker: businessAddress.CountryId |emptyItem | sortList"
+                    container="dialog" secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="Postal Code" i18n-label="@@policy.applicant.physicianInfo.postalcode" [control]="postalCode">
+                <lf-inputzipcode #postalCode name="postalCode" [zipCodeType]="businessAddress.CountryId | getZipCodeType"
+                    [(ngModel)]="businessAddress.PostalCode" secureComponent [autocomplete]="false"></lf-inputzipcode>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <lf-form-input label="Phone" i18n-label="@@policy.applicant.physicianInfo.phone" [control]="phone">
+                <ls-inputphone #phone name="phone" [(ngModel)]="businessPhone" secureComponent></ls-inputphone>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <lf-form-input label="Treatments" i18n-label="@@policy.applicant.physicianInfo.treatments" [control]="treatments">
+                <lf-inputtext #treatments name="treatments" [(ngModel)]="data.Field1" [maxLength]="255" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="Ongoing Treatments" i18n-label="@@policy.applicant.physicianInfo.ongoingtreatments"
+                [control]="stillUnderTreatmentFlag">
+                <lf-radiobuttongroup #stillUnderTreatmentFlag name="stillUnderTreatmentFlag" [(ngModel)]="data.Field2"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="stillUnderTreatmentFlag" [value]=1 label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="stillUnderTreatmentFlag" [value]=0 label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="Last Visit Date" i18n-label="@@policy.applicant.physicianInfo.lastvisitdate"
+                [control]="lastVisitDate">
+                <lf-inputdate #lastVisitDate name="lastVisitDate" [(ngModel)]="data.Field5" [modelAsString]="true"
+                    [stripTime]="true" container="dialog" secureComponent [maxDate]="maxLastVisitDate"></lf-inputdate>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <lf-form-input label="Last Visit Reason" i18n-label="@@policy.applicant.physicianInfo.lastvisitreason"
+                [control]="lastVisitReason">
+                <lf-inputtext #lastVisitReason name="lastVisitReason" [(ngModel)]="data.Field4" [maxLength]="50"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-4">
+            <lf-form-input label="Findings" i18n-label="@@policy.applicant.physicianInfo.findings" [control]="findings">
+                <lf-inputtext #findings name="findings" [(ngModel)]="data.Field3" [maxLength]="255" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

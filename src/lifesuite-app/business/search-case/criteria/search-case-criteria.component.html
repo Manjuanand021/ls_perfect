@@ -1,0 +1,14 @@
+<lf-panel header="Case Search Criteria" i18n-header="@@search.tab.title.case.search.criteria" [toggleable]="false" panelType="primary">
+    <div class="row justify-content-end search-buttons-container">
+        <lf-button id="searchButton" label="Search" i18n-label="@@general.button.label.search" (onClick)="onSearchCaseClick()" styleClass="btn btn-primary"
+            class="alwaysOnTop"></lf-button>&nbsp;
+        <lf-button id="clearButton" label="Clear" i18n-label="@@general.button.label.clear" (onClick)="onClearClick()" styleClass="btn btn-primary"
+            class="alwaysOnTop"></lf-button>
+    </div>
+    <div class="row search-inputs-container">
+        <div class="col-11">
+            <dynamic-form [formFields]="formFields" [formData]="formData" [layoutConfig]="formLayoutConfig" [form]="rootForm" [index]="index">
+            </dynamic-form>
+        </div>
+    </div>
+</lf-panel>

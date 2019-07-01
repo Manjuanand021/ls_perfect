@@ -1,0 +1,19 @@
+.ag-header-cell-label {
+    text-overflow: clip;
+    overflow-wrap: normal;
+    overflow: visible;
+    white-space: normal;
+}
+
+.ag-overlay-wrapper {
+    padding-top: 1.25rem;
+}
+
+.ag-menu {
+    overflow-y: inherit;
+    padding-left: 0.125rem;
+}
+
+.ag-header-cell-label .ag-header-cell-text {
+    white-space: normal !important;
+}

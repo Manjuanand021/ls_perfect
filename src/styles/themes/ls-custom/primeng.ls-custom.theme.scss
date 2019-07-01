@@ -1,0 +1,65 @@
+/* From ~primeng/resources/themes/cupertino.scss */
+
+$fontFamily: inherit;
+$fontSize: 0.95em;
+$borderRadius: 2px;
+$disabledOpacity: 0.35;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: #aed0ea;
+$headerBgColor: #deedf7;
+$headerTextColor: #222222;
+$headerFontWeight: bold;
+$headerIconTextColor: #222222;
+
+//Content
+$contentBorderWidth: 1px;
+$contentBorderColor: #dddddd;
+$contentBgColor: #f2f5f7;
+$contentTextColor: #362b36;
+
+//Default State
+$stateDefaultBorderWidth: 1px;
+$stateDefaultBorderColor: #aed0ea;
+$stateDefaultBgColor: #ffffff;
+$stateDefaultTextColor: #555555;
+
+//Active State
+$stateActiveBorderColor: #2694e8;
+$stateActiveBgColor: #3baae3;
+$stateActiveTextColor: #ffffff;
+
+//Active State for sub elements,
+//such as secondary left menu item
+$stateSubActiveBorderColor: #d4f1fb;
+$stateSubActiveBgColor: #d4f1fb;
+$stateSubActiveTextColor: #0070a3;
+
+//Highlight State
+$stateHighlightBorderColor: #156090;
+$stateHighlightBgColor: #186ba0;
+$stateHighlightTextColor: #ffffff;
+
+//Focus State
+$stateFocusBorderColor: #c0c0c0;
+$stateFocusBgColor: #e4f1fb;
+$stateFocusTextColor: #0070a3;
+
+//Error State
+$stateErrorBorderColor: #cd0a0a;
+$stateErrorBgColor: #cd0a0a;
+$stateErrorTextColor: #ffffff;
+
+//Hover State
+$stateHoverBorderColor: #74b2e2;
+$stateHoverBgColor: #e4f1fb;
+$stateHoverTextColor: #0070a3;
+
+//Forms
+$inputBgColor: #ffffff;
+$inputTextColor: #222222;
+$inputGroupTextColor: #2779aa;
+$invalidInputBorderColor: #cd0a0a;
+
+@import '~primeng/resources/themes/_theme';

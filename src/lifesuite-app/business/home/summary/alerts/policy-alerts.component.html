@@ -1,0 +1,32 @@
+<lf-panel header="Alerts" i18n-header="@@summary.paneltitle.alerts" [toggleable]="false" panelType="primary">
+    <div class="row pt-2">
+        <div class="col-6">
+            <label i18n="@@summary.alerts.columnheader.messages">Messages:</label>
+            <ls-policy-alert iconTitle="Inbound" i18n-iconTitle="@@summary.alerts.label.inbound" iconCssClass="ls-inbound-policy-icon"
+                [policyCount]="inboundPolicyCount" description="Inbox" i18n-description="@@summary.alerts.description.inbox"
+                (click)="onAlertClick('msgInbox')"></ls-policy-alert>
+
+            <ls-policy-alert iconTitle="Outbox" i18n-iconTitle="@@summary.alerts.label.outbox" iconCssClass="ls-outbox-policy-icon"
+                [policyCount]="outboxPolicyCount" description="Outbox" i18n-description="@@summary.alerts.description.outbox"
+                (click)="onAlertClick('msgOutbox')"></ls-policy-alert>
+
+            <ls-policy-alert iconTitle="Review" i18n-iconTitle="@@summary.alerts.label.review" iconCssClass="ls-review-policy-icon"
+                [policyCount]="reviewPolicyCount" description="Review" i18n-description="@@summary.alerts.description.review"
+                (click)="onAlertClick('msgReview')"></ls-policy-alert>
+        </div>
+        <div class="col-6 lf-dashed-left-border">
+            <label i18n="@@summary.alerts.columnheader.pastdue">Past Due Requirements:</label>
+            <ls-policy-alert iconTitle="Undewriting" i18n-iconTitle="@@summary.alerts.label.underwriting" iconCssClass="ls-underwriting-policy-icon"
+                [policyCount]="underwritingPolicyCount" description="Underwriting" i18n-description="@@summary.alerts.description.underwriting"
+                (click)="onAlertClick('reqUnderwriting')"></ls-policy-alert>
+
+            <ls-policy-alert iconTitle="Post-Issue" i18n-iconTitle="@@summary.alerts.label.postissue" iconCssClass="ls-post-issue-policy-icon"
+                [policyCount]="postIssuePolicyCount" description="Post-Issue" i18n-description="@@summary.alerts.description.postissue"
+                (click)="onAlertClick('reqPostIssue')"></ls-policy-alert>
+
+            <ls-policy-alert iconTitle="Pre-Issue" i18n-iconTitle="@@summary.alerts.label.preissue" iconCssClass="ls-pre-issue-policy-icon"
+                [policyCount]="preIssuePolicyCount" description="Pre-Issue" i18n-description="@@summary.alerts.description.preissue"
+                (click)="onAlertClick('reqPreIssue')"></ls-policy-alert>
+        </div>
+    </div>
+</lf-panel>

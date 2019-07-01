@@ -1,0 +1,5 @@
+<div class="row">
+    <data-grid #dataGrid style="height: 450px;" (rowSelected)="onRowSelected($event)" [gridOptions]="gridOptions"
+        (filterChanged)="onFilterChange()"></data-grid>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

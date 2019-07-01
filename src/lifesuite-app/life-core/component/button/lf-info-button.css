@@ -1,0 +1,40 @@
+/* most of these classes are primeng classes except lf-split-infobutton */
+.ui-fluid .ui-splitbutton .ui-button:first-child {
+    width: calc(100% - 2em);
+}
+
+.lf-infobutton .ui-button {
+    padding: 0.1rem;
+    height: 3.125rem;
+    width: 100%;
+    vertical-align: top;
+}
+
+.lf-infobutton.ui-buttonset {
+    margin-right: 0;
+    border-radius: 3px;
+}
+
+.lf-infobutton .ui-button-text {
+    font-size: 0.75rem;
+    position: absolute;
+    top: 0;
+    white-space: pre-wrap;
+}
+
+.lf-infobutton.lf-state-selected .ui-button-text,
+.lf-infobutton.lf-state-selected .ui-info-text {
+    font-weight: bold;
+}
+
+.lf-infobutton .ui-info-text {
+    display: inline-block;
+    position: relative;
+    top: 18px;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.lf-infobutton .ui-corner-all {
+    border-radius: 3px;
+}

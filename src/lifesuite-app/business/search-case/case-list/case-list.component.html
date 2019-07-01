@@ -1,0 +1,12 @@
+<div class="row justify-content-end" style="padding: 5px 0;">
+    <lf-button id="exportPolicyButton" label="Export" i18n-label="@@search.tab.grid.export" [disabled]="isExportButtonDisabled"
+        (onClick)="exportCases()" styleClass="btn btn-primary"></lf-button>&nbsp;
+    <lf-button id="openPolicyButton" label="Open" i18n-label="@@general.button.label.open" [disabled]="isOpenButtonDisabled"
+        (onClick)="onOpenPolicyButtonClick()" styleClass="btn btn-primary"></lf-button>
+</div>
+<div class="row">
+    <data-grid style="width: 100%; height: 450px;" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)"
+        (rowDoubleClicked)="onRowDoubleClicked($event)" (filterChanged)="onFilterChange()">
+    </data-grid>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

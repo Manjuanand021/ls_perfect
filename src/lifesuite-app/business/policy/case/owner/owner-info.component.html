@@ -1,0 +1,32 @@
+<lf-panel header="Owner" i18n-header="@@policy.case.owner.title" [toggleable]="true" panelType="secondary" stateId="panel_owner_{{index}}"
+ [state]="componentsState.get('panel_owner_'+index)" secureComponent>
+	<div [hidden]="!item.visible" [@fadeInOut]="item.visible">
+		<div class="itemContent" [class.invalid]="item.invalid">
+			<div class="owner">
+				<div class="row">
+					<div class="col-3">
+						<lf-form-input [control]="ownerPrimaryInsured" label="Primary Insured" i18n-label="@@policy.case.owner.primaryinsured">
+							<lf-radiobuttongroup #ownerPrimaryInsured name="owner_primaryInsured_{{item.sequenceId}}" [(ngModel)]="data.isPrimaryInsured"
+							 (change)="onPrimaryInsuredAsOwnerClick($event)" secureComponent>
+								<span>
+									<lf-radiobutton name="owner_primaryInsured_{{item.sequenceId}}" [value]=true label="Yes" i18n-label="@@policy.case.owner.yes"></lf-radiobutton>
+								</span>
+								<span>
+									<lf-radiobutton name="owner_primaryInsured_{{item.sequenceId}}" [value]=false label="No" i18n-label="@@policy.case.owner.no"></lf-radiobutton>
+								</span>
+							</lf-radiobuttongroup>
+						</lf-form-input>
+					</div>
+					<div class="col-3">
+						<lf-form-input [control]="partyType" label="Party Type" i18n-label="@@policy.case.owner.partytype">
+							<lf-select #partyType name="owner_partyType_{{item.sequenceId}}" [items]="listData.PersonTypeId | listItems:'value':'Id'"
+							 [(ngModel)]="data.PersonTypeId" (change)="onOwnerTypeChange($event)" [clearable]="false" [disabled]="data.isPrimaryInsured"
+							 secureComponent required style="width:150px"></lf-select>
+						</lf-form-input>
+					</div>
+				</div>
+				<compose [model]="item" [componentType]="itemComponentType"></compose>
+			</div>
+		</div>
+	</div>
+</lf-panel>

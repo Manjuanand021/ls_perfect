@@ -1,0 +1,92 @@
+﻿<div class="owner">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="associationCode" label="Name" i18n-label="@@policy.case.association.name">
+                <lf-select #associationCode name="associationCode" [items]="listData.Association_CompanyCode | listItems:'value':'Id'"
+                    [clearable]="false" [(ngModel)]="data.CompanyCode" (change)="onCompanyCodeNameChange($event)" secureComponent
+                    style="width:150px" required></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div *ngIf="associationDataExist">
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input [control]="addressLine1" label="Address" i18n-label="@@policy.case.association.address">
+
+                    <lf-statictext #addressLine1 name="addressLine1" [value]="businessAddress.AddressLine1" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="addressLine2">
+                    <lf-statictext #addressLine2 name="addressLine2" [value]="businessAddress.AddressLine2" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="addressLine3">
+                    <lf-statictext #addressLine3 name="addressLine3" [value]="businessAddress.AddressLine3" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input [control]="city" label="City" i18n-label="@@policy.case.association.city">
+                    <lf-statictext #city name="city" [value]="businessAddress.City" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="country" label="Country" i18n-label="@@policy.case.association.country">
+                    <lf-statictext #country name="country" [value]="countryName" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="state" label="State" i18n-label="@@policy.case.association.state">
+                    <lf-statictext #state name="state" [value]="stateName" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="postalCode" label="Postal Code" i18n-label="@@policy.case.association.postalcode">
+                    <lf-statictext #postalCode name="postalCode" [value]="businessAddress.PostalCode" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input [control]="companyCodeNumber" label="Company Code Number" i18n-label="@@policy.case.association.companycode">
+                    <lf-statictext #companyCodeNumber name="companyCodeNumber" [value]="data.CompanyCode" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="taxId" label="Tax Id" i18n-label="@@policy.case.association.taxid">
+                    <lf-statictext #taxId name="taxId" [value]="data.TaxId | taxIdMask" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="phoneNumber" label="Phone Number" i18n-label="@@policy.case.association.phonenumber">
+                    <lf-statictext #phoneNumber name="phoneNumber" [value]="workPhone | lsPhone" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="faxNumber" label="Fax Number" i18n-label="@@policy.case.association.faxnumber">
+                    <lf-statictext #faxNumber name="faxNumber" [value]="faxPhone | lsPhone" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input [control]="email" label="Email" i18n-label="@@policy.case.association.email">
+                    <lf-statictext #email name="email" [value]="data.EmailAddress" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="contactName" label="Contact Name" i18n-label="@@policy.case.association.contactname">
+                    <lf-statictext #contactName name="contactName" [value]="data.contactName" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="expirationDate" label="Expiration Date" i18n-label="@@policy.case.association.expirationdate">
+                    <lf-statictext #expirationDate name="expirationDate" [value]="data.assocExpirationDate | dbDate" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+    </div>
+</div>

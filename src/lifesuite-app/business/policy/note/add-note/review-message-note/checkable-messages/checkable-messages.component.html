@@ -1,0 +1,6 @@
+<label i18n="@@policy.notes.addnotes.checkableGroupPrompt">Apply above note to Multiple Checkable Review Messages</label>
+<div class="row">
+    <data-grid #dataGrid style="width: 100%;" [gridOptions]="gridOptions" [suppressRowClickSelection]="true"
+        rowSelection="multiple" (rowSelected)="onRowSelected($event)">
+    </data-grid>
+</div>

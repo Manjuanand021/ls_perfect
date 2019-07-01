@@ -1,0 +1,8 @@
+.page-height {
+    height: 450px;
+}
+
+.bottom-buttons {
+    align-items: flex-end;
+    display: flex;
+}

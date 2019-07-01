@@ -1,0 +1,7 @@
+<div class="row">
+	<div class="col-sm-{{layout.getFieldColSpan(fieldConfig.layout)}}" *ngFor="let fieldConfig of formFields;">
+		<ng-container dynamicField [index]="index" [config]="fieldConfig" [data]="formData"
+			[resolvedData]="resolvedData" (fieldEvent)="onFieldEvent($event)">
+		</ng-container>
+	</div>
+</div>

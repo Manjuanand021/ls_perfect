@@ -1,0 +1,97 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="User Name" i18n-label="@@user.preferences.username" [control]="userName">
+                <lf-statictext name="userName" #userName [value]="userData.FullName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="Active" i18n-label="@@user.preferences.active" [control]="active">
+                <lf-statictext name="active" #active [value]="userData.IsActive" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="Role" i18n-label="@@user.preferences.role" [control]="role">
+                <lf-statictext name="role" #role [value]="userData.RoleName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="Underwriter" i18n-label="@@user.preferences.underwriter" [control]="underwriter">
+                <lf-statictext name="underwriter" #underwriter [value]="userData.IsUnderwriter" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-lg-4">
+            <lf-form-input label="Phone Number" i18n-label="@@user.preferences.phone" [control]="phoneNumber">
+                <ls-inputphone #phoneNumber name="phoneNumber" [(ngModel)]="workPhone" secureComponent [extHidden]="false"></ls-inputphone>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-4">
+            <lf-form-input label="Fax Number" i18n-label="@@user.preferences.fax" [control]="faxNumber">
+                <ls-inputphone #faxNumber name="faxNumber" [(ngModel)]="faxPhone" secureComponent [extHidden]="false"></ls-inputphone>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-4">
+            <lf-form-input label="Email" i18n-label="@@user.preferences.email" [control]="emailAddress">
+                <lf-inputemail #emailAddress name="emailAddress" [(ngModel)]="user.EmailAddress" [maxLength]="100" secureComponent class="lf-emailAddress"></lf-inputemail>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="Preferred Language:" i18n-label="@@user.preferences.languagelabel" [control]="preferredLanguage">
+                <lf-select #preferredLanguage name="preferredLanguage" [items]="locales" [(ngModel)]="user.PreferredLanguageCode" (ngModelChange)="onLanguageChange($event)"
+                    secureComponent [clearable]="false" style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="Restricted To Teams?" i18n-label="@@user.preferences.restrictedteam" [control]="restrictedToTeams">
+                <lf-statictext name="restrictedToTeams" #restrictedToTeams [value]="userData.RestrictedToTeams" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-3" *ngIf="isLoadBalanceVisible">
+            <lf-form-input label="Load Balancing Factor" i18n-label="@@user.preferences.loadbalancingfactor" [control]="loadBalancingFactor">
+                <lf-statictext name="loadBalancingFactor" #loadBalancingFactor [value]="userData.LoadBalancingFactor" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6 col-lg-3">
+            <lf-form-input label="Job Title" i18n-label="@@user.preferences.jobtitle" [control]="jobTitle">
+                <lf-statictext name="jobTitle" #jobTitle [value]="user.JobTitle" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <hr>
+    <div class="row jusitfy-content-end">
+        <div class="col-6">
+            <lf-form-input label="Days Until Password Expires" i18n-label="@@user.preferences.passwordexpires" [control]="daysUntilPasswordExpires">
+                <lf-statictext name="daysUntilPasswordExpires" #daysUntilPasswordExpires [value]="user.daysUntilPasswordExpires" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input label="Out of office" i18n-label="@@user.preferences.outofoffice" [control]="outOfOffice">
+                <lf-checkbox name="outOfOffice" #outOfOffice [(ngModel)]="isOutOfOffice" secureComponent></lf-checkbox>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row jusitfy-content-end">
+        <div class="col-6">
+            <lf-form-input label="Auto Collapse Left Menu" i18n-label="@@user.preferences.autoCollapseLeftMenu" [control]="autoCollapseLeftMenu">
+                <lf-radiobuttongroup #autoCollapseLeftMenu name="autoCollapseLeftMenu" [(ngModel)]="userLocalSettings.autoCollapseLeftNav.value"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="autoCollapseLeftMenu" [value]=true label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="autoCollapseLeftMenu" [value]=false label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <hr>
+    <membership-grid [user]="user"></membership-grid>
+    <hr>
+    <authorization-grid [user]="user"></authorization-grid>
+</form>

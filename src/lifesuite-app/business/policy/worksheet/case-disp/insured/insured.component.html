@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-12">
+		<lf-panel [header]="panelHeader" [toggleable]="true" panelType="primary" stateId="panel_insured_{{index}}" [state]="componentsState.get('panel_insured_'+index)"
+		 [initCollapsed]="index!='0'" (collapsedChange)="onPanelCollapsedChange($event)" secureComponent>
+			<div *ngIf="showView">
+				<div class="row">
+					<div class="col-2">
+						<lf-form-input [control]="aviationExclusion" label="Aviation Exclusion" i18n-label="@@policy.worksheet.caseApplicantAviationExclusion">
+							<lf-radiobuttongroup #aviationExclusion name="aviationExclusion_{{index}}" [(ngModel)]="insured.AviationExclusion"
+							 [disabled]="disabledOnCaseOrCoverageStatus" secureComponent>
+								<span>
+									<lf-radiobutton [value]="RadioButtonValues.YES_NUMBER" name="aviationExclusion_{{index}}" label="Yes"
+									 i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+								</span>
+								<span>
+									<lf-radiobutton [value]="RadioButtonValues.NO_LS_BOOLEAN" name="aviationExclusion_{{index}}" label="No"
+									 i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+								</span>
+							</lf-radiobuttongroup>
+						</lf-form-input>
+					</div>
+					<div class="col-2">
+						<lf-form-input [control]="autoApproval" label="Auto Approval" i18n-label="@@policy.worksheet.caseApplicantAutoApproval">
+							<lf-radiobuttongroup #autoApproval name="autoApproval_{{index}}" [(ngModel)]="insured.AllowAutoApproval"
+							 [disabled]="disabledOnCaseOrCoverageStatus" secureComponent>
+								<span>
+									<lf-radiobutton [value]="RadioButtonValues.YES_NUMBER" name="autoApproval_{{index}}" label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+								</span>
+								<span>
+									<lf-radiobutton [value]="RadioButtonValues.NO_LS_BOOLEAN" name="autoApproval_{{index}}" label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+								</span>
+							</lf-radiobuttongroup>
+						</lf-form-input>
+					</div>
+					<div class="col-2">
+						<lf-form-input [control]="allowAutoApproval" label="Allow Auto Approval" i18n-label="@@policy.worksheet.caseApplicantAllowAutoApproval">
+							<lf-statictext #allowAutoApproval name="allowAutoApproval" [value]="insured.AllowAutoAprovalString"
+							 secureComponent></lf-statictext>
+						</lf-form-input>
+					</div>
+					<div class="col-2">
+						<lf-form-input [control]="debitCredit" label="Debit/Credit" i18n-label="@@policy.worksheet.caseApplicantDebitCredit">
+							<lf-statictext #debitCredit name="debitCredit" [value]="applicantTotalPoints | lfDecimal:'1.0-0'"
+							 secureComponent></lf-statictext>
+						</lf-form-input>
+					</div>
+					<div class="col-2">
+						<lf-form-input [control]="onHold" label="On Hold" i18n-label="@@policy.worksheet.caseApplicantPutOnHold">
+							<lf-radiobuttongroup #onHold [(ngModel)]="insured.isHold" name="onHold_{{index}}" (change)="showOnHoldConfirmDialog($event)"
+							 [disabled]="disabledOnCaseOrCoverageStatus" secureComponent>
+								<span>
+									<lf-radiobutton [value]="RadioButtonValues.YES_BOOLEAN" name="onHold_{{index}}" label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+								</span>
+								<span>
+									<lf-radiobutton [value]="RadioButtonValues.NO_BOOLEAN" name="onHold_{{index}}" label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+								</span>
+							</lf-radiobuttongroup>
+						</lf-form-input>
+					</div>
+				</div>
+				<div *ngFor="let coverage of insured.Coverages_LazyLoad; let i=index">
+					<ls-worksheet-coverage [coverage]="coverage" index="{{insured.PersonId}}_{{i}}"></ls-worksheet-coverage>
+				</div>
+			</div>
+		</lf-panel>
+	</div>
+</div>

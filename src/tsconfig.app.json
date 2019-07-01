@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "lib": ["es6", "dom"],
+        "module": "es6",
+        "moduleResolution": "node",
+        "mapRoot": "./",
+        "sourceMap": true,
+        "baseUrl": ".",
+        "outDir": "../dist/out-tsc",
+        "typeRoots": ["../node_modules/@types"],
+        "paths": {
+            "life-core/*": ["lifesuite-app/life-core/*"],
+            "ls-core/*": ["lifesuite-app/ls-core/*"],
+            "business/*": ["lifesuite-app/business/*"],
+            "ui/*": ["lifesuite-app/ui/*"],
+            "shared/*": ["lifesuite-app/shared/*"],
+            "environments/*": ["environments/*"],
+            "tests/*": ["tests/*"]
+        }
+    },
+    "exclude": ["node_modules", "src/karma-tests.ts", "**/*.spec.ts"]
+}

@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-9">
+		<lf-form-input [control]="applicantList" label="Applicant" i18n-label="@@policy.notes.label.applicant">
+			<!-- Use 'ngModelOption.standalone' to not add this control to NgForm to avoid saving data when applicant selection changes -->
+			<lf-select class="rm-dropdown" #applicantList name="applicantList" [(ngModel)]="selectedApplicantId" [ngModelOptions]="{standalone: true}"
+			 [items]="applicantListOptions" (change)="onApplicantChange($event)" [clearable]="false"
+			 [actionType]="applicantDropdownActionType" secureComponent></lf-select>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<div class="row justify-content-end from-group pt-24">
+				<lf-button id="openMessageButton" name="openMessageButton" label="Open" i18n-label="@@general.button.label.open"
+				(onClick)="openMessage($event)" styleClass="btn btn-primary" [disabled]="isOpenButtonDisabled" secureComponent></lf-button>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 pl-0 pr-0" >
+		<data-grid #dataGrid class="rm-grid-width" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)"
+		 (rowDoubleClicked)="onRowDoubleClicked($event)">
+		</data-grid>
+		<data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+	</div>
+</div>

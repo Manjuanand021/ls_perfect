@@ -1,0 +1,109 @@
+<div class="row">
+    <div class="col-2">
+        <lf-form-input label="Case Disposition" i18n-label="@@policy.worksheet.caseDisposition" [control]="caseDisposition">
+            <lf-statictext #caseDisposition name="caseDisposition" [value]="data.policy.PolicyStatusCode"
+                secureComponent></lf-statictext>
+        </lf-form-input>
+
+    </div>
+    <div class="col-2">
+        <lf-form-input label="Reason" i18n-label="@@policy.worksheet.caseDispositionReason" [control]="reasonText">
+            <lf-statictext #reasonText name="reasonText" [value]="data.policy.ReasonText" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-3" *ngIf="canChangeDisposition">
+        <lf-form-input [control]="changeDispositionField">
+            <lf-hyperlink #changeDispositionField name="changeDisposition" value="Change Disposition" i18n-value="@@policy.worksheet.caseDispositionChange"
+                (click)="onChangeDispositionClick($event)" secureComponent></lf-hyperlink>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <lf-form-input label="Case Number" i18n-label="@@policy.worksheet.caseDispositionNumber" [control]="caseNumber">
+            <lf-statictext #caseNumber name="caseNumber" [value]="data.policy.PolicyNumber" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input label="Assigned Underwriter" i18n-label="@@policy.worksheet.caseDispositionUnderwriter"
+            [control]="assignedUnderwriter">
+            <lf-statictext #assignedUnderwriter name="assignedUnderwriter" [value]="assignedUWName" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Case Auto Approval Allowed" i18n-label="@@policy.worksheet.caseDispositionAutoApproval"
+            [control]="caseAutoApprovalFlag">
+            <lf-radiobuttongroup #caseAutoApprovalFlag name="caseAutoApprovalFlag" [(ngModel)]="data.policy.AllowAusApproval"
+                [disabled]="disabledBasedOnCaseDispositionStatus" secureComponent>
+                <span>
+                    <lf-radiobutton name="caseAutoApprovalFlag" [value]="RadioButtonValues.YES_LS_BOOLEAN" label="Yes"
+                        i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                </span>
+                <span>
+                    <lf-radiobutton name="caseAutoApprovalFlag" [value]="RadioButtonValues.NO_LS_BOOLEAN" label="No"
+                        i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                </span>
+            </lf-radiobuttongroup>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Auto Close Date" i18n-label="@@policy.worksheet.caseDispositionAutoCloseDate" [control]="autoCloseDate">
+            <ls-inputdate #autoCloseDate name="autoCloseDate" [(ngModel)]="data.policy.AutoCloseDate" [disabled]="disabledBasedOnCaseDispositionStatus"
+                secureComponent></ls-inputdate>
+        </lf-form-input>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-2">
+        <lf-form-input label="GSI Indicator" i18n-label="@@policy.worksheet.caseDispositionGSI" [control]="gsiIndicator">
+            <lf-radiobuttongroup #gsiIndicator name="gsiIndicator" [(ngModel)]="data.policy.GsiIndicator" [disabled]="disabledBasedOnCaseDispositionStatus"
+                secureComponent>
+                <span>
+                    <lf-radiobutton name="gsiIndicator" [value]="RadioButtonValues.YES_LS_BOOLEAN" label="Yes"
+                        i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                </span>
+                <span>
+                    <lf-radiobutton name="gsiIndicator" [value]="RadioButtonValues.NO_LS_BOOLEAN" label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                </span>
+            </lf-radiobuttongroup>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input label="Reinsurer" i18n-label="@@policy.worksheet.caseDispositionreinsurer" [control]="reinsurer">
+            <lf-select #reinsurer name="reinsurer" [(ngModel)]="data.policy.ReinsuranceVendorCode" [items]="listData['ReinsuranceVendorCode'] | listItems:'value':'Id' | emptyItem"
+                style="width:150px" [disabled]="disabledBasedOnCaseDispositionStatus" secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-2">
+        <lf-form-input label="TPA" i18n-label="@@policy.worksheet.caseDispositiontpa" [control]="tpa">
+            <lf-statictext #tpa name="tpa" [value]="data.policy.TpaCode" secureComponent></lf-statictext>
+        </lf-form-input>
+
+    </div>
+    <div class="col-5">
+        <lf-form-input label="Priority" i18n-label="@@policy.worksheet.caseDispositionpriority" [control]="priority">
+            <lf-statictext #priority name="priority" [value]="data.policy.Priority" secureComponent></lf-statictext>
+        </lf-form-input>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <lf-form-input [control]="finalActionNote" label="Final Action Note"
+            i18n-label="@@policy.worksheet.caseDispositionfinalActionNote">
+            <lf-inputtextarea #finalActionNote name="finalActionNote" [(ngModel)]="data.policy.FinalActionNote"
+                [class]="{'lf-font-weight-bold':disabledBasedOnCaseDispositionStatus}" [style]="{width:'100%'}" rows="7"
+                maxLength="2000" [disabled]="disabledBasedOnCaseDispositionStatus" secureComponent>
+            </lf-inputtextarea>
+
+        </lf-form-input>
+    </div>
+</div>
+<br />
+<div *ngFor="let insured of data.policy.Insureds_LazyLoad; let idx=index" class="lf-panel-section">
+    <ls-insured [insured]="insured" [index]="idx" [disabledBasedOnCaseDispositionStatus]="disabledBasedOnCaseDispositionStatus"></ls-insured>
+</div>

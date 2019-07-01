@@ -1,0 +1,26 @@
+﻿<form #form="ngForm" role="form" class="form">
+    <div class="row" i18n="@@session.timeout.message">
+        Your session has expired, please enter the password to continue or click cancel to redirect to the login screen.
+    </div>
+    <br />
+    <div class="card-block">
+        <div class="form-group">
+            <label for="userName" i18n="@@loginLabel">Login ID</label>
+            <div id="userName">{{ userName }}</div>
+        </div>
+        <div class="form-group">
+            <label for="password" i18n="@@passwordLabel">Password</label>
+            <input
+                id="password"
+                type="password"
+                class="form-control"
+                [(ngModel)]="password"
+                name="password"
+                (keyup.enter)="onPasswordEntered()"
+                required
+                autofocus
+            />
+        </div>
+        <div *ngFor="let message of messages" class="alert alert-danger">{{ message }}</div>
+    </div>
+</form>

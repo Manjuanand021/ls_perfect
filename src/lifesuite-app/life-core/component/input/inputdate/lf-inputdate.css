@@ -1,0 +1,25 @@
+﻿.lf-inputdate-group.input-group {
+    flex-wrap: nowrap;
+}
+
+.lf-inputdate {
+    width: 125px;
+}
+
+.lf-inputdate + .input-group-addon {
+    background-color: #fff;
+    border: 1px solid #aed0ea;
+}
+
+.lf-inputdate + .input-group-addon:hover {
+    cursor: pointer;
+}
+
+.lf-inputdate:disabled + .input-group-addon {
+    cursor: default;
+}
+
+:-ms-input-placeholder.lf-inputdate {
+    color: #898989;
+    opacity: 1;
+}

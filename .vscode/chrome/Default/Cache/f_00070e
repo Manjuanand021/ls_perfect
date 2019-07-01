@@ -1,0 +1,418 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["business-login-login-module"],{
+
+/***/ "./src/lifesuite-app/business/login/carousel-item.rc.ts":
+/*!**************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/carousel-item.rc.ts ***!
+  \**************************************************************/
+/*! exports provided: CarouselItemResources */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselItemResources", function() { return CarouselItemResources; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var life_core_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/i18n */ "./src/lifesuite-app/life-core/i18n/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CarouselItemResources = /** @class */ (function () {
+    function CarouselItemResources(i18n) {
+        this.i18n = i18n;
+        this.id3CarouselItem = {
+            url: __webpack_require__(/*! ../../../styles/images/login/carousel_ID3.png */ "./src/styles/images/login/carousel_ID3.png"),
+            label: this.i18n({ value: 'ID<sup>3</sup>-  Full Spectrum Administration', id: 'product.name.id3' }),
+            description: this.i18n({
+                value: 'Any administrative solution that you choose has to be broad enough to support a growing range of products. The ID<sup>3</sup> System supports life, annuity and health insurance products from application through claims processing.  ID<sup>3</sup> has a long track record as a production-proven solution. It is being used by companies to manage hundreds of plan variations for the life and health insurance market, including variable, equity indexed, disability income and long term care products.',
+                id: 'product.desc.id3'
+            })
+        };
+        this.lpesCarouselItem = {
+            url: __webpack_require__(/*! ../../../styles/images/login/carousel_LPES.png */ "./src/styles/images/login/carousel_LPES.png"),
+            label: this.i18n({ value: 'Life Portraits&reg ES - Straight-Through-Processing', id: 'product.name.lpes' }),
+            description: this.i18n({
+                value: "<p>Life Portraits&reg ES helps every point of sale experience lead artfully to the perfect policy decision. Because it's flexible and expandable, Life Portraits&reg ES has the ability to adapt to every channel and seamlessly populate a variety of back-end processing solutions. Life Portraits&reg ES is based on modules that are used to create a customized marketing suite that fits the way your company sells today and easily adapts for tomorrow.  When used together, they provide a complete straight through processing environment for the marketing of life, health, and annuity products.</p> <p>Life Portraits&reg ES at a Glance:</p>- Compliant product illustrations<br>- True straight through processing<br>- Needs analysis suite <br>- Advanced sales<br>- Electronic applications and forms<br>- Electronic signatures and submissions",
+                id: 'product.desc.lpes'
+            })
+        };
+        this.lsauCarouselItem = {
+            url: __webpack_require__(/*! ../../../styles/images/login/carousel_LS.png */ "./src/styles/images/login/carousel_LS.png"),
+            label: this.i18n({ value: 'UnderwritingPro&reg - Automated Underwriting', id: 'product.name.lsau' }),
+            description: this.i18n({
+                value: 'UnderwritingPro&reg is an enterprise proven scalable, Web-based new business / automated underwriting system that can help streamline your new business and underwriting processes.  UnderwritingPro&reg allows underwriters and case managers to quickly access information including application and quote information, evidence, ratings and images using a common desktop. UnderwritingPro&reg allows carriers to analyze, monitor and measure performance and time-service throughout the new business life cycle.',
+                id: 'product.desc.lsau'
+            })
+        };
+    }
+    CarouselItemResources = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [life_core_i18n__WEBPACK_IMPORTED_MODULE_1__["I18n"]])
+    ], CarouselItemResources);
+    return CarouselItemResources;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/login-images-carousel.component.css":
+/*!******************************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/login-images-carousel.component.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".ls-image-text-container {\n    display: flex;\n    padding: 1em 0px;\n}\n\n.ls-product-image {\n    padding-left: 0px;\n    margin-right: 0.625rem;\n    max-width: 250px;\n    height: 450px;\n    max-height: 450px;\n}\n\n.ls-product-label {\n    font-size: 1.125rem;\n    padding-bottom: 0.15em;\n}\n\n.ls-product-desc {\n    border-top: 0.2em solid #c56e17;\n    padding-top: 0.1em;\n    font-size: 0.875rem;\n    text-align: left;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9saWZlc3VpdGUtYXBwL2J1c2luZXNzL2xvZ2luL2xvZ2luLWltYWdlcy1jYXJvdXNlbC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksY0FBYztJQUNkLGlCQUFpQjtDQUNwQjs7QUFFRDtJQUNJLGtCQUFrQjtJQUNsQix1QkFBdUI7SUFDdkIsaUJBQWlCO0lBQ2pCLGNBQWM7SUFDZCxrQkFBa0I7Q0FDckI7O0FBRUQ7SUFDSSxvQkFBb0I7SUFDcEIsdUJBQXVCO0NBQzFCOztBQUVEO0lBQ0ksZ0NBQWdDO0lBQ2hDLG1CQUFtQjtJQUNuQixvQkFBb0I7SUFDcEIsaUJBQWlCO0NBQ3BCIiwiZmlsZSI6InNyYy9saWZlc3VpdGUtYXBwL2J1c2luZXNzL2xvZ2luL2xvZ2luLWltYWdlcy1jYXJvdXNlbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxzLWltYWdlLXRleHQtY29udGFpbmVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIHBhZGRpbmc6IDFlbSAwcHg7XG59XG5cbi5scy1wcm9kdWN0LWltYWdlIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDBweDtcbiAgICBtYXJnaW4tcmlnaHQ6IDAuNjI1cmVtO1xuICAgIG1heC13aWR0aDogMjUwcHg7XG4gICAgaGVpZ2h0OiA0NTBweDtcbiAgICBtYXgtaGVpZ2h0OiA0NTBweDtcbn1cblxuLmxzLXByb2R1Y3QtbGFiZWwge1xuICAgIGZvbnQtc2l6ZTogMS4xMjVyZW07XG4gICAgcGFkZGluZy1ib3R0b206IDAuMTVlbTtcbn1cblxuLmxzLXByb2R1Y3QtZGVzYyB7XG4gICAgYm9yZGVyLXRvcDogMC4yZW0gc29saWQgI2M1NmUxNztcbiAgICBwYWRkaW5nLXRvcDogMC4xZW07XG4gICAgZm9udC1zaXplOiAwLjg3NXJlbTtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xufVxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/login-images-carousel.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/login-images-carousel.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ngb-carousel>\r\n\t<ng-template *ngFor=\"let product of productsArray\" ngbSlide>\r\n\t\t<div class=\"ls-image-text-container\">\r\n\t\t\t<img class=\"ls-product-image\" [src]=\"product.url\">\r\n\t\t\t<div class=\"col-lg-6\">\r\n\t\t\t\t<span class=\"ls-product-label\" [innerHTML]=\"product.label\"></span>\r\n\t\t\t\t<p class=\"ls-product-desc\" [innerHTML]=\"product.description\"></p>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</ng-template>\r\n</ngb-carousel>"
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/login-images-carousel.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/login-images-carousel.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: LoginImagesCarouselComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginImagesCarouselComponent", function() { return LoginImagesCarouselComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _carousel_item_rc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel-item.rc */ "./src/lifesuite-app/business/login/carousel-item.rc.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LoginImagesCarouselComponent = /** @class */ (function () {
+    function LoginImagesCarouselComponent(carouselItems) {
+        this._carouselItems = carouselItems;
+        this.productsArray = [
+        // this._carouselItems.id3CarouselItem,
+        // this._carouselItems.lpesCarouselItem,
+        // this._carouselItems.lsauCarouselItem
+        ];
+    }
+    LoginImagesCarouselComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'login-images-carousel',
+            template: __webpack_require__(/*! ./login-images-carousel.component.html */ "./src/lifesuite-app/business/login/login-images-carousel.component.html"),
+            styles: [__webpack_require__(/*! ./login-images-carousel.component.css */ "./src/lifesuite-app/business/login/login-images-carousel.component.css")]
+        }),
+        __metadata("design:paramtypes", [_carousel_item_rc__WEBPACK_IMPORTED_MODULE_1__["CarouselItemResources"]])
+    ], LoginImagesCarouselComponent);
+    return LoginImagesCarouselComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/login-routing.module.ts":
+/*!******************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/login-routing.module.ts ***!
+  \******************************************************************/
+/*! exports provided: LoginRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginRoutingModule", function() { return LoginRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var life_core_routing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! life-core/routing */ "./src/lifesuite-app/life-core/routing/index.ts");
+/* harmony import */ var business_login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! business/login/login.component */ "./src/lifesuite-app/business/login/login.component.ts");
+/* harmony import */ var business_login_sso_logout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! business/login/sso-logout.component */ "./src/lifesuite-app/business/login/sso-logout.component.ts");
+/* harmony import */ var business_login_carousel_item_rc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! business/login/carousel-item.rc */ "./src/lifesuite-app/business/login/carousel-item.rc.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var AppLogoutRoute = {
+    path: life_core_routing__WEBPACK_IMPORTED_MODULE_2__["RoutePath"].Logout,
+    component: business_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]
+};
+var AppLogoutOnSessionTimeoutRoute = {
+    path: life_core_routing__WEBPACK_IMPORTED_MODULE_2__["RoutePath"].LogoutOnSessionTimeout,
+    component: business_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]
+};
+var AppLogoutOnUnauthorizedRoute = {
+    path: life_core_routing__WEBPACK_IMPORTED_MODULE_2__["RoutePath"].LogoutOnUnauthorized,
+    component: business_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]
+};
+var AppSSOLogoutDefaultRoute = {
+    path: life_core_routing__WEBPACK_IMPORTED_MODULE_2__["RoutePath"].SSOLogoutDefault,
+    component: business_login_sso_logout_component__WEBPACK_IMPORTED_MODULE_4__["SSOLogoutComponent"]
+};
+var AppSSOLogoutOnUnauthorizedRoute = {
+    path: life_core_routing__WEBPACK_IMPORTED_MODULE_2__["RoutePath"].SSOLogoutOnUnauthorized,
+    component: business_login_sso_logout_component__WEBPACK_IMPORTED_MODULE_4__["SSOLogoutComponent"]
+};
+var LoginRoutes = [
+    {
+        path: '',
+        component: business_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]
+    },
+    AppLogoutRoute,
+    AppLogoutOnSessionTimeoutRoute,
+    AppLogoutOnUnauthorizedRoute,
+    AppSSOLogoutDefaultRoute,
+    AppSSOLogoutOnUnauthorizedRoute
+];
+var LoginRoutingModule = /** @class */ (function () {
+    function LoginRoutingModule() {
+    }
+    LoginRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(LoginRoutes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
+            providers: [business_login_carousel_item_rc__WEBPACK_IMPORTED_MODULE_5__["CarouselItemResources"]]
+        })
+    ], LoginRoutingModule);
+    return LoginRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/login.module.ts":
+/*!**********************************************************!*\
+  !*** ./src/lifesuite-app/business/login/login.module.ts ***!
+  \**********************************************************/
+/*! exports provided: LoginModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModule", function() { return LoginModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var ls_core_component_ls_components_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ls-core/component/ls-components.module */ "./src/lifesuite-app/ls-core/component/ls-components.module.ts");
+/* harmony import */ var _login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login.component */ "./src/lifesuite-app/business/login/login.component.ts");
+/* harmony import */ var _sso_logout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sso-logout.component */ "./src/lifesuite-app/business/login/sso-logout.component.ts");
+/* harmony import */ var _password_change_password_change_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./password-change/password-change.module */ "./src/lifesuite-app/business/login/password-change/password-change.module.ts");
+/* harmony import */ var _login_images_carousel_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./login-images-carousel.component */ "./src/lifesuite-app/business/login/login-images-carousel.component.ts");
+/* harmony import */ var _login_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login-routing.module */ "./src/lifesuite-app/business/login/login-routing.module.ts");
+/* harmony import */ var _open_app_landing_handler__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./open-app-landing.handler */ "./src/lifesuite-app/business/login/open-app-landing.handler.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+var LoginModule = /** @class */ (function () {
+    function LoginModule() {
+    }
+    LoginModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"].forRoot(),
+                ls_core_component_ls_components_module__WEBPACK_IMPORTED_MODULE_4__["LsComponentsModule"],
+                _password_change_password_change_module__WEBPACK_IMPORTED_MODULE_7__["PasswordChangeModule"],
+                _login_routing_module__WEBPACK_IMPORTED_MODULE_9__["LoginRoutingModule"]
+            ],
+            declarations: [_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"], _sso_logout_component__WEBPACK_IMPORTED_MODULE_6__["SSOLogoutComponent"], _login_images_carousel_component__WEBPACK_IMPORTED_MODULE_8__["LoginImagesCarouselComponent"]],
+            exports: [_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"]],
+            providers: [_open_app_landing_handler__WEBPACK_IMPORTED_MODULE_10__["OpenAppLandingHandler"]]
+        })
+    ], LoginModule);
+    return LoginModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/password-change/password-change.module.ts":
+/*!************************************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/password-change/password-change.module.ts ***!
+  \************************************************************************************/
+/*! exports provided: PasswordChangeModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordChangeModule", function() { return PasswordChangeModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var life_core_component_components_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! life-core/component/components.module */ "./src/lifesuite-app/life-core/component/components.module.ts");
+/* harmony import */ var _password_change_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./password-change.component */ "./src/lifesuite-app/business/login/password-change/password-change.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var PasswordChangeModule = /** @class */ (function () {
+    function PasswordChangeModule() {
+    }
+    PasswordChangeModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], life_core_component_components_module__WEBPACK_IMPORTED_MODULE_3__["ComponentsModule"]],
+            declarations: [_password_change_component__WEBPACK_IMPORTED_MODULE_4__["PasswordChangeComponent"]],
+            exports: [_password_change_component__WEBPACK_IMPORTED_MODULE_4__["PasswordChangeComponent"]],
+            entryComponents: [_password_change_component__WEBPACK_IMPORTED_MODULE_4__["PasswordChangeComponent"]]
+        })
+    ], PasswordChangeModule);
+    return PasswordChangeModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/sso-logout.component.html":
+/*!********************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/sso-logout.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"lf-splash\">\r\n\t<div class=\"lf-message\">{{message}}</div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/login/sso-logout.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/lifesuite-app/business/login/sso-logout.component.ts ***!
+  \******************************************************************/
+/*! exports provided: SSOLogoutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SSOLogoutComponent", function() { return SSOLogoutComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ls_core_session__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ls-core/session */ "./src/lifesuite-app/ls-core/session/index.ts");
+/* harmony import */ var life_core_routing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! life-core/routing */ "./src/lifesuite-app/life-core/routing/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var _a;
+
+
+
+
+var SSOLogoutComponent = /** @class */ (function () {
+    function SSOLogoutComponent(appSession, route) {
+        this._route = route;
+        this.setMessage(appSession.initializeError);
+    }
+    SSOLogoutComponent.prototype.setMessage = function (sessionMessage) {
+        var message = Messages[this._route.routeConfig.path];
+        this.message = message || Messages[life_core_routing__WEBPACK_IMPORTED_MODULE_3__["RoutePath"].SSOLogoutDefault];
+    };
+    SSOLogoutComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'sso-logout',
+            template: __webpack_require__(/*! ./sso-logout.component.html */ "./src/lifesuite-app/business/login/sso-logout.component.html")
+        }),
+        __metadata("design:paramtypes", [ls_core_session__WEBPACK_IMPORTED_MODULE_2__["AppSession"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+    ], SSOLogoutComponent);
+    return SSOLogoutComponent;
+}());
+
+var Messages = (_a = {},
+    _a[life_core_routing__WEBPACK_IMPORTED_MODULE_3__["RoutePath"].SSOLogoutDefault] = 'You have been successfully logged out.',
+    _a[life_core_routing__WEBPACK_IMPORTED_MODULE_3__["RoutePath"].SSOLogoutOnSessionTimeout] = 'Your session has been closed due to inactivity.',
+    _a[life_core_routing__WEBPACK_IMPORTED_MODULE_3__["RoutePath"].SSOLogoutOnUnauthorized] = 'HTTP Error: Unauthorized (401).',
+    _a);
+
+
+/***/ }),
+
+/***/ "./src/styles/images/login/carousel_ID3.png":
+/*!**************************************************!*\
+  !*** ./src/styles/images/login/carousel_ID3.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "carousel_ID3.png";
+
+/***/ }),
+
+/***/ "./src/styles/images/login/carousel_LPES.png":
+/*!***************************************************!*\
+  !*** ./src/styles/images/login/carousel_LPES.png ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "carousel_LPES.png";
+
+/***/ }),
+
+/***/ "./src/styles/images/login/carousel_LS.png":
+/*!*************************************************!*\
+  !*** ./src/styles/images/login/carousel_LS.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "carousel_LS.png";
+
+/***/ })
+
+}]);
+//# sourceMappingURL=business-login-login-module.js.map

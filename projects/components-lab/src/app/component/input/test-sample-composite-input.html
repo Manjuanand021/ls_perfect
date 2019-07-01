@@ -1,0 +1,56 @@
+<form #form="ngForm">
+    <br />
+    <label>Sample Composite Input</label> <br />
+    <div id="view1" class="col-sm-9">
+        <div class="row">
+            <div class="col-sm-1">
+                <label>Required</label>
+                <lf-select
+                    name="required"
+                    [items]="trueFalseList"
+                    [(ngModel)]="required"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Disabled</label>
+                <lf-select
+                    name="disabled"
+                    [items]="trueFalseList"
+                    [(ngModel)]="disabled"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Hidden</label>
+                <lf-select
+                    name="hidden"
+                    [items]="trueFalseList"
+                    [(ngModel)]="hidden"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+        </div>
+        <br />
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-sm-3">
+                <lf-form-input label="SampleCompositeInput" [control]="sampleComposite">
+                    <sample-composite-input
+                        #sampleComposite
+                        name="sampleComposite"
+                        [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)"
+                        [readonly]="toBoolean(readonly)"
+                        [(ngModel)]="compositeValue"
+                    ></sample-composite-input>
+                </lf-form-input>
+                <pre>Composite data: {{ compositeValue | json }}</pre>
+            </div>
+        </div>
+    </div>
+</form>

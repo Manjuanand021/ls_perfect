@@ -1,0 +1,26 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="userList" label="User" i18n-label="@@mywork.applicantscases.label.user">
+                <lf-select #userList name="userList" [(ngModel)]="filters.selectedUser" [items]="listData.userList | listItems:'CodeValue':'ExternalCode'"
+                    style="width:200px" (change)="onUserChange($event)" [actionType]="filterDropdownActionType"
+                    secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="teamList" label="Team" i18n-label="@@mywork.applicantscases.label.team">
+                <lf-select #teamList name="teamList" [(ngModel)]="filters.selectedTeam" [items]="listData.teamList | listItems:'CodeValue':'CodeId'"
+                    style="width:200px" (change)="onTeamChange($event)" [actionType]="filterDropdownActionType"
+                    secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 ls-task-filters">
+            <lf-info-button *ngFor="let taskFilter of taskFilterTypes; let index=index" [id]="taskFilter.type" [label]="taskFilter.header"
+                [infoLabel]="taskFilter.count" [selected]="taskFilter.type==filters.selectedTaskFilterType" [style]="{width: taskFilter.buttonWidth +'px'}"
+                (onClick)="onFilterTypeClicked($event)" secureComponent>
+            </lf-info-button>
+        </div>
+    </div>
+</form>

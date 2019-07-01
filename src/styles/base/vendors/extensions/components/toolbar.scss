@@ -1,0 +1,19 @@
+/* PrimeNG toolbar */
+
+.ui-toolbar {
+    border: none;
+}
+
+.ui-toolbar .ui-button.ui-state-default {
+    border: none;
+    background: transparent;
+}
+
+.ui-toolbar .badge {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.ui-toolbar.ui-widget-header {
+    font-weight: normal;
+}

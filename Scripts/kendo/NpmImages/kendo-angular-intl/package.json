@@ -1,0 +1,40 @@
+{
+  "name": "@kendo/kendo-angular-intl",
+  "description": "Internationalization",
+  "main": "dist/npm/main.js",
+  "module": "dist/es/main.js",
+  "dependencies": {
+    "@telerik/kendo-intl": "^0.12.0"
+  },
+  "description": "Kendo UI Internationalization for Angular 2 components",
+  "devDependencies": {
+    "@angular/common": "^6.1.0",
+    "@angular/compiler": "^6.1.0",
+    "@angular/compiler-cli": "^6.1.0",
+    "@angular/core": "^6.1.0",
+    "@angular/platform-browser": "^6.1.0",
+    "@angular/platform-browser-dynamic": "^6.1.0",
+    "@angular/platform-server": "^6.1.0",
+    "@progress/kendo-angular-tasks": "^8.0.0",
+    "@telerik/kendo-intl": "^0.12.0",
+    "cldr-data": "30.0.0",
+    "codelyzer": "2.0.0",
+    "core-js": "^2.2.2",
+    "cz-conventional-changelog": "^1.1.5",
+    "ghooks": "^1.0.3",
+    "gulp": "^3.9.0",
+    "rxjs": "^5.0.1",
+    "semantic-release": "^4.3.5",
+    "tslint": "~4.0.0",
+    "typescript": "~2.0.0",
+    "typings": "^1.3.0",
+    "validate-commit-msg": "^1.1.1",
+    "zone.js": "^0.7.2"
+  }, 
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@angular/core": ">=5.2.x"
+  },  
+  "typings": "dist/es/main",
+  "version": "0.10.0"
+}

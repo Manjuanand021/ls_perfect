@@ -1,0 +1,10 @@
+﻿<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input label="Select Product" i18n-label="@@applicant.coverage.product" [control]="product">
+                <lf-select #product name="product" [(ngModel)]="coverage.PlanCodeId" required [items]="resolvedData.listData?.PlanCodeId | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:250px" class="lf-dialog-dropdown" container="dialog"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+.lf-split-infobutton .ui-button {
+    background-color: #2399e5;
+}
+
+.lf-split-infobutton.lf-state-selected .ui-button {
+    background-color: #0275d8;
+}
+
+.lf-split-infobutton:hover .ui-button {
+    background-color: #0275d8;
+}
+
+.lf-split-infobutton .ui-button-text {
+    color: #fff;
+}
+
+.lf-split-infobutton .ui-button-text-only {
+    min-width: 100px;
+}
+
+.lf-split-infobutton .ui-button-text-only .ui-button-text {
+    padding: 0.25em 0.5em;
+}
+
+.lf-split-infobutton .ui-info-text {
+    color: yellow;
+}
+
+.lf-split-infobutton .fa.fa-caret-down {
+    color: #fff;
+}
+
+.ui-menu .ui-menuitem .lf-state-selected {
+    color: yellow;
+    background-color: #2399e5;
+}

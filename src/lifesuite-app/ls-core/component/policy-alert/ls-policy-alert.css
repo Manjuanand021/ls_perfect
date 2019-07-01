@@ -1,0 +1,21 @@
+.ls-policy-alert-container {
+    display: flex;
+    align-items: center;
+}
+
+.ls-policy-alert-icon {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ls-policy-alert-link {
+    padding: 0 0.3125rem;
+}
+
+.ls-policy-alert-description {
+    white-space: nowrap;
+}

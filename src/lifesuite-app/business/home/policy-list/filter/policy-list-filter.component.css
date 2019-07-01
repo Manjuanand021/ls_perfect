@@ -1,0 +1,6 @@
+.ls-status-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 50px;
+}

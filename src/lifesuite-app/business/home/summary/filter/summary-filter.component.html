@@ -1,0 +1,18 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row lf-dashed-bottom-border">
+        <div class="col-3">
+            <lf-form-input [control]="userList" label="User" i18n-label="@@mywork.applicantscases.label.user">
+                <lf-select #userList name="userList" [(ngModel)]="filters.selectedUser" [items]="listData.userList | listItems:'CodeValue':'ExternalCode'"
+                    style="width:200px" (change)="onUserChange($event)" [actionType]="filterDropdownActionType"
+                    secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="teamList" label="Team" i18n-label="@@mywork.applicantscases.label.team">
+                <lf-select #teamList name="teamList" [(ngModel)]="filters.selectedTeam" [items]="listData.teamList | listItems:'CodeValue':'CodeId'"
+                    style="width:200px" (change)="onTeamChange($event)" [actionType]="filterDropdownActionType"
+                    secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

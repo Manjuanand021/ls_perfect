@@ -1,0 +1,1696 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["lab-component-tab-view-test-tabview-module"],{
+
+/***/ "../../src/lifesuite-app/life-core/component/layout/split/index.ts":
+/*!*********************************************************************************************************************!*\
+  !*** D:/code/lifesuite/base/UI/HTML5/LifeSuite.Angular/src/lifesuite-app/life-core/component/layout/split/index.ts ***!
+  \*********************************************************************************************************************/
+/*! exports provided: LfSplitComponent, LfSplitAreaDirective, LfSplitGutterDirective, SplitArea, GutterSize, GutterColor, SplitPaneArea, SplitPaneStateData, LfSplitPaneComponent, LfSplitPaneChannels, SplitPaneContainerViewModel, SplitPaneDialogViewModel, SplitPaneResult */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _split_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./split-component */ "../../src/lifesuite-app/life-core/component/layout/split/split-component/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitComponent", function() { return _split_component__WEBPACK_IMPORTED_MODULE_0__["LfSplitComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitAreaDirective", function() { return _split_component__WEBPACK_IMPORTED_MODULE_0__["LfSplitAreaDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitGutterDirective", function() { return _split_component__WEBPACK_IMPORTED_MODULE_0__["LfSplitGutterDirective"]; });
+
+/* harmony import */ var _split_pane__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./split-pane */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneArea", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["SplitPaneArea"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneStateData", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["SplitPaneStateData"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitPaneComponent", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["LfSplitPaneComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitPaneChannels", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["LfSplitPaneChannels"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneContainerViewModel", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["SplitPaneContainerViewModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneDialogViewModel", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["SplitPaneDialogViewModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneResult", function() { return _split_pane__WEBPACK_IMPORTED_MODULE_1__["SplitPaneResult"]; });
+
+/* harmony import */ var _lf_split_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lf-split.model */ "../../src/lifesuite-app/life-core/component/layout/split/lf-split.model.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitArea", function() { return _lf_split_model__WEBPACK_IMPORTED_MODULE_2__["SplitArea"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GutterSize", function() { return _lf_split_model__WEBPACK_IMPORTED_MODULE_2__["GutterSize"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GutterColor", function() { return _lf_split_model__WEBPACK_IMPORTED_MODULE_2__["GutterColor"]; });
+
+
+
+
+
+
+/***/ }),
+
+/***/ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/index.ts":
+/*!********************************************************************************************************************************!*\
+  !*** D:/code/lifesuite/base/UI/HTML5/LifeSuite.Angular/src/lifesuite-app/life-core/component/layout/split/split-pane/index.ts ***!
+  \********************************************************************************************************************************/
+/*! exports provided: SplitPaneArea, SplitPaneStateData, LfSplitPaneComponent, LfSplitPaneChannels, SplitPaneContainerViewModel, SplitPaneDialogViewModel, SplitPaneResult */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lf_split_pane_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lf-split-pane.model */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane.model.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneArea", function() { return _lf_split_pane_model__WEBPACK_IMPORTED_MODULE_0__["SplitPaneArea"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneStateData", function() { return _lf_split_pane_model__WEBPACK_IMPORTED_MODULE_0__["SplitPaneStateData"]; });
+
+/* harmony import */ var _lf_split_pane_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lf-split-pane.component */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitPaneComponent", function() { return _lf_split_pane_component__WEBPACK_IMPORTED_MODULE_1__["LfSplitPaneComponent"]; });
+
+/* harmony import */ var _lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lf-split-pane-channels */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane-channels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LfSplitPaneChannels", function() { return _lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_2__["LfSplitPaneChannels"]; });
+
+/* harmony import */ var _vm_split_pane_container_vm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./vm/split-pane-container.vm */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-container.vm.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneContainerViewModel", function() { return _vm_split_pane_container_vm__WEBPACK_IMPORTED_MODULE_3__["SplitPaneContainerViewModel"]; });
+
+/* harmony import */ var _vm_split_pane_dialog_vm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./vm/split-pane-dialog.vm */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-dialog.vm.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneDialogViewModel", function() { return _vm_split_pane_dialog_vm__WEBPACK_IMPORTED_MODULE_4__["SplitPaneDialogViewModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SplitPaneResult", function() { return _vm_split_pane_dialog_vm__WEBPACK_IMPORTED_MODULE_4__["SplitPaneResult"]; });
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane-channels.ts":
+/*!*************************************************************************************************************************************************!*\
+  !*** D:/code/lifesuite/base/UI/HTML5/LifeSuite.Angular/src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane-channels.ts ***!
+  \*************************************************************************************************************************************************/
+/*! exports provided: LfSplitPaneChannels */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LfSplitPaneChannels", function() { return LfSplitPaneChannels; });
+var LfSplitPaneChannels = {
+    AddSplitPaneArea: 'add-split-pane-area',
+    RemoveSplitPaneArea: 'remove-split-pane-area',
+    SplitPaneVisible: 'split-pane-visible',
+    SplitPaneHidden: 'split-pane-hidden'
+};
+
+
+/***/ }),
+
+/***/ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane.model.ts":
+/*!**********************************************************************************************************************************************!*\
+  !*** D:/code/lifesuite/base/UI/HTML5/LifeSuite.Angular/src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane.model.ts ***!
+  \**********************************************************************************************************************************************/
+/*! exports provided: SplitPaneArea, SplitPaneStateData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SplitPaneArea", function() { return SplitPaneArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SplitPaneStateData", function() { return SplitPaneStateData; });
+/* harmony import */ var _lf_split_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lf-split.model */ "../../src/lifesuite-app/life-core/component/layout/split/lf-split.model.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var SplitPaneArea = /** @class */ (function (_super) {
+    __extends(SplitPaneArea, _super);
+    function SplitPaneArea(_a) {
+        var id = _a.id, index = _a.index, type = _a.type, size = _a.size, view = _a.view, context = _a.context, visible = _a.visible;
+        var _this = _super.call(this, { id: id, index: index, size: size, visible: visible }) || this;
+        _this.view = view;
+        _this.context = context;
+        _this.type = type;
+        return _this;
+    }
+    return SplitPaneArea;
+}(_lf_split_model__WEBPACK_IMPORTED_MODULE_0__["SplitArea"]));
+
+var SplitPaneStateData = /** @class */ (function () {
+    function SplitPaneStateData() {
+    }
+    return SplitPaneStateData;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-container.vm.ts":
+/*!*****************************************************************************************************************************************************!*\
+  !*** D:/code/lifesuite/base/UI/HTML5/LifeSuite.Angular/src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-container.vm.ts ***!
+  \*****************************************************************************************************************************************************/
+/*! exports provided: SplitPaneContainerViewModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SplitPaneContainerViewModel", function() { return SplitPaneContainerViewModel; });
+/* harmony import */ var life_core_view_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! life-core/view-model */ "../../src/lifesuite-app/life-core/view-model/index.ts");
+/* harmony import */ var life_core_messaging__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/messaging */ "../../src/lifesuite-app/life-core/messaging/index.ts");
+/* harmony import */ var life_core_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! life-core/util */ "../../src/lifesuite-app/life-core/util/index.ts");
+/* harmony import */ var life_core_component_shared_event_click_event_resolver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! life-core/component/shared/event/click-event.resolver */ "../../src/lifesuite-app/life-core/component/shared/event/click-event.resolver.ts");
+/* harmony import */ var _lf_split_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lf-split.model */ "../../src/lifesuite-app/life-core/component/layout/split/lf-split.model.ts");
+/* harmony import */ var _lf_split_pane_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lf-split-pane.model */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane.model.ts");
+/* harmony import */ var _lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lf-split-pane-channels */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane-channels.ts");
+/* harmony import */ var life_core_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! life-core/component */ "../../src/lifesuite-app/life-core/component/index.ts");
+/* harmony import */ var _split_pane_container_messages_mapper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./split-pane-container-messages.mapper */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-container-messages.mapper.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+
+
+
+
+var SplitPaneContainerViewModel = /** @class */ (function (_super) {
+    __extends(SplitPaneContainerViewModel, _super);
+    function SplitPaneContainerViewModel(injector) {
+        var _this = _super.call(this, injector) || this;
+        _this.splitPaneAreas = [];
+        _this.gutterSize = _lf_split_model__WEBPACK_IMPORTED_MODULE_4__["GutterSize"].large;
+        _this.gutterColor = _lf_split_model__WEBPACK_IMPORTED_MODULE_4__["GutterColor"].default;
+        _this.dragGutterColor = _lf_split_model__WEBPACK_IMPORTED_MODULE_4__["GutterColor"].drag;
+        _this.splitterMinimized = false;
+        _this.messagingService = injector.get(life_core_messaging__WEBPACK_IMPORTED_MODULE_1__["MessagingService"]);
+        _this._confirmDialog = injector.get(life_core_component__WEBPACK_IMPORTED_MODULE_7__["ConfirmDialog"]);
+        _this._splitPaneContainerMessagesMapper = injector.get(_split_pane_container_messages_mapper__WEBPACK_IMPORTED_MODULE_8__["SplitPaneContainerMessagesMapper"]);
+        _this.createStateValueAccessor(injector.get(life_core_util__WEBPACK_IMPORTED_MODULE_2__["TabStateManager"]));
+        _this.initContainerAreas();
+        _this.initSubscribers();
+        _this.initClickEventResolver();
+        return _this;
+    }
+    SplitPaneContainerViewModel.prototype.loadData = function () {
+        var splitPaneStateData = this._splitPaneStateValueAccessor.getValue();
+        if (splitPaneStateData) {
+            this.restoreSplitPaneState(splitPaneStateData);
+        }
+        else {
+            this.setContainerSplitVisible(false);
+        }
+        return Promise.resolve();
+    };
+    SplitPaneContainerViewModel.prototype.addSplitArea = function (areaData) {
+        if (this.splitPaneTypeAlreadyExists(areaData.areaId)) {
+            this.showSplitAreaExistMessage(areaData.areaId);
+            return;
+        }
+        if (!this.splitterVisible) {
+            this.showSplitter();
+        }
+        var splitPaneArea = this.createSplitPaneArea(areaData.areaId);
+        splitPaneArea.index = this.splitPaneAreas.length + 1;
+        splitPaneArea.context = areaData.context;
+        this.splitPaneAreas.push(splitPaneArea);
+        return splitPaneArea;
+    };
+    SplitPaneContainerViewModel.prototype.removeSplitArea = function (splitPaneResult) {
+        var area = this.splitPaneAreas.find(function (area) { return area.id == splitPaneResult.areaId; });
+        if (area) {
+            area.context = undefined;
+            this.splitPaneAreas.splice(this.splitPaneAreas.indexOf(area), 1);
+            if (this.splitPaneAreas.length == 0) {
+                this.hideSplitter();
+            }
+        }
+    };
+    SplitPaneContainerViewModel.prototype.onSplitGutterDragStart = function (e) {
+        this.gutterColor = _lf_split_model__WEBPACK_IMPORTED_MODULE_4__["GutterColor"].drag;
+        this.splitPaneSize = e.sizes[1];
+    };
+    SplitPaneContainerViewModel.prototype.onSplitGutterDragEnd = function (e) {
+        this.gutterColor = _lf_split_model__WEBPACK_IMPORTED_MODULE_4__["GutterColor"].default;
+        this.splitPaneSize = e.sizes[1];
+    };
+    SplitPaneContainerViewModel.prototype.onSplitGutterClick = function (e) {
+        this.gutterColor = _lf_split_model__WEBPACK_IMPORTED_MODULE_4__["GutterColor"].default;
+        this._gutterClickEventResolver.onClick(e);
+    };
+    SplitPaneContainerViewModel.prototype.ngOnDestroy = function () {
+        _super.prototype.ngOnDestroy.call(this);
+        this.messagingService.closeChannel(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].AddSplitPaneArea);
+        this.messagingService.closeChannel(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].RemoveSplitPaneArea);
+        if (this.messagingService.channelExist(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].SplitPaneVisible)) {
+            this.messagingService.closeChannel(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].SplitPaneVisible);
+        }
+        if (this.messagingService.channelExist(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].SplitPaneHidden)) {
+            this.messagingService.closeChannel(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].SplitPaneHidden);
+        }
+        this.saveSplitPaneState();
+    };
+    SplitPaneContainerViewModel.prototype.getErrorItemMessage = function (areaId) {
+        return this._splitPaneContainerMessagesMapper.getMessage(areaId);
+    };
+    SplitPaneContainerViewModel.prototype.handleSplitGutterClick = function (e) {
+        var SplitPaneMinimizedSize = 0.5;
+        if (this.splitterVisible) {
+            this.splitterMinimized = !this.splitterMinimized;
+            this.splitPaneSize = this.splitterMinimized ? SplitPaneMinimizedSize : this.splitPaneInitialSize;
+            this.setContainerAreasSize(this.splitPaneSize);
+            this.containerAreasInfo.right.size = this.splitPaneSize;
+        }
+    };
+    SplitPaneContainerViewModel.prototype.handleSplitGutterDoubleClick = function (e) { };
+    SplitPaneContainerViewModel.prototype.createStateValueAccessor = function (tabStateManager) {
+        this._splitPaneStateValueAccessor = new life_core_util__WEBPACK_IMPORTED_MODULE_2__["TabStateValueAccessor"](tabStateManager, this.splitPaneStateValueKey);
+    };
+    SplitPaneContainerViewModel.prototype.saveSplitPaneState = function () {
+        if (this.splitterVisible) {
+            var splitPaneStateData = new _lf_split_pane_model__WEBPACK_IMPORTED_MODULE_5__["SplitPaneStateData"]();
+            splitPaneStateData.splitPaneSize = this.splitPaneSize;
+            splitPaneStateData.splitPaneAreas = this.splitPaneAreas;
+            this._splitPaneStateValueAccessor.setValue(splitPaneStateData);
+        }
+    };
+    SplitPaneContainerViewModel.prototype.restoreSplitPaneState = function (splitPaneStateData) {
+        this.splitPaneSize = splitPaneStateData.splitPaneSize;
+        this.setContainerAreasSize(this.splitPaneSize);
+        this.splitPaneAreas = splitPaneStateData.splitPaneAreas;
+        this.setContainerSplitVisible(this.splitPaneAreas.length > 0);
+    };
+    SplitPaneContainerViewModel.prototype.initSubscribers = function () {
+        var _this = this;
+        this.subscriptionTracker.track(this.messagingService.subscribe(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].AddSplitPaneArea, function (value) {
+            if (_this.addSplitArea(value)) {
+                _this.publishSplitPaneVisibleMessage();
+            }
+        }));
+        this.subscriptionTracker.track(this.messagingService.subscribe(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].RemoveSplitPaneArea, function (splitPaneResult) {
+            _this.removeSplitArea(splitPaneResult);
+            _this.publishSplitPaneHiddenMessage();
+        }));
+    };
+    SplitPaneContainerViewModel.prototype.publishSplitPaneVisibleMessage = function () {
+        if (this.isSplitPaneVisible()) {
+            this.messagingService.publish(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].SplitPaneVisible);
+        }
+    };
+    SplitPaneContainerViewModel.prototype.publishSplitPaneHiddenMessage = function () {
+        if (this.isSplitPaneHidden()) {
+            this.messagingService.publish(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_6__["LfSplitPaneChannels"].SplitPaneHidden);
+        }
+    };
+    SplitPaneContainerViewModel.prototype.isSplitPaneVisible = function () {
+        return this.splitPaneAreas.length === 1;
+    };
+    SplitPaneContainerViewModel.prototype.isSplitPaneHidden = function () {
+        return this.splitPaneAreas.length === 0;
+    };
+    SplitPaneContainerViewModel.prototype.splitPaneTypeAlreadyExists = function (areaId) {
+        var areaType = this.getSplitAreaType(areaId);
+        return this.splitPane && this.splitPane.hasSplitArea(areaId, areaType);
+    };
+    SplitPaneContainerViewModel.prototype.showSplitAreaExistMessage = function (areaId) {
+        this._confirmDialog.open({
+            message: this.getErrorItemMessage(areaId),
+            title: this.getErrorItemDialogTitle(),
+            buttons: [new life_core_component__WEBPACK_IMPORTED_MODULE_7__["DialogButton"]({ type: life_core_component__WEBPACK_IMPORTED_MODULE_7__["DialogButtonType"].OK })]
+        });
+    };
+    SplitPaneContainerViewModel.prototype.initContainerAreas = function () {
+        this.splitPaneSize = this.splitPaneInitialSize;
+        this.containerAreasInfo = this.getContainerAreasInfo();
+        this.setContainerAreasSize(this.splitPaneInitialSize);
+    };
+    SplitPaneContainerViewModel.prototype.initClickEventResolver = function () {
+        var _this = this;
+        this._gutterClickEventResolver = new life_core_component_shared_event_click_event_resolver__WEBPACK_IMPORTED_MODULE_3__["ClickEventResolver"](function (event) { return _this.handleSplitGutterClick(event); }, function (event) { return _this.handleSplitGutterClick(event); });
+    };
+    SplitPaneContainerViewModel.prototype.showSplitter = function () {
+        this.setContainerSplitVisible(true);
+    };
+    SplitPaneContainerViewModel.prototype.hideSplitter = function () {
+        this.setContainerSplitVisible(false);
+    };
+    SplitPaneContainerViewModel.prototype.setContainerSplitVisible = function (visible) {
+        if (visible) {
+            this.splitterVisible = true;
+            this.splitContainerClass = 'tab-split-container';
+        }
+        else {
+            this.splitterVisible = false;
+            this.splitContainerClass = 'tab-no-split-container';
+        }
+    };
+    return SplitPaneContainerViewModel;
+}(life_core_view_model__WEBPACK_IMPORTED_MODULE_0__["ViewModel"]));
+
+
+
+/***/ }),
+
+/***/ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-dialog.vm.ts":
+/*!**************************************************************************************************************************************************!*\
+  !*** D:/code/lifesuite/base/UI/HTML5/LifeSuite.Angular/src/lifesuite-app/life-core/component/layout/split/split-pane/vm/split-pane-dialog.vm.ts ***!
+  \**************************************************************************************************************************************************/
+/*! exports provided: SplitPaneDialogViewModel, SplitPaneResult */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SplitPaneDialogViewModel", function() { return SplitPaneDialogViewModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SplitPaneResult", function() { return SplitPaneResult; });
+/* harmony import */ var life_core_view_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! life-core/view-model */ "../../src/lifesuite-app/life-core/view-model/index.ts");
+/* harmony import */ var life_core_messaging__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/messaging */ "../../src/lifesuite-app/life-core/messaging/index.ts");
+/* harmony import */ var life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! life-core/util/tab-state */ "../../src/lifesuite-app/life-core/util/tab-state/index.ts");
+/* harmony import */ var _lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lf-split-pane-channels */ "../../src/lifesuite-app/life-core/component/layout/split/split-pane/lf-split-pane-channels.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+var SplitPaneDialogViewModel = /** @class */ (function (_super) {
+    __extends(SplitPaneDialogViewModel, _super);
+    function SplitPaneDialogViewModel(injector) {
+        var _this = _super.call(this, injector) || this;
+        _this._dialogClosing = false;
+        _this.messagingService = injector.get(life_core_messaging__WEBPACK_IMPORTED_MODULE_1__["MessagingService"]);
+        _this.tabStateManager = injector.get(life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_2__["TabStateManager"]);
+        _this.stateValueAccessor = _this.createStateValueAccessor();
+        return _this;
+    }
+    SplitPaneDialogViewModel.prototype.ngAfterContentInit = function () {
+        var _this = this;
+        _super.prototype.ngAfterContentInit.call(this);
+        this.cardDialog.open(this.getDialogParams()).then(function (_) {
+            _this.setupCardDialogData();
+            _this.dialogData = _this.cardDialog.data;
+        });
+    };
+    SplitPaneDialogViewModel.prototype.setModel = function (model) {
+        this.splitArea = model;
+    };
+    SplitPaneDialogViewModel.prototype.getDialogComponent = function () {
+        return this.cardDialog.getContentComponent();
+    };
+    SplitPaneDialogViewModel.prototype.validate = function (validationRenderType) {
+        return this.getDialogComponent().validate(validationRenderType);
+    };
+    SplitPaneDialogViewModel.prototype.onDialogDismiss = function (e) {
+        this.closeDialog();
+    };
+    SplitPaneDialogViewModel.prototype.closeDialog = function (dialogResult) {
+        this.cardDialog.close();
+        this._dialogClosing = true;
+        this.messagingService.publish(_lf_split_pane_channels__WEBPACK_IMPORTED_MODULE_3__["LfSplitPaneChannels"].RemoveSplitPaneArea, new SplitPaneResult(this.splitArea.id, dialogResult));
+    };
+    SplitPaneDialogViewModel.prototype.onCardDialogButtonClick = function (dialogResult) {
+        if (dialogResult.closeDialog) {
+            this.closeDialog(dialogResult);
+        }
+    };
+    SplitPaneDialogViewModel.prototype.onCardDialogOkClick = function (dialogResult) { };
+    SplitPaneDialogViewModel.prototype.setupCardDialogData = function () {
+        var stateData = this.stateValueAccessor.getValue();
+        if (stateData) {
+            this.restoreState(stateData);
+        }
+        else {
+            this.initCardDialogData();
+        }
+    };
+    SplitPaneDialogViewModel.prototype.initCardDialogData = function () {
+        this.getDialogComponent().initData();
+    };
+    SplitPaneDialogViewModel.prototype.createStateValueAccessor = function () {
+        return new life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_2__["TabStateValueAccessor"](this.tabStateManager, this.getStateValueKey());
+    };
+    SplitPaneDialogViewModel.prototype.saveState = function () {
+        this.stateValueAccessor.setValue(this.getDialogComponent().getState());
+    };
+    SplitPaneDialogViewModel.prototype.restoreState = function (stateData) {
+        this.getDialogComponent().setState(stateData);
+    };
+    SplitPaneDialogViewModel.prototype.deleteState = function () {
+        this.stateValueAccessor.deleteValue();
+    };
+    SplitPaneDialogViewModel.prototype.ngOnDestroy = function () {
+        if (this._dialogClosing) {
+            this.deleteState();
+        }
+        else {
+            this.saveState();
+        }
+        _super.prototype.ngOnDestroy.call(this);
+    };
+    return SplitPaneDialogViewModel;
+}(life_core_view_model__WEBPACK_IMPORTED_MODULE_0__["ViewModel"]));
+
+var SplitPaneResult = /** @class */ (function () {
+    function SplitPaneResult(areaId, dialogResult) {
+        this.areaId = areaId;
+        this.dialogResult = dialogResult;
+    }
+    return SplitPaneResult;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/tab-definitions.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/component/tab-view/tab-definitions.ts ***!
+  \*******************************************************/
+/*! exports provided: PrimaryTabType, SecondaryTabType, TabObjectType, TabDefHome, TabDefSearch, TabDefPolicy, TabDefWorkItems, TabDefCaseDisposition, TabDefReviewMessages, TabDefNotes, TabDefDetails, TabDefinitions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrimaryTabType", function() { return PrimaryTabType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SecondaryTabType", function() { return SecondaryTabType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabObjectType", function() { return TabObjectType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefHome", function() { return TabDefHome; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefSearch", function() { return TabDefSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefPolicy", function() { return TabDefPolicy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefWorkItems", function() { return TabDefWorkItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefCaseDisposition", function() { return TabDefCaseDisposition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefReviewMessages", function() { return TabDefReviewMessages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefNotes", function() { return TabDefNotes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefDetails", function() { return TabDefDetails; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabDefinitions", function() { return TabDefinitions; });
+/* harmony import */ var life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! life-core/component/layout/tabview/model */ "../../src/lifesuite-app/life-core/component/layout/tabview/model/index.ts");
+
+var PrimaryTabType;
+(function (PrimaryTabType) {
+    PrimaryTabType[PrimaryTabType["Home"] = 0] = "Home";
+    PrimaryTabType[PrimaryTabType["Search"] = 1] = "Search";
+    PrimaryTabType[PrimaryTabType["Policy"] = 2] = "Policy";
+})(PrimaryTabType || (PrimaryTabType = {}));
+var SecondaryTabType;
+(function (SecondaryTabType) {
+    SecondaryTabType[SecondaryTabType["WorkItems"] = 0] = "WorkItems";
+    SecondaryTabType[SecondaryTabType["CaseDisposition"] = 1] = "CaseDisposition";
+    SecondaryTabType[SecondaryTabType["ReviewMessages"] = 2] = "ReviewMessages";
+    SecondaryTabType[SecondaryTabType["Notes"] = 3] = "Notes";
+    SecondaryTabType[SecondaryTabType["Details"] = 4] = "Details";
+})(SecondaryTabType || (SecondaryTabType = {}));
+var TabObjectType;
+(function (TabObjectType) {
+    TabObjectType[TabObjectType["Policy"] = 0] = "Policy";
+})(TabObjectType || (TabObjectType = {}));
+// PRIMARY Tab Definitions
+var TabDefHome = {
+    name: 'tabHome',
+    title: 'Home',
+    tabType: PrimaryTabType.Home,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Primary,
+    closable: false,
+    validatable: false
+};
+var TabDefSearch = {
+    name: 'tabSearch',
+    title: 'Search',
+    tabType: PrimaryTabType.Search,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Primary,
+    closable: true,
+    validatable: false
+};
+var TabDefPolicy = {
+    name: 'tabPolicy',
+    title: 'Policy',
+    tabType: PrimaryTabType.Policy,
+    tabObjectType: TabObjectType.Policy,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Primary,
+    closable: true,
+    validatable: true
+};
+// SECONDARY Tab Definitions
+var TabDefWorkItems = {
+    name: 'tabWorkItems',
+    title: 'Work Items',
+    tabType: SecondaryTabType.WorkItems,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Secondary,
+    closable: false,
+    validatable: false
+};
+var TabDefCaseDisposition = {
+    name: 'tabCaseDisposition',
+    title: 'Case Disposition',
+    tabType: SecondaryTabType.CaseDisposition,
+    tabObjectType: TabObjectType.Policy,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Secondary,
+    closable: false,
+    validatable: true
+};
+var TabDefReviewMessages = {
+    name: 'tabReviewMessages',
+    title: 'Review Messages',
+    tabType: SecondaryTabType.ReviewMessages,
+    tabObjectType: TabObjectType.Policy,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Secondary,
+    closable: false,
+    validatable: true
+};
+var TabDefNotes = {
+    name: 'tabNotes',
+    title: 'Notes',
+    tabType: SecondaryTabType.Notes,
+    tabObjectType: TabObjectType.Policy,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Secondary,
+    closable: false,
+    validatable: true
+};
+var TabDefDetails = {
+    name: 'tabDetails',
+    title: 'Policy Details',
+    tabType: SecondaryTabType.Notes,
+    tabObjectType: TabObjectType.Policy,
+    containerType: life_core_component_layout_tabview_model__WEBPACK_IMPORTED_MODULE_0__["TabContainerType"].Secondary,
+    closable: true,
+    validatable: true
+};
+var TabDefinitions = /** @class */ (function () {
+    function TabDefinitions() {
+    }
+    // PRIMARY Tab Definitions
+    TabDefinitions.Home = TabDefHome;
+    TabDefinitions.Search = TabDefSearch;
+    TabDefinitions.Policy = TabDefPolicy;
+    // SECONDARY Tab Definitions
+    TabDefinitions.WorkItems = TabDefWorkItems;
+    TabDefinitions.CaseDesposition = TabDefCaseDisposition;
+    TabDefinitions.ReviewMessages = TabDefReviewMessages;
+    TabDefinitions.Notes = TabDefNotes;
+    TabDefinitions.Details = TabDefDetails;
+    return TabDefinitions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-routed-tabview.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/component/tab-view/test-routed-tabview.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* Can redefine any of these variables in the themes by adding !default to the value */\n/* Fonts */\n/* Leftnav */\n/* Navbar */\n/* Footer */\n/* Height Calculations */\n/* Input components */\n/* Obsolete ConsumerFacing variables\r\n\r\n$quote-btn-font-size: 23px;\r\n$form-quote-bton-font-size: 22px;\r\n$radio-checkbox-height: 20px;\r\n$radio-checkbox-width: 25px;\r\n$form-radius: 25px;\r\n$mobile-app-width: 93%;\r\n$panel-max-width: 400px;\r\n$wrapper-max-width: 1240px;\r\n\r\n$landing-pg-save-time-font-family: 'Goudy Old Style', Garamond, serif;\r\n$quote-font-family: 'Calisto MT', Serif;\r\n$invalid-message-font-family: 'adelle-sans', Helvetica, Arial, sans-serif;\r\n*/\n.tab-split-container {\n  height: calc(100vh - 126px - 7px); }\n.tab-no-split-container {\n  height: 100%; }\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2NvbXBvbmVudHMtbGFiL3NyYy9hcHAvY29tcG9uZW50L3RhYi12aWV3L0Q6XFxjb2RlXFxsaWZlc3VpdGVcXGJhc2VcXFVJXFxIVE1MNVxcTGlmZVN1aXRlLkFuZ3VsYXIvc3JjXFxzdHlsZXNcXGJhc2VcXGhlbHBlcnNcXHZhcmlhYmxlcy5zY3NzIiwicHJvamVjdHMvY29tcG9uZW50cy1sYWIvc3JjL2FwcC9jb21wb25lbnQvdGFiLXZpZXcvRDpcXGNvZGVcXGxpZmVzdWl0ZVxcYmFzZVxcVUlcXEhUTUw1XFxMaWZlU3VpdGUuQW5ndWxhci9wcm9qZWN0c1xcY29tcG9uZW50cy1sYWJcXHNyY1xcYXBwXFxjb21wb25lbnRcXHRhYi12aWV3XFx0ZXN0LXJvdXRlZC10YWJ2aWV3LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS0EsdUZBQXVGO0FBRXZGLFdBQVc7QUFZWCxhQUFhO0FBS2IsWUFBWTtBQUtaLFlBQVk7QUFHWix5QkFBeUI7QUFLekIsc0JBQXNCO0FBSXRCOzs7Ozs7Ozs7Ozs7OztFQWNFO0FDakRGO0VBQ0ksa0NBSGdFLEVBSW5FO0FBRUQ7RUFDSSxhQUFZLEVBQ2YiLCJmaWxlIjoicHJvamVjdHMvY29tcG9uZW50cy1sYWIvc3JjL2FwcC9jb21wb25lbnQvdGFiLXZpZXcvdGVzdC1yb3V0ZWQtdGFidmlldy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8kYm9vdHN0cmFwLXNhc3MtdmVyc2lvbjogJzMuMy43JztcclxuLy8kYm9vdHN0cmFwLXNhc3MtaWNvbi1wYXRoOiAnLi9qc3BtX3BhY2thZ2VzL2dpdGh1Yi90d2JzL2Jvb3RzdHJhcC1zYXNzQCcgKyAkYm9vdHN0cmFwLXNhc3MtdmVyc2lvbiArICcvYXNzZXRzL2ZvbnRzL2Jvb3RzdHJhcC8nO1xyXG4vLyRib290c3RyYXAtc2Fzcy1wYXRoOiAnLi4vLi4vanNwbV9wYWNrYWdlcy9naXRodWIvdHdicy9ib290c3RyYXAtc2Fzc0AnICsgJGJvb3RzdHJhcC1zYXNzLXZlcnNpb24gKyAnL2Fzc2V0cy9zdHlsZXNoZWV0cy9ib290c3RyYXAnO1xyXG4vLyRib290c3RyYXAtc2Fzcy12YXJpYWJsZXMtcGF0aDogJy4uLy4uL2pzcG1fcGFja2FnZXMvZ2l0aHViL3R3YnMvYm9vdHN0cmFwLXNhc3NAJyArICRib290c3RyYXAtc2Fzcy12ZXJzaW9uICsgJy9hc3NldHMvc3R5bGVzaGVldHMvYm9vdHN0cmFwL3ZhcmlhYmxlcyc7XHJcblxyXG4vKiBDYW4gcmVkZWZpbmUgYW55IG9mIHRoZXNlIHZhcmlhYmxlcyBpbiB0aGUgdGhlbWVzIGJ5IGFkZGluZyAhZGVmYXVsdCB0byB0aGUgdmFsdWUgKi9cclxuXHJcbi8qIEZvbnRzICovXHJcbiRmb250LXNpemUtYmFzZTogMC43cmVtO1xyXG4kZm9udC1zaXplLXNtYWxsOiAoKCRmb250LXNpemUtYmFzZSAqIDAuOSkpO1xyXG4kZm9udC1zaXplLWxhcmdlOiAoKCRmb250LXNpemUtYmFzZSAqIDEuMikpO1xyXG4kZm9udC1zaXplLWV4dHJhLWxhcmdlOiAoKCRmb250LXNpemUtYmFzZSAqIDUuMikpO1xyXG4kZm9udC1zaXplLWgxOiAoKCRmb250LXNpemUtYmFzZSAqIDIuNikpO1xyXG4kZm9udC1zaXplLWgyOiAoKCRmb250LXNpemUtYmFzZSAqIDIuMTUpKTtcclxuJGZvbnQtc2l6ZS1oMzogKCRmb250LXNpemUtYmFzZSAqIDIpO1xyXG4kZm9udC1zaXplLWg0OiAoKCRmb250LXNpemUtYmFzZSAqIDEuODUpKTtcclxuJGZvbnQtc2l6ZS1oNTogKCgkZm9udC1zaXplLWJhc2UgKiAxLjMpKTtcclxuJGZvbnQtc2l6ZS1oNjogKCgkZm9udC1zaXplLWJhc2UgKiAxLjEpKTtcclxuXHJcbi8qIExlZnRuYXYgKi9cclxuJGxlZnRuYXYtbWF4LXdpZHRoOiAxMi41cmVtO1xyXG4kbGVmdG5hdi1tYXgtd2lkdGgteGw6IDE0cmVtO1xyXG4kbGVmdG5hdi1pY29ucy1vbmx5LXdpZHRoOiAyLjVyZW07XHJcblxyXG4vKiBOYXZiYXIgKi9cclxuJG5hdmJhci1sb2dvLWhlaWdodDogNTBweCAhZGVmYXVsdDtcclxuJG5hdmJhci1sb2dvLXdpZHRoOiAyMDVweCAhZGVmYXVsdDtcclxuJG5hdmJhci1oZWlnaHQ6ICRuYXZiYXItbG9nby1oZWlnaHQgKyA1cHg7XHJcblxyXG4vKiBGb290ZXIgKi9cclxuJGZvb3Rlci1oZWlnaHQ6IDBweDtcclxuXHJcbi8qIEhlaWdodCBDYWxjdWxhdGlvbnMgKi9cclxuJG9mZnNldC1ib3R0b206IDdweDtcclxuJGdyaWQtc3RhdHVzLWJhci1oZWlnaHQ6IDI1cHg7XHJcbiRncmlkLW9mZnNldC1ib3R0b206ICRvZmZzZXQtYm90dG9tICsgJGdyaWQtc3RhdHVzLWJhci1oZWlnaHQ7XHJcblxyXG4vKiBJbnB1dCBjb21wb25lbnRzICovXHJcbiRpbnB1dC1oZWlnaHQ6IDEuNXJlbTtcclxuJGlucHV0LXRleHQtc2l6ZTogMC44cmVtO1xyXG5cclxuLyogT2Jzb2xldGUgQ29uc3VtZXJGYWNpbmcgdmFyaWFibGVzXHJcblxyXG4kcXVvdGUtYnRuLWZvbnQtc2l6ZTogMjNweDtcclxuJGZvcm0tcXVvdGUtYnRvbi1mb250LXNpemU6IDIycHg7XHJcbiRyYWRpby1jaGVja2JveC1oZWlnaHQ6IDIwcHg7XHJcbiRyYWRpby1jaGVja2JveC13aWR0aDogMjVweDtcclxuJGZvcm0tcmFkaXVzOiAyNXB4O1xyXG4kbW9iaWxlLWFwcC13aWR0aDogOTMlO1xyXG4kcGFuZWwtbWF4LXdpZHRoOiA0MDBweDtcclxuJHdyYXBwZXItbWF4LXdpZHRoOiAxMjQwcHg7XHJcblxyXG4kbGFuZGluZy1wZy1zYXZlLXRpbWUtZm9udC1mYW1pbHk6ICdHb3VkeSBPbGQgU3R5bGUnLCBHYXJhbW9uZCwgc2VyaWY7XHJcbiRxdW90ZS1mb250LWZhbWlseTogJ0NhbGlzdG8gTVQnLCBTZXJpZjtcclxuJGludmFsaWQtbWVzc2FnZS1mb250LWZhbWlseTogJ2FkZWxsZS1zYW5zJywgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjtcclxuKi9cclxuIiwiQGltcG9ydCAnLi4vLi4vLi4vLi4vLi4vLi4vc3JjL3N0eWxlcy9iYXNlL2hlbHBlcnMvdmFyaWFibGVzJztcclxuXHJcbiRzcGxpdHRlci1vZmZzZXQtdG9wOiA3MXB4O1xyXG4kc3BsaXR0ZXItdG9wOiAkc3BsaXR0ZXItb2Zmc2V0LXRvcCArICRuYXZiYXItaGVpZ2h0O1xyXG4kc3BsaXR0ZXItaGVpZ2h0OiBjYWxjKDEwMHZoIC0gI3skc3BsaXR0ZXItdG9wfSAtICN7JG9mZnNldC1ib3R0b219KTtcclxuXHJcbi50YWItc3BsaXQtY29udGFpbmVyIHtcclxuICAgIGhlaWdodDogJHNwbGl0dGVyLWhlaWdodDtcclxufVxyXG5cclxuLnRhYi1uby1zcGxpdC1jb250YWluZXIge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-routed-tabview.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/component/tab-view/test-routed-tabview.ts ***!
+  \***********************************************************/
+/*! exports provided: TestRoutedTabView, PrimaryTabHostBase, HomeComp, SearchComp, SimpleComp, TabbedComp, SecondaryTabHostBase, NestedTabViewHostComp, CaseDispComp, MessagesComp, PolicyDetailComp, ParentDataResolver, ChildDataResolver */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestRoutedTabView", function() { return TestRoutedTabView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrimaryTabHostBase", function() { return PrimaryTabHostBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComp", function() { return HomeComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchComp", function() { return SearchComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SimpleComp", function() { return SimpleComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabbedComp", function() { return TabbedComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SecondaryTabHostBase", function() { return SecondaryTabHostBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NestedTabViewHostComp", function() { return NestedTabViewHostComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CaseDispComp", function() { return CaseDispComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessagesComp", function() { return MessagesComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PolicyDetailComp", function() { return PolicyDetailComp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParentDataResolver", function() { return ParentDataResolver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChildDataResolver", function() { return ChildDataResolver; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var life_core_view_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/view-model */ "../../src/lifesuite-app/life-core/view-model/index.ts");
+/* harmony import */ var life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! life-core/component/layout/tabview */ "../../src/lifesuite-app/life-core/component/layout/tabview/index.ts");
+/* harmony import */ var life_core_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! life-core/component */ "../../src/lifesuite-app/life-core/component/index.ts");
+/* harmony import */ var life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! life-core/util/tab-state */ "../../src/lifesuite-app/life-core/util/tab-state/index.ts");
+/* harmony import */ var life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! life-core/component/layout/split */ "../../src/lifesuite-app/life-core/component/layout/split/index.ts");
+/* harmony import */ var angular_split__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular-split */ "../../node_modules/angular-split/esm5/angular-split.js");
+/* harmony import */ var _test_split_area__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./test-split-area */ "./src/app/component/tab-view/test-split-area.ts");
+/* harmony import */ var life_core_authorization_authorization_provider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! life-core/authorization/authorization.provider */ "../../src/lifesuite-app/life-core/authorization/authorization.provider.ts");
+/* harmony import */ var _test_tab_authorization_provider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./test-tab-authorization.provider */ "./src/app/component/tab-view/test-tab-authorization.provider.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+// ***************************************
+// Main TabView component
+// ***************************************
+var TestRoutedTabView = /** @class */ (function (_super) {
+    __extends(TestRoutedTabView, _super);
+    function TestRoutedTabView(injector) {
+        return _super.call(this, injector) || this;
+    }
+    Object.defineProperty(TestRoutedTabView.prototype, "tabViewId", {
+        get: function () {
+            return 'primaryTabView';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TestRoutedTabView.prototype.getStaticTabs = function () {
+        var tabHome = this.tabDescriptorFactory.createPrimaryTabDescriptorHome();
+        var tabSearch = this.tabDescriptorFactory.createPrimaryTabDescriptorSearch();
+        tabHome.selected = true;
+        return [tabHome, tabSearch];
+    };
+    TestRoutedTabView.prototype.addTabSimple = function () {
+        var policyId = generatePolicyId();
+        var tabPolicy = this.tabDescriptorFactory.createPrimaryTabDescriptorSimple(policyId);
+        tabPolicy.selected = true;
+        this.addTab(tabPolicy);
+    };
+    TestRoutedTabView.prototype.addTabWithTabView = function () {
+        var policyId = generatePolicyId();
+        var tabPolicy = this.tabDescriptorFactory.createPrimaryTabDescriptorPolicy(policyId, policyId.toString());
+        tabPolicy.selected = true;
+        this.addTab(tabPolicy);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["RoutedTabView"]),
+        __metadata("design:type", life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["RoutedTabView"])
+    ], TestRoutedTabView.prototype, "refTabView", void 0);
+    TestRoutedTabView = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'test-routed-tab-view',
+            template: "\n        <lf-button label=\"Add Simple Tab\" (onClick)=\"addTabSimple()\"></lf-button>\n        <lf-button label=\"Add Tab with TabView\" (onClick)=\"addTabWithTabView()\"></lf-button>\n\n        <lf-routedTabView\n            id=\"primaryTabView\"\n            [tabs]=\"tabsData$\"\n            [initialSelectedIndex]=\"initialSelectedIndex$\"\n            controlClose=\"true\"\n            (onClose)=\"onTabClose($event)\"\n            (onChange)=\"onTabSelectionChange($event)\"\n        >\n            <router-outlet></router-outlet>\n        </lf-routedTabView>\n    ",
+            providers: [
+                life_core_view_model__WEBPACK_IMPORTED_MODULE_1__["ParentChildRegistry"],
+                life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_4__["TabStateManager"],
+                life_core_component__WEBPACK_IMPORTED_MODULE_3__["ComponentsStateManager"],
+                { provide: life_core_authorization_authorization_provider__WEBPACK_IMPORTED_MODULE_8__["AuthorizationProvider"], useClass: _test_tab_authorization_provider__WEBPACK_IMPORTED_MODULE_9__["TestTabAuthorizationProvider"] }
+            ]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], TestRoutedTabView);
+    return TestRoutedTabView;
+}(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["PrimaryTabViewHostViewModel"]));
+
+// ***************************************
+// First level (primary) tab components
+// ***************************************
+var PrimaryTabHostBase = /** @class */ (function (_super) {
+    __extends(PrimaryTabHostBase, _super);
+    function PrimaryTabHostBase(injector) {
+        var _this = _super.call(this, injector) || this;
+        console.debug("Comp " + _this.constructor.name + " loaded");
+        return _this;
+    }
+    PrimaryTabHostBase.prototype.ngOnDestroy = function () {
+        _super.prototype.ngOnDestroy.call(this);
+        console.debug("Comp " + this.constructor.name + " destroyed");
+    };
+    Object.defineProperty(PrimaryTabHostBase.prototype, "tabId", {
+        get: function () {
+            return this.tabData.compositeTabId.toString();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return PrimaryTabHostBase;
+}(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["PrimaryTabHostViewModel"]));
+
+var HomeComp = /** @class */ (function (_super) {
+    __extends(HomeComp, _super);
+    function HomeComp(injector, tabDescriptorFactory) {
+        var _this = _super.call(this, injector) || this;
+        _this.tabDescriptorFactory = tabDescriptorFactory;
+        return _this;
+    }
+    HomeComp.prototype.addTabSimple = function () {
+        var policyId = generatePolicyId();
+        var tabPolicy = this.tabDescriptorFactory.createPrimaryTabDescriptorSimple(policyId);
+        tabPolicy.selected = true;
+        this.messagingService.publish(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["TabChannels"].AddPrimaryTab, tabPolicy);
+    };
+    HomeComp.prototype.addTabWithTabView = function () {
+        var policyId = generatePolicyId();
+        var tabPolicy = this.tabDescriptorFactory.createPrimaryTabDescriptorPolicy(policyId, policyId.toString());
+        tabPolicy.selected = true;
+        this.messagingService.publish(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["TabChannels"].AddPrimaryTab, tabPolicy);
+    };
+    HomeComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'home',
+            template: "\n        <div style=\"height: 100vh;\">\n            Home\n        </div>\n    "
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["TabDescriptorFactory"]])
+    ], HomeComp);
+    return HomeComp;
+}(PrimaryTabHostBase));
+
+var SearchComp = /** @class */ (function (_super) {
+    __extends(SearchComp, _super);
+    function SearchComp(injector) {
+        return _super.call(this, injector) || this;
+    }
+    SearchComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'Search',
+            template: '<div style="height: 100vh;">Search</div>'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], SearchComp);
+    return SearchComp;
+}(PrimaryTabHostBase));
+
+var SimpleComp = /** @class */ (function (_super) {
+    __extends(SimpleComp, _super);
+    function SimpleComp(injector) {
+        return _super.call(this, injector) || this;
+    }
+    SimpleComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'comp1',
+            template: '<div>Simple Tab (SimpleComp) - #{{tabId}}</div>'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], SimpleComp);
+    return SimpleComp;
+}(PrimaryTabHostBase));
+
+var TabbedComp = /** @class */ (function (_super) {
+    __extends(TabbedComp, _super);
+    function TabbedComp(injector) {
+        var _this = _super.call(this, injector) || this;
+        _this.tabSplitAreasInfo = {
+            left: new life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["SplitArea"]({ id: 'left', index: 1, size: 100 - SplitPaneInitialSize }),
+            right: new life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["SplitArea"]({ id: 'right', index: 2, size: SplitPaneInitialSize })
+        };
+        _this.splitPaneAreas = [];
+        _this.splitPaneSize = SplitPaneInitialSize;
+        _this.createStateValueAccessor(injector.get(life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_4__["TabStateManager"]));
+        _this.initSubscribers();
+        return _this;
+    }
+    TabbedComp.prototype.initSubscribers = function () {
+        var _this = this;
+        this.messagingService.subscribe(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneChannels"].AddSplitPaneArea, function (id) {
+            _this.addSplitArea(id);
+        });
+        this.messagingService.subscribe(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneChannels"].RemoveSplitPaneArea, function (splitPaneResult) {
+            _this.removeSplitArea(splitPaneResult);
+        });
+    };
+    TabbedComp.prototype.loadData = function () {
+        var splitPaneStateData = this._splitPaneStateValueAccessor.getValue();
+        if (splitPaneStateData) {
+            this.restoreSplitPaneState(splitPaneStateData);
+        }
+        else {
+            this.setTabSplitVisible(false);
+        }
+        return Promise.resolve();
+    };
+    TabbedComp.prototype.showSplitter = function () {
+        this.setTabSplitVisible(true);
+    };
+    TabbedComp.prototype.hideSplitter = function () {
+        this.setTabSplitVisible(false);
+    };
+    TabbedComp.prototype.setTabSplitVisible = function (visible) {
+        if (visible) {
+            this.splitterVisible = true;
+            this.tabContainerClass = 'tab-split-container';
+        }
+        else {
+            this.splitterVisible = false;
+            this.tabContainerClass = 'tab-no-split-container';
+        }
+    };
+    TabbedComp.prototype.addSplitArea = function (id) {
+        if (this.splitPane && this.splitPane.hasSplitArea(id, id)) {
+            alert("Split area with id='" + id + "' already exists.");
+            return;
+        }
+        if (!this.splitterVisible) {
+            this.showSplitter();
+        }
+        this.splitPaneAreas.push(this.createSplitPaneArea(id));
+    };
+    TabbedComp.prototype.createSplitPaneArea = function (id) {
+        var area;
+        if (id == SplitPaneAreaTypes.note) {
+            area = new life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["SplitPaneArea"]({ id: id, index: 1, size: 55, view: _test_split_area__WEBPACK_IMPORTED_MODULE_7__["NoteDialog"] });
+        }
+        else if (id == SplitPaneAreaTypes.scratchpad) {
+            area = new life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["SplitPaneArea"]({ id: id, index: 2, size: 45, view: _test_split_area__WEBPACK_IMPORTED_MODULE_7__["ScratchPadDialog"] });
+        }
+        else {
+            throw new Error("Undefined Split Pane Area ID: '" + id + "'.");
+        }
+        return area;
+    };
+    TabbedComp.prototype.removeSplitArea = function (splitPaneResult) {
+        var area = this.splitPaneAreas.find(function (area) { return area.id == splitPaneResult.areaId; });
+        if (area) {
+            this.splitPaneAreas.splice(this.splitPaneAreas.indexOf(area), 1);
+            if (this.splitPaneAreas.length == 0) {
+                this.hideSplitter();
+            }
+        }
+    };
+    TabbedComp.prototype.onTabSplitGutterDragEnd = function (e) {
+        this.splitPaneSize = e.sizes[1];
+    };
+    TabbedComp.prototype.ngOnDestroy = function () {
+        _super.prototype.ngOnDestroy.call(this);
+        this.messagingService.closeChannel(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneChannels"].AddSplitPaneArea);
+        this.messagingService.closeChannel(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneChannels"].RemoveSplitPaneArea);
+        this.saveSplitPaneState();
+    };
+    // State management
+    TabbedComp.prototype.createStateValueAccessor = function (tabStateManager) {
+        this._splitPaneStateValueAccessor = new life_core_util_tab_state__WEBPACK_IMPORTED_MODULE_4__["TabStateValueAccessor"](tabStateManager, SplitPaneStateValueKey);
+    };
+    TabbedComp.prototype.saveSplitPaneState = function () {
+        if (this.splitterVisible) {
+            var splitPaneStateData = new life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["SplitPaneStateData"]();
+            splitPaneStateData.splitPaneSize = this.splitPaneSize;
+            splitPaneStateData.splitPaneAreas = this.splitPaneAreas;
+            this._splitPaneStateValueAccessor.setValue(splitPaneStateData);
+        }
+    };
+    TabbedComp.prototype.restoreSplitPaneState = function (splitPaneStateData) {
+        this.splitPaneSize = splitPaneStateData.splitPaneSize;
+        this.tabSplitAreasInfo.left.size = 100 - this.splitPaneSize;
+        this.tabSplitAreasInfo.right.size = this.splitPaneSize;
+        this.splitPaneAreas = splitPaneStateData.splitPaneAreas;
+        this.setTabSplitVisible(!!this.splitPaneAreas);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneComponent"]),
+        __metadata("design:type", life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneComponent"])
+    ], TabbedComp.prototype, "splitPane", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(angular_split__WEBPACK_IMPORTED_MODULE_6__["SplitComponent"]),
+        __metadata("design:type", angular_split__WEBPACK_IMPORTED_MODULE_6__["SplitComponent"])
+    ], TabbedComp.prototype, "tabSplit", void 0);
+    TabbedComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'tabbed-comp',
+            template: "\n        <span>\n            <!-- Tabbed Tab (TabbedComp) - #{{tabId}} -->\n        </span>\n        <div [class]=\"tabContainerClass\">\n            <lf-split direction=\"horizontal\" [useTransition]=\"true\" (dragEnd)=\"onTabSplitGutterDragEnd($event)\">\n                <lf-split-area [size]=\"tabSplitAreasInfo.left.size\">\n                    <nested-tabview-host-comp [primaryTabId]=\"tabId\"></nested-tabview-host-comp>\n                </lf-split-area>\n                <lf-split-area *ngIf=\"splitterVisible\" [size]=\"tabSplitAreasInfo.right.size\">\n                    <lf-split-pane\n                        [splitPaneAreas]=\"splitPaneAreas\"\n                        direction=\"vertical\"\n                        stateId=\"split_pane\"\n                        [state]=\"componentsState.get('split_pane')\"\n                    >\n                    </lf-split-pane>\n                </lf-split-area>\n            </lf-split>\n        </div>\n    ",
+            styles: [__webpack_require__(/*! ./test-routed-tabview.scss */ "./src/app/component/tab-view/test-routed-tabview.scss")],
+            providers: [life_core_view_model__WEBPACK_IMPORTED_MODULE_1__["ParentChildRegistry"]]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], TabbedComp);
+    return TabbedComp;
+}(PrimaryTabHostBase));
+
+var SplitPaneAreaTypes = {
+    note: 'note',
+    scratchpad: 'scratchpad'
+};
+var SplitPaneInitialSize = 30;
+var SplitPaneStateValueKey = 'splitPaneStateValueKey';
+// ***************************************
+// Second level (nested) tab components
+// ***************************************
+var SecondaryTabHostBase = /** @class */ (function (_super) {
+    __extends(SecondaryTabHostBase, _super);
+    function SecondaryTabHostBase(injector) {
+        var _this = _super.call(this, injector) || this;
+        console.debug("Comp " + _this.constructor.name + " loaded");
+        return _this;
+    }
+    SecondaryTabHostBase.prototype.ngOnDestroy = function () {
+        _super.prototype.ngOnDestroy.call(this);
+        console.debug("Comp " + this.constructor.name + " destroyed");
+    };
+    Object.defineProperty(SecondaryTabHostBase.prototype, "tabId", {
+        get: function () {
+            return this.tabData.compositeTabId.toString();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return SecondaryTabHostBase;
+}(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["SecondaryTabHostViewModel"]));
+
+var NestedTabViewHostComp = /** @class */ (function (_super) {
+    __extends(NestedTabViewHostComp, _super);
+    function NestedTabViewHostComp(injector) {
+        return _super.call(this, injector) || this;
+    }
+    Object.defineProperty(NestedTabViewHostComp.prototype, "tabViewId", {
+        get: function () {
+            return this.primaryTabId.toString();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    //private setupPanelData(): void {
+    NestedTabViewHostComp.prototype.getStaticTabs = function () {
+        var policyId = parseInt(this.primaryTabId.objectId);
+        var tabCaseDisp = this
+            .tabDescriptorFactory.createSecondaryTabDescriptorCaseDesp(policyId);
+        var tabMessages = this
+            .tabDescriptorFactory.createSecondaryTabDescriptorReviewMessages(policyId);
+        tabMessages.selected = true;
+        return [tabCaseDisp, tabMessages];
+    };
+    NestedTabViewHostComp.prototype.addNestedDynamicTab = function () {
+        var policyId = generatePolicyId(); //parseInt(this.primaryTabId.objectId);
+        var tabDescDetail = this
+            .tabDescriptorFactory.createSecondaryTabDescriptorDetail(policyId);
+        tabDescDetail.selected = true;
+        this.addTab(tabDescDetail);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["CompositeTabId"])
+    ], NestedTabViewHostComp.prototype, "primaryTabId", void 0);
+    NestedTabViewHostComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'nested-tabview-host-comp',
+            template: "\n        <!--  <lf-button label=\"Add Tab\" (onClick)=\"addNestedDynamicTab()\"></lf-button> -->\n        <lf-routedTabView\n            id=\"secondaryTabView\"\n            [tabs]=\"tabsData$\"\n            [initialSelectedIndex]=\"initialSelectedIndex$\"\n            controlClose=\"true\"\n            (onClose)=\"onTabClose($event)\"\n            (onChange)=\"onTabSelectionChange($event)\"\n        >\n            <router-outlet></router-outlet>\n        </lf-routedTabView>\n    "
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], NestedTabViewHostComp);
+    return NestedTabViewHostComp;
+}(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_2__["SecondaryTabViewHostViewModel"]));
+
+var CaseDispComp = /** @class */ (function (_super) {
+    __extends(CaseDispComp, _super);
+    function CaseDispComp(injector) {
+        return _super.call(this, injector) || this;
+    }
+    CaseDispComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'case-disp',
+            template: '<div>Case Disposition - #{{tabId}}</div>'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], CaseDispComp);
+    return CaseDispComp;
+}(SecondaryTabHostBase));
+
+var MessagesComp = /** @class */ (function (_super) {
+    __extends(MessagesComp, _super);
+    function MessagesComp(injector) {
+        return _super.call(this, injector) || this;
+    }
+    MessagesComp.prototype.onAddNoteClick = function () {
+        this.messagingService.publish(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneChannels"].AddSplitPaneArea, SplitPaneAreaTypes.note);
+    };
+    MessagesComp.prototype.onAddScratchpadClick = function () {
+        this.messagingService.publish(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_5__["LfSplitPaneChannels"].AddSplitPaneArea, SplitPaneAreaTypes.scratchpad);
+    };
+    MessagesComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'messages',
+            template: "\n        <div>Messages - #{{ tabId }}</div>\n        <lf-panel\n            header=\"Section 1\"\n            [toggleable]=\"true\"\n            panelType=\"primary\"\n            stateId=\"panel1\"\n            [state]=\"componentsState.get('panel1')\"\n        >\n            <div style=\"height: 300px;  border-width: 1px; border-style:solid; border-color:black\">\n                Content 1\n                <br /><br />\n                <lf-button label=\"Add Note\" (onClick)=\"onAddNoteClick()\"></lf-button>\n                <lf-button label=\"Open Scratchpad\" (onClick)=\"onAddScratchpadClick()\"></lf-button>\n            </div>\n        </lf-panel>\n        <lf-panel\n            header=\"Section 2\"\n            [toggleable]=\"true\"\n            panelType=\"primary\"\n            stateId=\"panel2\"\n            [state]=\"componentsState.get('panel2')\"\n        >\n            <div style=\"height: 200px;  border-width: 1px; border-style:solid; border-color:black\">Content 2</div>\n        </lf-panel>\n    "
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], MessagesComp);
+    return MessagesComp;
+}(SecondaryTabHostBase));
+
+var PolicyDetailComp = /** @class */ (function (_super) {
+    __extends(PolicyDetailComp, _super);
+    function PolicyDetailComp(injector) {
+        return _super.call(this, injector) || this;
+    }
+    PolicyDetailComp = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'policy-detail',
+            template: '<div>Policy Details - #{{tabId}}</div>'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], PolicyDetailComp);
+    return PolicyDetailComp;
+}(SecondaryTabHostBase));
+
+var ParentDataResolver = /** @class */ (function () {
+    function ParentDataResolver() {
+    }
+    ParentDataResolver.prototype.resolve = function (route, state) {
+        //console.debug("Parent Data Resolver called.", this.activatedRoute, route, state);
+    };
+    ParentDataResolver = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], ParentDataResolver);
+    return ParentDataResolver;
+}());
+
+var ChildDataResolver = /** @class */ (function () {
+    function ChildDataResolver() {
+    }
+    ChildDataResolver.prototype.resolve = function (route, state) {
+        //console.debug("Child Data Resolver called.", this.activatedRoute, route, state);
+    };
+    ChildDataResolver = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], ChildDataResolver);
+    return ChildDataResolver;
+}());
+
+function generatePolicyId() {
+    return Math.floor(Math.random() * 100);
+}
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-split-area.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/component/tab-view/test-split-area.ts ***!
+  \*******************************************************/
+/*! exports provided: NoteDialog, NoteComponent, ScratchPadDialog, ScratchPadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoteDialog", function() { return NoteDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoteComponent", function() { return NoteComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScratchPadDialog", function() { return ScratchPadDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScratchPadComponent", function() { return ScratchPadComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/component/dialog */ "../../src/lifesuite-app/life-core/component/dialog/index.ts");
+/* harmony import */ var life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! life-core/component/layout/split */ "../../src/lifesuite-app/life-core/component/layout/split/index.ts");
+/* harmony import */ var life_core_view_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! life-core/view-model */ "../../src/lifesuite-app/life-core/view-model/index.ts");
+/* harmony import */ var life_core_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! life-core/service */ "../../src/lifesuite-app/life-core/service/index.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// NOTE
+var NoteDialog = /** @class */ (function (_super) {
+    __extends(NoteDialog, _super);
+    function NoteDialog(injector) {
+        var _this = _super.call(this, injector) || this;
+        _this.view = NoteComponent;
+        return _this;
+    }
+    NoteDialog.prototype.getDialogParams = function () {
+        var _this = this;
+        return {
+            title: 'Notes',
+            buttons: [
+                new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButton"]({
+                    type: life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButtonType"].OK,
+                    handler: function (dialogResult) {
+                        _this.onCardDialogButtonClick(dialogResult);
+                    }
+                }),
+                new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButton"]({
+                    type: life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButtonType"].CANCEL,
+                    handler: function (dialogResult) {
+                        _this.onCardDialogButtonClick(dialogResult);
+                    }
+                })
+            ],
+            data: this.splitArea.context
+        };
+    };
+    // State Management
+    NoteDialog.prototype.getStateValueKey = function () {
+        return NoteDialogStateValueKey;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["CardDialog"]),
+        __metadata("design:type", life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["CardDialog"])
+    ], NoteDialog.prototype, "cardDialog", void 0);
+    NoteDialog = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'note-dialog',
+            template: "\n        <card-dialog [view]=\"view\" (dialogDismiss)=\"onDialogDismiss($event)\"></card-dialog>\n    "
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], NoteDialog);
+    return NoteDialog;
+}(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_2__["SplitPaneDialogViewModel"]));
+
+var NoteComponent = /** @class */ (function (_super) {
+    __extends(NoteComponent, _super);
+    function NoteComponent(injector) {
+        return _super.call(this, injector) || this;
+    }
+    NoteComponent.prototype.setModel = function (model) {
+        Object.assign(this.data, __assign({}, model));
+    };
+    NoteComponent.prototype.onDialogButtonClick = function (buttonId) {
+        var _this = this;
+        if (buttonId == life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButtonType"].OK) {
+            return this.validate(life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ValidationRenderType"].never).then(function (validationResult) {
+                if (validationResult == life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ViewValidationResult"].pass) {
+                    return _this.saveData().then(function (saveResult) {
+                        return new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogViewModelResult"](saveResult == life_core_service__WEBPACK_IMPORTED_MODULE_4__["SaveDataResult"].success, true);
+                    });
+                }
+                else {
+                    return Promise.resolve(new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogViewModelResult"](null, false, false));
+                }
+            });
+        }
+        return Promise.resolve(null);
+    };
+    NoteComponent.prototype.initData = function () {
+        this.data = new NoteDialogModel();
+    };
+    NoteComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'note-component',
+            template: "\n        <form #form=\"ngForm\" role=\"form\" class=\"form\" autocomplete=\"off\">\n            <div class=\"col\">\n                <lf-form-input [control]=\"textField\" label=\"Field 1\">\n                    <lf-inputtext #textField name=\"textField\" [(ngModel)]=\"data.text\" required></lf-inputtext>\n                </lf-form-input>                \n                <lf-form-input [control]=\"dateField\" label=\"Field 2\">\n                    <lf-inputdate #dateField name=\"dateField\" [(ngModel)]=\"data.date\"></lf-inputdate>\n                </lf-form-input>                \n            </div>\n            <div class=\"col\">\n                <lf-form-input [control]=\"note\" label=\"Note\">\n                    <lf-inputtextarea #note name=\"note\" [(ngModel)]=\"data.note\" rows=\"5\" cols=\"40\"></lf-inputtextarea>\n                </lf-form-input>                \n            </div>\n        </form>\n    ",
+            providers: [life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ParentChildRegistry"]]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], NoteComponent);
+    return NoteComponent;
+}(life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ViewModel"]));
+
+// SCRATCH PAD
+var ScratchPadDialog = /** @class */ (function (_super) {
+    __extends(ScratchPadDialog, _super);
+    function ScratchPadDialog(injector) {
+        var _this = _super.call(this, injector) || this;
+        _this.view = ScratchPadComponent;
+        return _this;
+    }
+    ScratchPadDialog.prototype.getDialogParams = function () {
+        var _this = this;
+        return {
+            title: 'Scratch Pad',
+            buttons: [
+                new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButton"]({
+                    type: life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButtonType"].OK,
+                    handler: function (dialogResult) {
+                        _this.onCardDialogButtonClick(dialogResult);
+                    }
+                }),
+                new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButton"]({
+                    type: life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButtonType"].CANCEL,
+                    handler: function (dialogResult) {
+                        _this.onCardDialogButtonClick(dialogResult);
+                    }
+                })
+            ],
+            data: this.splitArea.context
+        };
+    };
+    // State Management
+    ScratchPadDialog.prototype.getStateValueKey = function () {
+        return ScratchpadDialogStateValueKey;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["CardDialog"]),
+        __metadata("design:type", life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["CardDialog"])
+    ], ScratchPadDialog.prototype, "cardDialog", void 0);
+    ScratchPadDialog = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'scratch-pad-dialog',
+            template: "\n        <card-dialog [view]=\"view\" (dialogDismiss)=\"onDialogDismiss($event)\"></card-dialog>\n    "
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], ScratchPadDialog);
+    return ScratchPadDialog;
+}(life_core_component_layout_split__WEBPACK_IMPORTED_MODULE_2__["SplitPaneDialogViewModel"]));
+
+var ScratchPadComponent = /** @class */ (function (_super) {
+    __extends(ScratchPadComponent, _super);
+    function ScratchPadComponent(injector) {
+        return _super.call(this, injector) || this;
+    }
+    ScratchPadComponent.prototype.setModel = function (model) {
+        Object.assign(this.data, __assign({}, model));
+    };
+    ScratchPadComponent.prototype.onDialogButtonClick = function (buttonId) {
+        var _this = this;
+        if (buttonId == life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogButtonType"].OK) {
+            return this.validate(life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ValidationRenderType"].never).then(function (validationResult) {
+                if (validationResult == life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ViewValidationResult"].pass) {
+                    return _this.saveData().then(function (saveResult) {
+                        var dialogResult = saveResult == life_core_service__WEBPACK_IMPORTED_MODULE_4__["SaveDataResult"].success || saveResult == life_core_service__WEBPACK_IMPORTED_MODULE_4__["SaveDataResult"].noNeedToSave;
+                        return Promise.resolve(new life_core_component_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogViewModelResult"](dialogResult, true));
+                    });
+                }
+            });
+        }
+        return Promise.resolve(null);
+    };
+    ScratchPadComponent.prototype.initData = function () {
+        this.data = new ScratchpadModel();
+    };
+    ScratchPadComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'scratchpad-component',
+            template: "\n        <form #form=\"ngForm\" role=\"form\" class=\"form\" autocomplete=\"off\">\n            <div class=\"col\">\n                <lf-form-input [control]=\"pad\" label=\"Scratchpad\">\n                    <lf-inputtextarea #pad name=\"pad\" [(ngModel)]=\"data.text\" rows=\"7\" cols=\"40\"></lf-inputtextarea>\n                </lf-form-input> \n            </div>\n        </form>\n    ",
+            providers: [life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ParentChildRegistry"]]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
+    ], ScratchPadComponent);
+    return ScratchPadComponent;
+}(life_core_view_model__WEBPACK_IMPORTED_MODULE_3__["ViewModel"]));
+
+var NoteDialogModel = /** @class */ (function () {
+    function NoteDialogModel() {
+    }
+    return NoteDialogModel;
+}());
+var ScratchpadModel = /** @class */ (function () {
+    function ScratchpadModel() {
+    }
+    return ScratchpadModel;
+}());
+var NoteDialogStateValueKey = 'noteDialogStateValueKey';
+var ScratchpadDialogStateValueKey = 'scratchpadDialogStateValueKey';
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-tab-authorization.provider.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/component/tab-view/test-tab-authorization.provider.ts ***!
+  \***********************************************************************/
+/*! exports provided: TestTabAuthorizationProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestTabAuthorizationProvider", function() { return TestTabAuthorizationProvider; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var life_core_authorization__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/authorization */ "../../src/lifesuite-app/life-core/authorization/index.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var TestTabAuthorizationProvider = /** @class */ (function (_super) {
+    __extends(TestTabAuthorizationProvider, _super);
+    function TestTabAuthorizationProvider(parentAuthProvider) {
+        return _super.call(this, parentAuthProvider) || this;
+    }
+    TestTabAuthorizationProvider.prototype.setup = function () {
+        this.authorizationData.componentLevel['tabHome'] = 0;
+        this.authorizationData.componentLevel['tabSearch'] = 0;
+    };
+    TestTabAuthorizationProvider = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["SkipSelf"])()),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()),
+        __metadata("design:paramtypes", [life_core_authorization__WEBPACK_IMPORTED_MODULE_1__["AuthorizationProvider"]])
+    ], TestTabAuthorizationProvider);
+    return TestTabAuthorizationProvider;
+}(life_core_authorization__WEBPACK_IMPORTED_MODULE_1__["AuthorizationProvider"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-tab-descriptor.factory.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/component/tab-view/test-tab-descriptor.factory.ts ***!
+  \*******************************************************************/
+/*! exports provided: TestTabDescriptorFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestTabDescriptorFactory", function() { return TestTabDescriptorFactory; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! life-core/component/layout/tabview */ "../../src/lifesuite-app/life-core/component/layout/tabview/index.ts");
+/* harmony import */ var _tab_definitions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab-definitions */ "./src/app/component/tab-view/tab-definitions.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TestTabDescriptorFactory = /** @class */ (function (_super) {
+    __extends(TestTabDescriptorFactory, _super);
+    function TestTabDescriptorFactory() {
+        return _super.call(this) || this;
+    }
+    TestTabDescriptorFactory.prototype.getTabDescriptorTitle = function (tab) {
+        return null;
+    };
+    // PRIMARY Tabs
+    TestTabDescriptorFactory.prototype.createPrimaryTabDescriptorHome = function () {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].Home,
+            route: 'home'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createPrimaryTabDescriptorSearch = function () {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].Search,
+            route: 'search'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createPrimaryTabDescriptorPolicy = function (policyId, policyNumber) {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].Policy,
+            objectId: policyId.toString(),
+            title: "Case: " + policyNumber,
+            route: 'policy'
+        });
+    };
+    // SECONDARY Tabs
+    TestTabDescriptorFactory.prototype.createSecondaryTabDescriptorWorkItems = function () {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].WorkItems,
+            route: 'work-items'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createSecondaryTabDescriptorCaseDesp = function (policyId) {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].CaseDesposition,
+            objectId: policyId.toString(),
+            route: 'case-disp'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createSecondaryTabDescriptorReviewMessages = function (policyId) {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].ReviewMessages,
+            objectId: policyId.toString(),
+            route: 'review-messages'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createSecondaryTabDescriptorNotes = function (policyId) {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].Notes,
+            objectId: policyId.toString(),
+            route: 'notes'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createPrimaryTabDescriptorSimple = function (policyId) {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].Policy,
+            objectId: policyId.toString(),
+            title: "Some Tab (" + policyId + ")",
+            route: 'simple-comp'
+        });
+    };
+    TestTabDescriptorFactory.prototype.createSecondaryTabDescriptorDetail = function (policyId) {
+        return new life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptor"]({
+            tab: _tab_definitions__WEBPACK_IMPORTED_MODULE_2__["TabDefinitions"].Details,
+            objectId: policyId.toString(),
+            title: "Policy Details(" + policyId + ")",
+            route: 'policy-details'
+        });
+    };
+    TestTabDescriptorFactory = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], TestTabDescriptorFactory);
+    return TestTabDescriptorFactory;
+}(life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_1__["TabDescriptorFactory"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-tabview-routing.module.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/component/tab-view/test-tabview-routing.module.ts ***!
+  \*******************************************************************/
+/*! exports provided: testTabViewRoutes, TestTabViewRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "testTabViewRoutes", function() { return testTabViewRoutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestTabViewRoutingModule", function() { return TestTabViewRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./test-routed-tabview */ "./src/app/component/tab-view/test-routed-tabview.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var testTabViewRoutes = [
+    {
+        path: '',
+        component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["TestRoutedTabView"],
+        children: [
+            { path: 'home', component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["HomeComp"] },
+            { path: 'search', component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["SearchComp"] },
+            { path: 'simple-comp/:id', component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["SimpleComp"], resolve: { parentData: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["ParentDataResolver"] } },
+            {
+                path: 'policy/:id',
+                component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["TabbedComp"],
+                resolve: { childData: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["ParentDataResolver"] },
+                children: [
+                    { path: 'case-disp', component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["CaseDispComp"], resolve: { childData: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["ChildDataResolver"] } },
+                    { path: 'review-messages', component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["MessagesComp"] },
+                    { path: 'policy-details', component: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["PolicyDetailComp"], resolve: { childData: _test_routed_tabview__WEBPACK_IMPORTED_MODULE_2__["ChildDataResolver"] } }
+                ]
+            }
+        ]
+    }
+];
+var TestTabViewRoutingModule = /** @class */ (function () {
+    function TestTabViewRoutingModule() {
+    }
+    TestTabViewRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(testTabViewRoutes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+        })
+    ], TestTabViewRoutingModule);
+    return TestTabViewRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/tab-view/test-tabview.module.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/component/tab-view/test-tabview.module.ts ***!
+  \***********************************************************/
+/*! exports provided: TestTabViewModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestTabViewModule", function() { return TestTabViewModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "../../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular_split__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-split */ "../../node_modules/angular-split/esm5/angular-split.js");
+/* harmony import */ var life_core_component_components_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! life-core/component/components.module */ "../../src/lifesuite-app/life-core/component/components.module.ts");
+/* harmony import */ var life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! life-core/component/layout/tabview */ "../../src/lifesuite-app/life-core/component/layout/tabview/index.ts");
+/* harmony import */ var life_core_messaging__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! life-core/messaging */ "../../src/lifesuite-app/life-core/messaging/index.ts");
+/* harmony import */ var life_core_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! life-core/util */ "../../src/lifesuite-app/life-core/util/index.ts");
+/* harmony import */ var _test_tabview_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./test-tabview-routing.module */ "./src/app/component/tab-view/test-tabview-routing.module.ts");
+/* harmony import */ var _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./test-routed-tabview */ "./src/app/component/tab-view/test-routed-tabview.ts");
+/* harmony import */ var _test_split_area__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./test-split-area */ "./src/app/component/tab-view/test-split-area.ts");
+/* harmony import */ var _test_tab_descriptor_factory__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./test-tab-descriptor.factory */ "./src/app/component/tab-view/test-tab-descriptor.factory.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TestTabViewModule = /** @class */ (function () {
+    function TestTabViewModule() {
+    }
+    TestTabViewModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"],
+                angular_split__WEBPACK_IMPORTED_MODULE_4__["AngularSplitModule"],
+                life_core_component_components_module__WEBPACK_IMPORTED_MODULE_5__["ComponentsModule"],
+                life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_6__["RoutedTabViewModule"],
+                _test_tabview_routing_module__WEBPACK_IMPORTED_MODULE_9__["TestTabViewRoutingModule"]
+            ],
+            declarations: [
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["HomeComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["SearchComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["SimpleComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["TabbedComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["NestedTabViewHostComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["CaseDispComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["MessagesComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["PolicyDetailComp"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["TestRoutedTabView"],
+                _test_split_area__WEBPACK_IMPORTED_MODULE_11__["NoteDialog"],
+                _test_split_area__WEBPACK_IMPORTED_MODULE_11__["NoteComponent"],
+                _test_split_area__WEBPACK_IMPORTED_MODULE_11__["ScratchPadDialog"],
+                _test_split_area__WEBPACK_IMPORTED_MODULE_11__["ScratchPadComponent"]
+            ],
+            exports: [angular_split__WEBPACK_IMPORTED_MODULE_4__["SplitComponent"], angular_split__WEBPACK_IMPORTED_MODULE_4__["SplitAreaDirective"]],
+            entryComponents: [_test_split_area__WEBPACK_IMPORTED_MODULE_11__["NoteDialog"], _test_split_area__WEBPACK_IMPORTED_MODULE_11__["NoteComponent"], _test_split_area__WEBPACK_IMPORTED_MODULE_11__["ScratchPadDialog"], _test_split_area__WEBPACK_IMPORTED_MODULE_11__["ScratchPadComponent"]],
+            providers: [
+                life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_6__["TabViewStateStore"],
+                life_core_messaging__WEBPACK_IMPORTED_MODULE_7__["MessagingService"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["ParentDataResolver"],
+                _test_routed_tabview__WEBPACK_IMPORTED_MODULE_10__["ChildDataResolver"],
+                life_core_util__WEBPACK_IMPORTED_MODULE_8__["TabStateManager"],
+                { provide: life_core_component_layout_tabview__WEBPACK_IMPORTED_MODULE_6__["TabDescriptorFactory"], useClass: _test_tab_descriptor_factory__WEBPACK_IMPORTED_MODULE_12__["TestTabDescriptorFactory"] }
+            ]
+        })
+    ], TestTabViewModule);
+    return TestTabViewModule;
+}());
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=lab-component-tab-view-test-tabview-module.js.map

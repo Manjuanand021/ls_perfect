@@ -1,0 +1,9 @@
+@import '../../../../../styles/base/helpers/variables';
+
+$policy-list-grid-offset-top: 228px;
+$policy-list-grid-top: $policy-list-grid-offset-top + $navbar-height;
+//nested calcs do not work in IE
+$policy-list-grid-height: calc(100vh - (#{$policy-list-grid-top} + ((1.1rem - 16px) * 10)) - #{$grid-offset-bottom});
+.ls-policy-list-grid {
+    height: $policy-list-grid-height;
+}

@@ -1,0 +1,28 @@
+{
+	"/api/*": {
+		"target": "http://localhost:5000",
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/login": {
+		"target": "http://localhost:5000",
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/logout": {
+		"target": "http://localhost:5000",
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/caseMessageProcessorHub": {
+		"target": "http://localhost:5000",
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/.well-known/*": {
+		"target": "http://localhost:5000",
+		"secure": false,
+		"logLevel": "debug"
+	}
+
+}

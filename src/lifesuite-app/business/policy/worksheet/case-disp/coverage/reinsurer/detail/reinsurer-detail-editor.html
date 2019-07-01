@@ -1,0 +1,83 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="reinsurer" label="Reinsurer" i18n-label="@@policy.worksheet.coverage.reinsurer.reinsurer">
+				<lf-select #reinsurer name="reinsurer" [items]="resolvedData.listData.Reinsurer | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.CompanyCode" [disabled]="isReinsurerDisabled" secureComponent required style="width:200px">
+				</lf-select>
+			</lf-form-input>
+		</div>
+		<div class="col-6">
+			<lf-form-input [control]="treatyType" label="Treaty Type" i18n-label="@@policy.worksheet.coverage.reinsurer.treatytype">
+				<lf-select #treatyType name="treatyType" [items]="resolvedData.metaData.ReinsurerTreatyType | listItems: 'label' : 'value' | emptyItem"
+				 [(ngModel)]="data.TreatyType" secureComponent style="width:200px">
+				</lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="cessionNumber" label="Cession Number" i18n-label="@@policy.worksheet.coverage.reinsurer.cessionnumber">
+				<lf-inputtext #cessionNumber name="cessionNumber" [(ngModel)]="data.CessionNumber" maxLength="10" [regExp]="alphaNumericRegex"
+				 secureComponent></lf-inputtext>
+			</lf-form-input>
+		</div>
+		<div class="col-6">
+			<lf-form-input [control]="reinsuranceType" label="Reinsurance Type" i18n-label="@@policy.worksheet.coverage.reinsurer.reinsurancetype">
+				<lf-inputtext #reinsuranceType name="reinsuranceType" maxLength="1" [(ngModel)]="data.ReinsuranceType" [regExp]="alphaNumericRegex"
+				 secureComponent></lf-inputtext>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="retentionAmount" label="Retention Amount" i18n-label="@@policy.worksheet.coverage.reinsurer.retentionamount">
+				<lf-inputnumber #retentionAmount name="retentionAmount" [max]="9999999999" [(ngModel)]="data.RetentionAmount"
+				 [maxLength]="13" [disabled]="isRetentionAmountDisabled" format="n2" decimals="2" [allowNegative]="false"
+				 secureComponent></lf-inputnumber>
+			</lf-form-input>
+		</div>
+		<div class="col-6">
+			<lf-form-input [control]="reinsuranceAmount" label="Reinsurance Amount" i18n-label="@@policy.worksheet.coverage.reinsurer.reinsuranceamount">
+				<lf-inputnumber #reinsuranceAmount name="reinsuranceAmount" [maxLength]="13" [max]="9999999999" [(ngModel)]="data.ReinsuranceAmount"
+				 [disabled]="isReinsuranceAmountDisabled" format="n2" decimals="2" [allowNegative]="false" secureComponent></lf-inputnumber>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="adbReinsuredAmount" label="ADB Reinsured Amount" i18n-label="@@policy.worksheet.coverage.reinsurer.adbreinsuredamount">
+				<lf-inputnumber #adbReinsuredAmount name="adbReinsuredAmount" [maxLength]="13" [max]="9999999999" format="n2"
+				 decimals="2" [(ngModel)]="data.AdbReinsuredAmount" [allowNegative]="false" secureComponent></lf-inputnumber>
+			</lf-form-input>
+		</div>
+		<div class="col-6">
+			<lf-form-input [control]="reinsurerRateClass" label="Reinsurer Rate Class" i18n-label="@@policy.worksheet.coverage.reinsurer.reinsurerrateclass">
+				<lf-select #reinsurerRateClass name="reinsureanceRateClass" [items]="resolvedData.listData.RateClassApproved | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.ReinsurerRateClass" container="dialog"  secureComponent style="width:200px">
+				</lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="reinsurerTableRating" label="Reinsurer Table Rating" i18n-label="@@policy.worksheet.coverage.reinsurer.reinsurertablerating">
+				<lf-select #reinsurerTableRating name="reinsurerTableRating" [items]="resolvedData.listData.PermTableRating | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.ReinsurerTableRating" container="dialog" secureComponent style="width:200px">
+				</lf-select>
+			</lf-form-input>
+		</div>
+		<div class="col-6">
+			<lf-form-input [control]="placed" label="Placed?" i18n-label="@@policy.worksheet.coverage.reinsurer.placed">
+				<lf-radiobuttongroup #placed name="placed" [(ngModel)]="data.Placed" secureComponent>
+					<span>
+						<lf-radiobutton [value]=true name="placed" label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+					</span>
+					<span>
+						<lf-radiobutton [value]=false name="placed" label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+					</span>
+				</lf-radiobuttongroup>
+			</lf-form-input>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,5 @@
+<div class="row">
+    <div class="lf-grid-title" i18n="@@user.preferences.membership">Membership</div>
+    <data-grid #dataGrid [ngStyle]="{height: gridOptions.height}" rowSelection="single" [gridOptions]="gridOptions"
+        (rowClicked)="onRowClicked($event)"></data-grid>
+</div>

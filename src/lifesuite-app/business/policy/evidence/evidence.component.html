@@ -1,0 +1,11 @@
+﻿<div class="lf-page-header" i18n="@@policy.page.title.evidence">Evidence</div>
+<div class="row">
+	<div class="col-6">
+		<lf-form-input [control]="applicant" label="Applicant" i18n-label="@@policy.reassign.case.grid.applicant">
+			<lf-select #applicant name="applicant" [(ngModel)]="activeApplicantId" [ngModelOptions]="{standalone: true}" [items]="applicantList"
+			 (change)="onApplicantChange($event)" [actionType]="applicantDropdownActionType" secureComponent [clearable]="false"
+			 style="width:200px"></lf-select>
+		</lf-form-input>
+	</div>
+</div>
+<router-outlet></router-outlet>

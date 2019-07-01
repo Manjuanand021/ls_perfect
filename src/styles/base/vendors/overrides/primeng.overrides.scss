@@ -1,0 +1,210 @@
+// Include custom global PrimeNG styles here
+
+/* Angular validation */
+
+/* Validation classes 
+ng-touched, ng-untouched 
+ng-dirty, ng-pristine 
+ng-valid, ng-invalid 
+*/
+
+.ui-inputtext {
+    height: $input-height;
+    font-size: $input-text-size !important;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+textarea.ui-inputtext {
+    height: auto;
+}
+
+// Custom changes
+// removed margin and reduced icon size
+.ui-radiobutton-icon {
+    font-size: 0.5em;
+}
+// Custom changes
+
+.ng-invalid.ng-touched > .ui-inputtext,
+.ng-invalid.ng-touched > span > .ui-inputtext,
+.ng-invalid.ng-touched > .ui-dropdown,
+.ng-invalid.ng-touched > fieldset > .lf-parts > .lf-part > .ui-inputtext,
+.ng-invalid.ui-reveal > .ui-inputtext,
+.ng-invalid.ui-reveal > span > .ui-inputtext,
+.ng-invalid.ui-reveal > .ui-dropdown,
+.ng-select.ng-invalid.ui-reveal > .ng-select-container,
+.ng-invalid.ui-reveal > fieldset > .lf-parts > .lf-part > .ui-inputtext {
+    border-color: $invalidInputBorderColor;
+    box-shadow: none;
+}
+
+.ng-invalid.invalid-glow.ng-touched > .ui-inputtext,
+.ng-invalid.invalid-glow.ng-touched > span > .ui-inputtext,
+.ng-invalid.invalid-glow.ng-touched > .ui-dropdown,
+.ng-invalid.invalid-glow.ng-touched > fieldset > .lf-parts > .lf-part > .ui-inputtext,
+.ng-invalid.invalid-glow.ui-reveal > .ui-inputtext,
+.ng-invalid.invalid-glow.ui-reveal > span > .ui-inputtext,
+.ng-invalid.invalid-glow.ui-reveal > .ui-dropdown,
+.ng-select.invalid-glow.ng-invalid.ui-reveal > .ng-select-container,
+.ng-invalid.invalid-glow.ui-reveal > fieldset > .lf-parts > .lf-part > .ui-inputtext {
+    animation: invalid-glow 2s alternate;
+    transition: box-shadow 2s ease-out;
+}
+
+@keyframes invalid-glow {
+    to {
+        box-shadow: 0 0 8px $invalidInputBorderColor;
+    }
+}
+
+.ui-dropdown .ui-dropdown-trigger {
+    padding: 0.25em;
+}
+
+.ui-dropdown .ui-dropdown-label {
+    height: calc($input-height - 2px);
+}
+
+/* Widget */
+.ui-widget,
+.ui-widget input,
+.ui-widget textarea {
+    font-size: 1em;
+}
+
+.ui-state-disabled,
+.ui-widget:disabled {
+    opacity: 0.7;
+}
+
+/* Panel */
+.ui-panel.ui-panel-primary .ui-widget-header {
+    color: $stateActiveTextColor;
+    background: $panel-primary-bg;
+}
+
+.ui-panel.ui-panel-secondary .ui-widget-header {
+    color: $stateSubActiveTextColor;
+    background: $panel-secondary-bg;
+}
+
+.ui-panel.ui-panel-tertiary .ui-widget-header {
+    color: $stateSubActiveTextColor;
+    background: $panel-tertiary-bg;
+}
+
+.ui-panel .ui-panel-content {
+    background-color: $contentBgColor;
+}
+
+/* Menu */
+.ui-panelmenu .ui-widget-content {
+    border: none;
+}
+
+.ui-panelmenu-header.ui-state-default {
+    border-left: none;
+    border-right: none;
+}
+
+.ui-panelmenu-header.ui-state-active {
+    background-image: linear-gradient(to right, $panelmenu-header-bg-color1, $panelmenu-header-bg-color2);
+    border-color: $stateSubActiveBgColor;
+}
+
+.ui-panelmenu .ui-panelmenu-header a {
+    display: block;
+    padding: 0.25em 0.5em;
+}
+
+.ui-panelmenu-content {
+    background-color: $panelmenu-content-bg-color;
+}
+
+.ui-panelmenu .ui-menuitem-link {
+    padding: 0.25em 1.5em;
+}
+
+.ui-menu .ui-menuitem-link {
+    padding: 0.25em;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+// changed from '.ui-panelmenu .fa' to  '.ui-panelmenu .pi'
+.ui-panelmenu .pi {
+    width: 1.9em;
+}
+
+.ui-panelmenu .ui-panelmenu-content-wrapper {
+    width: 100%;
+}
+
+/* Radiobutton */
+.ui-radiobutton-label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+}
+
+/* Button */
+.ui-widget button {
+    font-size: 0.8rem;
+}
+
+.ui-button {
+    margin-right: 0.5rem;
+}
+
+button[type='submit'].ui-button {
+    margin-right: 0;
+}
+
+.ui-button-text-only .ui-button-text {
+    padding: 0.25em 1em;
+}
+
+.ui-button .ui-button-text {
+    line-height: 1.2;
+}
+
+.ui-button.btn-primary.ui-state-default,
+.btn-primary.ui-state-default:hover {
+    color: $stateActiveTextColor;
+    background-color: $primary-btn-bg;
+    border-color: $primary-btn-border-color;
+}
+
+button:disabled.btn-primary.ui-button {
+    opacity: $primary-btn-disabled-opacity;
+    background-color: $primary-btn-disabled-bg;
+    border-color: $primary-btn-disabled-border-color;
+}
+
+//Hover color not a priority right now. Left for future reference
+/*.ui-button.btn-primary.ui-state-default:hover {
+    background-image: linear-gradient(to bottom right, $stateHighlightBgColor, grey);
+    border-color: $stateHighlightBorderColor;
+}*/
+
+/* Label */
+.ui-label-disabled {
+    opacity: 0.8;
+}
+
+/* Inputs with input-group-addon, such as inputdate */
+.ui-widget + .input-group-addon,
+.ui-widget:disabled + .input-group-addon {
+    border-color: $stateDefaultBorderColor;
+    height: $input-height;
+}
+
+.ui-widget + .input-group-addon:hover {
+    border-color: $stateHoverBorderColor;
+}
+
+.ui-widget:disabled + .input-group-addon {
+    opacity: 0.35;
+}

@@ -1,0 +1,23 @@
+<!-- 
+	This html is copied from PrimeNg Growl component.
+    
+    Custom changes:
+-->
+
+<div #container [ngClass]="'ui-growl ui-widget'" [ngStyle]="style" [class]="styleClass">
+	<div #msgel *ngFor="let msg of value;let i = index" class="ui-growl-item-container ui-state-highlight ui-corner-all ui-shadow"
+	 aria-live="polite" [ngClass]="{'ui-growl-message-info':msg.severity == 'info','ui-growl-message-warn':msg.severity == 'warn',
+				'ui-growl-message-error':msg.severity == 'error','ui-growl-message-success':msg.severity == 'success'}"
+	 (click)="onMessageClick(i)" (mouseenter)="onMessageHover(i)">
+		<div class="ui-growl-item">
+			<div class="ui-growl-icon-close pi pi-times" (click)="remove(i,msgel)"></div>
+			<span class="ui-growl-image pi" [ngClass]="{'pi-info-circle':msg.severity == 'info','pi-exclamation-triangle':msg.severity == 'warn',
+							'pi-times':msg.severity == 'error','pi-check':msg.severity == 'success'}"></span>
+			<div class="ui-growl-message">
+				<span class="ui-growl-title">{{msg.summary}}</span>
+				<p [innerHTML]="msg.detail||''"></p>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+</div>

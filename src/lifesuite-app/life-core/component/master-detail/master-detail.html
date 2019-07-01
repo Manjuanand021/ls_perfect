@@ -1,0 +1,8 @@
+﻿<div *ngIf="!hidden" [id]="name" class="lf-master-detail">
+	<master [gridOptions]="gridOptions" [showDetailAsPopup]="showDetailAsPopup" [title]="title" [buttons]="buttons"
+	 [disabled]="disabled" [authorizationLevel]="authorizationLevel"></master>
+	<div *ngIf="!showDetailAsPopup">
+		<hr class="lf-master-detail-divider" />
+		<detail></detail>
+	</div>
+</div>

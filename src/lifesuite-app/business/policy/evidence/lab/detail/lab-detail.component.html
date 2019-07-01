@@ -1,0 +1,92 @@
+<div class="lf-dashed-bottom-border">
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="birthDate" label="Birth Date" i18n-label="@@policy.lab.detail.birthdate">
+                <lf-statictext #birthDate name="birthDate" [value]="data.BirthDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="agentName" label="Agent/Agency" i18n-label="@@policy.lab.detail.agentagency">
+                <lf-statictext #agentName name="agentName" [value]="data.AgentName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="drawnDate" label="Date/Time Collected" i18n-label="@@policy.lab.detail.datetimecollected">
+                <lf-statictext #drawnDate name="drawnDate" [value]="dateTimeCollected" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="sex" label="Gender" i18n-label="@@policy.lab.detail.sex">
+                <lf-statictext #sex name="sex" [value]="data.Sex" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="examiner" label="Examiner" i18n-label="@@policy.lab.detail.examiner">
+                <lf-statictext #examiner name="examiner" [value]="data.Examiner" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="testDate" label="Date Performed" i18n-label="@@policy.lab.detail.dateperformed">
+                <lf-statictext #testDate name="testDate" [value]="data.TestDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="taxId" label="SSN" i18n-label="@@policy.lab.detail.ssn">
+                <lf-statictext #taxId name="taxId" [value]="data.Ssn | taxIdMask" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="specialConditions" label="Special Conditions" i18n-label="@@policy.lab.detail.specialconditions">
+                <lf-statictext #specialConditions name="specialConditions" [value]="data.SpecialConditions"
+                    secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="ticketNumber" label="Ticket Number" i18n-label="@@policy.lab.detail.ticketnumber">
+                <lf-statictext #ticketNumber name="ticketNumber" [value]="data.TicketNumber" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="state" label="ApplState" i18n-label="@@policy.lab.detail.applstate">
+                <lf-statictext #state name="state" [value]="data.State" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="labTypeId" label="Lab Type Id" i18n-label="@@policy.lab.detail.labtypeid">
+                <lf-statictext #labTypeId name="labTypeId" [value]="data.LabTypeId" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="lastFoodTime" label="Last Food Date/Time" i18n-label="@@policy.lab.detail.lastfooddatetime">
+                <lf-statictext #lastFoodTime name="lastFoodTime" [value]="lastFoodDateTime" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="insType" label="Insurance Type" i18n-label="@@policy.lab.detail.insurancetype">
+                <lf-statictext #insType name="insType" [value]="insuranceType" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="insuranceAmount" label="Insurance Amount" i18n-label="@@policy.lab.detail.insuranceamount">
+                <lf-statictext #insuranceAmount name="insuranceAmount" [value]="data.InsuranceAmount | lfCurrency:'':'':'4.0-0'"
+                    secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+</div>
+
+<lab-comment-detail class="lf-dashed-bottom-border" [labCommentData]="data.Comments_LazyLoad"></lab-comment-detail>
+
+<lab-result-detail class="lf-dashed-bottom-border" [customerLabReportData]="data.CustomerLabReportProxies"></lab-result-detail>

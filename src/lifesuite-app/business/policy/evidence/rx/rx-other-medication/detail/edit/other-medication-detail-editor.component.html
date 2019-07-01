@@ -1,0 +1,56 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Medical Condition" i18n-label="@@policy.medication.edit.condition" [control]="medicalCondition">
+                <lf-select #medicalCondition name="medicalCondition" [(ngModel)]="medicalConditionValue" [items]="resolvedData.listData.Condition | listItems:'value':'Id'"
+                    [clearable]="false" secureComponent style="width:200px" (change)="onMedicalConditionChange($event)"
+                    container="dialog" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6" *ngIf="otherMedicalConditionSelected">
+            <lf-form-input [control]="otherMedicalCondition">
+                <lf-inputtext #otherMedicalCondition name="otherMedicalCondition" [(ngModel)]="otherMedicalConditionValue"
+                    secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Drug Name" [control]="drugName" i18n-label="@@policy.medication.edit.drugname">
+                <lf-select #drugName name="drugName" [(ngModel)]="drugNameValue" [items]="drugNameListItems | listItems:'value':'Id'"
+                    [clearable]="false" secureComponent [disabled]="otherMedicalConditionSelected" style="width:200px"
+                    (change)="onDrugNameChange($event)" container="dialog" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6" *ngIf="showOtherDrug">
+            <lf-form-input [control]="otherDrugName">
+                <lf-inputtext #otherDrugName name="otherDrugName" [(ngModel)]="otherDrugNameValue" [maxLength]="200"
+                    secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!showOtherDrug">
+        <div class="col-6">
+            <lf-form-input label="Debit/Credit" i18n-label="@@policy.medication.edit.points" [control]="debitCredit">
+                <lf-statictext #debitCredit name="debitCredit" [value]="data.Points|number" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="showOtherDrug">
+        <div class="col-6">
+            <lf-form-input label="Debit/Credit" i18n-label="@@policy.medication.edit.points" [control]="debitCredit">
+                <lf-statictext #debitCredit name="debitCredit" [value]="" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input label="" [control]="otherDebitCredit">
+                <lf-inputnumber #otherDebitCredit name="otherDebitCredit" [max]="1000" [(ngModel)]="data.Points" format="n0"
+                    decimals="0" [authorizationLevel]="authorizationData.defaultLevel" [allowNegative]="false" required></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+
+</form>

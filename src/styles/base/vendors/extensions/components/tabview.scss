@@ -1,0 +1,96 @@
+/* PrimeNG tabview */
+/* TabView */
+
+.ui-tabview {
+    padding: 0;
+}
+
+.ui-tabview > .ui-widget-header {
+    border: none;
+}
+
+.ui-tabview > .ui-tabview-nav > li {
+    margin: 0;
+}
+
+.ui-tabview.ui-tabview-top > .ui-tabview-nav li {
+    top: 0px;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-default > a,
+.ui-tabview > .ui-tabview-nav > .ui-state-default > .ui-tabview-close {
+    opacity: 0.8;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-active > a,
+.ui-tabview > .ui-tabview-nav > .ui-state-active > .ui-tabview-close {
+    opacity: 1;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-active {
+    border-left: none;
+    border-right: none;
+    border-top: 3px solid $stateActiveBorderColor;
+}
+
+/* Primary (first level) TabView */
+.ui-tabview.ui-tabview-primary {
+    min-height: calc(100vh - #{$navbar-height});
+}
+
+.ui-tabview.ui-tabview-primary > .ui-tabview-nav {
+    padding: 0;
+}
+
+.ui-tabview.ui-tabview-primary > .ui-tabview-nav > li {
+    padding: 0.25em 0;
+}
+
+/* Secondary (second level) TabView */
+.ui-tabview.ui-tabview-secondary {
+    margin: 0.25em;
+}
+
+.ui-tabview.ui-tabview-secondary > .ui-tabview-nav {
+    padding: 0;
+}
+
+.ui-tabview.ui-tabview-secondary > .ui-tabview-nav > .ui-state-active {
+    margin-top: -0.25em;
+}
+
+.ui-tabview.ui-tabview-secondary > .ui-tabview-nav > .ui-state-active > a {
+    margin-top: 0.25em;
+}
+
+.ui-tabview.ui-tabview-secondary > .ui-tabview-nav > li {
+    padding: 0;
+}
+
+/* Tertiary (third level) TabView */
+.ui-tabview.ui-tabview-tertiary {
+    margin: 0.25em;
+}
+
+.ui-tabview.ui-tabview-tertiary > .ui-tabview-nav {
+    padding: 0;
+}
+
+.ui-tabview.ui-tabview-tertiary > .ui-tabview-nav > .ui-state-active {
+    margin-top: -0.3em;
+}
+
+.ui-tabview.ui-tabview-tertiary > .ui-tabview-nav > .ui-state-active > a {
+    margin-top: 0.25em;
+}
+
+.ui-tabview.ui-tabview-tertiary > .ui-tabview-nav > li {
+    padding: 0;
+}
+
+.ui-tabview-left-icon {
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    margin-top: -0.15em;
+}

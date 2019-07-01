@@ -1,0 +1,62 @@
+<lf-panel [header]="panelHeader" [toggleable]="true" panelType="secondary" stateId="panel_coverage_{{index}}" [state]="componentsState.get('panel_coverage_'+index)"
+    secureComponent>
+    <div class="row justify-content-end">
+        <lf-button id="reopenCaseButton" name="reopenCaseButton" label="Reopen" i18n-label="@@general.button.label.reopen"
+            [disabled]="canReopenCoverage" (onClick)="onReopenCoverageButtonClick()" styleClass="btn btn-primary"
+            [actionType]="reopenCaseButtonActionType" secureComponent></lf-button>
+    </div>
+    <dynamic-form [formFields]="formFields" [formData]="formData" [layoutConfig]="formLayoutConfig" [form]="rootForm"
+        [index]="index" secureComponent>
+    </dynamic-form>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="calculatedRateClass" label="Calculated Rate Class"
+                i18n-label="@@policy.worksheet.calcrateclass">
+                <lf-statictext #calculatedRateClass name="calculatedRateClass_{{index}}"
+                    [value]="data.coverage.CalculatedPointsRateClass" format="number"
+                    [disabled]="disabledBasedOnCoverageStatus" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="calculatedRateTableRating" label="Calculated Table Rating"
+                i18n-label="@@policy.worksheet.coverage.calculatedtablerating">
+                <lf-statictext #calculatedRateTableRating name="calculatedRateTableRating_{{index}}"
+                    [value]="data.coverage.RateClassApprovedDescription" [disabled]="disabledBasedOnCoverageStatus"
+                    secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="finalActionNote" label="Final Action Note"
+                i18n-label="@@policy.worksheet.coverageDispositionNote">
+                <lf-inputtextarea #finalActionNote name="finalActionNote_{{index}}"
+                    [(ngModel)]="data.coverage.FinalActionNote" maxLength="2000"
+                    [disabled]="disabledBasedOnCoverageStatus"
+                    [class]="{'lf-font-weight-bold':disabledBasedOnCoverageStatus}" [style]="{width:'100%'}" rows="7"
+                    secureComponent>
+                </lf-inputtextarea>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 ">
+            <benefit [coverage]="data.coverage" [disabled]="disabledBasedOnCoverageStatus" *ngIf="showBenefitSection"></benefit>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <amendment [coverage]="data.coverage" [disabled]="disabledBasedOnCoverageStatus" *ngIf="showAmendmentSection"></amendment>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <reinsurer [coverage]="data.coverage" [disabled]="disabledBasedOnCoverageStatus" *ngIf="showReinsurerSection"></reinsurer>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <impairment [coverage]="data.coverage" [disabled]="disabledBasedOnCoverageStatus" *ngIf="showImpairmentSection"></impairment>
+        </div>
+    </div>
+</lf-panel>

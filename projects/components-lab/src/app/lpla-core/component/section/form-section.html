@@ -1,0 +1,11 @@
+<section>
+	<div id="section-validation-messages" *ngFor="let message of messages" class="alert alert-danger au-animate">
+		{{message}}
+	</div>
+	<ng-content></ng-content>
+	<div class="clearfix">
+		<div class="pull-right">
+			<button *ngIf="buttonNextVisible" class="form-section-button lf-secondary-btn" (click)="onButtonNextClick()">Next</button>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,90 @@
+<div class="agency">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="agencyName" label="Name" i18n-label="@@policy.case.agency.name">
+                <lf-select #agencyName name="agencyName" [items]="listData['PersonId'] | listItems:'value':'Id'"
+                    [(ngModel)]="data.PersonId" [clearable]="false" (change)="onAgencyChange($event)" container="body"
+                    secureComponent style="width:150px" required></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div *ngIf="agencyDataExist">
+        <div class="row" *ngIf="businessAddress">
+            <div class="col-3">
+                <lf-form-input [control]="addressLine1" label="Address" i18n-label="@@policy.case.agency.address">
+                    <lf-statictext #addressLine1 name="addressLine1" [value]="businessAddress.AddressLine1"
+                        secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="addressLine2">
+                    <lf-statictext #addressLine2 name="addressLine2" [value]="businessAddress.AddressLine2"
+                        secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="addressLine3">
+                    <lf-statictext #addressLine3 name="addressLine3" [value]="businessAddress.AddressLine3"
+                        secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row" *ngIf="businessAddress">
+            <div class="col-3">
+                <lf-form-input [control]="city" label="City" i18n-label="@@policy.case.agency.city">
+                    <lf-statictext #city name="city" [value]="businessAddress.City" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="country" label="Country" i18n-label="@@policy.case.agency.country">
+                    <lf-statictext #country name="country" [value]="countryName" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="state" label="State" i18n-label="@@policy.case.agency.state">
+                    <lf-statictext #state name="state" [value]="stateName" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="postalCode" label="Postal Code" i18n-label="@@policy.case.agency.postalcode">
+                    <lf-statictext #postalCode name="postalCode" [value]="businessAddress.PostalCode" secureComponent>
+                    </lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input [control]="agencyNumber" label="Agency Number"
+                    i18n-label="@@policy.case.agency.agencynumber">
+                    <lf-statictext #agencyNumber name="agencyNumber" [value]="data.AgencyNumber" secureComponent>
+                    </lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="email" label="Email" i18n-label="@@policy.case.agency.email">
+                    <lf-statictext #email name="email" [value]="data.EmailAddress" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="taxId" label="Tax Id" i18n-label="@@policy.case.agency.taxid">
+                    <lf-statictext #taxId name="taxId" [value]="data.TaxId | taxIdMask" secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-3">
+                <lf-form-input [control]="phoneNumber" label="Phone Number"
+                    i18n-label="@@policy.case.agency.phonenumber">
+                    <lf-statictext #phoneNumber name="phoneNumber" [value]="workPhone | lsPhone" secureComponent>
+                    </lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <lf-form-input [control]="faxNumber" label="Fax Number" i18n-label="@@policy.case.agency.faxnumber">
+                    <lf-statictext #faxNumber name="faxNumber" [value]="faxPhone | lsPhone" secureComponent>
+                    </lf-statictext>
+                </lf-form-input>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<form #form="ngForm">
+    <br />
+    <label>RadioButtonGroup</label>
+    <div class="row">
+        <div class="col-2">
+            <label>Required</label>
+            <lf-select name="required" [items]="trueFalseList" [(ngModel)]="required" [clearable]="false" style="width:100px;"></lf-select>
+        </div>
+        <div class="col-2">
+            <label>Disabled</label>
+            <lf-select name="disabled" [items]="trueFalseList" [(ngModel)]="disabled" [clearable]="false" style="width:100px;"></lf-select>
+        </div>
+        <div class="col-2">
+            <label>Hidden</label>
+            <lf-select name="hidden" [items]="trueFalseList" [(ngModel)]="hidden" [clearable]="false" style="width:100px;"></lf-select>
+        </div>
+    </div>
+    <br />
+    <hr style="border-top: 1px solid" />
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input label="Boolean RadioButtonGroup" [control]="radioButtonGroup1">
+                <lf-radiobuttongroup #radioButtonGroup1 name="radioButtonGroup1" [required]="toBoolean(required)"
+                    [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)"
+                    [(ngModel)]="fields.boolRadioButtonField.value" class="ui-g" style="width:250px;margin-bottom:10px">
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup1" [value]="true" label="Option [true]"></lf-radiobutton>
+                    </div>
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup1" [value]="false" label="Option [false]"></lf-radiobutton>
+                    </div>
+                </lf-radiobuttongroup>
+                Selected Value =
+                {{ fields.boolRadioButtonField.value === undefined ? 'none' : fields.boolRadioButtonField.value }}
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="String RadioButtonGroup" [control]="radioButtonGroup2">
+                <lf-radiobuttongroup #radioButtonGroup2 name="radioButtonGroup2" [required]="toBoolean(required)"
+                    [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)"
+                    [(ngModel)]="fields.strRadioButtonField.value" class="ui-g" style="width:250px;margin-bottom:10px">
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup2" value="a" label="Option 'a'"></lf-radiobutton>
+                    </div>
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup2" value="b" label="Option 'b'"></lf-radiobutton>
+                    </div>
+                </lf-radiobuttongroup>
+                Selected Value = {{ fields.strRadioButtonField.value || 'none' }}
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Number RadioButtonGroup" [control]="radioButtonGroup3">
+                <lf-radiobuttongroup #radioButtonGroup3 name="radioButtonGroup3" [required]="toBoolean(required)"
+                    [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)"
+                    [(ngModel)]="fields.numRadioButtonField.value" class="ui-g" style="width:250px;margin-bottom:10px">
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup3" value="0" label="Option 0"></lf-radiobutton>
+                    </div>
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup3" value="1" label="Option 1"></lf-radiobutton>
+                    </div>
+                    <div class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup3" value="2" label="Option 2"></lf-radiobutton>
+                    </div>
+                </lf-radiobuttongroup>
+                Selected Value = {{ fields.numRadioButtonField.value || 'none' }}
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Sr Dynamic RadioButtonGroup" [control]="radioButtonGroup4">
+                <lf-radiobuttongroup #radioButtonGroup4 name="radioButtonGroup4" [required]="toBoolean(required)"
+                    [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)"
+                    [(ngModel)]="fields.boolRadioButtonField.value" (change)="onRadioGroupChange($event)" class="ui-g"
+                    style="width:250px;margin-bottom:10px">
+                    <div *ngFor="let option of options" class="ui-g-12">
+                        <lf-radiobutton name="radioButtonGroup4" [value]="option.value" [label]="option.label"></lf-radiobutton>
+                    </div>
+                </lf-radiobuttongroup>
+                Selected Value =
+                {{ fields.boolRadioButtonField.value === undefined ? 'none' : fields.boolRadioButtonField.value }}
+            </lf-form-input>
+        </div>
+    </div>
+</form>

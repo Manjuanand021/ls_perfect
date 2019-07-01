@@ -1,0 +1,10 @@
+<div class="lf-solid-bottom-border">
+    <div class="lf-grid-title">{{title}}</div>
+    <data-grid #dataGrid [ngStyle]="{height: gridOptions.height}" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)">
+    </data-grid>
+    <lf-form-input [control]="medicalConditionTotal" label="Total" i18n-label="@@policy.medicalcondition.grid.totalconditionpoints"
+        labelPosition="left">
+        <lf-statictext #medicalConditionTotal name="medicalConditionTotal" [value]="total | lfDecimal:'1.0-0'"
+            secureComponent></lf-statictext>
+    </lf-form-input>
+</div>

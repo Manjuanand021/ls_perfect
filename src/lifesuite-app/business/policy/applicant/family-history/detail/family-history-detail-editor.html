@@ -1,0 +1,50 @@
+﻿<form ngForm #form="ngForm" role="form" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="relationship" label="Relationship" i18n-label="@@applicant.info.family.relationship">
+                <lf-select #relationship name="relationship" [(ngModel)]="data.FamhistRelationshipCode" [items]="resolvedData.listData.FamhistRelationshipCode | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:150px" container="dialog" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="status" label="Status" i18n-label="@@applicant.info.family.stats">
+                <lf-select #status name="status" [(ngModel)]="data.LivingStatus" [items]="resolvedData.listData.LivingStatus | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:150px" container="dialog" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="age" label="Age" i18n-label="@@applicant.info.family.age">
+                <lf-inputnumber #age name="age" [(ngModel)]="data.Age" maxLength="3" format="n0" decimals="0"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="cancerAge" label="Cancer Age" i18n-label="@@applicant.info.family.cancerage">
+                <lf-inputnumber #cancerAge name="cancerAge" [(ngModel)]="data.CancerAge" maxLength="2" format="n0"
+                    [allowNegative]="false" decimals="0" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="heartAge" label="Heart Age" i18n-label="@@applicant.info.family.heartage">
+                <lf-inputnumber #heartAge name="heartAge" [(ngModel)]="data.HeartDiseaseAge" maxLength="3" format="n0"
+                    [allowNegative]="false" decimals="0" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="otherAge" label="Other Age" i18n-label="@@applicant.info.family.otherage">
+                <lf-inputnumber #otherAge name="otherAge" [(ngModel)]="data.OtherDiseaseAge" maxLength="3" format="n0"
+                    [allowNegative]="false" decimals="0" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="reason" label="Reason" i18n-label="@@applicant.info.family.reason">
+                <lf-inputtext #reason name="reason" [(ngModel)]="data.Description" maxLength="60" secureComponent
+                    [style]="{width:'200px'}"></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,73 @@
+<div class="lf-background-image">
+	<nav class="navbar navbar-expand bg-faded">
+		<!--<a name="lifeSuite" class="navbar-brand mr-auto" href="#">UnderwritingPro
+			<sup>&reg;</sup>
+		</a>-->
+		<div class="logo-container">
+			<div class="lf-logo-image d-inline-block align-top"></div>
+		</div>
+	</nav>
+	<div class="mt-1 ls-login-container">
+		<form role="form" class="ls-signin-form" (submit)="login()" autocomplete="off">
+			<section class="card bg-primary card-inverse">
+
+				<div class="card-header">
+					<h4 class="card-title text-light">{{title}}</h4>
+				</div>
+
+				<div class="card-block">
+					<div *ngFor="let messageItem of messages" class="alert {{messageItem.messageCssClass}}">
+						{{messageItem.message}}
+					</div>
+
+					<label for="userName" class="text-light" i18n="@@login.label.username">User Name</label>
+					<div class="input-group pb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<span class="fa fa-user" aria-hidden="true"></span>
+							</span>
+						</div>
+						<input id="userName" type="text" placeholder="User Name" i18n-placeholder="@@login.label.username" class="form-control"
+						 [(ngModel)]="userName" name="userName" required autofocus />
+					</div>
+
+					<label for="password" class="text-light" i18n="@@login.label.password">Password</label>
+					<div class="input-group pb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<span class="fa fa-lock" aria-hidden="true"></span>
+							</span>
+						</div>
+						<input id="password" type="password" placeholder="Password" i18n-placeholder="@@login.label.password" class="form-control"
+						 [(ngModel)]="password" name="password" required />
+					</div>
+
+					<!--
+				<div class="checkbox">
+					<label>
+						<input id="saveLogin" type="checkbox"
+							value.bind="saveLogin" /> Remember me
+					</label>
+				</div>
+				-->
+				</div>
+
+				<div class="card-footer clearfix">
+					<div class="row justify-content-end">
+						<lf-button id="loginButton" type="submit" [label]="loginButtonLabel" [disabled]="!loginButtonEnabled" class="btn-primary">
+						</lf-button>
+					</div>
+				</div>
+			</section>
+			<div class="links">
+				<div class="row justify-content-start">
+					<lf-hyperlink name="changePassword" value="Change Password" (click)="onChangePasswordClick($event)" i18n-value="@@login.changepassword"></lf-hyperlink>
+					&nbsp;&nbsp;
+					<lf-hyperlink name="forgotPassword" value="Forgot Password " (click)="onForgotPasswordClick($event) " i18n-value="@@login.forgotpassword"></lf-hyperlink>
+				</div>
+			</div>
+		</form>
+		<login-images-carousel class="ls-image-carousel"></login-images-carousel>
+	</div>
+	<block-ui [blocked]="busy"></block-ui>
+</div>

@@ -1,0 +1,1 @@
+Any static assets placed in this folder will be copied to dist/assets folder.

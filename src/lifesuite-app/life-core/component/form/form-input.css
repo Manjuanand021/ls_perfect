@@ -1,0 +1,27 @@
+.lf-form-input-reqiured {
+    color: #f00;
+}
+
+.lf-form-input-alert {
+    /*background-color: #f2dede;
+	border-color: #ebcccc;*/
+    color: red;
+    font-weight: 600;
+    transition: all 500ms ease;
+}
+
+.lf-form-input-label-disabled {
+    opacity: 0.8;
+}
+
+.lf-form-input-content {
+    vertical-align: middle;
+}
+
+.lf-form-input-content.left {
+    display: inline;
+}
+
+.lf-form-input-content.right {
+    padding-left: 0.5em;
+}

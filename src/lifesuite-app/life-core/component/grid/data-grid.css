@@ -1,0 +1,27 @@
+data-grid {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Fixes layout issue with grid not resizing when browser width decreased */
+#center {
+    width: auto !important;
+}
+
+.lf-grid-checkbox-column-cell {
+    text-align: center;
+}
+
+.lf-grid-checkbox-header-cell {
+    text-align: center;
+}
+
+.ag-ltr .lf-grid-checkbox-header-cell .ag-header-select-all {
+    float: none;
+    margin-right: 4px;
+}
+
+/* Column autoheight */
+.cell-wrap-text {
+    white-space: normal !important;
+}

@@ -1,0 +1,70 @@
+﻿<div class="lf-dashed-bottom-border">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="caseNumber" label="Case #" i18n-label="@@policy.mib.detail.case">
+                <lf-statictext #caseNumber name="caseNumber" [value]="data.PolicyNumber" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="name" label="MIB Name" i18n-label="@@policy.mib.detail.mibname">
+                <lf-statictext #name name="name" [value]="mibName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="birthDate" label="Birth Date" i18n-label="@@policy.mib.detail.birthdate">
+                <lf-statictext #birthDate name="birthDate" [value]="data.BirthDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="birthPlace" label="Birth Place" i18n-label="@@policy.mib.detail.birthplace">
+                <lf-statictext #birthPlace name="birthPlace" [value]="data.PlaceOfBirth" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="gender" label="Gender" i18n-label="@@policy.mib.detail.gender">
+                <lf-statictext #gender name="gender" [value]="data.Gender" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="occupation" label="Occupation" i18n-label="@@policy.mib.detail.occupation">
+                <lf-statictext #occupation name="occupation" [value]="data.Occupation" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="hitOrTry" label="Hit or Try" i18n-label="@@policy.mib.detail.hitortry">
+                <lf-statictext #hitOrTry name="hitOrTry" [value]="data.ReplyType" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="inquiryType" label="Inquiry Type" i18n-label="@@policy.mib.detail.inquirytype">
+                <lf-statictext #inquiryType name="inquiryType" [value]="data.InqType" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="inquiryDate" label="Inquiry Date" i18n-label="@@policy.mib.detail.inquirydate">
+                <lf-statictext #inquiryDate name="inquiryDate" [value]="data.InquiryDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="modifyDate" label="Modified Date" i18n-label="@@policy.mib.detail.modifydate">
+                <lf-statictext #modifyDate name="modifyDate" [value]="data.ModifyDatetime | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="recordType" label="Record Type" i18n-label="@@policy.mib.detail.recordtype">
+                <lf-statictext #recordType name="recordType" [value]="data.RecType" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-start">
+    <div class="lf-grid-title">{{title}}</div>
+</div>
+<div class="row">
+    <data-grid #dataGrid style="width:100%;height:150px;" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)"></data-grid>
+</div>
+<div class="row justify-content-start">{{recordCount}} Records</div>

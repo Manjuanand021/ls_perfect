@@ -1,0 +1,28 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="riskFactor" label="Risk Factor" i18n-label="@@policy.worksheet.debitcredit.gridheader.riskfactor">
+                <lf-inputtext #riskFactor name="riskFactor" [(ngModel)]="data.RiskFactor" maxLength="100"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="description" label="Description" i18n-label="@@policy.worksheet.debitcredit.gridheader.description">
+                <lf-inputtext #description name="description" [(ngModel)]="data.Note" maxLength="200" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="debit" label="Debit/Credit" i18n-label="@@policy.worksheet.debitcredit.gridheader.debitcredit">
+                <lf-inputnumber #debit name="debit" min="-999" max="9999" [(ngModel)]="data.Debit" format="n0"
+                    maxLength="4" decimals="0" secureComponent required></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="createdBy" label="Created By" i18n-label="@@policy.worksheet.debitcredit.gridheader.createdby">
+                <lf-statictext #createdBy name="createdBy" [value]="userName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

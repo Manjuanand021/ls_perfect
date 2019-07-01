@@ -1,0 +1,9 @@
+﻿<lf-panel header="Other Insurance Cases and Policies" i18n-header="@@policy.applicant.otherInsurancePolicies.title" [toggleable]="true"
+    panelType="primary" stateId="panel_otherInsuranceCasesAndPolicies" [state]="componentsState.get('panel_otherInsuranceCasesAndPolicies')"
+    [initCollapsed]=true secureComponent>
+    <div class="row">
+        <master-detail [gridOptions]="gridOptions" [buttons]="buttons" [title]="title" [showDetailAsPopup]="showDetailAsPopup" secureComponent
+            [disabled]="disabled" style="width: 100%;">
+        </master-detail>
+    </div>
+</lf-panel>

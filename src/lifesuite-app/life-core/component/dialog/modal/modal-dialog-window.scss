@@ -1,0 +1,12 @@
+﻿$maximized-dialog-vertical-offset: 1.75rem;
+$dialog-header-and-footer-height: 4.5rem;
+
+@media screen {
+    .modal-adaptive .modal-dialog {
+        width: 95% !important;
+        max-width: calc(95%);
+    }
+    .modal-adaptive .modal-body {
+        min-height: calc(100vh - #{($maximized-dialog-vertical-offset * 2)} - #{$dialog-header-and-footer-height});
+    }
+}

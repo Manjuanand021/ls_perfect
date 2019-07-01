@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between">
+    <div class="lf-grid-title">{{title}}</div>
+    <div class="ml-auto pb-2">
+        <lf-button id="openPolicyButton" label="Open" i18n-label="@@general.button.label.open" (onClick)="onOpenButtonClick()"
+            styleClass="btn btn-primary mt-2" [disabled]="isOpenButtonDisabled" secureComponent></lf-button>
+    </div>
+</div>
+<div class="row ls-task-list-grid">
+    <data-grid #dataGrid style="width: 100%" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event) "
+        (rowDoubleClicked)="onRowDoubleClicked($event) " (filterChanged)="onFilterChange() "></data-grid>
+</div>
+<div class="row">
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

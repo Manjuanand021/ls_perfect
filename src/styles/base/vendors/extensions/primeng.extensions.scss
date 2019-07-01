@@ -1,0 +1,13 @@
+// Include custom global PrimeNG styles here
+
+//State for sub elements, such as secondary left menu item
+//the class prefix has to be changes since it is not a primeng class
+.ui-sub-state-active {
+    border-color: $stateSubActiveBorderColor;
+    background: $stateSubActiveBgColor;
+    font-weight: 600;
+}
+
+.lf-emailAddress .ui-inputtext {
+    width: 200px;
+}

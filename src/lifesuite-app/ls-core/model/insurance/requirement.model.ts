@@ -1,0 +1,48 @@
+﻿import { BaseModel } from '../core';
+import { DBDate } from '../util';
+
+export class RequirementModel extends BaseModel {
+    public readonly $type: string = 'vpi.aus.insurance.core.RequirementModel, LifeSuite';
+    public InsuredRequirementId: Object;
+    public RequirementInformationId: object;
+    public RequirementCode: string;
+    public AddedBy: object;
+    public AddedDate: DBDate;
+    public ClosedBy: object;
+    public ClosedDate: DBDate;
+    public ClosedDisposition: string;
+    public NeededForApprovalFlag: object;
+    public NotifyWhenSatisfied: object;
+    public NotifyCmWhenSatisfied: object;
+    public ReviewMessageId: object;
+    public PolicyPersonId: object;
+    public FollowupDate: DBDate;
+    public OrderedBy: string;
+    public CanAutoApprove: object;
+    public NotifyWhenReceived: object;
+    public ReceivedId: object;
+    public NoteId: object;
+    public ReceivedDate: DBDate;
+    public ReceivedBy: object;
+    public CreateComment: string;
+    public OrderedDate: DBDate;
+    public Provider: string;
+    public EvidenceType: string;
+    public AuthorizationRequired: object;
+    public ExternalRequirementCode: string;
+    public LastFollowupDate: DBDate;
+    public ManualOrAutomaticEntry: string;
+    public NewBusinessUntilClosed: object;
+    public ProviderOrderId: object;
+    public ScheduleDate: DBDate;
+    public CompleteDate: DBDate;
+    public AltCreateComment: string;
+    public AttachedDocumentId: string;
+    public DocUrl: string;
+    public OrderedById: object;
+    public OrderedByTeam: string;
+    public AccountCode: string;
+    public RequirementComment: string;
+    public AlwaysOrder: string;
+    public NotifyCmWhenReceived: object;
+}

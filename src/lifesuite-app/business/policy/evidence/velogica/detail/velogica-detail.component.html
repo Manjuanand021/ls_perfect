@@ -1,0 +1,64 @@
+<div class="lf-solid-bottom-border">
+    <div class="lf-page-subheader" i18n="@@mywork.applicantpreview.label.applicantInformation">Applicant Information</div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input label="Applicant Name" i18n-label="@@policy.velogica.detail.applicantname" [control]="applicantName">
+                <lf-statictext #applicantName name="applicantName" [value]="applicantFullName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input label="Tax ID" i18n-label="@@policy.velogica.detail.taxid" [control]="taxId">
+                <lf-statictext #taxId name="taxId" [value]="applicant.TaxId" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input label="Birth Date" i18n-label="@@policy.velogica.detail.birthdate" [control]="birthDate">
+                <lf-statictext #birthDate name="birthDate" [value]="applicant.BirthDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input label="Gender" i18n-label="@@policy.velogica.detail.gender" [control]="gender">
+                <lf-statictext #gender name="gender" [value]="applicant.Sex" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+</div>
+<div class="lf-page-subheader" i18n="@@policy.velogica.result.sectiontitle">Velogica Underwriting Decision</div>
+<div class="row">
+    <div class="col-4">
+        <lf-form-input label="Status" i18n-label="@@policy.velogica.detail.status" [control]="status">
+            <lf-statictext #status name="status" [value]="data.StatusResponse" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <lf-form-input label="UW Class Approved" i18n-label="@@policy.velogica.detail.uwclassapproved" [control]="uwClassApproved">
+            <lf-statictext #uwClassApproved name="uwClassApproved" [value]="data.UnderwritingClass" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <lf-form-input label="Coverage Information" i18n-label="@@policy.velogica.detail.coverage" [control]="coverageInformation">
+            <lf-statictext #coverageInformation name="coverageInformation" [value]="coveragePlanName" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <lf-form-input label="Decision" i18n-label="@@policy.velogica.detail.decision" [control]="decision">
+            <lf-statictext #decision name="decision" [value]="data.Decision" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <lf-form-input label="UW Smoker Class" i18n-label="@@policy.velogica.detail.uwSmoker" [control]="uwSmokerClass">
+            <lf-statictext #uwSmokerClass name="uwSmokerClass" [value]="data.SmokerClass" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <lf-form-input label="Support Information Received" i18n-label="@@policy.velogica.detail.evidenceIncluded" [control]="supportInformationReceived">
+            <lf-statictext #supportInformationReceived name="supportInformationReceived" [value]="data.EvidenceIncluded" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="lf-dashed-bottom-border"></div>
+<velogica-reasons-data [velogicaDetailList]="data.Details_LazyLoad"></velogica-reasons-data>

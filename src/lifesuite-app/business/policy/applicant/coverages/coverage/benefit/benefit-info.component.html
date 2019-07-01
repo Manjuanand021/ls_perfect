@@ -1,0 +1,37 @@
+<div [hidden]="!item.visible" [@fadeInOut]="item.visible">
+    <div class="itemContent" [class.invalid]="item.invalid">
+        <div class="row">
+            <div class="col-4">
+                <lf-form-input label="Benefit" [control]="benefitId" i18n-label="@@aapplicant.coverage.benefit.benefit">
+                    <lf-statictext #benefitId name="benefitId_{{item.sequenceId}}" [value]="benefitName"
+                        secureComponent></lf-statictext>
+                </lf-form-input>
+            </div>
+            <div class="col-4">
+                <lf-form-input label="Amount" [control]="amount" i18n-label="@@applicant.coverage.benefit.amount">
+                    <lf-inputnumber #amount name="amount_{{item.sequenceId}}" [(ngModel)]="item.data.Amount"
+                        [allowNegative]="false" maxLength="10" secureComponent></lf-inputnumber>
+                </lf-form-input>
+            </div>
+            <div class="col-4">
+                <lf-form-input label="Duration" [control]="duration" i18n-label="@@applicant.coverage.benefit.duration">
+                    <lf-inputnumber #duration name="duration_{{item.sequenceId}}" [(ngModel)]="item.data.BenefitDuration"
+                        format="n0" decimals="0" [allowNegative]="false" maxLength="3" secureComponent></lf-inputnumber>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <lf-form-input label="Additional Information" [control]="additionalInformation" i18n-label="@@applicant.coverage.benefit.addlinfo">
+                    <lf-inputtext #additionalInformation name="additionalInformation_{{item.sequenceId}}" [(ngModel)]="item.data.Description"
+                        [maxLength]="255" secureComponent></lf-inputtext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pb-1">
+                <benefit-party [benefit]="item.data"></benefit-party>
+            </div>
+        </div>
+    </div>
+</div>

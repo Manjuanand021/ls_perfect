@@ -1,0 +1,32 @@
+<lf-panel header="Payor" i18n-header="@@policy.case.payor.title" [toggleable]="true" panelType="secondary" stateId="panel_payor"
+ [state]="componentsState.get('panel_payor')" secureComponent>
+	<div [@fadeInOut]="data.visible">
+		<div class="itemContent" [class.invalid]="data.invalid">
+			<div class="payor">
+				<div class="row">
+					<div class="col-3">
+						<lf-form-input [control]="payorPrimaryInsured" label="Primary Insured" i18n-label="@@policy.case.payor.primaryinsured">
+							<lf-radiobuttongroup #payorPrimaryInsured name="payorPrimaryInsured" [(ngModel)]="data.isPrimaryInsured" (change)="onPrimaryInsuredAsPayorClick($event); refCompose.onModelChange()"
+							 secureComponent>
+								<span>
+									<lf-radiobutton name="payorPrimaryInsured" [value]=true label="Yes" i18n-label="@@policy.case.payor.yes"></lf-radiobutton>
+								</span>
+								<span>
+									<lf-radiobutton name="payorPrimaryInsured" [value]=false label="No" i18n-label="@@policy.case.payor.no"></lf-radiobutton>
+								</span>
+							</lf-radiobuttongroup>
+						</lf-form-input>
+					</div>
+					<div class="col-3">
+						<lf-form-input [control]="partyType" label="Party Type" i18n-label="@@policy.case.payor.partytype">
+							<lf-select #partyType name="payor_partyType" [items]="listData['PersonTypeId'] | listItems:'value':'Id'" [(ngModel)]="data.PersonTypeId"
+							 (change)="onPayorTypeChange($event)" [disabled]="data.isPrimaryInsured" [clearable]="false" secureComponent required
+							 style="width:150px"></lf-select>
+						</lf-form-input>
+					</div>
+				</div>
+				<compose #refCompose [model]="data" [componentType]="itemComponentType"></compose>
+			</div>
+		</div>
+	</div>
+</lf-panel>

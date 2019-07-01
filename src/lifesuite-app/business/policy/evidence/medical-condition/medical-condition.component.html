@@ -1,0 +1,16 @@
+﻿<div class="row lf-dashed-bottom-border">
+    <div class="col-12">
+        <master-detail [gridOptions]="gridOptions" [buttons]="buttons" [showDetailAsPopup]="showDetailAsPopup"
+            secureComponent [ngStyle]="{'width': '100%'}">
+        </master-detail>
+    </div>
+</div>
+<div class="row justify-content-start">
+    <div class="col-2">
+        <lf-form-input [control]="medicalCondition" label="Total" i18n-label="@@policy.medicalcondition.grid.totalconditionpoints"
+            labelPosition="left">
+            <lf-statictext #medicalCondition name="medicalCondition" [value]="medicalConditionTotalPoints | lfDecimal:'1.0-0'"
+                secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+/* item-list.css */
+
+.lf-item {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.625rem;
+}
+
+.lf-item .lf-item-selected,
+.lf-item .lf-item-selected:hover {
+    cursor: auto;
+    border: 2px solid #3baae3;
+}
+
+.lf-item .lf-item-unselected:hover,
+.lf-item-button:hover {
+    cursor: pointer;
+}
+
+.lf-item-buttonbar {
+    padding: 0.3125rem 0;
+}
+
+.lf-item-button {
+    width: 60px;
+    height: 30px;
+    margin: 0 0.625rem;
+    padding: 0;
+}
+
+.lf-item-list {
+    list-style: none;
+    padding: 0px;
+}
+
+/* CSS3-Animations */
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

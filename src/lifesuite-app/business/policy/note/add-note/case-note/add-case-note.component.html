@@ -1,0 +1,153 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="caseNumber" label="Case #" i18n-label="@@policy.notes.addnotes.casenumber">
+                <lf-statictext #caseNumber name="caseNumber" [value]="policy.PolicyNumber" secureComponent>
+                </lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="caseManager" label="Case Manager"
+                i18n-label="@@policy.notes.addnotes.casemanager">
+                <lf-statictext #caseManager name="caseManager" [value]="serviceAssociateName" secureComponent>
+                </lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="agency" label="Agency" i18n-label="@@policy.notes.addnotes.agency">
+                <lf-statictext #agency name="agency" [value]="agencyName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="agent" label="Agent" i18n-label="@@policy.notes.addnotes.agent">
+                <lf-statictext #agent name="agent" [value]="agentName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="createdOn" label="Created On" i18n-label="@@policy.notes.addnotes.createdon">
+                <lf-statictext #createdOn name="createdOn" [value]="dateCreated | lfDate" secureComponent>
+                </lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="createdBy" label="Created By" i18n-label="@@policy.notes.addnotes.createdby">
+                <lf-statictext #createdBy name="createdBy" [value]="userName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-lg-6">
+            <lf-form-input [control]="applicant" label="Applicant" i18n-label="@@policy.notes.addnotes.applicant">
+                <lf-select #applicant name="applicant" [items]="applicantList" [(ngModel)]="applicantId"
+                    (change)="onApplicantChange($event)" [disabled]="isSupplementalNote || isApplicantListDisabled"
+                    style="width:200px" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="!showSubjectFieldList && !isSupplementalNote">
+        <div class="col-12">
+            <lf-form-input [control]="subject" label="Subject" i18n-label="@@policy.notes.addnotes.subject">
+                <lf-inputtext #subject name="subject" [(ngModel)]="data.Topic" [maxLength]="254"
+                    [disabled]="isSubjectDisabled" [style]="{ width: '280px' }" secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="showSubjectFieldList && !isSupplementalNote">
+        <div class="col-12">
+            <lf-form-input [control]="subjectList" label="Subject" i18n-label="@@policy.notes.addnotes.subject">
+                <lf-select #subjectList name="subjectList" [items]="subjectListOptions | listItems: 'label':'value'"
+                    [(ngModel)]="data.Topic" [disabled]="isSubjectDisabled" style="width:280px" [clearable]="false"
+                    secureComponent required></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input [control]="visibilityList" label="Visibility"
+                i18n-label="@@policy.notes.addnotes.visibility">
+                <lf-select #visibilityList name="visibilityList"
+                    [items]="visibilityListOptions | listItems: 'label':'value'" [(ngModel)]="data.Visibility"
+                    style="width:200px" (change)="onVisibilityChange($event)" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input [control]="needsReview" label="Needs Review"
+                i18n-label="@@policy.notes.addnotes.needsreview">
+                <lf-radiobuttongroup #needsReview name="needsReview" [(ngModel)]="needReview"
+                    (change)="onNeedReviewChange($event)" secureComponent>
+                    <span>
+                        <lf-radiobutton name="needsReview" [value]="true" label="Yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="needsReview" [value]="false" label="No"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-xl-6">
+            <lf-form-input [control]="noteReviewDate" label="Review Date"
+                i18n-label="@@policy.notes.addnotes.reviewdate">
+                <ls-inputdate #noteReviewDate name="noteReviewDate" [(ngModel)]="data.DiaryDate"
+                    [disabled]="!needReview" [required]="needReview" secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+        <div class="col-12 col-xl-4">
+            <lf-form-input [control]="reviewerTypeList" label="Reviewer Type"
+                i18n-label="@@policy.notes.addnotes.reviewertype">
+                <lf-select #reviewerTypeList name="reviewerTypeList"
+                    [items]="reviewerTypeListOptions | listItems: 'value':'Id'" [(ngModel)]="data.UserType"
+                    style="width: 100px" (change)="onReviewerTypeChange($event)" [disabled]="!needReview"
+                    [required]="needReview" [clearable]="false" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-xl-5">
+            <lf-form-input [control]="reviewerList" label="Reviewer" i18n-label="@@policy.notes.addnotes.reviewer">
+                <lf-select #reviewerList name="reviewerList" [items]="reviewerListOptions | listItems: 'label':'value'"
+                    [(ngModel)]="data.ReferToUserId" style="width:150px" [disabled]="!needReview"
+                    [required]="needReview" [clearable]="false" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-xs-12 col-xl-7">
+            <lf-form-input [control]="sendEmail" label="Send Email" i18n-label="@@policy.notes.addnotes.sendemail">
+                <lf-radiobuttongroup #sendEmail name="sendEmail" [(ngModel)]="data.EmailToList" [disabled]="!needReview"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="sendEmail" value="Yes" label="Yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="sendEmail" value="No" label="No"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input [control]="noteTextArea" [label]="noteFieldLabel">
+                <lf-inputtextarea #noteTextArea name="noteTextArea" rows="7" [style]="{ width: '100%' }"
+                    [(ngModel)]="data.Note" secureComponent required></lf-inputtextarea>
+            </lf-form-input>
+        </div>
+    </div>
+    <hr *ngIf="isSupplementalNote" />
+    <div class="row" *ngIf="isSupplementalNote">
+        <div class="col-12">
+            <div style="height: 150px; overflow-y: auto; border:1px solid grey">
+                <ls-note noteTitle="Note" [noteSubject]="parentNote.Topic"
+                    [noteCreatedOn]="parentNote.AddedDate | dbDate" [noteCreatedBy]="getAuthorName(parentNote)"
+                    [note]="parentNote.Note" i18n-noteTitle="@@policy.notes.addnotes.note"></ls-note>
+                <div *ngFor="let supplementalNote of parentNote.SupplementalNotes">
+                    <ls-supplemental-note noteTitle="Past Supplemental Notes"
+                        [noteReferredTo]="getReferredToUserName(supplementalNote)"
+                        [noteCreatedOn]="supplementalNote.AddedDate | dbDate: 'shortDateMediumTime'"
+                        [noteCreatedBy]="getAuthorName(supplementalNote)" [note]="supplementalNote.Note"
+                        i18n-noteTitle="@@policy.notes.addnotes.supplementalnote"></ls-supplemental-note>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

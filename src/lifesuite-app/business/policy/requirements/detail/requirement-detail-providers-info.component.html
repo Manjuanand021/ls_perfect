@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-sm-10">
+        <lf-form-input label="Physician" i18n-label="@@policy.requirement.provider.physician" [control]="physician">
+            <lf-select #physician name="physician" [items]="physicianList | listItems:'label':'value' | emptyItem"
+                [(ngModel)]="selectedPhysician" secureComponent style="width:150px" (change)="onPhysicianChange($event)"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="justify-content-end col-sm-2 pt-24">
+        <lf-button id="providerSearch" (click)="onProviderSearchButtonClick()" label="Provider Search" i18n-label="@@policy.requirement.provider.providersearch"
+            secureComponent styleClass="btn btn-primary"></lf-button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <lf-form-input label="Hospital/Clinic" i18n-label="@@policy.requirement.provider.hospitalclinic" [control]="hospital">
+            <lf-inputtext #hospital name="hospital" [(ngModel)]="data.medicalProviderProxyDTO.Company" maxLength="50"
+                secureComponent [required]="isHospitalFieldRequired" (blur)="updateHospitalFieldRequired()" [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="First Name" i18n-label="@@policy.requirement.provider.physicianfirstname" [control]="firstName">
+            <lf-inputtext #firstName name="firstName" [(ngModel)]="data.medicalProviderProxyDTO.FirstName" maxLength="250"
+                secureComponent [required]="!isHospitalFieldRequired" (blur)="updateNameFieldsRequired()"
+                [autocomplete]="false" [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="Last Name" i18n-label="@@policy.requirement.provider.physicianlastname" [control]="lastName">
+            <lf-inputtext #lastName name="lastName" [(ngModel)]="data.medicalProviderProxyDTO.LastName" maxLength="250"
+                secureComponent [required]="!isHospitalFieldRequired" (blur)="updateNameFieldsRequired()"
+                [autocomplete]="false" [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <lf-form-input label="Address" i18n-label="@@policy.requirement.provider.address1" [control]="address1">
+            <lf-inputtext #address1 name="address1" [(ngModel)]="data.medicalProviderProxyDTO.AddressLine1" maxLength="100"
+                secureComponent [autocomplete]="false" [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="" [control]="address2">
+            <lf-inputtext #address2 name="address2" [(ngModel)]="data.medicalProviderProxyDTO.AddressLine2" maxLength="100"
+                secureComponent [autocomplete]="false" [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <lf-form-input label="City" i18n-label="@@policy.requirement.provider.city" [control]="city">
+            <lf-inputtext #city name="city" [(ngModel)]="data.medicalProviderProxyDTO.AddressCity" maxLength="255"
+                secureComponent required [autocomplete]="false" [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="Country" i18n-label="@@policy.requirement.provider.physiciancountry" [control]="country">
+            <lf-select #country name="country" [items]="listData.country | listItems:'label':'value' | emptyItem"
+                [(ngModel)]="data.medicalProviderProxyDTO.CountryID" (change)="onCountryChange()" style="width:150px"
+                secureComponent required [disabled]="isRequirementSatisfied"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="State" i18n-label="@@policy.requirement.provider.physicianstate" [control]="state">
+            <lf-select #state name="state" 
+                [items]="listData | stateListPicker: data.medicalProviderProxyDTO.CountryID | listItems:'label':'externalCode'  | emptyItem | sortList"
+                [(ngModel)]="data.medicalProviderProxyDTO.AddressState" style="width:150px" secureComponent required
+                [disabled]="isRequirementSatisfied"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="Postal Code" i18n-label="@@policy.requirement.provider.physicianpostalcode" [control]="postalCode">
+            <lf-inputzipcode #postalCode name="postalCode" [zipCodeType]="data.medicalProviderProxyDTO.CountryID | getZipCodeType"
+                [(ngModel)]="data.medicalProviderProxyDTO.Zip" secureComponent [autocomplete]="false" [disabled]="isRequirementSatisfied"></lf-inputzipcode>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="Phone Number" i18n-label="@@policy.requirement.provider.physicianworkphone" [control]="phoneNumber">
+            <ls-inputphone #phoneNumber name="phoneNumber" [(ngModel)]="data.medicalProviderProxyDTO.PhoneDTO"
+                secureComponent [autocomplete]="false" [disabled]="isRequirementSatisfied"></ls-inputphone>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <lf-form-input label="Provider ID" i18n-label="@@policy.requirement.provider.providerid" [control]="providerID">
+            <lf-inputtext #providerID name="providerID" [(ngModel)]="data.medicalProviderProxyDTO.GovtID" maxLength="50"
+                restrictDecimals="true" secureComponent [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-3">
+        <lf-form-input label="Patient ID" i18n-label="@@policy.requirement.provider.patientid" [control]="patientID">
+            <lf-inputtext restrictDecimals="true" #patientID name="patientID" [(ngModel)]="data.medicalProviderProxyDTO.PatientID"
+                maxLength="1024" secureComponent [disabled]="isRequirementSatisfied"></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div #buttonElement [ngClass]="{'ui-splitbutton lf-infobutton ui-buttonset ui-widget ui-corner-all':true,'ui-state-disabled':disabled,'lf-state-selected':selected}"
+    [ngStyle]="style" [class]="styleClass">
+    <button #defaultbtn type="button" pButton [name]="name" [icon]="icon" [iconPos]="iconPos" [label]="label" lfInfo
+        [infoLabel]="infoLabel" class="ui-corner-all" (click)="onDefaultButtonClick($event)" [disabled]="disabled"></button>
+</div>

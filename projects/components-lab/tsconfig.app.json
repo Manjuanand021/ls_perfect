@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/app",
+        "types": ["node"],
+        "typeRoots": ["../../node_modules/@types"],
+        "baseUrl": "./src",
+        "paths": {
+            "life-core/*": ["../../../src/lifesuite-app/life-core/*"],
+            "ls-core/*": ["../../../src/lifesuite-app/ls-core/*"],
+            "lpla-core/*": ["app/lpla-core/*"],
+            "lab/*": ["app/*"],
+            "shared/*": ["app/shared/*"],
+            "environments/*": ["../../../src/environments/*"],
+            "tests/*": ["tests/*"]
+        }
+    },
+    "exclude": ["test.ts", "**/*.spec.ts"]
+}

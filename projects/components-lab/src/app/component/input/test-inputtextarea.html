@@ -1,0 +1,74 @@
+<form #form="ngForm">
+    <br />
+    <label>Textarea</label> <br />
+    <div id="view1" class="col-sm-9">
+        <div class="row">
+            <div class="col-sm-1">
+                <label>Required</label>
+                <lf-select
+                    name="required"
+                    [items]="trueFalseList"
+                    [(ngModel)]="required"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Disabled</label>
+                <lf-select
+                    name="disabled"
+                    [items]="trueFalseList"
+                    [(ngModel)]="disabled"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Hidden</label>
+                <lf-select
+                    name="hidden"
+                    [items]="trueFalseList"
+                    [(ngModel)]="hidden"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>ReadOnly</label>
+                <lf-select
+                    name="readonly"
+                    [items]="trueFalseList"
+                    [(ngModel)]="readonly"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label># Of Rows</label> <input name="numRows" [(ngModel)]="rows" style="width:100px;" />
+            </div>
+            <div class="col-sm-1">
+                <label># Of Cols</label> <input name="numCols" [(ngModel)]="cols" style="width:100px;" />
+            </div>
+        </div>
+        <br />
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-sm-3">
+                <lf-form-input label="Sr TextArea" [control]="inputTextareaField1">
+                    <lf-inputtextarea
+                        #inputTextareaField1
+                        name="inputTextareaField1"
+                        [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)"
+                        [readonly]="toBoolean(readonly)"
+                        [(ngModel)]="fields.srTextareaField.value"
+                        rows="rows"
+                        cols="cols"
+                    ></lf-inputtextarea>
+                </lf-form-input>
+                <pre>Selected value: {{ fields.srTextareaField.value || 'none' }}</pre>
+            </div>
+        </div>
+    </div>
+</form>

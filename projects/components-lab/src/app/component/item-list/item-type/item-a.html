@@ -1,0 +1,8 @@
+<lf-panel header="Item A" [toggleable]="true" panelType="secondary">
+	<div [hidden]="!item.visible" [@fadeInOut]="item.visible">
+		<div #refDOMContext class="itemContent typeA">
+			<div>{{data.name}}</div>
+			<div>id={{data.id}}</div>
+		</div>
+	</div>
+</lf-panel>

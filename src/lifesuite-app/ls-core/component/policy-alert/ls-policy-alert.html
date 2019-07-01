@@ -1,0 +1,5 @@
+<div class="ls-policy-alert-container">
+    <div class="ls-policy-alert-icon {{iconCssClass}}"></div>
+    <lf-hyperlink [value]="policyCount" (click)="onAlertClick($event)" class="ls-policy-alert-link"></lf-hyperlink>
+    <div (click)="onAlertClick($event)" class="ls-policy-alert-description">{{description}}</div>
+</div>

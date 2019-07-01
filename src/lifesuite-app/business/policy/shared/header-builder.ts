@@ -1,0 +1,1 @@
+﻿export const HeaderItemSeparator: string = String.fromCharCode(160).repeat(10);

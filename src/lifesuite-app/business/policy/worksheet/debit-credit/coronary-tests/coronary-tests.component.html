@@ -1,0 +1,7 @@
+<div class="lf-grid-title" i18n="@@policy.worksheet.debitcredit.coronarytests">Coronary Tests</div>
+<data-grid #dataGrid [ngStyle]="{height: gridOptions.height}" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)">
+</data-grid>
+<lf-form-input [control]="coronaryTestsTotal" label="Total" i18n-label="@@policy.worksheet.debitcredit.total"
+    labelPosition="left">
+    <lf-statictext #coronaryTestsTotal name="coronaryTestsTotal" [value]="total | lfDecimal:'1.0-0'" secureComponent></lf-statictext>
+</lf-form-input>

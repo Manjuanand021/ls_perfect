@@ -1,0 +1,19 @@
+﻿<div class="modal-header" (click)="dialogMaximizeHandler.onHeaderClick($event)" (mousedown)="dialogDragHandler.onHeaderMouseDown($event)"
+ (mouseup)="dialogDragHandler.onHeaderMouseUp($event)" (mouseleave)="dialogDragHandler.onHeaderMouseLeave($event)" (mousemove)="dialogDragHandler.onDialogDrag($event)"
+ (dragstart)="dialogDragHandler.onDialogDragStart($event)">
+	<div class="modal-title">{{title}}</div>
+	<div class="control-bar">
+		<button type="button" class="control-bar-maximize" aria-label="Maximize" (click)="dialogMaximizeHandler.onMaximizeClick($event)">
+			<span [ngClass]="['fa','lf-modal-control-bar-button', maximized?'fa-window-restore':'fa-window-maximize']" aria-hidden="true"></span>
+		</button>
+		<button type="button" class="control-bar-close" aria-label="Close" (click)="onCloseClick()">
+			<span class="fa fa-window-close lf-modal-control-bar-button" aria-hidden="true"></span>
+		</button>
+	</div>
+</div>
+<div class="modal-body ">
+	<compose [componentType]="view " [model]="data "></compose>
+</div>
+<div class="modal-footer ">
+	<dialog-buttonbar [buttons]="buttons" (buttonClick)="onButtonClick($event)"></dialog-buttonbar>
+</div>

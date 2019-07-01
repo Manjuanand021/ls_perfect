@@ -1,0 +1,140 @@
+label {
+    font-weight: 600;
+    clear: both;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    vertical-align: top;
+    display: inline-block !important;
+    font-size: 0.8rem;
+}
+.label-appearance {
+    label:first-child {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+/*
+.label-block {
+	display: block !important;
+}
+
+.form-body {
+    background-color: $form-body-bg;
+	color: $form-body-color;
+	padding: 20px 5px;
+	border-bottom-right-radius: $form-radius;
+	border-bottom-left-radius: $form-radius;
+}
+
+.form-control {
+    padding: 10px 5px;
+}
+
+.radio-label {
+    font-weight: normal;
+    text-shadow: $radio-label-text-shadow;
+}
+
+.input-group, .fullwidthdropdownlist {
+    width: 100%;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    height: $radio-checkbox-height;
+    width: $radio-checkbox-width;
+    margin: 0;
+}
+
+*/
+
+/*For ipad this corrects the radio button issue*/
+
+/*
+input[type="radio"] {
+     border-radius: 20px; 
+    -webkit-border-radius:20px;
+}
+
+.form-group {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.formrow {
+    display: inline;
+	margin:0 auto;
+    float: left;
+    padding:9px 5px 3px 5px;
+    border: $input-control-border;
+    width: 50%;
+    text-align: left;
+	background: $formrow-bg-default; 
+}
+
+.formrow:first-of-type {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.formrow:last-of-type {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+form fieldset p{
+	display: inline !important;
+	width: auto !important;
+}
+*/
+
+/*
+fieldset {
+    border: none;
+	width: 100%;
+	max-width: $panel-max-width;
+}
+
+div.field-required {
+	width: 10px;
+	height: 13px;
+	margin-left: 5px;
+	display: inline-block;
+	background-image: url('../../styles/images/form/required-mark.png');
+	background-repeat: no-repeat;
+}
+
+div.help-tooltip {
+	width: 16px;
+	height: 16px;
+	margin-left: 5px;
+	display: inline-block;
+	vertical-align: super;
+	background-image: url('../../styles/images/form/question-mark.png');
+	background-repeat: no-repeat;
+    transition:  box-shadow .3s;
+	border-radius: 8px;
+	border: none;
+}
+
+div.help-tooltip:hover {
+    box-shadow: $help-toolkit-icon-hover;
+    transition:  box-shadow .3s;
+}
+*/
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+/*
+@include media-breakpoint-up(sm) {
+	.form-body {
+		padding: 20px;
+	}
+
+	.form-group {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+}
+*/

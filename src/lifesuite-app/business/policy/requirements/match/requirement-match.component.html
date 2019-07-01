@@ -1,0 +1,16 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="pb-3">
+            <lf-form-input [control]="viewList" label="View" i18n-label="@@policy.matching.view">
+                <lf-select #viewList name="viewList" [(ngModel)]="filterModel.selectedView" [items]="viewListOptions"
+                    style="width:200px" (change)="onViewChange()" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <data-grid style="height: 450px;" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)"
+            (rowDoubleClicked)="onRowDoubleClicked($event)" (filterChanged)="onFilterChange()">
+        </data-grid>
+    </div>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</form>

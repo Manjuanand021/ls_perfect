@@ -1,0 +1,86 @@
+<lf-panel header="Distribution" i18n-header="@@policy.case.distribution.title" panelType="primary" [toggleable]="true"
+    stateId="panel_distribution" [state]="componentsState.get('panel_distribution')" [initCollapsed]=true
+    secureComponent>
+
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="salesDirectorName" label="Regional Sales Director" i18n-label="@@policy.case.distribution.regSalesDir">
+                <lf-inputtext #salesDirectorName name="salesDirectorName" [(ngModel)]="data.policy.SalesDirectorName"
+                    maxLength="255" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="salesDirectorCode" label="Regional Sales Director Code" i18n-label="@@policy.case.distribution.regSalesDirCode">
+                <lf-inputtext #salesDirectorCode name="salesDirectorCode" maxLength="10" [(ngModel)]="data.policy.SalesDirectorCode"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="marketingCode" label="Marketing Code" i18n-label="@@policy.case.distribution.marketingCode">
+                <lf-inputtext #marketingCode name="marketingCode" maxLength="20" [(ngModel)]="data.policy.MarketingCode"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="marketingOrganizationName" label="Marketing Organization Name" i18n-label="@@policy.case.distribution.marketingOrgName">
+                <lf-inputtext #marketingOrganizationName name="marketingOrganizationName" maxLength="50" [(ngModel)]="data.policy.MarketingOrganizationName"
+                    secureComponent [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="agentTeamCode" label="Agent Team Code" i18n-label="@@policy.case.distribution.agentTeamCode">
+                <lf-inputtext format="n0" decimals="0" #agentTeamCode name="agentTeamCode" [maxLength]="5" [(ngModel)]="data.policy.AgentTeamCode"
+                    secureComponent [regExp]="numberRegex"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="agentStaffCode" label="Agent Staff Code" i18n-label="@@policy.case.distribution.agentStaffCode">
+                <lf-inputtext format="n0" decimals="0" #agentStaffCode name="agentStaffCode" [maxLength]="5"
+                    [(ngModel)]="data.policy.AgentStaffCode" secureComponent [regExp]="numberRegex"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="commissionOverride" label="Commission Override" i18n-label="@@policy.case.distribution.commissionOvr">
+                <lf-checkbox #commissionOverride name="commissionOverride" [(ngModel)]="data.policy.CommissionOverride"
+                    secureComponent></lf-checkbox>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="leadNumberId" label="Lead Number" i18n-label="@@policy.case.distribution.leadNumber">
+                <lf-inputtext #leadNumberId name="leadNumberId" maxLength="15" [(ngModel)]="data.policy.LeadNumberId"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="sourceInfo" label="Source Information" i18n-label="@@policy.case.distribution.sourceInformation">
+                <lf-select #sourceInfo name="sourceInfo" [items]="listData.SourceInfo | listItems:'value':'Id'" [clearable]="false"
+                    [(ngModel)]="data.policy.SourceInfo" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="applicationSourceType" label="Application Source Type" i18n-label="@@policy.case.distribution.appSourceType">
+                <lf-statictext #applicationSourceType name="applicationSourceType" [value]="data.policy.ApplicationSourceType"
+                    secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="distributorCode" label="Distribution Code" i18n-label="@@policy.case.distribution.distCode">
+                <lf-select #distributorCode name="distributorCode" [items]="listData.DistributorCode | listItems:'value':'Id'" [clearable]="false"
+                    [(ngModel)]="data.policy.DistributorCode" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="alternateCaseId" label="Alternate Policy Number" i18n-label="@@policy.case.distribution.altPolicyNbr">
+                <lf-inputtext #alternateCaseId name="alternateCaseId" maxLength="20" [(ngModel)]="data.policy.AlternateCaseId"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+</lf-panel>

@@ -1,0 +1,50 @@
+﻿<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Disposition" i18n-label="@@policy.worksheet.coverageDisposition" [control]="disposition">
+                <lf-select #disposition name="disposition" [(ngModel)]="data.Disposition" [items]="filteredDispositionList | listItems:'value':'Id' | emptyItem"
+                    (change)="onDispositionChange($event)" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="applyToAllOpenBenefit" label="Apply To All Open Benefits?" i18n-label="@@policy.worksheet.applytoallbenefits">
+                <lf-checkbox #applyToAllOpenBenefit name="applyToAllOpenBenefit" [(ngModel)]="applyToAllBenefits"
+                    secureComponent></lf-checkbox>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input label="Reason" i18n-label="@@policy.worksheet.coverageDispositionReason" [control]="dispositionChangeReason">
+                <lf-select #dispositionChangeReason name="dispositionChangeReason" [(ngModel)]="data.ReasonText"
+                    [items]="filteredReasonList | listItems:'value':'Id' | emptyItem" secureComponent style="width:200px"
+                    [required]="isReasonRequired"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="cancelOpenRequirementsExist">
+        <div class="col-12">
+            <lf-form-input label="Cancel Open Requirements" i18n-label="@@policy.worksheet.caseDispositionRequirements"
+                [control]="cancelOpenRequirementsOption">
+                <lf-radiobuttongroup #cancelOpenRequirementsOption name="cancelOpenRequirementsOption" [(ngModel)]="cancelOpenRequirementsValue"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="cancelOpenRequirementsOption" value="All" label="All" i18n-label="@@general.stringconstants.all"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="cancelOpenRequirementsOption" value="Exclude" label="Exclude Post Issue Requirements"
+                            i18n-label="@@policy.worksheet.caseDispositionRequirementExclude"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input label="Final Action Note" i18n-label="@@policy.worksheet.coverageDispositionNote" [control]="finalActionNote">
+                <lf-inputtextarea #finalActionNote name="finalActionNote" [(ngModel)]="data.FinalActionNote" [required]="isNoteRequired"
+                    secureComponent rows="10" cols="30"></lf-inputtextarea>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

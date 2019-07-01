@@ -1,0 +1,2 @@
+<span *ngIf="renderAsHtml;else innerTextBlock" [hidden]="hidden" innerHTML="{{value}}" class="lf-statictext"></span>
+<ng-template #innerTextBlock><span [hidden]="hidden" [innerText]="value" class="lf-statictext"></span></ng-template>

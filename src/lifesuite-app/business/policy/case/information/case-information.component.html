@@ -1,0 +1,148 @@
+﻿<lf-panel header="Case Information" i18n-header="@@policy.case.info.title" panelType="primary" [toggleable]="true"
+    stateId="panel_information" [state]="componentsState.get('panel_information')" secureComponent>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="companyName" label="Company Name" i18n-label="@@policy.case.info.company">
+                <lf-select #companyName name="companyName" [items]="listData.CompanyCode | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.policy.CompanyCode" secureComponent style="width:200px" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="preferredLanguage" label="Preferred Language" i18n-label="@@policy.case.info.language">
+                <lf-select #preferredLanguage name="preferredLanguage" [items]="listData.PreferredLanguageCode | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.policy.PreferredLanguageCode" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="applicationType" label="Application Type" i18n-label="@@policy.case.info.applicationtype">
+                <lf-select #applicationType name="applicationType" [items]="listData.ApplicationType | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.policy.ApplicationType" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="trialApplication" label="Trial Application" i18n-label="@@policy.case.info.trialapp">
+                <lf-radiobuttongroup #trialApplication name="trialApplication" [(ngModel)]="data.policy.TrialApplicationFlag"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton [value]=-1 label="Yes" i18n-label="@@general.stringconstants.yes" name="trialApplication"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton [value]=0 label="No" i18n-label="@@general.stringconstants.no" name="trialApplication"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="faceAmount" label="Face Amount" i18n-label="@@policy.case.info.faceamount">
+                <lf-inputnumber #faceAmount name="faceAmount" [(ngModel)]="data.policy.faceAmount" format="n2"
+                    [allowNegative]="false" maxLength="9" secureComponent disabled></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="cwaAmount" label="CWA Amount" i18n-label="@@policy.case.info.cwaamount">
+                <lf-inputnumber #cwaAmount name="cwaAmount" [(ngModel)]="data.policy.CwaAmount" format="n2"
+                    [allowNegative]="false" maxLength="10" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="cwaDate" label="CWA Date" i18n-label="@@policy.case.info.cwadate">
+                <ls-inputdate #cwaDate name="cwaDate" [(ngModel)]="data.policy.CwaDate" secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="conditionalReceiptNumber" label="Conditional Receipt Number" i18n-label="@@policy.case.info.condreceiptnumber">
+                <lf-inputtext #conditionalReceiptNumber name="conditionalReceiptNumber" maxLength="10" [(ngModel)]="data.policy.CondReceiptNumber"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="TIAFromReceived" label="TIA Form Received" i18n-label="@@policy.case.info.tiaformreceived">
+                <lf-checkbox #TIAFromReceived name="TIAFromReceived" [(ngModel)]="data.policy.TiaIndicator"
+                    secureComponent></lf-checkbox>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="lifeSuiteReceivedDate" label="LifeSuite Rec'd Date" i18n-label="@@policy.case.lifesuitereceiveddate.trialapp">
+                <ls-inputdate #lifeSuiteReceivedDate name="lifeSuiteReceivedDate" [(ngModel)]="data.policy.AddedDate"
+                    secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="requestedIssueDate" label="Requested Issue Date" i18n-label="@@policy.case.info.requestedissuedate">
+                <ls-inputdate #requestedIssueDate name="requestedIssueDate" [(ngModel)]="data.policy.RequestedIssueDate"
+                    secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="applicationNumber" label="Application Number" i18n-label="@@policy.case.info.applicationnumber">
+                <lf-inputtext #applicationNumber name="applicationNumber" [(ngModel)]="data.policy.ApplicationNumber"
+                    maxLength="20" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="applicationReceived" label="Application Received" i18n-label="@@policy.case.info.applicationreceiveddate">
+                <ls-inputdate #applicationReceived name="applicationReceived" [(ngModel)]="data.policy.ReceiveDate"
+                    (ngModelChange)="onApplicationReceivedDateChange()" secureComponent required></ls-inputdate>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="applicationSigned" label="Application Signed" i18n-label="@@policy.case.info.applicationsigneddate">
+                <ls-inputdate #applicationSigned name="applicationSigned" [(ngModel)]="data.policy.ApplicationDate"
+                    secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="agentSigned" label="Agent Signed" i18n-label="@@policy.case.info.agentsigneddate">
+                <ls-inputdate #agentSigned name="agentSigned" [(ngModel)]="data.policy.AgentSignedDate" (ngModelChange)="onAgentSignedDateChange()"
+                    secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="backdate" label="Backdate" i18n-label="@@policy.case.info.backdate">
+                <lf-checkbox #backdate name="backdate" [(ngModel)]="data.policy.BackDatePolicy" secureComponent></lf-checkbox>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="familyRelatedCaseId" label="Family/Related Case ID" i18n-label="@@policy.case.info.familyrelatedcaseid">
+                <lf-inputtext #familyRelatedCaseId name="familyRelatedCaseId" maxLength="20" [(ngModel)]="data.policy.CaseGroupId"
+                    secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="priority" label="Priority" i18n-label="@@policy.case.info.priority">
+                <lf-select #priority name="priority" [items]="listData.Priority | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.policy.Priority" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="underwriter" label="Underwriter" i18n-label="@@policy.case.info.underwriter">
+                <lf-select #underwriter name="underwriter" [items]="listData.UnderwriterId | listItems:'value':'Id'"
+                    [(ngModel)]="data.policy.UnderwriterId" [clearable]="false" secureComponent style="width:200px"
+                    (change)="onUnderwriterChange($event)" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="serviceAssociate" label="Service Associate" i18n-label="@@policy.case.info.serviceassociate">
+                <lf-select #serviceAssociate name="serviceAssociate" [items]="listData.ServiceAssociateId | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.policy.ServiceAssociateId" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="team" label="Team" i18n-label="@@policy.case.info.team">
+                <lf-select #team name="team" [disabled]="disabledTeam" [items]="listData.TeamId | listItems:'value':'Id' | emptyItem" [(ngModel)]="data.policy.TeamId"
+                    secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+</lf-panel>

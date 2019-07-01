@@ -1,0 +1,80 @@
+$icons-path: '~ag-grid-community/src/styles/icons/';
+
+// Fonts
+$font-family: inherit;
+$font-size: 10pt !default;
+
+$secondary-font-size: 10pt !default;
+$header-font-weight: 600 !default;
+
+$cell-horizontal-padding: 2px !default;
+
+// changes the default icon color
+$icon-color: #fff !default;
+$header-background-color: $grid-bg;
+$border-color: #9bc2e6;
+$hover-color: #d5ebf7 !default;
+$selected-color: #90caf9 !default;
+
+$focused-cell-border-color: transparent !default;
+
+// Important - don't move these import files;
+// they should stay here to work correctly with SASS variables
+// and css classes defined before and after them.
+@import '~ag-grid-community/src/styles/ag-grid.scss';
+@import '~ag-grid-community/src/styles/ag-theme-blue.scss';
+
+.ag-theme-blue {
+    font-size: $font-size;
+}
+
+.ag-theme-blue .ag-header {
+    font-weight: $header-font-weight;
+}
+
+.ag-theme-blue .ag-header-cell {
+    line-height: 20px;
+    padding-top: 2px;
+}
+
+.ag-theme-blue .ag-header-cell-label .ag-header-icon {
+    height: $icon-size;
+}
+
+.ag-theme-blue .ag-ltr .ag-cell-focus {
+    border-top: 2px solid transparent;
+    border-bottom: 1px dotted $border-color;
+    border-right: 1px dotted $border-color;
+    border-left: 2px solid transparent;
+}
+
+.ag-theme-blue .ag-overlay-no-rows-center {
+    padding: 0.1875rem 1.25rem;
+    border-radius: 3px;
+}
+
+//Icons background images copied over from ag-theme-blue.css file
+.ag-theme-blue .ag-header .ag-icon-asc {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNNSAzaDJ2OUg1eiIvPjxwYXRoIGQ9Ik04Ljk5MyA1LjJWMy40OTNoLTZ2Nkg0LjdWNS4yaDQuMjkzeiIgaWQ9ImIiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48dXNlIGZpbGw9IiNEOEQ4RDgiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggc3Ryb2tlPSIjRkZGIiBkPSJNNS41IDMuNWgxdjhoLTF6Ii8+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNS45OTMgNi40OTMpIj48dXNlIGZpbGw9IiNEOEQ4RDgiIHhsaW5rOmhyZWY9IiNiIi8+PHBhdGggc3Ryb2tlPSIjRkZGIiBkPSJNOC40OTMgNC43di0uNzA3aC01djVINC4yVjQuN2g0LjI5M3oiLz48L2c+PC9nPjwvc3ZnPg==);
+    display: inline-block;
+}
+.ag-theme-blue .ag-header .ag-icon-desc {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNNSAyaDJ2OUg1eiIvPjxwYXRoIGQ9Ik04Ljk5MyA2LjFWNC4zOTNoLTZ2Nkg0LjdWNi4xaDQuMjkzeiIgaWQ9ImIiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48dXNlIGZpbGw9IiNEOEQ4RDgiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggc3Ryb2tlPSIjRkZGIiBkPSJNNS41IDIuNWgxdjhoLTF6Ii8+PGcgdHJhbnNmb3JtPSJyb3RhdGUoLTEzNSA1Ljk5MyA3LjM5MykiPjx1c2UgZmlsbD0iI0Q4RDhEOCIgeGxpbms6aHJlZj0iI2IiLz48cGF0aCBzdHJva2U9IiNGRkYiIGQ9Ik04LjQ5MyA1LjZ2LS43MDdoLTV2NUg0LjJWNS42aDQuMjkzeiIvPjwvZz48L2c+PC9zdmc+);
+    display: inline-block;
+}
+.ag-theme-blue .ag-header .ag-icon-expanded {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cmVjdCBzdHJva2Utb3BhY2l0eT0iLjUiIHN0cm9rZT0iI0ZGRiIgeD0iMS41IiB5PSIxLjUiIHdpZHRoPSI5IiBoZWlnaHQ9IjkiIHJ4PSIxIi8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTUgM2gydjZINXoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNOSA1djJIM1Y1eiIvPjwvZz48L3N2Zz4=);
+    display: inline-block;
+}
+.ag-theme-blue .ag-header .ag-icon-contracted {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cmVjdCBzdHJva2Utb3BhY2l0eT0iLjUiIHN0cm9rZT0iI0ZGRiIgeD0iMS41IiB5PSIxLjUiIHdpZHRoPSI5IiBoZWlnaHQ9IjkiIHJ4PSIxIi8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTkgNXYySDNWNXoiLz48L2c+PC9zdmc+);
+    display: inline-block;
+}
+.ag-theme-blue .ag-header .ag-icon-menu {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMWgxMHYySDF6bTAgNGgxMHYySDF6bTAgNGgxMHYySDF6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+    display: inline-block;
+}
+.ag-theme-blue .ag-header .ag-icon-filter {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMmgxMEw3IDZ2NUw1IDlWNkwxIDJ6bTQgNHYxaDJWNkg1eiIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+);
+    display: inline-block;
+}

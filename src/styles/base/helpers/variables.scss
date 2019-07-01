@@ -1,0 +1,56 @@
+//$bootstrap-sass-version: '3.3.7';
+//$bootstrap-sass-icon-path: './jspm_packages/github/twbs/bootstrap-sass@' + $bootstrap-sass-version + '/assets/fonts/bootstrap/';
+//$bootstrap-sass-path: '../../jspm_packages/github/twbs/bootstrap-sass@' + $bootstrap-sass-version + '/assets/stylesheets/bootstrap';
+//$bootstrap-sass-variables-path: '../../jspm_packages/github/twbs/bootstrap-sass@' + $bootstrap-sass-version + '/assets/stylesheets/bootstrap/variables';
+
+/* Can redefine any of these variables in the themes by adding !default to the value */
+
+/* Fonts */
+$font-size-base: 0.7rem;
+$font-size-small: (($font-size-base * 0.9));
+$font-size-large: (($font-size-base * 1.2));
+$font-size-extra-large: (($font-size-base * 5.2));
+$font-size-h1: (($font-size-base * 2.6));
+$font-size-h2: (($font-size-base * 2.15));
+$font-size-h3: ($font-size-base * 2);
+$font-size-h4: (($font-size-base * 1.85));
+$font-size-h5: (($font-size-base * 1.3));
+$font-size-h6: (($font-size-base * 1.1));
+
+/* Leftnav */
+$leftnav-max-width: 12.5rem;
+$leftnav-max-width-xl: 14rem;
+$leftnav-icons-only-width: 2.5rem;
+
+/* Navbar */
+$navbar-logo-height: 50px !default;
+$navbar-logo-width: 205px !default;
+$navbar-height: $navbar-logo-height + 5px;
+
+/* Footer */
+$footer-height: 0px;
+
+/* Height Calculations */
+$offset-bottom: 7px;
+$grid-status-bar-height: 25px;
+$grid-offset-bottom: $offset-bottom + $grid-status-bar-height;
+
+/* Input components */
+$input-height: 1.5rem;
+$input-text-size: 0.8rem;
+
+/* Obsolete ConsumerFacing variables
+
+$quote-btn-font-size: 23px;
+$form-quote-bton-font-size: 22px;
+$radio-checkbox-height: 20px;
+$radio-checkbox-width: 25px;
+$form-radius: 25px;
+$mobile-app-width: 93%;
+$panel-max-width: 400px;
+$wrapper-max-width: 1240px;
+
+$landing-pg-save-time-font-family: 'Goudy Old Style', Garamond, serif;
+$quote-font-family: 'Calisto MT', Serif;
+$invalid-message-font-family: 'adelle-sans', Helvetica, Arial, sans-serif;
+*/

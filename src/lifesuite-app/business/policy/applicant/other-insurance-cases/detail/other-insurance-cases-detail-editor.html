@@ -1,0 +1,63 @@
+﻿<form ngForm #form="ngForm" role="form" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="company" label="Company Name" i18n-label="@@policy.applicant.otherInsurancePolicies.companyname">
+                <lf-inputtext #company name="company" [(ngModel)]="data.Company" maxLength="50" secureComponent
+                    required [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="status" label="Status" i18n-label="@@policy.applicant.otherInsurancePolicies.status">
+                <lf-select #status name="status" [(ngModel)]="data.Status" [items]="resolvedData.listData.Status | listItems:'value':'Id' | emptyItem"
+                    (change)="onStatusChange($event)" (onKeydown)="onStatusChange($event)" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-4" *ngIf="isReplacement">
+            <lf-form-input [control]="replacementType" label="Replacement Type" i18n-label="@@policy.applicant.otherInsurancePolicies.replacementtype">
+                <lf-select #replacementType name="replacementType" [(ngModel)]="data.ReplacementType" [items]="resolvedData.listData.ReplacementType | listItems:'value':'Id' | emptyItem"
+                    secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="lineOfBusiness" label="LOB" i18n-label="@@policy.applicant.otherInsurancePolicies.lob">
+                <lf-select #lineOfBusiness name="lineOfBusiness" [(ngModel)]="data.LineOfBusiness" [items]="resolvedData.listData.LineOfBusiness | listItems:'value':'Id' | emptyItem"
+                container="dialog" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="purposeOfCoverage" label="Purpose" i18n-label="@@policy.applicant.otherInsurancePolicies.purpose">
+                <lf-select #purposeOfCoverage name="purposeOfCoverage" [(ngModel)]="data.PurposeOfCoverage" [items]="resolvedData.listData.PurposeOfCoverage | listItems:'value':'Id' | emptyItem"
+                container="dialog" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="policyNumber" label="Policy #" i18n-label="@@policy.applicant.otherInsurancePolicies.policynumber">
+                <lf-inputtext #policyNumber name="policyNumber" [(ngModel)]="data.PolicyNumber" maxLength="20"
+                    secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="issueDate" label="Date Issued" i18n-label="@@policy.applicant.otherInsurancePolicies.dateissued">
+                <ls-inputdate #issueDate name="issueDate" [(ngModel)]="data.IssueDate" container="dialog" secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="amount" label="Amount" i18n-label="@@policy.applicant.otherInsurancePolicies.amount">
+                <lf-inputnumber #amount name="amount" maxLength="10" [(ngModel)]="data.Amount" format="n0"
+                    [allowNegative]="false" secureComponent required></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="adbAmount" label="ADB" i18n-label="@@policy.applicant.otherInsurancePolicies.adb">
+                <lf-inputnumber #adbAmount name="adbAmount" maxLength="10" [(ngModel)]="data.AdbAmount" format="n0"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,78 @@
+﻿<div class="lf-dashed-bottom-border">
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="reportDate" label="Report Date" i18n-label="@@policy.mvr.detail.reportdate">
+                <lf-statictext #reportDate name="reportDate" [value]="data.ReportDate  | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="licenseClass" label="License Class" i18n-label="@@policy.mvr.detail.licenseclass">
+                <lf-statictext #licenseClass name="licenseClass" [value]="data.LicenseClass" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="licenseName" label="License Name" i18n-label="@@policy.mvr.detail.licensename">
+                <lf-statictext #licenseName name="licenseName" [value]="fullName" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="state" label="State" i18n-label="@@policy.mvr.detail.state">
+                <lf-statictext #state name="state" [value]="data.State" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="issueDate" label="Issue Date" i18n-label="@@policy.mvr.detail.issuedate">
+                <lf-statictext #issueDate name="issueDate" [value]="data.IssueDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="licenseNumber" label="License Number" i18n-label="@@policy.mvr.detail.licensenumber">
+                <lf-statictext #licenseNumber name="licenseNumber" [value]="data.LicenseNumber" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="address" label="Address" i18n-label="@@policy.mvr.detail.licenseaddress">
+                <lf-statictext #address name="address" [value]="data.LicenseAddress" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="expireDate" label="Expire Date" i18n-label="@@policy.mvr.detail.expiredate">
+                <lf-statictext #expireDate name="expireDate" [value]="data.ExpireDate | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="licenseStatus" label="License Status" i18n-label="@@policy.mvr.detail.licensestatus">
+                <lf-statictext #licenseStatus name="licenseStatus" [value]="data.LicenseStatus" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="licenseCityState" label="City/State" i18n-label="@@policy.mvr.detail.licensecitystate">
+                <lf-statictext #licenseCityState name="licenseCityState" [value]="data.LicenseCityState" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="restrictions" label="Restrictions" i18n-label="@@policy.mvr.detail.restrictions">
+                <lf-statictext #restrictions name="restrictions" [value]="data.Restrictions" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="driverInformation" label="Driver Information" i18n-label="@@policy.mvr.detail.driverinformation">
+                <lf-statictext #driverInformation name="driverInformation" [value]="data.DriverInformation" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="reportStatus" label="Report Status" i18n-label="@@policy.mvr.detail.reportstatus">
+                <lf-statictext #reportStatus name="reportStatus" [value]="data.ReportStatus" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+</div>
+<mvr-detail-violations [violationData]="violationData"></mvr-detail-violations>

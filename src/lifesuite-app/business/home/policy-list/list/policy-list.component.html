@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-start">
+    <div class="p-2">
+        <label for="labelFor" i18n="@@policylist.label.status">
+            Status:
+        </label>&nbsp;
+        <div class="d-inline align-middle">
+            <span innerHTML={{statusValue}}></span>
+        </div>
+    </div>
+    <div class="p-2">
+        <label for="labelFor" i18n="@@policylist.label.range">
+            Range:
+        </label>&nbsp;
+        <div class="d-inline align-middle">
+            <span innerHTML={{rangeValue}}></span>
+        </div>
+    </div>
+    <div class="ml-auto p-2">
+        <lf-button id="openPolicyButton"  label="Open" i18n-label="@@general.button.label.open"  (onClick)="onOpenPolicyButtonClick()"
+             secureComponent styleClass="btn btn-primary" [disabled]="isOpenPolicyButtonDisabled"></lf-button>
+    </div>
+</div>
+
+
+<div class="row ls-policy-list-grid">
+    <data-grid style="width: 100%" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClicked($event)"
+        (filterChanged)="onFilterChange()">
+    </data-grid>
+</div>
+<div class="row">
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

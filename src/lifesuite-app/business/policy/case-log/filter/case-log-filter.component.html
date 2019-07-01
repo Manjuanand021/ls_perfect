@@ -1,0 +1,18 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="viewList" label="View" i18n-label="@@policy.case.log.view">
+                <lf-select #viewList name="viewList" [(ngModel)]="selectedView" [items]="listData.MyWorkView"
+                    [clearable]="false" style="width:200px" (change)="onViewChange($event)" [clearable]="false"
+                    [actionType]="filterDropdownActionType" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-4" *ngIf="isApplicantDropDownVisible">
+            <lf-form-input [control]="applicants" label="Applicant" i18n-label="@@policy.case.log.applicant">
+                <lf-select #applicants name="applicants" [items]="applicantsList | listItems:'label':'value'"
+                    [(ngModel)]="selectedApplicantId" style="width:200px" (change)="onApplicantChange($event)"
+                    [clearable]="false" [actionType]="filterDropdownActionType" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

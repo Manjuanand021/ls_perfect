@@ -1,0 +1,154 @@
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="agentNumber" label="Agent Number" i18n-label="@@policy.case.agents.agentsnumber">
+            <lf-inputtext #agentNumber name="agentNumber_{{item.sequenceId}}" [(ngModel)]="activeAgentNumber"
+                [maxLength]="20" (blur)="onAgentNumberBlur($event)" secureComponent required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="agentType" label="Agent Type" i18n-label="@@policy.case.agents.producertype">
+            <lf-select #agentType name="agentType_{{item.sequenceId}}" [items]="listData.ProducerType | listItems:'value':'Id' | emptyItem"
+                [(ngModel)]="data.ProducerType" secureComponent style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="internalPostalBox" label="Internal Postal Box" i18n-label="@@policy.case.agents.internalpostalbox">
+            <lf-inputtext #internalPostalBox name="internalPostalBox_{{item.sequenceId}}" [(ngModel)]="data.RoutingNumber"
+                [maxLength]="30" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input [control]="firmName" label="Firm Name" i18n-label="@@policy.case.agents.firmname">
+            <lf-inputtext #firmName name="firmName_{{item.sequenceId}}" [(ngModel)]="data.FirmName" [maxLength]="50"
+                secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="title" label="Title" i18n-label="@@policy.case.agents.titlename">
+            <lf-select #title name="agentTitle_{{item.sequenceId}}" [items]="listData.Title | listItems:'value':'Id' | emptyItem"
+                [(ngModel)]="data.Title" secureComponent style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="firstName" label="First Name" i18n-label="@@policy.case.agents.firstname">
+            <lf-inputtext #firstName name="agentFirstName_{{item.sequenceId}}" [(ngModel)]="data.FirstName" [maxLength]="250"
+                secureComponent required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="middleName" label="Middle Name" i18n-label="@@policy.case.agents.middlename">
+            <lf-inputtext #middleName name="agentMiddleName_{{item.sequenceId}}" [(ngModel)]="data.MiddleName"
+                [maxLength]="100" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input [control]="lastName" label="Last Name" i18n-label="@@policy.case.agents.lastname">
+            <lf-inputtext #lastName name="agentLastName_{{item.sequenceId}}" [(ngModel)]="data.LastName" [maxLength]="250"
+                secureComponent required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-1">
+        <lf-form-input [control]="suffix" label="Suffix" i18n-label="@@policy.case.agents.suffix">
+            <lf-select #suffix name="agentSuffix_{{item.sequenceId}}" [items]="listData.Suffix | listItems:'value':'Id' | emptyItem"
+                [(ngModel)]="data.Suffix" secureComponent style="width:70px"></lf-select>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="commissionSplit" label="Commission Splits" i18n-label="@@policy.case.agents.commissionsplits">
+            <lf-inputnumber #commissionSplit name="commissionSplit_{{item.sequenceId}}" format="p0" decimals="5"
+                [(ngModel)]="data.CommissionSplit" [allowNegative]="false" [maxLength]="10" [max]="2147483647"
+                secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="commissionOption" label="Commission Option" i18n-label="@@policy.case.agents.commissionopt">
+            <lf-inputtext #commissionOption name="commissionOption_{{item.sequenceId}}" [(ngModel)]="data.CommissionOption"
+                [maxLength]="20" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="commissionPct" label="Commission %" i18n-label="@@policy.case.agents.commissionpct">
+            <lf-inputnumber #commissionPct format="n2" decimals="2" maxLength="10" max="9999999" name="commissionPct_{{item.sequenceId}}"
+                [(ngModel)]="data.CommissionPct" [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input [control]="levelFiveCode" label="Level 5 Code" i18n-label="@@policy.case.agents.level5code">
+            <lf-inputtext #levelFiveCode name="levelFiveCode_{{item.sequenceId}}" [(ngModel)]="data.Level5Code"
+                maxLength="5" secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="taxId" label="Tax ID" i18n-label="@@policy.case.agents.taxid">
+            <lf-inputtaxid #taxId name="agentTaxId_{{item.sequenceId}}" [(ngModel)]="data.TaxId" secureComponent></lf-inputtaxid>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Phone Number" [control]="work" i18n-label="@@policy.case.agents.phonenumber">
+            <ls-inputphone #work name="work_{{item.sequenceId}}" [(ngModel)]="workNumber" secureComponent></ls-inputphone>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Fax Number" [control]="fax" i18n-label="@@policy.case.agents.faxnumber">
+            <ls-inputphone #fax name="fax_{{item.sequenceId}}" [(ngModel)]="faxNumber" secureComponent></ls-inputphone>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input label="Email" [control]="emailAddress" i18n-label="@@policy.case.agents.email">
+            <lf-inputemail #emailAddress name="emailAddress_{{item.sequenceId}}" [(ngModel)]="data.EmailAddress"
+                maxLength="100" secureComponent></lf-inputemail>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="address1" label="Address" i18n-label="@@policy.case.agents.address">
+            <lf-inputtext #address1 name="agentAddress1_{{item.sequenceId}}" [(ngModel)]="businessAddress.AddressLine1"
+                maxLength="100" secureComponent [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="address2" label="&nbsp;" i18n-label="@@policy.case.agents.address">
+            <lf-inputtext #address2 name="agentAddress2_{{item.sequenceId}}" [(ngModel)]="businessAddress.AddressLine2"
+                maxLength="100" secureComponent [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="address3" label="&nbsp;" i18n-label="@@policy.case.agents.address">
+            <lf-inputtext #address3 name="agentAddress3_{{item.sequenceId}}" [(ngModel)]="businessAddress.AddressLine3"
+                maxLength="100" secureComponent [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="city" label="City" i18n-label="@@policy.case.agents.city">
+            <lf-inputtext #city name="agentCity_{{item.sequenceId}}" [(ngModel)]="businessAddress.City" maxLength="30"
+                secureComponent [autocomplete]="false"></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="country" label="Country" i18n-label="@@policy.case.agents.country">
+            <lf-select #country name="agentCountry_{{item.sequenceId}}" [items]="listData.CountryId | listItems:'value':'Id' | emptyItem"
+                [(ngModel)]="businessAddress.CountryId" secureComponent style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="state" label="State" i18n-label="@@policy.case.agents.state">
+            <lf-select #state name="agentState_{{item.sequenceId}}" [items]="listData | stateListPicker: businessAddress.CountryId | emptyItem | sortList"
+                [(ngModel)]="businessAddress.CountryStateId" secureComponent style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-2">
+        <lf-form-input [control]="postalCode" label="Postal Code" i18n-label="@@policy.case.agents.postalcode">
+            <lf-inputzipcode #postalCode name="agentPostalCode_{{item.sequenceId}}" [zipCodeType]="businessAddress.CountryId | getZipCodeType"
+                [(ngModel)]="businessAddress.PostalCode" secureComponent [autocomplete]="false"></lf-inputzipcode>
+        </lf-form-input>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+
+.detailLink {
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.detailLink:hover {
+	background-color: powderblue;
+}
+
+.detail-content {
+	margin-left: 20px;
+}

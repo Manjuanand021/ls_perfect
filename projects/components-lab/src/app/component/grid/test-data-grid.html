@@ -1,0 +1,8 @@
+<div class="row">
+	<data-grid style="width: 800px; height: 500px;" [gridOptions]="gridOptions" (rowSelected)="onRowSelected($event)">
+	</data-grid>
+</div>
+<br />
+<div class="row">
+	Selected row(s): {{selectedRows | json}}
+</div>

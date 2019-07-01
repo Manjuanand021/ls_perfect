@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-4">
+        <lf-form-input [control]="status" label="Status" i18n-label="@@policy.rx.rules.status">
+            <lf-statictext #status name="status" [value]="firstRxItem.OrderResultStatus" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <lf-form-input [control]="fillCount" label="Fill Count" i18n-label="@@policy.rx.rules.fillcount">
+            <lf-statictext #fillCount name="fillCount" [value]="firstRxItem.PrescriptionFillCount" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <rx-web-buttons [firstRxItem]="firstRxItem"></rx-web-buttons>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <lf-form-input [control]="gender" label="Gender" i18n-label="@@policy.rx.rules.gender">
+            <lf-statictext #gender name="gender" [value]="firstRxItem.ApplicantGender" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <lf-form-input [control]="dOB" label="DOB" i18n-label="@@policy.rx.rules.birthdate">
+            <lf-statictext #dOB name="dOB" [value]="firstRxItem.ApplicantBirthDate" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-12 col-xl-12 lf-solid-bottom-border">
+        <!-- no content here. need border bottom -->
+    </div>
+    <div class="col-12 col-md-12 col-xl-12">
+        <rx-rules-summary *ngIf="rxRulesExist" [rxRules]="rxRules"></rx-rules-summary>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-12 col-xl-12">
+        <rx-usage></rx-usage>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿<lf-panel header="Agency" i18n-header="@@policy.case.agency.title" panelType="primary" [toggleable]="true" stateId="panel_agency"
+    [state]="componentsState.get('panel_agency')" [initCollapsed]=true secureComponent>
+    <optional-section [dataExists]="dataExists" [item]="item" [itemComponentType]="itemComponentType" (createItem)="createItem()"
+        (removeItem)="removeItem()" secureComponent>
+    </optional-section>
+</lf-panel>

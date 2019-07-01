@@ -1,0 +1,41 @@
+﻿<!-- 
+	This html is copied from corresponding PrimeNg component.
+    
+	Custom changes:
+		Moved <span *ngIf="item.items"> to be after <span ..>{{item.label}}</span> for *ngIf="!item.routerLink"
+		Changed class="ui-panelmenu-header-link" to [ngClass]="{'ui-panelmenu-headerlink-hasicon ...""
+		Replaced <p-panelMenuSub> with custom <panel-menu-sub>
+		Added title="{{item.label}}" to <span class="ui-menuitem-icon"> for showing label on hover
+		Added [name]="item.id + '-link'"
+		Added [name]="item.id + '-routerlink'"
+		Added classes "pi pi-fw" to class="ui-menuitem-icon" to make icons show
+-->
+
+<div [class]="styleClass" [ngStyle]="style" [ngClass]="'ui-panelmenu ui-widget'">
+	<ng-container *ngFor="let item of model;let f=first;let l=last;">
+		<div [ngClass]="{'ui-widget ui-panelmenu-header ui-state-default':true,'ui-corner-top':f,'ui-corner-bottom':l&&!item.expanded,
+			'ui-state-active':item.expanded,'ui-state-disabled':item.disabled}"
+		 [class]="item.styleClass" [ngStyle]="item.style">
+			<a *ngIf="!item.routerLink" [name]="item.id + '-link'" [href]="item.url||'#'" (click)="handleClick($event,item)"
+			 [attr.target]="item.target" [attr.title]="item.title" [ngClass]="{'ui-panelmenu-headerlink-hasicon':item.icon}">
+				<span title="{{item.label}}" class="ui-menuitem-icon pi pi-fw" [ngClass]="item.icon" *ngIf="item.icon"></span>
+				<span class="ui-menuitem-text">{{item.label}}</span>
+				<span *ngIf="item.items" class="ui-panelmenu-icon pi pi-fw" [ngClass]="{'pi-caret-right':!item.expanded,'pi-caret-down':item.expanded}"></span>
+			</a>
+			<a *ngIf="item.routerLink" [routerLink]="item.routerLink" [queryParams]="item.queryParams" [routerLinkActive]="'ui-state-active'"
+			 [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}" (click)="handleClick($event,item)"
+			 [attr.target]="item.target" [attr.title]="item.title" class="ui-panelmenu-header-link">
+				<span *ngIf="item.items" class="ui-panelmenu-icon pi pi-fw" [ngClass]="{'pi-caret-right':!item.expanded,'pi-caret-down':item.expanded}"></span>
+				<span title="{{item.label}}" class="ui-menuitem-icon pi pi-fw" [ngClass]="item.icon" *ngIf="item.icon"></span>
+				<span class="ui-menuitem-text">{{item.label}}</span>
+			</a>
+		</div>
+		<div *ngIf="item.items" class="ui-panelmenu-content-wrapper" [@rootItem]="item.expanded ? {value: 'visible', params: {transitionParams: transitionOptions}} : {value: 'hidden', params: {transitionParams: transitionOptions}}"
+		 (@rootItem.done)="onToggleDone()" [ngClass]="{'ui-panelmenu-content-wrapper-overflown': !item.expanded||animating}">
+			<div class="ui-panelmenu-content ui-widget-content">
+				<panel-menu-sub [item]="item" [expanded]="true" [transitionOptions]="transitionOptions" class="ui-panelmenu-root-submenu"
+				 (submenuClick)="handleSubMenuClick($event)"></panel-menu-sub>
+			</div>
+		</div>
+	</ng-container>
+</div>

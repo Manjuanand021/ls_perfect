@@ -1,0 +1,71 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="disposition" label="Disposition" i18n-label="@@policy.worksheet.coverage.benefit.disposition">
+                <lf-select #disposition name="disposition" [items]="resolvedData.listData.CoverageStatus | listItems:'value':'Id'" 
+                [(ngModel)]="data.CoverageStatus" (change)="onCaseDispositionChange($event)" [clearable]="false" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="reason" label="Reason" i18n-label="@@policy.worksheet.coverage.benefit.dispositionReason">
+                <lf-select #reason name="reason" [items]="resolvedData.listData.ReasonText | listItems:'value':'Id' | emptyItem" [(ngModel)]="data.ReasonText" 
+                container="dialog" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="tableRating" label="Table Rating" i18n-label="@@policy.worksheet.coverage.benefit.tableRating">
+                <lf-select #tableRating name="tableRating" [items]="resolvedData.listData.PermTableRating | listItems:'value':'Id' | emptyItem" [(ngModel)]="data.PermTableRating" 
+                container="dialog" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="tableRatingReason" label="Table Rating Reason" i18n-label="@@policy.worksheet.coverage.benefit.tableRatingReason">
+                <lf-select #tableRatingReason name="tableRatingReason" [items]="resolvedData.listData.PermTableReason | listItems:'value':'Id' | emptyItem" 
+                [(ngModel)]="data.PermTableReason" secureComponent style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="amount" label="Amount" i18n-label="@@policy.worksheet.coverage.benefit.amount">
+                <lf-inputnumber #amount name="amount" [(ngModel)]="data.Amount" maxLength="10" [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input label="Reinsurance" i18n-label="@@policy.worksheet.coverage.benefit.reinsurance" [control]="reinsurance">
+                <lf-radiobuttongroup #reinsurance name="reinsurance" [(ngModel)]="data.ReinsuranceFlag" secureComponent>
+                    <span>
+                        <lf-radiobutton name="reinsurance" [value]=true label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="reinsurance" [value]=false label="No" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="permFlatExtra" label="Perm. Flat Extra" i18n-label="@@policy.worksheet.coverage.benefit.permFlatExtra">
+                <lf-inputnumber #permFlatExtra name="permFlatExtra" [(ngModel)]="data.PermFlatExtraAmount" format="n2" decimals="2" maxLength="6" min="0" max="999" 
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="tempFlatExtraAmt" label="Temporary Flat Extra Amount" i18n-label="@@policy.worksheet.coverage.benefit.tempFlatExtra">
+                <lf-inputnumber #tempFlatExtraAmt name="tempFlatExtraAmt" [(ngModel)]="data.TempFlatExtraAmount" format="n2" decimals="2" [allowNegative]="false" 
+                maxLength="6" min="0" max="999" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="tempFlatExtraDuration" label="Temporary Flat Extra Duration" i18n-label="@@policy.worksheet.coverage.benefit.tempFlatExtraDuration">
+                <lf-inputnumber #tempFlatExtraDuration name="tempFlatExtraDuration" [(ngModel)]="data.TempFlatExtraPeriod" format="n0" decimals="0" [allowNegative]="false" 
+                min="0" max="999" maxLength="3" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

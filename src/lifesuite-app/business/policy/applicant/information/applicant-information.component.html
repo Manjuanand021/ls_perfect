@@ -1,0 +1,350 @@
+﻿<lf-panel [header]="applicantPanelHeader" [toggleable]="true" panelType="primary" stateId="panel_applicantInformation"
+    [state]="componentsState.get('panel_applicantInformation')" secureComponent class="label-appearance">
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Title" i18n-label="@@policy.applicant.info.title" [control]="title">
+                <lf-select #title name="title" [(ngModel)]="applicant.Title"
+                    [items]="listData.Title | listItems:'value':'Id' | emptyItem" secureComponent style="width: 80%">
+                </lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="First Name" i18n-label="@@policy.applicant.info.firstname" [control]="firstName">
+                <lf-inputtext #firstName name="firstName" class="input-width" [(ngModel)]="applicant.FirstName"
+                    (blur)="onApplicantNameChanged()" maxLength="20" secureComponent [autocomplete]="false">
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Middle Name" i18n-label="@@policy.applicant.info.middlename" [control]="middleName">
+                <lf-inputtext #middleName name="middleName" class="input-width" [(ngModel)]="applicant.MiddleName"
+                    (blur)="onApplicantNameChanged()" maxLength="20" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Last Name" i18n-label="@@policy.applicant.info.lastname" [control]="lastName">
+                <lf-inputtext #lastName name="lastName" class="input-width" [(ngModel)]="applicant.LastName"
+                    (blur)="onApplicantNameChanged()" maxLength="50" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Suffix" i18n-label="@@policy.applicant.info.suffix" [control]="suffix">
+                <lf-select #suffix name="suffix" [(ngModel)]="applicant.Suffix"
+                    [items]="listData.Suffix | listItems:'value':'Id' | emptyItem" secureComponent style="width: 80%">
+                </lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Birth Name" i18n-label="@@policy.applicant.info.birthname" [control]="birthName">
+                <lf-inputtext #birthName name="birthName" class="input-width" [(ngModel)]="applicant.BirthName"
+                    maxLength="15" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Birth Date" i18n-label="@@policy.applicant.info.birthdate" [control]="birthDate">
+                <ls-inputdatecrypted #birthDate name="birthDate" [(ngModel)]="applicant.BirthDate"
+                    class='input-date-width' [maxDate]="maxBirthDate" (ngModelChange)="onApplicantBirthDateChange()"
+                    required secureComponent>
+                </ls-inputdatecrypted>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Tax ID" i18n-label="@@policy.applicant.info.taxid" [control]="taxID">
+                <lf-inputtaxid #taxID name="taxID" class="input-width" [(ngModel)]="applicant.TaxId" secureComponent>
+                </lf-inputtaxid>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Client ID" i18n-label="@@policy.applicant.info.clientid" [control]="clientID">
+                <lf-inputtext #clientID name="clientID" class="input-width" [(ngModel)]="applicant.ClientId"
+                    maxLength="15" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Address" i18n-label="@@policy.applicant.info.address" [control]="addressLine1">
+                <lf-inputtext #addressLine1 name="addressLine1" class="input-width"
+                    [(ngModel)]="residenceAddress.AddressLine1" maxLength="30" secureComponent [autocomplete]="false">
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="addressLine2">
+                <lf-inputtext #addressLine2 name="addressLine2" class="input-width"
+                    [(ngModel)]="residenceAddress.AddressLine2" maxLength="30" secureComponent [autocomplete]="false">
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-2">
+            <lf-form-input [control]="addressLine3">
+                <lf-inputtext #addressLine3 name="addressLine3" class="input-width"
+                    [(ngModel)]="residenceAddress.AddressLine3" maxLength="30" secureComponent [autocomplete]="false">
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="City" [control]="city" i18n-label="@@policy.applicant.info.city">
+                <lf-inputtext #city name="city" class="input-width" [(ngModel)]="residenceAddress.City" maxLength="30"
+                    secureComponent [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Country" [control]="countryId" i18n-label="@@policy.applicant.info.country">
+                <lf-select #countryId name="countryId" [(ngModel)]="residenceAddress.CountryId"
+                    [items]="listData.CountryId | listItems:'value':'Id' | emptyItem" style="width:90%" secureComponent>
+                </lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="State" [control]="countryStateId" i18n-label="@@policy.applicant.info.state">
+                <lf-select #countryStateId name="countryStateId" [(ngModel)]="residenceAddress.CountryStateId"
+                    [items]="listData | stateListPicker: residenceAddress.CountryId |emptyItem | sortList"
+                    style="width: 80%" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Postal Code" [control]="postalCode" i18n-label="@@policy.applicant.info.postalcode">
+                <lf-inputzipcode #postalCode name="postalCode" class="input-width"
+                    [zipCodeType]="residenceAddress.CountryId | getZipCodeType"
+                    [(ngModel)]="residenceAddress.PostalCode" secureComponent [autocomplete]="false"></lf-inputzipcode>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Home Phone" [control]="homePhone1" i18n-label="@@policy.applicant.info.homephone">
+                <ls-inputphone #homePhone1 name="homePhone1" [(ngModel)]="homePhone" secureComponent [extHidden]="true">
+                </ls-inputphone>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Work Phone" [control]="workPhone1" i18n-label="@@policy.applicant.info.workphone">
+                <ls-inputphone #workPhone1 name="workPhone1" [(ngModel)]="workPhone" secureComponent></ls-inputphone>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Cell Phone" [control]="cellPhone1" i18n-label="@@policy.applicant.info.cellphone">
+                <ls-inputphone #cellPhone1 name="cellPhone1" [(ngModel)]="cellPhone" secureComponent [extHidden]="true">
+                </ls-inputphone>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Preferred Location to Call" [control]="phoneTypeCode"
+                i18n-label="@@policy.applicant.info.preferredloctocall">
+                <lf-select #phoneTypeCode name="preferredLocationToCall" [(ngModel)]="applicant.preferredPhoneTypeCode"
+                    [items]="listData.preferredPhoneTypeCode | listItems:'value':'Id'" style="width: 90%"
+                    [clearable]="false" secureComponent></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Best Day to Call" [control]="bestDayToCall"
+                i18n-label="@@policy.applicant.info.bestdaytocall">
+                <lf-inputtext #bestDayToCall name="bestDayToCall" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].BestDayToCall" maxLength="30" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Best Time to Call" [control]="bestTimeToCall"
+                i18n-label="@@policy.applicant.info.besttimetocall">
+                <lf-inputtext #bestTimeToCall name="bestTimeToCall" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].BestTimeToCall" maxLength="30" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Locality" [control]="locality" i18n-label="@@policy.applicant.info.locality">
+                <lf-inputtext #locality name="locality" [(ngModel)]="applicant.Applications_LazyLoad[0].Locality"
+                    class="input-width" maxLength="20" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Applicant Signature Type" [control]="applicantSignatureType"
+                i18n-label="@@policy.applicant.info.applicantsignaturetype">
+                <lf-select #applicantSignatureType name="applicantSignatureType"
+                    [(ngModel)]="applicant.ApplicantSignatureType"
+                    [items]="listData.applicantSignatureType | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width: 90%"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Email" [control]="emailAddress" i18n-label="@@policy.applicant.info.email">
+                <lf-inputemail #emailAddress name="emailAddress" [(ngModel)]="applicant.EmailAddress" maxLength="100"
+                    class="input-width" secureComponent></lf-inputemail>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Airmiles" i18n-label="@@policy.applicant.info.airmiles" [control]="airmilesFlag">
+                <lf-radiobuttongroup #airmilesFlag name="airmilesFlag"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].AirmilesFlag" secureComponent>
+                    <span>
+                        <lf-radiobutton name="airmilesFlag" value=1 label="Yes"
+                            i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="airmilesFlag" value=0 label="No"
+                            i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Airmiles Number" i18n-label="@@policy.applicant.info.airmilesnumber"
+                [control]="airmilesNumber">
+                <lf-inputtext #airmilesNumber name="airmilesNumber" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].Airmiles" maxLength="25" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Employee Number" i18n-label="@@policy.applicant.info.employeenumber"
+                [control]="employeeNumber">
+                <lf-inputtext #employeeNumber name="employeeNumber" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].EmployeeNumber" maxLength="14" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Medical Authorization" i18n-label="@@policy.applicant.info.medauth"
+                [control]="medicalAuthorizationFlag">
+                <lf-radiobuttongroup #medicalAuthorizationFlag name="medicalAuthorizationFlag"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].MedicalAuthorizationFlag" secureComponent>
+                    <span>
+                        <lf-radiobutton name="medicalAuthorizationFlag" value=1 label="Yes"
+                            i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="medicalAuthorizationFlag" value=0 label="No"
+                            i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="HIPAA Authorization" i18n-label="@@policy.applicant.info.hippaauth"
+                [control]="hipaaAuthorizationFlag">
+                <lf-radiobuttongroup #hipaaAuthorizationFlag name="hipaaAuthorizationFlag"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].HippaAuthorizationFlag" secureComponent>
+                    <span>
+                        <lf-radiobutton name="hipaaAuthorizationFlag" value=1 label="Yes"
+                            i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="hipaaAuthorizationFlag" value=0 label="No"
+                            i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Membership Number" i18n-label="@@policy.applicant.info.membershipnumber"
+                [control]="membershipNumber">
+                <lf-inputtext #membershipNumber name="membershipNumber" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].MembershipNumber" maxLength="10" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Driver's License Status" i18n-label="@@policy.applicant.info.driverslicensestatus"
+                [control]="driversLicenseStatus">
+                <lf-select #driversLicenseStatus name="driversLicenseStatus"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].DriversLicenseStatus"
+                    [items]="listData.DriversLicenseStatus | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width: 80%"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Driver's License" i18n-label="@@policy.applicant.info.licensenumber"
+                [control]="driversLicenseNumber">
+                <lf-inputtext #driversLicenseNumber name="driversLicenseNumber" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].DriversLicenseNumber" (blur)="onDLDataChange()"
+                    maxLength="20" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Driver's License Country" i18n-label="@@policy.applicant.info.driverlicensecountry"
+                [control]="driversLicenseCountryId">
+                <lf-select #driversLicenseCountryId name="driversLicenseCountryId"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].DriversLicenseCountryId"
+                    [items]="listData.DriversLicenseCountryId | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width: 90%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Driver's License State" i18n-label="@@policy.applicant.info.driverlicensestate"
+                [control]="driversLicenseState">
+                <lf-select #driversLicenseState name="driversLicenseState"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].DriversLicenseState" (change)="onDLDataChange()"
+                    [items]="listData | stateListPicker: applicant.Applications_LazyLoad[0].DriversLicenseCountryId | emptyItem | sortList"
+                    secureComponent style="width: 80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="State ID Number" i18n-label="@@policy.applicant.info.applicantstateid"
+                [control]="stateId">
+                <lf-inputtext #stateId class="input-width" name="stateId"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].StateId" maxLength="15" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Signed Country" i18n-label="@@policy.applicant.info.signedcountry"
+                [control]="signedCountryId">
+                <lf-select #signedCountryId name="signedCountryId" [(ngModel)]="applicant.SignedCountryId"
+                    [items]="listData.SignedCountryId | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width: 90%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Signed State" i18n-label="@@policy.applicant.info.signedstate"
+                [control]="signedStateId">
+                <lf-select #signedStateId name="signedStateId" [(ngModel)]="applicant.SignedStateId"
+                    [items]="listData | stateListPicker: applicant.SignedCountryId | emptyItem | sortList"
+                    secureComponent style="width: 90%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Additional UW Amount" i18n-label="@@policy.applicant.info.addluwamount"
+                [control]="additionalUWAmount">
+                <lf-inputnumber #additionalUWAmount name="additionalUWAmount" class="input-width"
+                    [(ngModel)]="applicant.AddUwAmt" maxLength="12" [max]="maxAdditionalUWAmount"
+                    [allowNegative]="false" secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="MIB Filter Code" i18n-label="@@policy.applicant.info.mibfiltercode"
+                [control]="mibFilterCode">
+                <lf-inputtext #mibFilterCode name="mibFilterCode" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].MibFilterCode" maxLength="3" secureComponent>
+                </lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Req Auto Ordered?" i18n-label="@@policy.applicant.info.reqautoordered"
+                [control]="reqAutoOrdered">
+                <lf-statictext #reqAutoOrdered name="reqAutoOrdered" class="input-width"
+                    [value]="applicant.UndAllowAutoApproval|getYesNoString:1" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <applicant-action [applications]="applications"></applicant-action>
+    </div>
+</lf-panel>

@@ -1,0 +1,37 @@
+﻿<form #form="ngForm" role="form" class="form" autocomplete="off">
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="amendmentType" label="Issue Request Type" i18n-label="@@policy.worksheet.coverage.amendment.issueType">
+				<lf-select #amendmentType name="amendmentType" [items]="resolvedData.listData.AmendmentType | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.AmendmentType" (change)="onAmendmentTypeChange($event)" secureComponent style="width:350px"
+				 required [disabled]="isDisabledOnEdit">
+				</lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="amendmentCode" label="Issue Request" i18n-label="@@policy.worksheet.coverage.amendment.issueRequest">
+				<lf-select #amendmentCode name="amendmentCode" [items]="amendmentCodeOptions.AmendmentCode | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.AmendmentCode" (change)="onAmendmentCodeChange($event)" secureComponent style="width:350px"
+				 container="dialog" required [disabled]="isDisabledOnEdit">
+				</lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="amendmentCode" label="Code" i18n-label="@@policy.worksheet.coverage.amendment.issueCode">
+				<lf-statictext #amendmentCode name="amendmentCode" [value]="data.AmendmentCode" secureComponent [style]="{width:'350px'}"></lf-statictext>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<lf-form-input [control]="amendmentText" label="Description" i18n-label="@@policy.worksheet.coverage.amendment.issueText">
+				<lf-inputtextarea #amendmentText name="amendmentText" [(ngModel)]="data.AmendmentText" secureComponent maxLength="1000"
+				 rows="6" [style]="{width: '100%'}"></lf-inputtextarea>
+			</lf-form-input>
+		</div>
+	</div>
+</form>

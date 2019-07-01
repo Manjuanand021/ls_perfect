@@ -1,0 +1,11 @@
+:host {
+    width: 100%;
+}
+
+.search-buttons-container {
+    padding-top: 1.5625rem;
+}
+
+.search-inputs-container {
+    margin-top: -2.5rem;
+}

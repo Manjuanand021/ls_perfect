@@ -1,0 +1,83 @@
+.ui-toolbar {
+    background-color: $page-header-bg;
+}
+
+.ui-toolbar .ui-button-icon-only {
+    width: 2em;
+}
+
+.ui-toolbar .ui-button-icon-only .ui-button-icon-left {
+    top: 50%;
+    left: 50%;
+    margin-top: -0.7em;
+    margin-left: -1em;
+}
+
+.toolbar-button-small {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: no-repeat center center;
+}
+
+.toolbar-button-medium {
+    width: 24px !important;
+    height: 24px !important;
+    display: inline-block;
+    background: no-repeat center center;
+}
+
+.ui-toolbar .ui-button.ui-state-default:hover {
+    background-color: #aed0ea;
+}
+
+.ui-toolbar .badge {
+    background-color: red;
+    border-color: #dc3545;
+    color: #fff;
+    font-size: 70%;
+    margin-left: -2em;
+    margin-right: 1em;
+    vertical-align: top;
+}
+
+// Buttons
+.button-validate {
+    background: url('../../styles/images/toolbar/toolValidate.png');
+    background-position: center;
+}
+
+.button-panels {
+    background-image: url('../../styles/images/toolbar/toolWindows.png');
+    background-position: top;
+}
+
+.button-note {
+    background-image: url('../../styles/images/toolbar/toolNote.png');
+    background-position: center;
+}
+
+.button-caseLog {
+    background-image: url('../../styles/images/toolbar/toolCaseLog.png');
+    background-position: center;
+}
+
+.button-underwrite {
+    background-image: url('../../styles/images/toolbar/toolUnderwrite.png');
+    background-position: center;
+}
+
+.button-help {
+    background-image: url('../../styles/images/toolbar/toolHelp.png');
+    background-position: center;
+}
+
+.button-save-refresh {
+    background-image: url('../../styles/images/toolbar/toolSaveArrow.png');
+    background-position: center;
+}
+
+.button-favorites {
+    background-image: url('../../styles/images/toolbar/toolFavorites.png');
+    background-position: center;
+}

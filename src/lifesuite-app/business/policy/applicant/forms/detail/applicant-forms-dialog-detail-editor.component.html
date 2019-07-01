@@ -1,0 +1,29 @@
+<form ngForm #form="ngForm" role="form" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="label" label="Label" i18n-label="@@policy.applicant.form.question.label">
+                <lf-statictext #label name="label" [value]="data.Label" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input [control]="question" label="Question" i18n-label="@@policy.applicant.form.question.question">
+                <lf-statictext #question name="question" [value]="data.QuestionText" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="answer" label="Answer" i18n-label="@@policy.applicant.form.question.answer">
+                <lf-select #answer name="answer" [items]="listData.AnswerSet | listItems:'label':'label' | emptyItem" [(ngModel)]="data.Answer"
+                    secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input [control]="comment" label="Comments" i18n-label="@@policy.applicant.form.question.comments">
+                <lf-inputtext #comment name="comment" [(ngModel)]="data.Comment" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

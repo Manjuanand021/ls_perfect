@@ -1,0 +1,1 @@
+export * from './physician-facility-name.component';

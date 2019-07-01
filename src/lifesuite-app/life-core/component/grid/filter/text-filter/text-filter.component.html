@@ -1,0 +1,27 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off" (click)="$event.stopPropagation()"
+    (submit)="onApplyClick()">
+    <div *ngFor="let message of messages" class="alert alert-danger">
+        {{message}}
+    </div>
+    <div class="row">
+        <lf-form-input [control]="filterText" label="Filter Text:"
+            i18n-label="@@component.grid.filter.label.filtertype">
+            <lf-inputtext #filterText name="filterText" [(ngModel)]="filterValue" [regExp]="filterRegExp" required>
+            </lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="row">
+        <span>
+            <lf-button type="submit" id="applyButton" label="Apply" i18n-label="@@component.grid.filter.button.apply"
+                (onClick)="onApplyClick()" styleClass="btn btn-primary" class="mr-2"></lf-button>
+        </span>
+        <span>
+            <lf-button id="cancelButton" label="Cancel" i18n-label="@@component.grid.filter.button.cancel"
+                (onClick)="onCancelClick()" styleClass="btn btn-primary"></lf-button>
+        </span>
+        <span>
+            <lf-button id="clearButton" label="Remove" i18n-label="@@component.grid.filter.button.remove"
+                (onClick)="onClearClick()" styleClass="btn btn-primary"></lf-button>
+        </span>
+    </div>
+</form>

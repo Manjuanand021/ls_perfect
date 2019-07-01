@@ -1,0 +1,92 @@
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="companyName" label="Company Name" i18n-label="@@policy.case.owner.companyname">
+			<lf-inputtext #companyName name="owner_companyName_{{item.sequenceId}}" required [(ngModel)]="data.LastName" [maxLength]="250" [disabled]="data.isPrimaryInsured" 
+			secureComponent required [autocomplete]="false"></lf-inputtext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="email" label="Email" i18n-label="@@policy.case.owner.email">
+			<lf-inputemail #email name="owner_email_{{item.sequenceId}}" [(ngModel)]="data.EmailAddress" [maxLength]="100" [disabled]="data.isPrimaryInsured" 
+			secureComponent></lf-inputemail>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="role" label="Role" i18n-label="@@policy.case.owner.role">
+			<lf-select #role name="owner_role_{{item.sequenceId}}" [items]="listData.SubRoleId | listItems:'value':'Id' | emptyItem" [(ngModel)]="data.SubRoleId" 
+			secureComponent style="width:150px" (change)="onOwnerRoleChange($event)"></lf-select>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="relation" label="Relation to Insured" i18n-label="@@policy.case.owner.relationshiptoinsured">
+			<lf-select #relation name="owner_relation_{{item.sequenceId}}" [items]="listData.RelationshipToInsured | listItems:'value':'Id' | emptyItem" 
+			[(ngModel)]="data.RelationshipToInsured" [disabled]="data.isPrimaryInsured" secureComponent style="width:150px"></lf-select>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="taxId" label="Tax ID" i18n-label="@@policy.case.owner.taxid">
+			<lf-inputtaxid #taxId name="owner_taxId_{{item.sequenceId}}" [(ngModel)]="data.TaxId" [disabled]="data.isPrimaryInsured" secureComponent></lf-inputtaxid>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="clientId" label="Client ID" i18n-label="@@policy.case.owner.clientid">
+			<lf-inputtext #clientId name="owner_clientId_{{item.sequenceId}}" [(ngModel)]="data.ClientId" [maxLength]="11" [disabled]="data.isPrimaryInsured" 
+			secureComponent></lf-inputtext>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="address1" label="Address" i18n-label="@@policy.case.owner.address">
+			<lf-inputtext #address1 name="owner_address1_{{item.sequenceId}}" [(ngModel)]="residentAddress.AddressLine1" maxLength="100" [disabled]="data.isPrimaryInsured" 
+			secureComponent [autocomplete]="false"></lf-inputtext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="address2" label="&nbsp;">
+			<lf-inputtext #address2 name="owner_address2_{{item.sequenceId}}" [(ngModel)]="residentAddress.AddressLine2" maxLength="100" [disabled]="data.isPrimaryInsured" 
+			secureComponent [autocomplete]="false"></lf-inputtext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="address3" label="&nbsp;">
+			<lf-inputtext #address3 name="owner_address3_{{item.sequenceId}}" [(ngModel)]="residentAddress.AddressLine3" maxLength="100" [disabled]="data.isPrimaryInsured" 
+			secureComponent [autocomplete]="false"></lf-inputtext>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="city" label="City" i18n-label="@@policy.case.owner.city">
+			<lf-inputtext #city name="owner_city_{{item.sequenceId}}" [(ngModel)]="residentAddress.City" maxLength="30" [disabled]="data.isPrimaryInsured" secureComponent 
+			[autocomplete]="false"></lf-inputtext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="country" label="Country" i18n-label="@@policy.case.owner.country">
+			<lf-select #country name="owner_country_{{item.sequenceId}}" [items]="listData.CountryId | listItems:'value':'Id' | emptyItem" [(ngModel)]="residentAddress.CountryId" 
+			[disabled]="data.isPrimaryInsured" secureComponent style="width:220px"></lf-select>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="state" label="State" i18n-label="@@policy.case.owner.state">
+			<lf-select #state name="owner_state_{{item.sequenceId}}" [items]="listData | stateListPicker: residentAddress.CountryId | emptyItem | sortList" 
+			[(ngModel)]="residentAddress.CountryStateId" [disabled]="data.isPrimaryInsured" secureComponent style="width:150px"></lf-select>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input [control]="postalCode" label="Postal Code" i18n-label="@@policy.case.owner.postalcode">
+			<lf-inputzipcode #postalCode name="owner_postalCode_{{item.sequenceId}}" [zipCodeType]="residentAddress.CountryId | getZipCodeType" [(ngModel)]="residentAddress.PostalCode" 
+			[disabled]="data.isPrimaryInsured" secureComponent [autocomplete]="false"></lf-inputzipcode>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="workPhone1" label="Work Phone" i18n-label="@@policy.case.owner.workphone">
+			<ls-inputphone #workPhone1 name="owner_workPhone1_{{item.sequenceId}}" [(ngModel)]="workPhone" [disabled]="data.isPrimaryInsured" secureComponent></ls-inputphone>
+		</lf-form-input>
+	</div>
+</div>

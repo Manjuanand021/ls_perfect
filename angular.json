@@ -1,0 +1,271 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "LifeSuiteSPA": {
+            "root": "",
+            "sourceRoot": "src",
+            "projectType": "application",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "../LifeSuite.Web/wwwroot",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "tsConfig": "src/tsconfig.app.json",
+                        "showCircularDependencies": true,
+                        "polyfills": "src/polyfills.ts",
+                        "assets": ["src/assets", "src/locale", "src/favicon.ico"],
+                        "styles": ["src/styles.css", "src/styles/themes/ls-default.theme.scss"],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "prod-en-us": {
+                            "outputPath": "../LifeSuite.Web/wwwroot/en-us",
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true,
+                            "buildOptimizer": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "baseHref": "/en-us/",
+                            "i18nLocale": "en-US"
+                        },
+                        "prod-fr-ca": {
+                            "outputPath": "../LifeSuite.Web/wwwroot/fr-ca",
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true,
+                            "buildOptimizer": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "baseHref": "/fr-ca/",
+                            "i18nFile": "src/locale/messages.fr-CA.xlf",
+                            "i18nFormat": "xlf",
+                            "i18nLocale": "fr-CA"
+                        },
+                        "test": {
+                            "outputPath": "../LifeSuite.Web/wwwroot/en-us",
+                            "sourceMap": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.test.ts"
+                                }
+                            ],
+                            "baseHref": "/en-us/",
+                            "i18nLocale": "en-US"
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "LifeSuiteSPA:build"
+                    },
+                    "configurations": {
+                        "prod": {
+                            "browserTarget": "LifeSuiteSPA:build:prod"
+                        },
+                        "prod-en-us": {
+                            "browserTarget": "LifeSuiteSPA:build:prod-en-us"
+                        },
+                        "prod-fr-ca": {
+                            "browserTarget": "LifeSuiteSPA:build:prod-fr-ca"
+                        },
+                        "test": {
+                            "browserTarget": "LifeSuiteSPA:build:test"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "LifeSuiteSPA:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "src/karma-tests.ts",
+                        "karmaConfig": "./karma.conf.js",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "src/tsconfig.spec.json",
+                        "scripts": [],
+                        "styles": ["src/styles.css", "src/styles/themes/ls-default.theme.scss"],
+                        "assets": ["src/assets", "src/locale", "src/favicon.ico"]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+                        "exclude": []
+                    }
+                }
+            }
+        },
+        "LifeSuiteSPA-e2e": {
+            "root": "e2e",
+            "sourceRoot": "e2e",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "./protractor.conf.js",
+                        "devServerTarget": "LifeSuiteSPA:serve"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["e2e/tsconfig.e2e.json"],
+                        "exclude": []
+                    }
+                }
+            }
+        },
+        "components-lab": {
+            "root": "projects/components-lab",
+            "sourceRoot": "projects/components-lab/src",
+            "projectType": "application",
+            "prefix": "app",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/components-lab",
+                        "index": "projects/components-lab/src/index.html",
+                        "main": "projects/components-lab/src/main.ts",
+                        "polyfills": "projects/components-lab/src/polyfills.ts",
+                        "tsConfig": "projects/components-lab/tsconfig.app.json",
+                        "assets": ["projects/components-lab/src/favicon.ico", "projects/components-lab/src/assets"],
+                        "styles": ["projects/components-lab/src/styles.css", "src/styles/themes/ls-default.theme.scss"],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "prod-en-us": {
+                            "outputPath": "dist/components-lab/en-us",
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": true,
+                            "aot": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true,
+                            "buildOptimizer": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "projects/components-lab/src/environments/environment.ts",
+                                    "with": "projects/components-lab/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "baseHref": "./",
+                            "i18nLocale": "en-US"
+                        },
+                        "prod-fr-ca": {
+                            "outputPath": "dist/components-lab/fr-ca",
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": true,
+                            "aot": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true,
+                            "buildOptimizer": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "projects/components-lab/src/environments/environment.ts",
+                                    "with": "projects/components-lab/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "baseHref": "./",
+                            "i18nFile": "projects/components-lab/src/locale/messages.fr-CA.xlf",
+                            "i18nFormat": "xlf",
+                            "i18nLocale": "fr-CA"
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "components-lab:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "components-lab:build:production"
+                        },
+                        "prod-en-us": {
+                            "browserTarget": "components-lab:build:prod-en-us"
+                        },
+                        "prod-fr-ca": {
+                            "browserTarget": "components-lab:build:prod-fr-ca"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "components-lab:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/components-lab/src/test.ts",
+                        "polyfills": "projects/components-lab/src/polyfills.ts",
+                        "tsConfig": "projects/components-lab/tsconfig.spec.json",
+                        "karmaConfig": "projects/components-lab/karma.conf.js",
+                        "styles": ["projects/components-lab/src/styles.css"],
+                        "scripts": [],
+                        "assets": ["projects/components-lab/src/favicon.ico", "projects/components-lab/src/assets"]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/components-lab/tsconfig.app.json",
+                            "projects/components-lab/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "LifeSuiteSPA",
+    "schematics": {
+        "@schematics/angular:component": {
+            "prefix": "app",
+            "styleext": "cass"
+        },
+        "@schematics/angular:directive": {
+            "prefix": "app"
+        }
+    }
+}

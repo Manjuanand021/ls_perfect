@@ -1,0 +1,91 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="title" label="Title" i18n-label="@@applicant.coverage.beneficiary.title">
+                <lf-select #title name="title" [items]="listData.Title | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.Title" secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="firstName" label="First Name" i18n-label="@@applicant.coverage.beneficiary.firstname">
+                <lf-inputtext #firstName name="firstName" [(ngModel)]="data.FirstName" [maxLength]="200"
+                    secureComponent required [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="middleName" label="Middle Name" i18n-label="@@applicant.coverage.middlename.trustname">
+                <lf-inputtext #middleName name="middleName" [(ngModel)]="data.MiddleName" [maxLength]="100"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="lastName" label="Last Name" i18n-label="@@applicant.coverage.beneficiary.lastname">
+                <lf-inputtext #lastName name="lastName" [(ngModel)]="data.LastName" [maxLength]="100" secureComponent
+                    required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="suffix" label="Suffix" i18n-label="@@applicant.coverage.beneficiary.suffix">
+                <lf-select #suffix name="suffix" [items]="listData.Suffix | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.Suffix" secureComponent style="width:70px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="birthDate" label="Birth Date" i18n-label="@@applicant.coverage.beneficiary.birthdate">
+                <ls-inputdatecrypted #birthDate name="birthDate" [(ngModel)]="data.BirthDate" [maxDate]="maxBirthDate"
+                    secureComponent container="dialog"></ls-inputdatecrypted>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="beneficiaryType" label="Beneficiary Type" i18n-label="@@applicant.coverage.beneficiary.beneficiarytype">
+                <lf-select #beneficiaryType name="beneficiaryType" [items]="listData.BeneficiaryType | listItems:'value':'Id'"
+                    [(ngModel)]="beneType" (change)="onBeneficiaryTypeChange()" secureComponent required
+                    style="width:150px" container="dialog"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="taxId" label="Tax ID" i18n-label="@@applicant.coverage.beneficiary.taxid">
+                <lf-inputtaxid #taxId name="taxId" [(ngModel)]="data.TaxId" secureComponent></lf-inputtaxid>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="amount" label="Amount" i18n-label="@@applicant.coverage.beneficiary.amount">
+                <lf-inputnumber #amount name="amount" [(ngModel)]="data.Amount" maxLength="10" format="n0"
+                    [allowNegative]="false" [maxLength]="10" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="sharePct" label="Share %" i18n-label="@@applicant.coverage.beneficiary.sharepctwithspace">
+                <lf-inputnumber #sharePct name="sharePct" [max]="100" [(ngModel)]="data.Percentage" [allowNegative]="false"
+                    maxLength="5" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="relation" label="Relation" i18n-label="@@applicant.coverage.beneficiary.relation">
+                <lf-select #relation name="relation" [items]="listData.RelationshipToInsuredCode | listItems:'value':'Id' | emptyItem"
+                    [(ngModel)]="data.RelationshipToInsuredCode" container="dialog" secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Irrevocable" i18n-label="@@applicant.coverage.beneficiary.irrevocable" [control]="irrevocableFlag">
+                <lf-radiobuttongroup #irrevocableFlag name="irrevocableFlag" [(ngModel)]="data.IrrevokableIndicator"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="irrevocableFlag" value="-1" label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="irrevocableFlag" value="0" label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

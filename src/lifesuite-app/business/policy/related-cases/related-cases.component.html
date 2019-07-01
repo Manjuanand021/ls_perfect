@@ -1,0 +1,13 @@
+﻿<div class="lf-page-header">{{title}}</div>
+<div class="row col-12 justify-content-end" style="padding-bottom: 5px;">
+	<lf-button id="openPolicyButton" label="Open" i18n-label="@@general.button.label.open" (onClick)="openPolicy()" styleClass="btn btn-primary"
+	 [disabled]="isOpenEnabled" secureComponent></lf-button>
+</div>
+<div class="row">
+	<div class="col-12">
+		<data-grid [ngStyle]="{width: '100%', height: '450px'}" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClicked($event)">
+		</data-grid>
+	</div>
+</div>
+
+<data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>

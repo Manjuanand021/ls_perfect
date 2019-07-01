@@ -1,0 +1,92 @@
+﻿<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="lf-page-subheader" i18n="@@applicant.popup.label.coverage">Coverage</div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Product" i18n-label="@@applicant.popup.label.product" [control]="product">
+                <lf-select #product name="product" [(ngModel)]="policyCoverage.PlanCodeId" [items]="resolvedData.listData?.PlanCodeId | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:250px" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6">
+            <lf-form-input label="Face Amount" i18n-label="@@applicant.popup.label.faceamount" [control]="faceAmount">
+                <lf-inputnumber #faceAmount name="faceAmount" [(ngModel)]="policyCoverage.Amount" [allowNegative]="false"
+                    [maxLength]="10" secureComponent required></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="lf-page-subheader" i18n="@@applicant.popup.label.applicant">Applicant</div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input label="Title" i18n-label="@@applicant.popup.label.title" [control]="title">
+                <lf-select #title name="title" [(ngModel)]="applicant.Title" [items]="resolvedData.listData?.Title | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="First Name" i18n-label="@@applicant.popup.label.firstname" [control]="firstName">
+                <lf-inputtext #firstName name="firstName" [(ngModel)]="applicant.FirstName" maxLength="20"
+                    secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Middle Name" i18n-label="@@applicant.popup.label.middlename" [control]="middleName">
+                <lf-inputtext #middleName name="middleName" [(ngModel)]="applicant.MiddleName" maxLength="20"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input label="Last Name" i18n-label="@@applicant.popup.label.lastname" [control]="lastName">
+                <lf-inputtext #lastName name="lastName" [(ngModel)]="applicant.LastName" maxLength="50" secureComponent
+                    required></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Suffix" i18n-label="@@applicant.popup.label.suffix" [control]="suffix">
+                <lf-select #suffix name="suffix" [(ngModel)]="applicant.Suffix" [items]="resolvedData.listData?.Suffix | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input label="Birth Date" i18n-label="@@applicant.popup.label.birthdate" [control]="birthDate">
+                <ls-inputdatecrypted #birthDate name="birthDate" [(ngModel)]="applicant.BirthDate" [maxDate]="maxBirthDate"
+                    (ngModelChange)="onApplicantBirthDateChange()" secureComponent container="dialog" required></ls-inputdatecrypted>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Gender" i18n-label="@@applicant.popup.label.gender" [control]="gender">
+                <lf-select #gender name="gender" [(ngModel)]="applicant.Sex" [items]="resolvedData.listData?.Sex | listItems:'value':'Id' | emptyItem"
+                    required secureComponent style="width:150px" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input label="Relation" i18n-label="@@applicant.popup.label.relation" [control]="relation">
+                <lf-select #relation name="relation" [(ngModel)]="applicant.RelationshipToInsured" [items]="resolvedData.listData?.RelationshipToInsured | listItems:'value':'Id' | emptyItem"
+                    secureComponent style="width:150px" container="dialog"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input label="Medical Authorization" i18n-label="@@applicant.popup.label.medicalauth" [control]="medicalAuthorization">
+                <lf-radiobuttongroup #medicalAuthorization name="medicalAuthorization" [(ngModel)]="applicant.Applications_LazyLoad[0].MedicalAuthorizationFlag"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="medicalAuthorization" value=1 label="Yes" i18n-label="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="medicalAuthorization" value=0 label="No" i18n-label="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

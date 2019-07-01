@@ -1,0 +1,71 @@
+/* TabView */
+
+.ui-tabview > .ui-tabview-nav > li {
+    margin: 0;
+}
+
+.ui-tabview.ui-tabview-top > .ui-tabview-nav li {
+    top: 0px;
+}
+
+.ui-tabview.ui-tabview-top.ui-tabview-primary > .ui-tabview-nav li {
+    top: 1px;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-default {
+    background-color: $headerBgColor;
+}
+.ui-tabview > .ui-tabview-nav > .ui-state-active {
+    background-color: $contentBgColor;
+    border-right: 1px solid $headerBorderColor !important;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-active > a,
+.ui-tabview > .ui-tabview-nav > .ui-state-active > .ui-tabview-close {
+    color: $stateDefaultTextColor;
+}
+
+/*for generating a border in this situation*/
+.ui-tabview > .ui-widget-header {
+    background: transparent;
+    background-image: linear-gradient(transparent 97%, $headerBorderColor 2%);
+}
+
+/* Primary (first level) TabView */
+
+.ui-tabview.ui-tabview-primary > .ui-tabview-nav > li > a > .ui-tabview-title {
+    font-size: 0.75rem;
+}
+
+/* Secondary (second level) TabView */
+/*
+.ui-tabview.ui-tabview-secondary {
+	...
+}
+*/
+
+/* Tertiary (third level) TabView */
+/* .ui-tabview.ui-tabview-tertiary {
+	...
+}
+*/
+
+/* Tab icons */
+.ls-tabview-home {
+    color: #4776b9;
+    font-size: 1.25em;
+    height: auto !important;
+    text-align: center;
+}
+
+.ls-tabview-searchcase {
+    background: url('../../styles/images/leftnav/LS_searchcase.png') no-repeat;
+}
+
+.ls-tabview-reassigncase {
+    background: url('../../styles/images/leftnav/LS_reassigncase.png') no-repeat;
+}
+
+.ls-tabview-case {
+    background: url('../../styles/images/leftnav/LS_case.png') no-repeat;
+}

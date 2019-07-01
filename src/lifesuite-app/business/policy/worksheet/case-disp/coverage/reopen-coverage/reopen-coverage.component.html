@@ -1,0 +1,10 @@
+﻿<form #form="ngForm" role="form" class="form" autocomplete="off" [ngStyle]="{height: '100px'}">
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Reason" i18n-label="@@applicant.info.family.reason" [control]="reason">
+                <lf-select #reason name="reason" [(ngModel)]="reopenReason" [disabled]="!isReasonListRequired" [items]="resolvedData.metaData?.final_action_reason_reopened | listItems:'label':'value' | emptyItem"
+                    style="width:250px" container="dialog" secureComponent [required]="isReasonListRequired"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,17 @@
+﻿@import '../../../../../styles/base/helpers/variables';
+
+$splitter-offset-top: 39px;
+$splitter-top: $splitter-offset-top + $navbar-height;
+$splitter-height: calc(100vh - (#{$splitter-top} + ((1.1rem - 16px) * 10)) - #{$offset-bottom});
+
+.tab-split-container {
+    height: $splitter-height;
+}
+
+.tab-no-split-container {
+    height: 100%;
+}
+
+policy-toolbar {
+    min-height: 33px;
+}

@@ -1,0 +1,8 @@
+<div class="lf-dashed-bottom-border">
+    <data-grid #dataGrid [ngStyle]="{height: gridOptions.height}" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)">
+    </data-grid>
+    <lf-form-input [control]="riskFactorTotal" label="Total" i18n-label="@@policy.medicalcondition.grid.totalconditionpoints"
+        labelPosition="left">
+        <lf-statictext #riskFactorTotal name="riskFactorTotal" [value]="total | lfDecimal:'1.0-0'" secureComponent></lf-statictext>
+    </lf-form-input>
+</div>

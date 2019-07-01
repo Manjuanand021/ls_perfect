@@ -1,0 +1,11 @@
+﻿<!-- 
+ Adopted from NgbPopoverWindow in ng-bootstrap/src/popover/popover.ts
+ -->
+<div class="arrow"></div>
+<h3 class="popover-header" *ngIf="title != null">
+  <ng-template #simpleTitle>{{title}}</ng-template>
+  <ng-template [ngTemplateOutlet]="isTitleTemplate() ? title : simpleTitle" [ngTemplateOutletContext]="context"></ng-template>
+</h3>
+<div class="popover-body">
+  <ng-content></ng-content>
+</div>

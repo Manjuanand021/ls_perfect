@@ -1,0 +1,181 @@
+<div>Input fields</div>
+<pre>Child AuthorizationData: {{authorizationData | json}}</pre>
+<div class="row">
+	<div class="col-sm-3">
+		<lf-form-input label="Disable All Inputs " [control]="chkDisableAll">
+			<lf-checkbox #chkDisableAll name="chkDisableAll" binary="true" (click)="onAllInputsDisableClick($event, chkDisableAll.checked)"></lf-checkbox>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="Hide All Inputs " [control]="chkHideAll">
+			<lf-checkbox #chkHideAll name="chkHideAll" binary="true" (click)="onAllInputsHideClick($event, chkHideAll.checked)"></lf-checkbox>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="Require All Inputs " [control]="chkRequireAll">
+			<lf-checkbox #chkRequireAll name="chkRequireAll" binary="true" (click)="onAllInputsRequireClick($event, chkRequireAll.checked)"></lf-checkbox>
+		</lf-form-input>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-3">
+		<lf-form-input label="InputText - Always Authorized (Edit)" [control]="editableTextField">
+			<lf-inputtext #editableTextField name="editableTextField" [(ngModel)]="data.editableText" secureComponent required></lf-inputtext>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputText - Always Unauthorized (View)" [control]="viewOnlyTextField">
+			<lf-inputtext #viewOnlyTextField name="viewOnlyTextField" [(ngModel)]="data.viewOnlyText" secureComponent required></lf-inputtext>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-3">
+		<lf-form-input label="InputText" [control]="textField">
+			<lf-inputtext #textField name="textField" [(ngModel)]="data.text" secureComponent></lf-inputtext>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputTextArea" [control]="textAreaField">
+			<lf-inputtextarea #textAreaField name="textAreaField" [(ngModel)]="data.textarea" secureComponent></lf-inputtextarea>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputNumber" [control]="numberField">
+			<lf-inputnumber #numberField name="numberField" [(ngModel)]="data.number" min="1" max="1000" [allowNegative]="false"
+			 maxLength="4" secureComponent></lf-inputnumber>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputDate" [control]="dateField">
+			<ls-inputdate #dateField name="dateField" [(ngModel)]="data.date" [minDate]="data.minDate" [maxDate]="data.maxDate"
+			 [validators]="dateValidators" secureComponent></ls-inputdate>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputTime" [control]="timeField">
+			<ls-inputtime #timeField name="timeField" [(ngModel)]="data.date" secureComponent></ls-inputtime>
+		</lf-form-input>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputMask" [control]="maskField">
+			<lf-inputmask #maskField name="maskField" mask="999-99-9999" [(ngModel)]="data.mask" placeholder="999-99-9999"
+			 secureComponent></lf-inputmask>
+		</lf-form-input>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="Checkbox" [control]="checkboxField">
+			<lf-checkbox #checkboxField name="checkboxField" [(ngModel)]="data.checkbox" binary="true" secureComponent></lf-checkbox>
+		</lf-form-input>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="Select" [control]="dropdownField">
+			<lf-select #dropdownField name="dropdownField" [items]="dropdownList" [(ngModel)]="data.dropdown" style="width:150px"
+			 secureComponent></lf-select>
+		</lf-form-input>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="RadioButtonGroup" [control]="radioButtonGroup1">
+			<lf-radiobuttongroup #radioButtonGroup1 name="group5" [(ngModel)]="data.radiobutton" secureComponent>
+				<lf-radiobutton name="group5" value='1' label="Option 1"></lf-radiobutton>
+				<lf-radiobutton name="group5" value='2' label="Option 2"></lf-radiobutton>
+			</lf-radiobuttongroup>
+		</lf-form-input>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputTaxId" [control]="taxIdField">
+			<lf-inputtaxid #taxIdField name="taxIdField" [(ngModel)]="data.taxId" alwaysMasked="true" secureComponent></lf-inputtaxid>
+		</lf-form-input>
+		<pre>TaxId: {{data.taxId}}</pre>
+	</div>
+	<div class="col-sm-3">
+		<lf-form-input label="InputBankRoutingNumber" [control]="bankRoutingField">
+			<lf-inputbankrouting #bankRoutingField name="bankRoutingField" [(ngModel)]="data.bankRoutingNumber" secureComponent></lf-inputbankrouting>
+		</lf-form-input>
+		<pre>Bank Routing Number: {{data.bankRoutingNumber}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputBankAccount" [control]="bankAccountField">
+			<lf-inputbankaccount #bankAccountField name="bankAccountField" [(ngModel)]="data.bankAccount" secureComponent></lf-inputbankaccount>
+		</lf-form-input>
+		<pre>Bank Account: {{data.bankAccount}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputPhone" [control]="phoneField">
+			<lf-inputphone #phoneField name="phoneField" [(ngModel)]="data.phone" [extHidden]="false" secureComponent required></lf-inputphone>
+		</lf-form-input>
+		<pre>Phone data: {{data.phone | json}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputCreditCard" [control]="creditCardNumberField">
+			<lf-inputcreditcard #creditCardNumberField name="creditCardNumberField" [(ngModel)]="data.creditcardnumber"
+			 secureComponent required></lf-inputcreditcard>
+		</lf-form-input>
+		<pre>Credit Card Number: {{data.creditcardnumber}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputCreditCardExpirationDate" [control]="creditCardExpirationDateField">
+			<lf-inputcreditcardexpiration #creditCardExpirationDateField name="creditCardExpirationDateField" [(ngModel)]="data.creditcardexpiration"
+			 secureComponent required></lf-inputcreditcardexpiration>
+		</lf-form-input>
+		<pre>Credit Card Expiration Date: {{data.creditcardexpiration | json}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputHeight" [control]="heightField">
+			<lf-inputheight #heightField name="heightField" [(ngModel)]="data.height" secureComponent></lf-inputheight>
+		</lf-form-input>
+		<pre>Height: {{data.height}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputWeight" [control]="weightField">
+			<lf-inputweight #weightField name="weightField" [(ngModel)]="data.weight" secureComponent></lf-inputweight>
+		</lf-form-input>
+		<pre>Weight: {{data.weight}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputDateRange" [control]="dateRangeField">
+			<lf-inputdaterange #dateRangeField name="dateRangeField" [(ngModel)]="data.daterange" secureComponent></lf-inputdaterange>
+		</lf-form-input>
+		<pre>DateRange: {{data.daterange | json}}</pre>
+	</div>
+
+	<div class="col-sm-3">
+		<lf-form-input label="InputZipCode" [control]="zipcodeField">
+			<lf-inputzipcode #zipcodeField name="zipcodeField" zipCodeType="US" [(ngModel)]="data.zipcode" secureComponent></lf-inputzipcode>
+		</lf-form-input>
+		<pre>Zip Code: {{data.zipcode}}</pre>
+	</div>
+
+	<div class="col-sm-1">
+		<lf-form-input label="Hyperlink" [control]="hyperlinkField">
+			<lf-hyperlink #hyperlinkField name="hyperlinkField" [value]="data.hyperlinkValue | currency:'USD':'symbol'" (click)="onSomeHyperlinkClick($event)"
+			 secureComponent></lf-hyperlink>
+		</lf-form-input>
+	</div>
+
+	<div class="col-sm-1">
+		<lf-button label="Action Button" secureComponent></lf-button>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-6">
+		<lf-panel secureComponent header="Collapsible Panel" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+			<lf-form-input label="Text Field" [control]="panelTextField">
+				<lf-inputtext #panelTextField name="panelTextField" secureComponent></lf-inputtext>
+			</lf-form-input>
+		</lf-panel>
+	</div>
+</div>

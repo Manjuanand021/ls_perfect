@@ -1,0 +1,141 @@
+/* Highlighting rules for nav menu items */
+
+@media (min-width: 768px) {
+    /* On small screens, convert the nav menu to a vertical sidebar */
+    .navbar {
+        border-radius: 0px;
+        border-width: 0px;
+    }
+    .navbar-collapse {
+        border-top: 1px solid #444;
+        padding: 0px;
+    }
+    .navbar ul {
+        float: none;
+    }
+    .navbar li {
+        float: none;
+        font-size: 0.85rem;
+        margin: 6px;
+    }
+    .navbar li a {
+        padding: 10px 16px;
+        border-radius: 4px;
+    }
+    .navbar a {
+        /* If a menu item's text is too long, truncate it */
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+top-nav {
+    top: 50px;
+    margin-top: -50px;
+}
+
+.navbar .ui-button.btn-primary.ui-state-default {
+    background-color: #2399e5;
+}
+
+/* Sticky top-nav */
+/* Fixed navbar will be used in the place of sticky navbar */
+/*
+top-nav.stick {
+    position: fixed;
+    left: 15px;
+    right: 15px;
+    top: 0;
+    margin-top: 0px;
+    z-index: 1;
+    transition: margin 0.3s ease-out;
+    -webkit-transition: margin 0.3s ease-out;
+}
+
+.stick .lf-logo-image {
+    width: 120px;
+    height: 30px;
+    background-size: 120px 30px;
+}
+
+.stick .navbar li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.stick .navbar li a {
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+
+.stick .nav-item.nav-item-user-name {
+    display: none;
+}
+
+.stick .nav-item.nav-item-info {
+    display: inline-block;
+    padding-right: 100px;
+} 
+*/
+
+.nav-item.nav-item-user-name {
+    display: inline-block;
+}
+
+.nav-item.nav-item-info {
+    display: none;
+}
+
+.nav-item.nav-item-saving {
+    font-size: 0.7rem;
+    color: yellow;
+}
+
+.flex-30 {
+    flex-basis: 30%;
+}
+
+.flex-90 {
+    flex-basis: 80%;
+    display: inherit;
+}
+
+.flex-90 div {
+    justify-content: space-between;
+    display: flex;
+    flex-basis: 100%;
+}
+
+.logo-container {
+    display: table;
+}
+
+.top-nav-ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.ls-searchbar {
+    display: block;
+    position: fixed;
+    background: #9bc2e6;
+    top: 50px;
+    left: 15px;
+    right: 15px;
+    padding: 10px;
+    margin: 0px;
+}
+@media (max-width: 1280px) {
+    .ls-search-box input {
+        width: 9rem;
+    }
+}
+
+.ls-search-icon-button {
+    background-color: transparent;
+    border-color: transparent;
+}

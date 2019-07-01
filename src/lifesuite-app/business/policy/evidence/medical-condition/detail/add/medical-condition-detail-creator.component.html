@@ -1,0 +1,73 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Bodily System" i18n-label="@@policy.medicalcondition.edit.bodilysystem" [control]="bodilySystem">
+                <lf-select #bodilySystem name="bodilySystem" [(ngModel)]="bodilyDependentInput.parentInput.value"
+                    [items]="resolvedData.listData.BodilySystem | listItems:'value':'Id'" [clearable]="false"
+                    secureComponent style="width:350px" (change)="onBodilySystemChange($event)" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6" *ngIf="bodilyDependentInput.childInput.visible">
+            <lf-form-input label="" [control]="newBodilySystem">
+                <lf-inputtext #newBodilySystem name="newBodilySystem" [style]="{width:'350px'}" [(ngModel)]="bodilyDependentInput.childInput.value"
+                    [maxLength]="255" secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Condition" i18n-label="@@policy.medicalcondition.edit.condition" [control]="condition">
+                <lf-select #condition name="condition" [(ngModel)]="conditionDependentInput.parentInput.value" [items]="resolvedData.listData.Condition | listItems:'value':'Id'"
+                    [clearable]="false" secureComponent [disabled]="conditionDependentInput.parentInput.disable" style="width:350px"
+                    (change)="onConditionChange($event)" required></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6" *ngIf="conditionDependentInput.childInput.visible">
+            <lf-form-input label="" [control]="newCondition">
+                <lf-inputtext #newCondition name="newCondition" [style]="{width:'350px'}" [(ngModel)]="conditionDependentInput.childInput.value"
+                    [maxLength]="255" [maxLength]="255" secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+
+    <div *ngIf="!(bodilyDependentInput.childInput.visible || conditionDependentInput.childInput.visible)">
+        <div class="row">
+            <div class="col-12">
+                <add-medical-condition [medicalConditionList]="medicalConditionList"></add-medical-condition>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="bodilyDependentInput.childInput.visible || conditionDependentInput.childInput.visible">
+        <div class="row">
+            <div class="col-6">
+                <lf-form-input label="Criteria" i18n-label="@@policy.medicalcondition.edit.criteria" [control]="criteria">
+                    <lf-inputtext #criteria name="criteria" [(ngModel)]="data.Criteria" [maxLength]="255"
+                        secureComponent required></lf-inputtext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <lf-form-input label="Time of Criteria" i18n-label="@@policy.medicalcondition.edit.timeofcriteria"
+                    [control]="timeOfCriteria">
+                    <lf-inputtext #timeOfCriteria name="timeOfCriteria" [(ngModel)]="data.TimeOfCriteria" [maxLength]="255"
+                        secureComponent required></lf-inputtext>
+                </lf-form-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <lf-form-input label="Debit/Credit" i18n-label="@@policy.medicalcondition.edit.points" [control]="debit">
+                    <lf-inputnumber #debit name="debit" [max]="1000" [min]="-999" [maxLength]="4" [(ngModel)]="data.Points" format="n0"
+                        decimals="0" secureComponent required></lf-inputnumber>
+                </lf-form-input>
+            </div>
+        </div>
+    </div>
+</form>

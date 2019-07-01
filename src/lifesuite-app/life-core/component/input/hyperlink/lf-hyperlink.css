@@ -1,0 +1,13 @@
+﻿.btn.btn-link {
+    padding: 0.5rem 0;
+    text-decoration: underline;
+}
+
+.btn-link:hover {
+    cursor: pointer;
+}
+
+.btn-link:disabled {
+    text-decoration: underline;
+    cursor: default;
+}

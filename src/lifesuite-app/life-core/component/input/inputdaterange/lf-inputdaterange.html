@@ -1,0 +1,13 @@
+<fieldset [disabled]="disabled" [hidden]="hidden" [class.disabled]="disabled">
+	<div class="lf-parts">
+		<div class="lf-part">
+			<lf-inputdate #minDate [ngModel]="value?.minDate" (ngModelChange)="onMinDateChange($event)" aria-label="Min Date">
+			</lf-inputdate>
+		</div>
+		<div class="lf-part-spacer"></div>
+		<div class="lf-part">
+			<lf-inputdate #maxDate [ngModel]="value?.maxDate" (ngModelChange)="onMaxDateChange($event)" aria-label="Max Date">
+			</lf-inputdate>
+		</div>
+	</div>
+</fieldset>

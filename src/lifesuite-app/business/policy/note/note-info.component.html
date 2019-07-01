@@ -1,0 +1,8 @@
+<lf-panel [header]="panelHeader" [iconVisible]="isIconVisible" [iconClass]="iconClass" [toggleable]="true" panelType="secondary"
+ stateId="{{panelNoteType}}_{{index}}" [state]="componentsState.get(panelNoteType + '_' + index)" secureComponent>
+	<div class="itemContent" [class.invalid]="item.invalid">
+		<div class="note">
+			<compose [model]="item" [componentType]="itemComponentType"></compose>
+		</div>
+	</div>
+</lf-panel>

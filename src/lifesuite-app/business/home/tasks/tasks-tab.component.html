@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-12">
+        <tasks-filter (filterChange)="setTaskFilter($event)"></tasks-filter>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" [ngSwitch]="true">
+        <inbox-outbox-task-list *ngSwitchCase="taskFilter?.selectedTaskFilterType === taskFilterType.Inbox || 
+                taskFilter?.selectedTaskFilterType === taskFilterType.Outbox"
+            [filter]="taskFilter"></inbox-outbox-task-list>
+        <requirement-task-list *ngSwitchCase="taskFilter?.selectedTaskFilterType === taskFilterType.ReqToOrder || 
+                taskFilter?.selectedTaskFilterType === taskFilterType.PastDueUWReq || 
+                taskFilter?.selectedTaskFilterType === taskFilterType.PastDuePreIssue || 
+                taskFilter?.selectedTaskFilterType === taskFilterType.PastDuePostIssue || 
+                taskFilter?.selectedTaskFilterType === taskFilterType.PendingMail"
+            [filter]="taskFilter"></requirement-task-list>
+        <review-message-task-list *ngSwitchCase="taskFilter?.selectedTaskFilterType === taskFilterType.CaseMgrRevMsg"
+            [filter]="taskFilter"></review-message-task-list>
+        <diary-activity-task-list *ngSwitchCase="taskFilter?.selectedTaskFilterType === taskFilterType.Diary" [filter]="taskFilter"></diary-activity-task-list>
+        <image-received-task-list *ngSwitchCase="taskFilter?.selectedTaskFilterType === taskFilterType.ImgRecd"
+            [filter]="taskFilter"></image-received-task-list>
+        <mib-task-list *ngSwitchCase="taskFilter?.selectedTaskFilterType === taskFilterType.MIB2Yr" [filter]="taskFilter"></mib-task-list>
+    </div>
+</div>

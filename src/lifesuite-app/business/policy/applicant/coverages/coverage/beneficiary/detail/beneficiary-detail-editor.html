@@ -1,0 +1,17 @@
+﻿<form #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-3">
+            <lf-form-input [control]="partyType" label="Party Type" i18n-label="@@applicant.coverage.beneficiary.beneficiarytype">
+                <lf-select #partyType name="partyType" [items]="resolvedData.listData.PersonTypeId | listItems:'value':'Id'" [(ngModel)]="data.PersonTypeId"
+                    (change)="onPartyTypeChange($event)" [clearable]="false" secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-3">
+            <lf-form-input [control]="benefitType" label="Benefit Type" i18n-label="@@applicant.coverage.beneficiary.type">
+                <lf-select #benefitType name="benefitType" [items]="resolvedData.listData.BenefitType | listItems:'value':'Id'" [(ngModel)]="data.BenefitType"
+                    secureComponent style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <compose [model]="{data:data, resolvedData:resolvedData}" [componentType]="itemComponentType"></compose>
+</form>

@@ -1,0 +1,16 @@
+﻿<div [class]="splitContainerClass">
+	<lf-split direction="horizontal" [useTransition]="true" [gutterSize]="gutterSize" [gutterColor]="gutterColor" [dragGutterColor]="dragGutterColor"
+	 [splitterMinimized]="splitterMinimized" (dragStart)="onSplitGutterDragStart($event)" (dragEnd)="onSplitGutterDragEnd($event)"
+	 (gutterClick)="onSplitGutterClick($event)">
+		<lf-split-area [size]="containerAreasInfo.left.size">
+			<div class="row justify-content-end">
+				<policy-toolbar></policy-toolbar>
+			</div>
+			<router-outlet></router-outlet>
+		</lf-split-area>
+		<lf-split-area *ngIf="splitterVisible" [size]="containerAreasInfo.right.size">
+			<lf-split-pane [splitPaneAreas]="splitPaneAreas" direction="vertical" stateId="split_pane" [state]="componentsState.get('split_pane')">
+			</lf-split-pane>
+		</lf-split-area>
+	</lf-split>
+</div>

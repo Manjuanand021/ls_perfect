@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand bg-faded lf-navbar-fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navigationbar" aria-controls="navigationbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navigationbar">
+        <form class="form-inline mr-auto flex-30" role="form"
+            [ngClass]="{ 'ls-searchbar': showSearchBar, 'd-none d-xl-block': !showSearchBar }">
+            <lf-inputtext name="policyNumber" placeholder="Case #" [(ngModel)]="policyNumber"
+                i18n-placeholder="@@application.topbar.label.searchCase" class="ls-search-box" secureComponent>
+            </lf-inputtext>&nbsp;
+            <lf-button id="searchPolicyButton" label="Search" type="submit" i18n-label="@@general.button.label.search"
+                (onClick)="onSearchPolicyClick($event)" secureComponent styleClass="btn btn-primary"></lf-button>
+        </form>
+        <button type="button" class="d-xl-none ls-search-icon-button" (click)="isSearchBarVisible()"
+            *ngIf="!showSearchBar">
+            <i class="fa fa-search fa-2x" style="color: white;"></i>
+        </button>
+        <button type="button" class="d-xl-none ls-search-icon-button" (click)="isSearchBarVisible()"
+            *ngIf="showSearchBar">
+            <i class="fa fa-close fa-2x" style="color: white;"></i>
+        </button>
+        <div class="navbar-nav mr-auto flex-90">
+            <ul class="top-nav-ul">
+                <li *ngIf="showInfo" class="nav-item nav-item-info">
+                    <a name="infoString" class="nav-link">
+                        <span class="lf-nav-name">{{ infoString }}</span>
+                    </a>
+                </li>
+            </ul>
+            <div>
+                <ul class="top-nav-ul">
+                    <li class="nav-item nav-item-user-name d-none d-sm-block">
+                        <a name="userName" class="nav-link">
+                            <ng-container i18n="@@application.topbar.label.welcome">Welcome, </ng-container>
+                            <span class="lf-nav-name">{{ userName }}
+                                <small *ngIf="isOutOfOffice">-&nbsp;
+                                    <ng-container i18n="@@user.preferences.outofoffice">Out of Office</ng-container>
+                                </small>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="top-nav-ul list-items">
+                    <!-- Below comment is kept in case if we need require in future -->
+
+                    <!--
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" (click)="onNavItemClick($event)">
+                                <i class="lf-nav-link-icon lf-nav-link-icon-left fa fa-question-circle"></i>Help</a>
+                        </li>
+                    -->
+                    <li class="nav-item d-none d-lg-block">
+                        <a name="preference" class="nav-link" (click)="onPreferencesClick()">
+                            <i class="lf-nav-link-icon lf-nav-link-icon-left fa fa-cog"></i>
+                            <ng-container i18n="@@application.topbar.label.preferences">Preferences</ng-container>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-sm-block">
+                        <a name="about" class="nav-link" lfPopover [popoverParams]="dialogAboutParams">
+                            <i class="lf-nav-link-icon lf-nav-link-icon-left fa fa-info-circle"></i>
+                            <ng-container i18n="@@application.topbar.label.about">About</ng-container>
+                            <i class="lf-nav-link-icon lf-nav-link-icon-right fa fa-caret-down"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="logout" href="#" class="nav-link" (click)="onLogoutClick($event)">
+                            <i class="lf-nav-link-icon lf-nav-link-icon-left fa fa-sign-out"></i>
+                            <ng-container i18n="@@application.topbar.label.logout">Logout</ng-container>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="top-nav-ul" style="width: 200px;">
+            <li *ngIf="isSavingData" class="nav-item nav-item-saving d-none d-sm-block">
+                <a name="saving">
+                    <i class="lf-nav-link-icon lf-nav-link-icon-left fa fa-save"></i>
+                    <ng-container i18n="@@application.topbar.label.saving">saving...</ng-container>
+                </a>
+            </li>
+        </ul>
+        <div class="logo-container">
+            <div class="lf-logo-image d-inline-block align-top"></div>
+        </div>
+    </div>
+</nav>

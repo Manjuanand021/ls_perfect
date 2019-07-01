@@ -1,0 +1,1 @@
+export * from './mvr-detail-violations.component';

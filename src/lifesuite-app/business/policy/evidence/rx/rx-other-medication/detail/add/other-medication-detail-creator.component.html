@@ -1,0 +1,38 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+
+    <div class="row">
+        <div class="col-6">
+            <lf-form-input label="Medical Condition" i18n-label="@@policy.medication.edit.condition" [control]="medicalCondition">
+                <lf-select #medicalCondition name="medicalCondition" [(ngModel)]="data.Condition" [items]="resolvedData.listData.Condition | listItems:'value':'Id'"
+                    [clearable]="false" secureComponent style="width:350px" (change)="onMedicalConditionChange($event)" required></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-6" *ngIf="isNewMedicalCondition">
+            <lf-form-input label="New Medical Condition" i18n-label="@@policy.medication.edit.othercondition" [control]="newMedicalCondition">
+                <lf-inputtext #newMedicalCondition name="newMedicalCondition" [style]="{width:'350px'}" [(ngModel)]="newMedicalConditionValue"
+                    maxLength="249" secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div *ngIf="!this.isNewMedicalCondition">
+        <div class="row">
+            <div class="col-12">
+                <add-other-medication [medicationDTO]="medicationDTO"></add-other-medication>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <lf-form-input label="Other Drug" i18n-label="@@policy.medication.edit.headerotherdrugs" [control]="otherDrug">
+                    <lf-checkbox #otherDrug name="otherDrug" [(ngModel)]="isOtherMedication" [disabled]="disableOtherMedication"
+                        secureComponent></lf-checkbox>
+                </lf-form-input>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="isOtherMedication || isNewMedicalCondition">
+        <div class="col-12" style="padding: 0;">
+            <other-drug-medication [otherDrugMedicationDTO]="otherDrugMedicationDTO"></other-drug-medication>
+        </div>
+    </div>
+</form>

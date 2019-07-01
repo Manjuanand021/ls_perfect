@@ -1,0 +1,57 @@
+<form ngForm #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="caseNumber" label="Case #" i18n-label="@@policy.notes.addnotes.casenumber">
+                <lf-statictext #caseNumber name="caseNumber" [value]="policy.PolicyNumber" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-8">
+            <lf-form-input [control]="applicant" label="Applicant" i18n-label="@@policy.addnotes.label.applicant">
+                <lf-select #applicant name="applicant" [items]="applicantList" [(ngModel)]="applicantId"
+                    (change)="onApplicantChange($event)" [disabled]="isApplicantListDisabled" secureComponent
+                    [clearable]="false" style="width:200px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="birthDate" label="Date of Birth" i18n-label="@@policy.notes.addnotes.birthdate">
+                <lf-statictext #birthDate name="birthDate" [value]="dateOfBirth | dbDate" secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+        <div class="col-8" *ngIf="showApplicantStatus">
+            <lf-form-input [control]="applicantStatus" label="Applicant Status" i18n-label="@@policy.notes.addnotes.applicantstatus">
+                <lf-statictext #applicantStatus name="applicantStatus" [value]="applicantStatusDescription"
+                    secureComponent></lf-statictext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!showSubjectFieldList">
+        <div class="col-12">
+            <lf-form-input [control]="subject" label="Subject" i18n-label="@@policy.notes.addnotes.subject">
+                <lf-inputtext #subject name="subject" [(ngModel)]="data.Topic" [maxLength]="254" [style]="{width:'300px'}"
+                    secureComponent required></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="showSubjectFieldList">
+        <div class="col-3">
+            <lf-form-input [control]="subjectList" label="Subject" i18n-label="@@policy.notes.addnotes.subject">
+                <lf-select #subjectList name="subjectList" [items]="subjectListOptions| listItems:'label':'value'"
+                    [(ngModel)]="data.Topic" style="width:300px"  [clearable]="false" secureComponent required></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <lf-form-input [control]="note" label="Note" i18n-label="@@policy.notes.addnotes.note">
+                <lf-inputtextarea #note name="note" [(ngModel)]="data.Note" secureComponent rows="10" [style]="{width: '100%'}"
+                    required></lf-inputtextarea>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

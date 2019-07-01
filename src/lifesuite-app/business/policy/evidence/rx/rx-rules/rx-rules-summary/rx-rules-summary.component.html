@@ -1,0 +1,6 @@
+<div class="lf-solid-bottom-border">
+    <div class="lf-page-subheader">{{title}}</div>
+    <data-grid #dataGrid [ngStyle]="{height: gridOptions.height}" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)">
+    </data-grid>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

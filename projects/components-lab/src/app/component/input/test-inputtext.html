@@ -1,0 +1,83 @@
+<form #form="ngForm">
+    <br />
+    <label>InputText</label> <br />
+    <div id="view1" class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-1">
+                <label>Required</label>
+                <lf-select
+                    name="required"
+                    [items]="trueFalseList"
+                    [(ngModel)]="required"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Disabled</label>
+                <lf-select
+                    name="disabled"
+                    [items]="trueFalseList"
+                    [(ngModel)]="disabled"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Hidden</label>
+                <lf-select
+                    name="hidden"
+                    [items]="trueFalseList"
+                    [(ngModel)]="hidden"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>ReadOnly</label>
+                <lf-select
+                    name="readonly"
+                    [items]="trueFalseList"
+                    [(ngModel)]="readonly"
+                    [clearable]="false"
+                    style="width:100px;"
+                ></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Max Length</label> <input name="max" [(ngModel)]="maxLength" style="width:100px;" />
+            </div>
+        </div>
+        <br />
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-sm-3">
+                <lf-form-input label="Sr InputText" [control]="srTextField">
+                    <lf-inputtext
+                        #srTextField
+                        name="srTextField"
+                        [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)"
+                        [readonly]="toBoolean(readonly)"
+                        [maxLength]="maxLength"
+                        [(ngModel)]="fields.srTextField.value"
+                    ></lf-inputtext>
+                </lf-form-input>
+            </div>
+            <div class="col-sm-3">
+                <lf-form-input label="LPLA InputText" [control]="lplaTextField">
+                    <lpla-inputtext
+                        #lplaTextField
+                        name="lplaTextField"
+                        [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)"
+                        [maxLength]="maxLength"
+                        [(ngModel)]="fields.lplaTextField.value"
+                        [fieldModel]="fields.lplaTextField.model"
+                    ></lpla-inputtext>
+                </lf-form-input>
+            </div>
+        </div>
+    </div>
+</form>

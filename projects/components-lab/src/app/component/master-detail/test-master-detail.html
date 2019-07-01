@@ -1,0 +1,13 @@
+<div class="col-sm-6">
+	<label>Choose Master Detail Type:</label>
+	<lf-select name="detailPopup" [items]="detailStyleList | emptyItem" [(ngModel)]="detailStyle" [style]="{width:'100px'}"></lf-select>
+	<br />
+</div>
+<hr style="border-top: 1px dashed" />
+<br />
+<div class="row" *ngIf="detailStyle == 'inline'">
+	<test-master-detail-inline></test-master-detail-inline>
+</div>
+<div class="row" *ngIf="detailStyle == 'popup'">
+	<test-master-detail-popup></test-master-detail-popup>
+</div>

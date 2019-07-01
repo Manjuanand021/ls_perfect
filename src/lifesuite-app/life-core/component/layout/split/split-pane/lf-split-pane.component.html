@@ -1,0 +1,8 @@
+﻿<lf-split [direction]="direction" [gutterSize]="gutterSize" [gutterColor]="gutterColor" [dragGutterColor]="dragGutterColor"
+    (gutterClick)="onSplitGutterClick($event)" (dragStart)="onSplitDragStart($event) " (dragEnd)="onSplitDragEnd($event) " [useTransition]="true ">
+    <ng-template ngFor let-area [ngForOf]="splitPaneAreas " let-index="index ">
+        <lf-split-area *ngIf="area.visible " [order]="area.index " [size]="area.size ">
+            <compose [componentType]="area.view " [model]="area "></compose>
+        </lf-split-area>
+    </ng-template>
+</lf-split>

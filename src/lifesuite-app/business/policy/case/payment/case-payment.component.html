@@ -1,0 +1,115 @@
+<lf-panel header="Payment Information" i18n-header="@@policy.case.payment.title" panelType="primary" [toggleable]="true"
+ stateId="panel_payment" [state]="componentsState.get('panel_payment')" [initCollapsed]=true secureComponent>
+	<div class="row">
+		<div class="col-3">
+			<lf-form-input [control]="modePremium" label="Mode Premium" i18n-label="@@policy.case.payment.modalpremium">
+				<lf-inputnumber #modePremium name="modePremium" [(ngModel)]="data.policy.ModePremium" maxLength="10"
+				 [allowNegative]="false" secureComponent></lf-inputnumber>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<lf-form-input [control]="paymentMethod" label="Payment Method" i18n-label="@@policy.case.payment.paymentmethod">
+				<lf-select #paymentMethod name="paymentMethod" [items]="listData.PaymentMethodCode | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.policy.PaymentMethodCode" secureComponent style="width:200px"></lf-select>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="paymentMode" label="Payment Mode" i18n-label="@@policy.case.payment.paymentmode">
+				<lf-select #paymentMode name="paymentMode" [items]="listData.PaymentModeCode | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.policy.PaymentModeCode" secureComponent style="width:200px"></lf-select>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="billingDay" label="Billing Day" i18n-label="@@policy.case.payment.billingday">
+				<lf-inputnumber #billingDay name="billingDay" [(ngModel)]="data.policy.BillDay" [max]="maxBillingDayValue"
+				 maxLength="10" format="n0" decimals="0" [allowNegative]="false" secureComponent></lf-inputnumber>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="trust" label="Trust" i18n-label="@@policy.case.payment.trust">
+				<lf-select #trust name="trust" [items]="listData.TrustCode | listItems:'value':'Id' | emptyItem" [(ngModel)]="data.policy.TrustCode"
+				 secureComponent style="width:150px"></lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<lf-form-input [control]="creditCardType" label="Credit Card Type" i18n-label="@@policy.case.payment.creditcardtype">
+				<lf-select #creditCardType name="creditCardType" [items]="listData.CreditCardType | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.policy.CreditCardType" (change)="onCreditCardTypeChange($event)" secureComponent style="width:150px"></lf-select>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="creditCardNumber" label="Credit Card Number" i18n-label="@@policy.case.payment.creditcardnumber">
+				<lf-inputcreditcard #creditCardNumber name="creditCardNumber" [creditCardType]="data.policy.CreditCardType | getCreditCardType"
+				 [(ngModel)]="data.policy.creditCardNumberDecrypted" secureComponent [required]="isCreditCardRequired"></lf-inputcreditcard>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="creditCardExpiration" label="Credit Card Expiration" i18n-label="@@policy.case.payment.creditcardexpiration">
+				<lf-inputcreditcardexpiration #creditCardExpiration name="creditCardExpiration" [ngModel]="data.policy | getCreditCardExpirationFromPolicy"
+				 (ngModelChange)="onCreditCardExpirationChange($event)" #creditCardExpirationNgModel="ngModel" secureComponent
+				 [required]="isCreditCardRequired"></lf-inputcreditcardexpiration>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="cardHolderName" label="Card Holder Name" i18n-label="@@policy.case.payment.cardholdername">
+				<lf-inputtext #cardHolderName name="cardHolderName" [(ngModel)]="data.policy.creditCardAccountNameDecrypted"
+				 maxLength="175" secureComponent [required]="isCreditCardRequired" [autocomplete]="false"></lf-inputtext>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<lf-form-input [control]="bankAccountType" label="Bank Account Type" i18n-label="@@policy.case.payment.bankaccounttype">
+				<lf-select #bankAccountType name="bankAccountType" [items]="listData.BankAccountType | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.policy.BankAccountType" (change)="onBankAccountTypeChange($event)" secureComponent style="width:150px"></lf-select>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="bankTransactionNumber" label="Bank Transaction Number" i18n-label="@@policy.case.payment.banktransaction">
+				<lf-inputtext #bankTransactionNumber name="bankTransactionNumber" [(ngModel)]="data.policy.bankTransactionNumberDecrypted"
+				 maxLength="175" secureComponent></lf-inputtext>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="bankName" label="Bank Name" i18n-label="@@policy.case.payment.bankname">
+				<lf-inputtext #bankName name="bankName" [(ngModel)]="data.policy.BankNameOnAccount" maxLength="255" secureComponent></lf-inputtext>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="nameOnAccount" label="Name on Bank Account" i18n-label="@@policy.case.payment.nameonbankaccount">
+				<lf-inputtext #nameOnAccount name="nameOnAccount" [(ngModel)]="data.policy.bankAccountNameDecrypted" maxLength="100"
+				 secureComponent [autocomplete]="false"></lf-inputtext>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<lf-form-input [control]="bankRoutingNumber" label="Bank Routing Number" i18n-label="@@policy.case.payment.bankrouting">
+				<lf-inputbankrouting #bankRoutingNumber name="bankRoutingNumber" [(ngModel)]="data.policy.bankRountingNumberDecrypted"
+				 maxLength="30" secureComponent></lf-inputbankrouting>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="bankAccountNumber" label="Bank Account Number" i18n-label="@@policy.case.payment.bankaccount">
+				<lf-inputbankaccount #bankAccountNumber name="bankAccountNumber" [(ngModel)]="data.policy.bankAccountNumberDecrypted"
+				 [maxLength]="30" secureComponent></lf-inputbankaccount>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="listBillLocation" label="List Bill Location Number" i18n-label="@@policy.case.payment.listbilllocationnumber">
+				<lf-inputnumber #listBillLocation name="listBillLocation" [(ngModel)]="data.policy.ListBillLocation" maxLength="20"
+				 format="n0" decimals="0" [allowNegative]="false" secureComponent></lf-inputnumber>
+			</lf-form-input>
+		</div>
+		<div class="col-3">
+			<lf-form-input [control]="listBillEmployeeId" label="List Bill Employee Number" i18n-label="@@policy.case.payment.listbillemployeenumber">
+				<lf-inputtext #listBillEmployeeId name="listBillEmployeeId" [(ngModel)]="data.policy.ListBillEmployeeId" maxLength="20"
+				 secureComponent></lf-inputtext>
+			</lf-form-input>
+		</div>
+	</div>
+</lf-panel>

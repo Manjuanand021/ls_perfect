@@ -1,0 +1,28 @@
+<div class="lf-page-header" style="margin-top:0;" i18n="@@policy.reassign.case.title">
+    Reassign Case
+</div>
+<div class="row pb-3">
+    <div class="col-3">
+        <lf-form-input label="Reassign From" i18n-label="@@policy.reassign.case.from">
+            <lf-select style="width:200px" [items]="listData.userId | listItems:'value':'externalCode' | emptyItem" [(ngModel)]="reassignCaseFilter.fromUser"
+                (change)="onReassignFromUserChange($event)" secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Reassign To" i18n-label="@@policy.reassign.case.to">
+            <lf-select style="width:200px" [disabled]="isToUsersListDisabled" [items]="reassignToUsersList | listItems:'value':'externalCode' | emptyItem"
+                [(ngModel)]="reassignCaseFilter.toUser" (change)="onReassignToUserChange($event)" secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-6 bottom-buttons">
+        <lf-button id="reassignSelected" label="Reassign Selected" i18n-label="@@policy.reassign.case.selected" [disabled]="isReassignButtonDisabled"
+            secureComponent styleClass="btn btn-primary" (onClick)="reassignSelectedCases()"></lf-button>
+        <lf-button id="reassignAll" label="Reassign All" i18n-label="@@policy.reassign.case.all" [disabled]="isReassignButtonDisabled"
+            secureComponent styleClass="btn btn-primary" (onClick)="reassignAllCases()"></lf-button>
+    </div>
+</div>
+<div class="row page-height">
+    <div class="col">
+        <reassign-case-grid *ngIf="isGridVisible"></reassign-case-grid>
+    </div>
+</div>

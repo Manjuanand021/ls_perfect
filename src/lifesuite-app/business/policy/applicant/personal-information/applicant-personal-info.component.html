@@ -1,0 +1,174 @@
+﻿<lf-panel header="Personal Information" i18n-header="@@policy.applicant.personal.info.PersonalInformationTitle"
+    [toggleable]="true" panelType="primary" stateId="panel_applicantPersonalInformation" class="label-appearance"
+    [state]="componentsState.get('panel_applicantPersonalInformation')" [initCollapsed]=true secureComponent>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="residenceCountry" label="Residence Country"
+                i18n-label="@@policy.applicant.personal.info.ResidenceCountry">
+                <lf-select #residenceCountry name="residenceCountry"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].ResidenceCountry"
+                    [items]="listData.ResidenceCountry | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="citizenship" label="Citizenship"
+                i18n-label="@@policy.applicant.personal.info.Citizenship">
+                <lf-select #citizenship name="citizenship"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].CitizenshipCountryId"
+                    [items]="listData.CitizenshipCountryId | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="citizenshipStatus" label="Citizenship Status"
+                i18n-label="@@policy.applicant.personal.info.CitizenshipType">
+                <lf-select #citizenshipStatus name="citizenshipStatus"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].CitizenshipType"
+                    [items]="listData.CitizenshipType | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="permResidentId" label="Permanent Resident ID"
+                i18n-label="@@policy.applicant.personal.info.ResidentId">
+                <lf-inputtext #permResidentId name="permResidentId" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].ResidentId" maxLength="10" secureComponent
+                    maxLength="10"></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class=" row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="gender" label="Gender" i18n-label="@@policy.applicant.personal.info.Gender">
+                <lf-select #gender name="gender" [(ngModel)]="applicant.Sex" [items]="listData.Sex | listItems:
+                    'value': 'Id' | emptyItem" secureComponent style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="maritalStatus" label="Marital Status"
+                i18n-label="@@policy.applicant.personal.info.MaritalStatus">
+                <lf-select #maritalStatus name="maritalStatus" [(ngModel)]="applicant.MaritalStatus" [items]="listData.MaritalStatus
+                    | listItems: 'value': 'Id' | emptyItem" secureComponent style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="tobaccoUse" label="Tobacco Use"
+                i18n-label="@@policy.applicant.personal.info.TobaccoUse">
+                <lf-select #tobaccoUse name="tobaccoUse"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].TobaccoUses_LazyLoad[0].TobaccoUseId"
+                    [items]="listData.TobaccoUseId | listItems: 'value': 'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="tobaccoType" label="Tobacco Type"
+                i18n-label="@@policy.applicant.personal.info.TobaccoType">
+                <lf-select #tobaccoType name="tobaccoType"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].TobaccoUses_LazyLoad[0].TobaccoTypeId"
+                    [items]="listData.TobaccoTypeId | listItems: 'value': 'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="quitDate" label="Quit Date"
+                i18n-label="@@policy.applicant.personal.info.QuitDate">
+                <ls-inputdate #quitDate name="quitDate" class="input-date-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].TobaccoUses_LazyLoad[0].QuitDate" secureComponent>
+                </ls-inputdate>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="yearsSmoked" label="Years Smoked"
+                i18n-label="@@policy.applicant.personal.info.YearsSmoked">
+                <lf-inputnumber format="d" #yearsSmoked name="yearsSmoked" maxLength="2" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].TobaccoUses_LazyLoad[0].YearsSmoked"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="unitsPerDay" label="Units Per Day"
+                i18n-label="@@policy.applicant.personal.info.UnitsPerDay">
+                <lf-inputnumber format="d" #unitsPerDay name="unitsPerDay" maxLength="2" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].TobaccoUses_LazyLoad[0].PacksPerDay"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="birthCountry" label="Birth Country"
+                i18n-label="@@policy.applicant.personal.info.BirthCountry">
+                <lf-select #birthCountry name="birthCountry"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].BirthCountry"
+                    [items]="listData.BirthCountry | listItems: 'value': 'Id' | emptyItem" secureComponent
+                    (change)="onBirthCountryChange()" style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="birthState" label="Birth State"
+                i18n-label="@@policy.applicant.personal.info.BirthState">
+                <lf-select #birthState name="birthState" [(ngModel)]="applicant.Applications_LazyLoad[0].BirthState"
+                    [items]="listData | stateListPicker: applicant.Applications_LazyLoad[0].BirthCountry | emptyItem | sortList"
+                    secureComponent style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="height" label="Height" i18n-label="@@policy.applicant.personal.info.Height">
+                <lf-inputheight #height name="height" [(ngModel)]="applicant.Applications_LazyLoad[0].HeightInches"
+                    class="input-width" secureComponent></lf-inputheight>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="weight" label="Weight" i18n-label="@@policy.applicant.personal.info.Weight">
+                <lf-inputweight #weight name="weight" [(ngModel)]="applicant.Applications_LazyLoad[0].WeightPounds"
+                    class="input-width" secureComponent></lf-inputweight>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="weightPreviousYear" label="Weight Prev. Year"
+                i18n-label="@@policy.applicant.personal.info.WeightPrevYear">
+                <lf-inputweight #weightPreviousYear name="weightPreviousYear" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].WeghtPreviousYear" secureComponent></lf-inputweight>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="weightChangeReason" label="Weight Change Reason"
+                i18n-label="@@policy.applicant.personal.info.WeightChangeReason">
+                <lf-inputtext #weightChangeReason name="weightChangeReason" class="input-width"
+                    [(ngModel)]="applicant.Applications_LazyLoad[0].ReasonForWeightChange" maxLength="100"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input [control]="systolicBpReading" label="Systolic BP Reading"
+                i18n-label="@@policy.applicant.personal.info.SystolicBpReading">
+                <lf-inputnumber format="d" #systolicBpReading name="systolicBpReading" maxLength="10"
+                    class="input-width" [(ngModel)]="applicant.Applications_LazyLoad[0].SystolicBpReading"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="diastolicBpReading" label="Diastolic BP Reading"
+                i18n-label="@@policy.applicant.personal.info.DistolicBpReading">
+                <lf-inputnumber format="d" #diastolicBpReading name="diastolicBpReading" maxLength="10"
+                    class="input-width" [(ngModel)]="applicant.Applications_LazyLoad[0].DiastolicBpReading"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="cholestrolReading" label="Cholesterol Reading"
+                i18n-label="@@policy.applicant.personal.info.CholesterolReading">
+                <lf-inputnumber format="d" #cholestrolReading name="cholestrolReading" maxLength="10"
+                    class="input-width" [(ngModel)]="applicant.Applications_LazyLoad[0].CholesterolReading"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+</lf-panel>

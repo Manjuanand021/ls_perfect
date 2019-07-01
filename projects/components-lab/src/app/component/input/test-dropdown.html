@@ -1,0 +1,62 @@
+<form #form="ngForm">
+    <br />
+    <label>DropDown</label> <br />
+    <div id="view1" class="col-sm-9">
+        <div class="row">
+            <div class="col-sm-1">
+                <label>Required</label>
+                <lf-select name="required" [items]="trueFalseList" [(ngModel)]="required" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Disabled</label>
+                <lf-select name="disabled" [items]="trueFalseList" [(ngModel)]="disabled" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Hidden</label>
+                <lf-select name="hidden" [items]="trueFalseList" [(ngModel)]="hidden" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Searchable</label>
+                <lf-select name="searchable" [items]="trueFalseList" [(ngModel)]="searchable" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Clearable</label>
+                <lf-select name="clearable" [items]="trueFalseList" [(ngModel)]="clearable" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+        </div>
+        <br />
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-sm-3">
+                <lf-form-input label="Lf Select - string list" [control]="lfStringListField1">
+                    <lf-select #lfStringListField1 name="lfStringListField1" [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [searchable]="toBoolean(searchable)"
+                        [clearable]="toBoolean(clearable)" [items]="stringList" [(ngModel)]="stringListValue1" style="width:120px;"
+                        (change)="onDropDownChange($event)"></lf-select>
+                </lf-form-input>
+                <pre>Selected value: {{ stringListValue1 || 'none' }}</pre>
+            </div>
+
+            <div class="col-sm-3">
+                <lf-form-input label="Lf Select - numeric list" [control]="lfNumericListField">
+                    <lf-select #lfNumericListField name="lfNumericListField" [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [searchable]="toBoolean(searchable)"
+                        [clearable]="toBoolean(clearable)" [items]="numericList" [(ngModel)]="numericListValue" style="width:120px;"
+                        (change)="onDropDownChange($event)"></lf-select>
+                </lf-form-input>
+                <pre>Selected value: {{ numericListValue }}</pre>
+            </div>
+
+            <div class="col-sm-3">
+                <lf-form-input label="Lpla Select - string list" [control]="lplaStringListField2">
+                    <lpla-select #lplaStringListField2 name="lplaStringListField2" [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [searchable]="toBoolean(searchable)"
+                        [clearable]="toBoolean(clearable)" [items]="stringList" [(ngModel)]="stringListValue2" style="width:120px;"
+                        (change)="onDropDownChange($event)"></lpla-select>
+                </lf-form-input>
+                <pre>Selected value: {{ stringListValue2 || 'none' }}</pre>
+            </div>
+        </div>
+        <br />
+    </div>
+</form>

@@ -1,0 +1,45 @@
+﻿.lf-modal-control-bar-button {
+    color: #fff;
+}
+
+/* following classes overwrite bootstrap classes */
+.modal-header {
+    background-color: #337ab7;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.4em 0.5em;
+}
+.modal-body {
+    min-height: 90px;
+    padding: 1em;
+}
+
+.modal-footer {
+    padding: 0.5em 1em;
+}
+
+.control-bar {
+    float: right;
+}
+
+.control-bar-close,
+.control-bar-maximize {
+    opacity: 0.7;
+}
+
+.control-bar-close:hover,
+.control-bar-maximize:hover {
+    opacity: 0.9;
+}
+
+button.control-bar-close,
+button.control-bar-maximize {
+    padding: 0 0.15rem;
+    background-color: transparent;
+    border: 0;
+}
+
+.control-bar-close:not(:disabled):not(.disabled),
+.control-bar-maximize:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}

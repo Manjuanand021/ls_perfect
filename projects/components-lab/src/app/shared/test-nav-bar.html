@@ -1,0 +1,13 @@
+<!-- sticky-top or fixed-top are supported/working only in chrome for now -->
+<nav class="navbar navbar-toggleable-xl bg-faded lf-navbar-fixed-top">
+    <!--
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigationbar" aria-controls="navigationbar" aria-expanded="false" aria-label="Toggle navigation">
+        	<span class="navbar-toggler-icon"></span>
+        </button>
+    -->
+    <div class="logo-container"><div class="lf-logo-image d-inline-block align-top"></div></div>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link lf-nav-label" i18n="@@navbar.title">Components Lab (ver 7)</a></li>
+    </ul>
+    <div class="loader"><div *ngIf="isRouterNavigating" class="fa fa-spinner fa-spin fa-2x fa-inverse"></div></div>
+</nav>

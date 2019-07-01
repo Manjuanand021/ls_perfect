@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 lf-dashed-bottom-border">
+            <lf-form-input [control]='providerType'>
+                <lf-radiobuttongroup #providerType name="providerType" [(ngModel)]="searchFilter.providerSearchSource"
+                    secureComponent>
+                    <span>
+                        <lf-radiobutton name="providerType" value="LS" label="LifeSuite Internal Provider Search"
+                            i18n-label="@@policy.requirement.providersearch.lssearch"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="providerType" value="EXT" label="External Provider Search" i18n-label="@@policy.requirement.providersearch.epssearch"
+                            [disabled]="true"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+    </div>
+    <form #form="ngForm" role="form" class="form" autocomplete="off">
+        <div class="row">
+            <div class="col-12">
+                <lf-form-input label="Search Type" i18n-label="@@policy.requirement.providersearch.searchtype"
+                    [control]="searchType">
+                    <lf-select #searchType name="searchType" [items]="data.resolvedData.metaData.MedicalProviderSearchType | sortList: 'externalCode' | listItems:'label':'value'"
+                        [(ngModel)]="searchFilter.searchType" secureComponent (change)="onProviderSearchTypeChange($event)"
+                        required></lf-select>
+                </lf-form-input>
+            </div>
+        </div>
+        <compose [model]="data" [componentType]="itemComponentType"></compose>
+        <div class="row lf-dashed-bottom-border">
+            <div class="ls-justify-content-end-flex-layout pb-2">
+                <lf-button id="search" label="Search" i18n-label="@@general.button.label.search" (onClick)="onSearchButtonClick()"
+                    secureComponent styleClass="btn btn-primary"></lf-button>
+                <lf-button id="clear" label="Clear" i18n-label="@@general.button.label.clear" (onClick)="setFormDataToInitialState()"
+                    secureComponent styleClass="btn btn-primary"></lf-button>
+            </div>
+        </div>
+    </form>
+    <medical-provider-list [providerList]="medicalProviders" [searchType]="activeSearchType" (onRowSelect)="onMedicalProviderSelection($event)"></medical-provider-list>
+</div>

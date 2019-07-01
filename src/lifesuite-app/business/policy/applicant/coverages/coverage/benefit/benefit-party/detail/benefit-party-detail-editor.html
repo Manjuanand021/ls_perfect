@@ -1,0 +1,64 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="firstName" label="First Name" i18n-label="@@applicant.coverage.benefit.party.firstname">
+                <lf-inputtext #firstName name="firstName" [(ngModel)]="data.FirstName" maxLength="250" required
+                    [authorizationLevel]="authorizationData.defaultLevel" [autocomplete]="false"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="middleName" label="Middle Name" i18n-label="@@applicant.coverage.benefit.party.middlename">
+                <lf-inputtext #middleName name="middleName" [(ngModel)]="data.MiddleName" maxLength="10"
+                    [authorizationLevel]="
+                    authorizationData.defaultLevel"></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="lastName" label="Last Name" i18n-label="@@applicant.coverage.benefit.party.lastname">
+                <lf-inputtext #lastName name="lastName" [(ngModel)]="data.LastName" maxLength="250" required
+                    [authorizationLevel]="
+                    authorizationData.defaultLevel"></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="birthDate" label="Birth Date" i18n-label="@@applicant.coverage.benefit.party.birthdate">
+                <ls-inputdatecrypted #birthDate name="birthDate" [(ngModel)]="data.BirthDate" [maxDate]="maxBirthDate"
+                    container="dialog" required></ls-inputdatecrypted>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="gender" label="Gender" i18n-label="@@applicant.coverage.benefit.party.gender">
+                <lf-select #gender name="gender" [(ngModel)]="data.Sex" [items]="resolvedData.listData.Sex | listItems:'value':'Id' | emptyItem"
+                    style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="height" label="Height" i18n-label="@@applicant.coverage.benefit.party.height">
+                <lf-inputheight #height name="height" [(ngModel)]="data.HeightInches" maxLength="4"></lf-inputheight>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="weight" label="Weight" i18n-label="@@applicant.coverage.benefit.party.weight">
+                <lf-inputweight #weight name="weight" [(ngModel)]="data.WeightPounds" maxLength="4"></lf-inputweight>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <lf-form-input [control]="relation" label="Relation" i18n-label="@@applicant.coverage.benefit.party.relation">
+                <lf-select #relation name="relation" [(ngModel)]="data.RelationshipToInsuredCode" 
+                [items]="resolvedData.listData.RelationshipToInsuredCode | listItems:'value':'Id' | emptyItem"
+                container="dialog" style="width:150px"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-4">
+            <lf-form-input [control]="clientID" label="Client ID" i18n-label="@@applicant.coverage.benefit.party.clientid">
+                <lf-inputtext #clientID name="clientID" maxLength="15" [(ngModel)]="data.ClientId" [authorizationLevel]="authorizationData.defaultLevel"></lf-inputtext>
+            </lf-form-input>
+        </div>
+    </div>
+</form>

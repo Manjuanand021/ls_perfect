@@ -1,0 +1,193 @@
+﻿<lf-panel header="Financial Data" i18n-header="@@policy.applicant.findata.label.title" [toggleable]="true"
+    panelType="primary" stateId="panel_applicantFinancialData" class="label-appearance"
+    [state]="componentsState.get('panel_applicantFinancialData')" [initCollapsed]=true secureComponent>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Income" i18n-label="@@policy.applicant.findata.label.income"
+                [control]="incomeCurrentYear">
+                <lf-inputnumber format="n2" maxLength="10" class="input-width" #incomeCurrentYear
+                    name="incomeCurrentYear" [(ngModel)]="applicationInfo.Income" [allowNegative]="false"
+                    secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Income Prior Year" i18n-label="@@policy.applicant.findata.label.incomeprioryr"
+                [control]="incomePrevYear">
+                <lf-inputnumber format="n2" maxLength="10" class="input-width" #incomePrevYear name="incomePriorYear"
+                    [(ngModel)]="applicationInfo.IncomePrevYear" [allowNegative]="false" secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Total Household Income" i18n-label="@@policy.applicant.findata.label.totalincome"
+                [control]="totalHouseholdIncome">
+                <lf-inputnumber format="n2" maxLength="10" class="input-width" #totalHouseholdIncome
+                    name="totalHouseholdIncome" [(ngModel)]="applicationInfo.TotalHouseholdIncome"
+                    [allowNegative]="false" secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Unearned Income" i18n-label="@@policy.applicant.findata.label.unearnedincome"
+                [control]="unearnedIncome">
+                <lf-inputnumber format="n2" maxLength="10" class="input-width" #unearnedIncome name="unearnedIncome"
+                    [(ngModel)]="applicationInfo.UnearnedIncome" [allowNegative]="false" secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Net Worth" i18n-label="@@policy.applicant.findata.label.networth"
+                [control]="netWorth">
+                <lf-inputnumber format="n2" maxLength="10" class="input-width" #netWorth name="netWorth"
+                    [(ngModel)]="applicationInfo.NetWorth" [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input [control]="bankruptcyDisposition" label="Declared Bankruptcy"
+                i18n-label="@@policy.applicant.findata.label.declaredbankruptcy">
+                <lf-radiobuttongroup #bankruptcyDisposition name="bankruptcyDisposition"
+                    [(ngModel)]="applicationInfo.BankruptcyDisposition" secureComponent>
+                    <span>
+                        <lf-radiobutton name="bankruptcyDisposition" value="Y" label="Yes"
+                            i18n-value="@@general.stringconstants.yes"></lf-radiobutton>
+                    </span>
+                    <span>
+                        <lf-radiobutton name="bankruptcyDisposition" value="N" label="No"
+                            i18n-value="@@general.stringconstants.no"></lf-radiobutton>
+                    </span>
+                </lf-radiobuttongroup>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Date Bankruptcy Discharged"
+                i18n-label="@@policy.applicant.findata.label.datebankruptcydischarged"
+                [control]="bankruptcyDischargeDate">
+                <ls-inputdate #bankruptcyDischargeDate name="bankruptcyDischargeDate" class="input-width"
+                    [(ngModel)]="applicationInfo.BankruptcyDischargeDate" secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Years Business Owned" i18n-label="@@policy.applicant.findata.label.yrsbusinessowned"
+                [control]="businessOwnedYears">
+                <lf-inputnumber format="n0" decimals="0" maxLength="3" class="input-width" #businessOwnedYears
+                    name="businessOwnedYears" [(ngModel)]="applicationInfo.BusinessOwnedYears" [allowNegative]="false"
+                    secureComponent [autocomplete]="false"></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Years Business in Existence"
+                i18n-label="@@policy.applicant.findata.label.yrsbusinessexists" [control]="businessExistenceYears">
+                <lf-inputnumber format="n0" decimals="0" maxLength="3" class="input-width" #businessExistenceYears
+                    name="businessExistenceYears" [(ngModel)]="applicationInfo.BusinessExistenceYears"
+                    [allowNegative]="false" secureComponent [autocomplete]="false"></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Business Type" i18n-label="@@policy.applicant.findata.label.businesstype"
+                [control]="businessType">
+                <lf-select #businessType name="businessType" [(ngModel)]="applicationInfo.BusinessType"
+                    [items]="listData.BusinessType | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Employer Name" i18n-label="@@policy.applicant.findata.label.employername"
+                [control]="employer">
+                <lf-inputtext #employer name="employer" class="input-width" [(ngModel)]="applicationInfo.Employer"
+                    maxLength="100" secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Employer Address" i18n-label="@@policy.applicant.findata.label.employeraddress"
+                [control]="employerAddress">
+                <lf-inputtextarea class="lf-inputtextarea-width" #employerAddress name="employerAddress"
+                    [(ngModel)]="applicationInfo.EmployerAddress" maxLength="1000" secureComponent
+                    [autocomplete]="false"></lf-inputtextarea>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Years at Employer" i18n-label="@@policy.applicant.findata.label.yrsatemployer"
+                [control]="yearsAtEmployer">
+                <lf-inputnumber format="n0" class="input-width" decimals="0" maxLength="2" #yearsAtEmployer
+                    name="yearsAtEmployer" [(ngModel)]="applicationInfo.YearsAtEmployer" [allowNegative]="false"
+                    secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Months at Employer" i18n-label="@@policy.applicant.findata.label.monthsatemployer"
+                [control]="monthsAtEmployer">
+                <lf-inputnumber format="n0" class="input-width" decimals="0" maxLength="2" #monthsAtEmployer
+                    name="monthsAtEmployer" [(ngModel)]="applicationInfo.MonthsAtEmployer" [allowNegative]="false"
+                    secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Occupation Code" i18n-label="@@policy.applicant.findata.label.occupationcode"
+                [control]="occupationCode">
+                <lf-inputtext #occupationCode class="input-width" name="occupationCode"
+                    [(ngModel)]="applicationInfo.OccupationCode" maxLength="50" (blur)="onOccupationCodeBlur($event)"
+                    secureComponent></lf-inputtext>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Occupation" i18n-label="@@policy.applicant.findata.label.occupation"
+                [control]="occupation">
+                <lf-select #occupation name="occupation" [(ngModel)]="applicationInfo.Occupation"
+                    [items]="listData.Occupation | listItems:'value':'Id' | emptyItem" secureComponent
+                    style="width:80%"></lf-select>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Job Duties" i18n-label="@@policy.applicant.findata.label.jobduties"
+                [control]="jobDuties">
+                <lf-inputtextarea class="lf-inputtextarea-width" #jobDuties name="jobDuties"
+                    [(ngModel)]="applicationInfo.JobDuties" maxLength="150" secureComponent></lf-inputtextarea>
+            </lf-form-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <lf-form-input label="Hire Date" i18n-label="@@policy.applicant.findata.label.hiredate"
+                [control]="employerHireDate">
+                <ls-inputdate #employerHireDate name="employerHireDate" [(ngModel)]="applicationInfo.EmployerHireDate"
+                    class="input-date-width" secureComponent></ls-inputdate>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="# of Hours Worked" i18n-label="@@policy.applicant.findata.label.hoursworked"
+                [control]="employerHoursWorked">
+                <lf-inputnumber class="input-width" format="n0" decimals="0" maxLength="2" #employerHoursWorked
+                    name="employerHoursWorked" [(ngModel)]="applicationInfo.EmployerHoursWorked" [allowNegative]="false"
+                    secureComponent>
+                </lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Monthly Expenses" i18n-label="@@policy.applicant.findata.label.monthlyexpense"
+                [control]="monthlyExpense">
+                <lf-inputnumber class="input-width" format="n2" maxLength="10" [max]="maxMonthlyExpensesValue"
+                    #monthlyExpense name="monthlyExpense" [(ngModel)]="applicationInfo.MonthlyExpense"
+                    [allowNegative]="false" secureComponent></lf-inputnumber>
+            </lf-form-input>
+        </div>
+        <div class="col-sm-3">
+            <lf-form-input label="Business Ownership Percentage"
+                i18n-label="@@policy.applicant.findata.label.businessownershippct" [control]="businessOwnershipPercent">
+                <lf-inputnumber class="input-width" format="n0" decimals="0" maxLength="3" [max]="100"
+                    #businessOwnershipPercent name="businessOwnershipPercent"
+                    [(ngModel)]="applicationInfo.BusinessOwnershipPercent" [allowNegative]="false" secureComponent
+                    [autocomplete]="false"></lf-inputnumber>
+            </lf-form-input>
+        </div>
+    </div>
+</lf-panel>

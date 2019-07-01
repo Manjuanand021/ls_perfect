@@ -1,0 +1,22 @@
+<form #form="ngForm">
+
+	<div>Test Authorization</div>
+
+	<pre>Parent AuthorizationData: {{authorizationData | json}}</pre>
+
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input label="Authorization Level" [control]="authorizationLevel">
+				<lf-select #authorizationLevel name="authorizationLevel" [items]="authorizationLevels" [ngModel]="authorizationData.defaultLevel"
+				 (change)="onAuthorizationLevelChanged($event.value)" style="width: 200px"></lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+
+	<hr style="border-top: 2px solid" />
+
+	<router-outlet></router-outlet>
+
+	<scroll-up></scroll-up>
+
+</form>

@@ -1,0 +1,17 @@
+<fieldset [disabled]="disabled" [hidden]="hidden" [class.disabled]="disabled">
+	<div class="lf-parts">
+		<div class="lf-part">
+			<input #month type="text" [class]="monthInputStyleClass" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="2" size="2" [placeholder]="elementsData.month.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)"
+			 (keypress)="onKeyPress($event)" (focus)="onMonthFocus($event)" (blur)="onMonthBlur($event)" [disabled]="elementsData.month.disabled"
+			 aria-label="Month" style="width: 30px">
+		</div>
+		<div class="lf-part-spacer"></div>
+		<div class="lf-part">
+			<input #year type="text" [class]="yearInputStyleClass" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="4" size="4" [placeholder]="elementsData.year.placeholder" (change)="onChange($event)" (keypress)="onKeyPress($event)"
+			 (focus)="onYearFocus($event)" (blur)="onYearBlur($event)" [disabled]="elementsData.year.disabled" aria-label="Year" style="width: 50px">
+		</div>
+		<div>{{expirationFormatText}}</div>
+	</div>
+</fieldset>

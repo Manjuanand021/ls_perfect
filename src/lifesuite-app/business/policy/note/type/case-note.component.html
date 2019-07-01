@@ -1,0 +1,65 @@
+<div *ngIf="showAddSupplementalButton" class="row justify-content-end col-sm-12" style="padding-bottom: 5px;">
+    <lf-button id="addSupplementalNote" name="addSupplementalNote" label="Add Supplemental Note" i18n-label="@@policy.notes.addnotes.addsupplementalnotes"
+        (onClick)="addSupplementalNote()" [actionType]="addSupplementalButtonActionType" secureComponent styleClass="btn btn-primary"></lf-button>
+</div>
+<div class="row">
+    <div class="col-sm-2 col-xs-3">
+        <lf-form-input [control]="createdOn" label="Created On" i18n-label="@@policy.notes.detail.addedon">
+            <lf-statictext #createdOn name="createdOn_{{item.sequenceId}}" [value]="data.AddedDate | dbDate" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-2">
+        <lf-form-input [control]="noteType" label="Type" i18n-label="@@policy.notes.label.notestype">
+            <lf-statictext #noteType name="noteType_{{item.sequenceId}}" [value]="getNoteTypeCategory(data.NoteType)" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-2">
+        <lf-form-input [control]="applicant" label="Applicant" i18n-label="@@policy.notes.addnotes.applicant">
+            <lf-statictext #applicant name="applicant_{{item.sequenceId}}" [value]="applicantName" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-2">
+        <lf-form-input [control]="createdBy" label="Created By" i18n-label="@@policy.notes.addnotes.author">
+            <lf-statictext #createdBy name="createdBy_{{item.sequenceId}}" [value]="getAuthorName(data)" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-2">
+        <lf-form-input [control]="source" label="Source" i18n-label="@@policy.notes.detail.source">
+            <lf-statictext #source name="source_{{item.sequenceId}}" [value]="getNoteTypeValue(data.NoteType)" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-2">
+        <lf-form-input [control]="visibility" label="Visibility" i18n-label="@@policy.notes.addnotes.visibility">
+            <lf-statictext #visibility name="visibility_{{item.sequenceId}}" [value]="data.Visibility" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-4">
+        <lf-form-input [control]="subject" label="Subject" i18n-label="@@policy.notes.detail.source">
+            <lf-statictext #subject name="subject_{{item.sequenceId}}" [value]="data.Topic" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <lf-form-input [control]="note" label="Note" i18n-label="@@policy.notes.addnotes.note">
+            <lf-statictext #note name="note_{{item.sequenceId}}" [value]="data.Note" [renderAsHtml]="false"
+                secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-sm-2">
+        <lf-form-input [control]="updatedOn" label="Last Updated" i18n-label="@@policy.notes.detail.lastupdate">
+            <lf-statictext #updatedOn name="updatedOn_{{item.sequenceId}}" [value]="data.UpdateDate | dbDate:'shortDateMediumTime'" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row" *ngIf="data.SupplementalNotes.length > 0">
+    <div class="col-12">
+        <div class="supplemental-note">
+            <div *ngFor="let supplementalNote of data.SupplementalNotes">
+                <ls-supplemental-note noteTitle="Supplemental Note" i18n-noteTitle="@@policy.notes.detail.supplemental"
+                    [noteReferredTo]="getReferredToUserName(supplementalNote)" [noteCreatedOn]="supplementalNote.AddedDate | dbDate : 'shortDateMediumTime'"
+                    [noteCreatedBy]="getAuthorName(supplementalNote)" [note]="supplementalNote.Note" secureComponent></ls-supplemental-note>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿<lf-panel header="Association" i18n-header="@@policy.case.association.title" panelType="primary" [toggleable]="true" stateId="panel_association"
+    [state]="componentsState.get('panel_association')" [initCollapsed]=true secureComponent>
+    <optional-section [dataExists]="dataExists" [item]="item" [itemComponentType]="itemComponentType" (createItem)="createItem()"
+        (removeItem)="removeItem()" secureComponent>
+    </optional-section>
+</lf-panel>

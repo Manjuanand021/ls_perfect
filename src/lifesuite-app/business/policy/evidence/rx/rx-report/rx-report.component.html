@@ -1,0 +1,85 @@
+﻿<div class="lf-page-subheader" i18n="@@mywork.applicantpreview.label.applicantInformation">Applicant Information</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input label="Report Date" i18n-label="@@policy.rx.applicant.sectiontitle" [control]="reportDate">
+			<lf-statictext #reportDate name="reportDate" [value]="firstRxReportItem.ReportDate | dbDate" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="Policy Number" i18n-label="@@policy.rx.applicant.policynumber" [control]="policyNumber">
+			<lf-statictext #policyNumber name="policyNumber" [value]="firstRxReportItem.PolicyNumber" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="Name of Insurance Company" i18n-label="@@policy.rx.applicant.nameofcompany" [control]="nameOfInsuranceCompany">
+			<lf-statictext #nameOfInsuranceCompany name="nameOfInsuranceCompany" [value]="firstRxReportItem.CompanyName" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<rx-web-buttons [firstRxItem]="firstRxReportItem"></rx-web-buttons>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-3">
+		<lf-form-input label="Name of Insured" i18n-label="@@policy.rx.applicant.nameofinsured" [control]="insuredName">
+			<lf-statictext #insuredName name="insuredName" [value]="fullName" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="Requestor" i18n-label="@@policy.rx.applicant.requester" [control]="requestor">
+			<lf-statictext #requestor name="requestor" [value]="firstRxReportItem.Requestor" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="Address of Insurance Company" i18n-label="@@policy.rx.applicant.addressofcompany" [control]="insuranceCompanyAddress">
+			<lf-statictext #insuranceCompanyAddress name="insuranceCompanyAddress" [value]="firstRxReportItem.CompanyAddress" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-3">
+		<lf-form-input label="Tax ID" i18n-label="@@policy.rx.applicant.taxid" [control]="taxId">
+			<lf-statictext #taxId name="taxId" [value]="firstRxReportItem.Ssno | taxIdMask" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="Account Code" i18n-label="@@policy.rx.applicant.accountcode" [control]="accountCode">
+			<lf-statictext #accountCode name="accountCode" [value]="firstRxReportItem.AccountCode" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="State" i18n-label="@@policy.rx.applicant.state" [control]="state">
+			<lf-statictext #state name="state" [value]="firstRxReportItem.InsuredState" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input label="Birth Date" i18n-label="@@policy.rx.applicant.birthdate" [control]="birthDate">
+			<lf-statictext #birthDate name="birthDate" [value]="firstRxReportItem.BirthDate | lfDate" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3">
+		<lf-form-input label="Ticket Number" i18n-label="@@policy.rx.applicant.ticketnumber" [control]="ticketNumber">
+			<lf-statictext #ticketNumber name="ticketNumber" [value]="firstRxReportItem.TicketNumber" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input label="Gender" i18n-label="@@policy.rx.applicant.gender" [control]="gender">
+			<lf-statictext #gender name="gender" [value]="firstRxReportItem.SexState" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+	<div class="col-3" *ngIf="!isClientScoreFieldVisible">
+		<lf-form-input label="Calculated Client Score" i18n-label="@@policy.rx.applicant.clientscore" [control]="calculatedClientScore">
+			<lf-statictext #calculatedClientScore name="calculatedClientScore" [value]="firstRxReportItem.ClientScore" secureComponent></lf-statictext>
+		</lf-form-input>
+	</div>
+</div>
+<hr/>
+<prescription-information [prescriptionData]="prescriptionData"></prescription-information>
+<physician [physicianData]="physicianData"></physician>
+<rx-detail [prescriptionData]="prescriptionData"></rx-detail>

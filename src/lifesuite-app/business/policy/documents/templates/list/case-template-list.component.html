@@ -1,0 +1,12 @@
+<div class="row" style="height: 450px;flex-direction:  column;">
+    <div class="row d-flex justify-content-between">
+        <label i18n="@@policy.case.document.template">Templates</label>
+        <div class="pb-1">
+            <lf-button id="openDocumentButton" (onClick)="onGenerateDocument()" label="Generate Document" i18n-label="@@policy.documents.templates.button.generatedoc"
+                styleClass="btn btn-primary" secureComponent [disabled]="isGenerateDocumentBtnDisabled"></lf-button>
+        </div>
+    </div>
+    <data-grid #dataGrid [ngStyle]="{width: '100%', height: gridOptions.height}" (rowClicked)="onRowClicked($event)"
+        [gridOptions]="gridOptions" rowSelection="single"></data-grid>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</div>

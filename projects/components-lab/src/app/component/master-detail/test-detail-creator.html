@@ -1,0 +1,15 @@
+<div>
+	<div #refDOMContext>
+		<label>Create Item</label>
+		<div>id: {{data.id}}</div>
+		<div>country: <lf-select name="country" [(ngModel)]="data.country" [items]="countryList | emptyItem"
+			 [authorizationLevel]="authorizationData.defaultLevel" [style]="{width:'100px'}"></lf-select>
+		</div>
+		<div>downloads: <lf-inputtext name="downloads" [(ngModel)]="data.downloads" [authorizationLevel]="authorizationData.defaultLevel"></lf-inputtext>
+		</div>
+		<div>sales: <lf-inputtext name="sales" [(ngModel)]="data.sales" [authorizationLevel]="authorizationData.defaultLevel"></lf-inputtext>
+		</div>
+		<div>date: <lf-inputdate name="date" [(ngModel)]="data.date" [authorizationLevel]="authorizationData.defaultLevel"></lf-inputdate>
+		</div>
+	</div>
+</div>

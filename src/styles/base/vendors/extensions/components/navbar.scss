@@ -1,0 +1,144 @@
+/* Bootstrap navbar extension */
+.navbar {
+    border-left: none;
+    border-right: none;
+    margin-bottom: 0;
+    min-height: initial;
+    background-image: linear-gradient(to bottom, $navbar-default-bg-color1, $navbar-default-bg-color2);
+    padding: 0 0.5rem;
+    height: $navbar-height;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* To fix the navbar at the top- extending bootstrap fixed-top to be supported in IE also*/
+.navbar.lf-navbar-fixed-top {
+    @include position-fixed;
+    /* to match the container-fluid padding of bootstrap */
+    left: ($grid-gutter-width / 2);
+    right: ($grid-gutter-width / 2);
+    top: 0;
+    /* bootstrap's z-index value for fixed elements */
+    z-index: $zindex-fixed;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    color: $navbar-default-color;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
+
+.nav-link,
+.nav-link:hover,
+.nav-link:focus {
+    color: $navbar-default-color;
+}
+
+.navbar-collapse {
+    border: none !important;
+    padding: 0;
+}
+
+.lf-nav-link-icon {
+    padding-right: 0.25rem;
+}
+
+.lf-nav-link-icon-left {
+    padding-right: 0.25rem;
+}
+
+.lf-nav-link-icon-right {
+    padding-left: 0.3rem;
+}
+
+.lf-nav-spacer {
+    padding-right: 2rem;
+}
+
+.lf-nav-name {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.lf-nav-label {
+    font-size: 0.8rem;
+    padding-right: 0.3rem;
+    vertical-align: middle;
+    color: $navbar-default-color;
+}
+
+li.loader {
+    color: #fff;
+    margin-top: 0.625rem;
+    margin-left: 0.625rem;
+    width: 50px;
+}
+
+/* Top nav bar starts collapsing at 767px*/
+@include media-breakpoint-down(xs) {
+    .navbar-collapse {
+        overflow: hidden;
+        z-index: 2;
+        position: absolute;
+    }
+
+    /*For side collapse*/
+    .navbar-collapse[aria-expanded='true'] {
+        transition: width 0.1s;
+        display: block;
+        overflow: hidden;
+    }
+
+    .navbar-collapse[aria-expanded='false'] {
+        transition: width 0.1s;
+        display: block;
+        width: 0px;
+        overflow: hidden;
+        height: 0;
+    }
+
+    .navbar-collapse[aria-expanded='false'] .nav > li > a {
+        color: $navbar-collapse-color;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@include media-breakpoint-up(sm) {
+    #navigationbar ul {
+        list-style: none;
+    }
+
+    #navigation {
+        margin: 0px;
+        padding: 0px;
+        display: table;
+    }
+
+    #navigation ul {
+        display: table-row-group;
+    }
+
+    #navigation li {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    #navigation li a {
+        display: block;
+        color: $navbar-default-color;
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@include media-breakpoint-up(md) {
+}

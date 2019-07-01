@@ -1,0 +1,6 @@
+﻿<lf-panel header="Third Party Administrator" i18n-header="@@policy.case.TPA.title" panelType="primary" [toggleable]="true"
+    stateId="panel_tpa" [state]="componentsState.get('panel_tpa')" [initCollapsed]=true secureComponent>
+    <optional-section [dataExists]="dataExists" [item]="item" [itemComponentType]="itemComponentType" (createItem)="createItem()"
+        (removeItem)="removeItem()" secureComponent>
+    </optional-section>
+</lf-panel>

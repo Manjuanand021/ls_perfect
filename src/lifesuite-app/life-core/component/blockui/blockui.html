@@ -1,0 +1,8 @@
+<!-- 
+	Custom changes:
+	added <i class="fa fa-spinner fa-spin ...></i>
+-->
+<div #mask class="ui-blockui ui-widget-overlay" [ngClass]="{'ui-blockui-document':!target}" [ngStyle]="{display: blocked ? 'block' : 'none'}">
+	<i class="fa fa-spinner fa-spin fa-3x" style="position: relative; top: 100px; left: 50%"></i>
+	<ng-content></ng-content>
+</div>

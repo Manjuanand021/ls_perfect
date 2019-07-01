@@ -1,0 +1,18 @@
+﻿<div class="lf-page-header" i18n="@@policy.requirement.requirements">Requirements</div>
+<div class="row">
+	<div class="col-3">
+		<lf-form-input [control]="applicantList" label="Applicant" i18n-label="@@policy.requirement.applicant">
+			<!-- Use 'ngModelOption.standalone' to not add this control to NgForm to avoid saving data when applicant selection changes -->
+			<lf-select #applicantList name="applicantList" [(ngModel)]="selectedApplicantId" [ngModelOptions]="{standalone: true}"
+			 [items]="applicantListOptions" (change)="onApplicantChange()" [clearable]="false" style="width:200px" [actionType]="applicantDropdownActionType"
+			 secureComponent></lf-select>
+		</lf-form-input>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<master-detail [gridOptions]="gridOptions" [buttons]="buttons" [showDetailAsPopup]="showDetailAsPopup"
+		 secureComponent style="width: 1000px;">
+		</master-detail>
+	</div>
+</div>

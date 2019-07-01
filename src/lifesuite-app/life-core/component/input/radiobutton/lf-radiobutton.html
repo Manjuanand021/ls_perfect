@@ -1,0 +1,12 @@
+<div [ngStyle]="style" [ngClass]="'ui-radiobutton ui-widget'" [class]="styleClass" [hidden]="hidden">
+	<div class="ui-helper-hidden-accessible">
+		<input #input type="radio" [attr.id]="inputId" [attr.name]="name" [attr.value]="value" [attr.tabindex]="tabindex" [checked]="checked" [disabled]="disabled"
+		 (change)="onChange($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" (keydown)="onKeyDown($event)">
+	</div>
+	<div (click)="handleClick($event)" [ngClass]="{'ui-radiobutton-box ui-widget ui-state-default':true,
+		'ui-state-active':input.checked,'ui-state-disabled':disabled,'ui-state-focus':focused}">
+		<span class="ui-radiobutton-icon ui-clickable" [ngClass]="{'fa fa-circle':input.checked}"></span>
+	</div>
+</div>
+<label class="ui-radiobutton-label" (click)="onLabelClick()" [ngClass]="{'ui-label-active':input.checked,'ui-label-disabled':disabled,'ui-label-focus':focused}"
+ *ngIf="label" [attr.for]="inputId" [hidden]="hidden">{{label}}</label>

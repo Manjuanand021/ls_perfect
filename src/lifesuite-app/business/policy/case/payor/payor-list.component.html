@@ -1,0 +1,6 @@
+<lf-panel header="Payor" i18n-header="@@policy.case.payor.title" [toggleable]="true" panelType="primary" stateId="panel_payors"
+ [state]="componentsState.get('panel_payors')" [initCollapsed]=true secureComponent>
+	<optional-section [dataExists]="dataExists" [item]="item" [itemComponentType]="itemComponentType" (createItem)="createItem()"
+	 (removeItem)="removeItem()" secureComponent>
+	</optional-section>
+</lf-panel>

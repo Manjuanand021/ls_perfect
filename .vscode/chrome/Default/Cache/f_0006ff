@@ -1,0 +1,411 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
+
+/***/ "./src/lifesuite-app/business/home/tab/index.ts":
+/*!******************************************************!*\
+  !*** ./src/lifesuite-app/business/home/tab/index.ts ***!
+  \******************************************************/
+/*! exports provided: TabHomeDataKeys */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state_tab_home_data_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state/tab-home-data-keys */ "./src/lifesuite-app/business/home/tab/state/tab-home-data-keys.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabHomeDataKeys", function() { return _state_tab_home_data_keys__WEBPACK_IMPORTED_MODULE_0__["TabHomeDataKeys"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/home/tab/state/tab-home-data-keys.ts":
+/*!*************************************************************************!*\
+  !*** ./src/lifesuite-app/business/home/tab/state/tab-home-data-keys.ts ***!
+  \*************************************************************************/
+/*! exports provided: TabHomeDataKeys */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabHomeDataKeys", function() { return TabHomeDataKeys; });
+var TabHomeDataKeys = {
+    ACTIVE_POLICY_PROXY: 'active_policy_proxy',
+    POLICY_LIST_FILTERS: 'policy_list_filters',
+    TASK_LIST_FILTERS: 'tasks_list_filters',
+    SUMMARY_FILTERS: 'summary_filters'
+};
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/auto-navigation/index.ts":
+/*!********************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/auto-navigation/index.ts ***!
+  \********************************************************************/
+/*! exports provided: AutoNavigationChannels */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _auto_navigation_channels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auto-navigation-channels */ "./src/lifesuite-app/business/shared/auto-navigation/auto-navigation-channels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AutoNavigationChannels", function() { return _auto_navigation_channels__WEBPACK_IMPORTED_MODULE_0__["AutoNavigationChannels"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/composite-fields/composite-fields.ts":
+/*!********************************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/composite-fields/composite-fields.ts ***!
+  \********************************************************************************/
+/*! exports provided: CompositeFields */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompositeFields", function() { return CompositeFields; });
+var CompositeFieldsMap = {
+    InsuredNameFull: ['InsuredLastName', 'InsuredFirstName', 'InsuredMiddleName'],
+    UnderwriterName: ['UnderwriterLastName', 'UnderwriterFirstName'],
+    ServiceAssociateNameShort: ['ServiceAssociateLastName', 'ServiceAssociateFirstName'],
+    UnderwriterNameShort: ['UnderwriterLastName', 'UnderwriterFirstName'],
+    InsuredNameShort: ['InsuredNameShort'],
+    ServiceAssociateName: ['ServiceAssociateLastName', 'ServiceAssociateFirstName'],
+    AuthorName: ['AuthorLastName', 'AuthorFirstName'],
+    ReferredToName: ['ReferredToLastName', 'ReferredToFirstName'],
+    ApplicantName: ['ApplicantLastName', 'ApplicantFirstName'],
+    CaseManagerName: ['CaseManagerLastName', 'CaseManagerFirstName'],
+    Agent: ['AgentLastName', 'AgentFirstName'],
+    InsuredName: ['InsuredLastName', 'InsuredFirstName']
+};
+var CompositeFields = /** @class */ (function () {
+    function CompositeFields() {
+    }
+    /**
+     *Get mapping information for composite field
+     * @param field name of the field to look up mapping for
+     * @return array of one ore more field names.
+     * For a composite field return array of fields included in a composite field;
+     * For a simple field return an array with the field name itself
+     */
+    CompositeFields.getFieldMap = function (field) {
+        return CompositeFieldsMap[field] || [field];
+    };
+    return CompositeFields;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/composite-fields/index.ts":
+/*!*********************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/composite-fields/index.ts ***!
+  \*********************************************************************/
+/*! exports provided: CompositeFields */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _composite_fields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./composite-fields */ "./src/lifesuite-app/business/shared/composite-fields/composite-fields.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CompositeFields", function() { return _composite_fields__WEBPACK_IMPORTED_MODULE_0__["CompositeFields"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/grid/base-grid-data-source.ts":
+/*!*************************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/grid/base-grid-data-source.ts ***!
+  \*************************************************************************/
+/*! exports provided: BaseGridDataSource */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseGridDataSource", function() { return BaseGridDataSource; });
+/* harmony import */ var life_core_component_grid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! life-core/component/grid */ "./src/lifesuite-app/life-core/component/grid/index.ts");
+/* harmony import */ var ls_core_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ls-core/service */ "./src/lifesuite-app/ls-core/service/index.ts");
+/* harmony import */ var business_shared_composite_fields__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! business/shared/composite-fields */ "./src/lifesuite-app/business/shared/composite-fields/index.ts");
+
+
+
+var BaseGridDataSource = /** @class */ (function () {
+    function BaseGridDataSource(injector) {
+        this.dataService = injector.get(ls_core_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]);
+        this.serverFilterModelBuilder = injector.get(life_core_component_grid__WEBPACK_IMPORTED_MODULE_0__["ServerFilterModelBuilder"]);
+    }
+    BaseGridDataSource.prototype.getRows = function (params) {
+        var _this = this;
+        var onGetRowsComplete = function (rows, rowCount) {
+            params.successCallback(rows, rowCount);
+            params.context.hostComponent.onGetRowsComplete({
+                gridState: new life_core_component_grid__WEBPACK_IMPORTED_MODULE_0__["GridState"]({
+                    sortModel: params.sortModel,
+                    filterModel: params.filterModel
+                }),
+                rows: rows,
+                rowCount: rowCount
+            });
+        };
+        this.getRowCountIfNeeded(params).then(function (rowCount) {
+            if (rowCount > 0) {
+                var serviceParams = _this.getRowsServiceParams(params);
+                _this.dataService.getData(serviceParams).then(function (response) {
+                    var rows = response.responsePayload;
+                    onGetRowsComplete(rows, rowCount);
+                });
+            }
+            else {
+                onGetRowsComplete([], rowCount);
+            }
+        });
+    };
+    BaseGridDataSource.prototype.getRowCountIfNeeded = function (params) {
+        var _this = this;
+        if (!this.rowCount) {
+            var serviceParams = this.getRowCountServiceParams(params);
+            return this.dataService.getData(serviceParams).then(function (response) {
+                var rowCount = response.responsePayload;
+                _this.setRowCount(rowCount);
+                return rowCount;
+            });
+        }
+        else {
+            return Promise.resolve(this.rowCount);
+        }
+    };
+    BaseGridDataSource.prototype.setRowCount = function (rowCount) {
+        this.rowCount = rowCount;
+    };
+    BaseGridDataSource.prototype.getSortFieldsForSortModel = function (sortModel) {
+        var _this = this;
+        var sortFieldForSortModel = [];
+        sortModel.forEach(function (field) {
+            var sortOrder = ls_core_service__WEBPACK_IMPORTED_MODULE_1__["SortFieldOrder"].getSortOrder(field.sort);
+            var sortFields = _this.getSortFieldsForSortModelField(field.colId, sortOrder);
+            sortFieldForSortModel.push.apply(sortFieldForSortModel, sortFields);
+        });
+        return sortFieldForSortModel;
+    };
+    BaseGridDataSource.prototype.getSortFieldsForSortModelField = function (fieldId, sortOrder) {
+        var mappedFields = business_shared_composite_fields__WEBPACK_IMPORTED_MODULE_2__["CompositeFields"].getFieldMap(fieldId);
+        return mappedFields.map(function (mappedField) {
+            return new ls_core_service__WEBPACK_IMPORTED_MODULE_1__["SortField"](mappedField, sortOrder);
+        });
+    };
+    BaseGridDataSource.prototype.getFilterCriterion = function (gridFilters) {
+        var _a;
+        var filterCriterion = this.getFilterModelsForGridFilters(gridFilters);
+        var externalFilters = this.getExternalFilters();
+        if (externalFilters && externalFilters.filters) {
+            // MT expects external filters to be at the top of the list
+            (_a = filterCriterion.filters).unshift.apply(_a, externalFilters.filters);
+        }
+        return filterCriterion;
+    };
+    BaseGridDataSource.prototype.getFilterModelsForGridFilters = function (gridFilters) {
+        var _this = this;
+        var filterModels = new ls_core_service__WEBPACK_IMPORTED_MODULE_1__["CompositeFilter"]([]);
+        Object.keys(gridFilters).forEach(function (gridFilterName) {
+            var filterModelForGridFilter = _this.getFilterModelForGridFilter(gridFilterName, gridFilters[gridFilterName]);
+            if (filterModelForGridFilter) {
+                filterModels.filters.push(filterModelForGridFilter);
+            }
+        });
+        return filterModels;
+    };
+    BaseGridDataSource.prototype.getFilterModelForGridFilter = function (field, gridFilter) {
+        var mappedFields = business_shared_composite_fields__WEBPACK_IMPORTED_MODULE_2__["CompositeFields"].getFieldMap(field);
+        return this.serverFilterModelBuilder.build(mappedFields, gridFilter);
+    };
+    BaseGridDataSource.prototype.getExternalFilters = function () {
+        // override in child class if need to provide external filters in additional to grid column filters
+        return null;
+    };
+    BaseGridDataSource.prototype.resetRowCount = function () {
+        this.rowCount = undefined;
+    };
+    return BaseGridDataSource;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/grid/base-policy-grid-datasource.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/grid/base-policy-grid-datasource.ts ***!
+  \*******************************************************************************/
+/*! exports provided: BasePolicyGridDataSource */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BasePolicyGridDataSource", function() { return BasePolicyGridDataSource; });
+/* harmony import */ var ls_core_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ls-core/service */ "./src/lifesuite-app/ls-core/service/index.ts");
+/* harmony import */ var _base_grid_data_source__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-grid-data-source */ "./src/lifesuite-app/business/shared/grid/base-grid-data-source.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var BasePolicyGridDataSource = /** @class */ (function (_super) {
+    __extends(BasePolicyGridDataSource, _super);
+    function BasePolicyGridDataSource(injector) {
+        return _super.call(this, injector) || this;
+    }
+    BasePolicyGridDataSource.prototype.getRowsPayLoad = function (params) {
+        var filterCriterion = this.getFilterCriterion(params.filterModel);
+        var numOfItems = params.endRow - params.startRow;
+        var sortFields = this.getSortFieldsForSortModel(params.sortModel);
+        return new ls_core_service__WEBPACK_IMPORTED_MODULE_0__["PagedDataRequest"]({
+            startIndex: params.startRow,
+            numItemsToFetch: numOfItems,
+            sortFields: sortFields,
+            filters: filterCriterion !== undefined ? filterCriterion.filters : []
+        });
+    };
+    BasePolicyGridDataSource.prototype.getRowCountPayLoad = function (params) {
+        var filterCriterion = this.getFilterCriterion(params.filterModel);
+        return new ls_core_service__WEBPACK_IMPORTED_MODULE_0__["PagedDataRequest"]({
+            filters: filterCriterion !== undefined ? filterCriterion.filters : []
+        });
+    };
+    return BasePolicyGridDataSource;
+}(_base_grid_data_source__WEBPACK_IMPORTED_MODULE_1__["BaseGridDataSource"]));
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/grid/grid-data-state-keys.ts":
+/*!************************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/grid/grid-data-state-keys.ts ***!
+  \************************************************************************/
+/*! exports provided: GridDataStateKeys */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridDataStateKeys", function() { return GridDataStateKeys; });
+var GridDataStateKeys = {
+    REASSIGN_CASE: 'reassign-case',
+    SEARCH_CASE: 'search-case',
+    POLICY_LIST: 'policy-list',
+    TASK_LIST: 'task-list',
+    RECENTLY_ACCESSED_CASES: 'recently-accessed-cases',
+    CASE_LOG: 'case-log',
+    REQUIREMENT_MATCH: 'requirement-match'
+};
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/grid/index.ts":
+/*!*********************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/grid/index.ts ***!
+  \*********************************************************/
+/*! exports provided: BaseGridDataSource, BasePolicyGridDataSource, GridDataStateKeys */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _base_grid_data_source__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base-grid-data-source */ "./src/lifesuite-app/business/shared/grid/base-grid-data-source.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseGridDataSource", function() { return _base_grid_data_source__WEBPACK_IMPORTED_MODULE_0__["BaseGridDataSource"]; });
+
+/* harmony import */ var _base_policy_grid_datasource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-policy-grid-datasource */ "./src/lifesuite-app/business/shared/grid/base-policy-grid-datasource.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BasePolicyGridDataSource", function() { return _base_policy_grid_datasource__WEBPACK_IMPORTED_MODULE_1__["BasePolicyGridDataSource"]; });
+
+/* harmony import */ var _grid_data_state_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grid-data-state-keys */ "./src/lifesuite-app/business/shared/grid/grid-data-state-keys.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GridDataStateKeys", function() { return _grid_data_state_keys__WEBPACK_IMPORTED_MODULE_2__["GridDataStateKeys"]; });
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/business/shared/view-type/policy-view-type.ts":
+/*!*************************************************************************!*\
+  !*** ./src/lifesuite-app/business/shared/view-type/policy-view-type.ts ***!
+  \*************************************************************************/
+/*! exports provided: PolicyViewType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PolicyViewType", function() { return PolicyViewType; });
+var PolicyViewType;
+(function (PolicyViewType) {
+    PolicyViewType[PolicyViewType["Applicant"] = 0] = "Applicant";
+    PolicyViewType[PolicyViewType["Case"] = 1] = "Case";
+})(PolicyViewType || (PolicyViewType = {}));
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/ls-core/routing/index.ts":
+/*!****************************************************!*\
+  !*** ./src/lifesuite-app/ls-core/routing/index.ts ***!
+  \****************************************************/
+/*! exports provided: LsResolveUtil */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ls_resolve_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ls-resolve.util */ "./src/lifesuite-app/ls-core/routing/ls-resolve.util.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LsResolveUtil", function() { return _ls_resolve_util__WEBPACK_IMPORTED_MODULE_0__["LsResolveUtil"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./src/lifesuite-app/ls-core/routing/ls-resolve.util.ts":
+/*!**************************************************************!*\
+  !*** ./src/lifesuite-app/ls-core/routing/ls-resolve.util.ts ***!
+  \**************************************************************/
+/*! exports provided: LsResolveUtil */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LsResolveUtil", function() { return LsResolveUtil; });
+/**
+ *  Provides helper methods to define
+ *  specific resolver objects, such as data, listData, metaData, etc. in routing tables.
+ */
+var LsResolveUtil = /** @class */ (function () {
+    function LsResolveUtil() {
+    }
+    LsResolveUtil.getDataResolver = function (resolver) {
+        return { data: resolver };
+    };
+    LsResolveUtil.getListDataResolver = function (resolver) {
+        return { listData: resolver };
+    };
+    LsResolveUtil.getMetaDataResolver = function (resolver) {
+        return { metaData: resolver };
+    };
+    return LsResolveUtil;
+}());
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=common.js.map

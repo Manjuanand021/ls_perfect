@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="navbar.title" datatype="html">
+        <source>Components Lab (ver 7)</source>
+        <target state="new">Components Lab (ver 7)(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/test-nav-bar.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="test.gridheader.country" datatype="html">
+        <source>Country</source>
+        <target state="new">Country(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/components-lab/src/app/component/grid/test-grid-columns.builder.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="test.gridheader.downloads" datatype="html">
+        <source>Downloads</source>
+        <target state="new">Downloads(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/components-lab/src/app/component/grid/test-grid-columns.builder.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="test.gridheader.sales" datatype="html">
+        <source>Sales</source>
+        <target state="new">Sales(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/components-lab/src/app/component/grid/test-grid-columns.builder.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="test.gridheader.date" datatype="html">
+        <source>Date</source>
+        <target state="new">Date(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/components-lab/src/app/component/grid/test-grid-columns.builder.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="component.grid.overlay.norows" datatype="html">
+        <source>No Rows To Show</source>
+        <target state="new">No Rows To Show(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/overlay/no-rows-overlay.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="id1" datatype="html">
+        <source>Hello i18n for <x id="INTERPOLATION" equiv-text="{{title}}"/>!</source>
+        <target state="new">Hello i18n for <x id="INTERPOLATION" equiv-text="{{title}}"/> !(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/components-lab/src/app/test.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <target state="new">Close(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <target state="new">Previous(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <target state="new">Next(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <target state="new">Previous month(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <target state="new">Next month(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <target state="new">Select month(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <target state="new">Select year(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <target state="new">««(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <target state="new">First(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <target state="new">«(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <target state="new">Previous(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <target state="new">»(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <target state="new">Next(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <target state="new">»»(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <target state="new">Last(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
+        <target state="new"><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <target state="new">Increment hours(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <target state="new">HH(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <target state="new">Hours(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <target state="new">Decrement hours(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <target state="new">Increment minutes(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <target state="new">MM(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <target state="new">Minutes(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <target state="new">Decrement minutes(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <target state="new">Increment seconds(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <target state="new">SS(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <target state="new">Seconds(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <target state="new">Decrement seconds(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source>PM</source>
+        <target state="new">PM(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source>AM</source>
+        <target state="new">AM(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/input/inputtime/lf-inputtime.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="component.grid.filter.label.filtertype" datatype="html">
+        <source>Filter Text:</source>
+        <target state="new">Filter Text:(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/text-filter/text-filter.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/numeric-filter/numeric-filter.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/date-filter/date-filter.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="component.grid.filter.button.apply" datatype="html">
+        <source>Apply</source>
+        <target state="new">Apply(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/text-filter/text-filter.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/numeric-filter/numeric-filter.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/date-filter/date-filter.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="component.grid.filter.button.cancel" datatype="html">
+        <source>Cancel</source>
+        <target state="new">Cancel(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/text-filter/text-filter.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/numeric-filter/numeric-filter.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/date-filter/date-filter.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="component.grid.filter.button.remove" datatype="html">
+        <source>Remove</source>
+        <target state="new">Remove(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/text-filter/text-filter.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/numeric-filter/numeric-filter.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/date-filter/date-filter.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="component.grid.filter.label.to" datatype="html">
+        <source>To:</source>
+        <target state="new">To:(fr)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/numeric-filter/numeric-filter.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../src/lifesuite-app/life-core/component/grid/filter/date-filter/date-filter.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

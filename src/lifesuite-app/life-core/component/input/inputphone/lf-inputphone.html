@@ -1,0 +1,28 @@
+<fieldset [disabled]="disabled" [hidden]="hidden" [class.disabled]="disabled">
+	<div class="lf-parts">
+		<div *ngIf="!elementsData.areaCode.hidden" class="lf-part">
+			<input #areaCode [type]="elementsData.areaCode.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="3" size="3" [placeholder]="elementsData.areaCode.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)"
+			 (keypress)="onKeyPress($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.areaCode.disabled"
+			 aria-label="AreaCode" style="width: 35px;">
+		</div>
+		<div *ngIf="!elementsData.prefix.hidden" class="lf-part-spacer"></div>
+		<div *ngIf="!elementsData.prefix.hidden" class="lf-part">
+			<input #prefix [type]="elementsData.prefix.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'" maxlength="3"
+			 size="3" [placeholder]="elementsData.prefix.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)" (keypress)="onKeyPress($event)"
+			 (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.prefix.disabled" aria-label="Prefix" style="width: 35px;">
+		</div>
+		<div *ngIf="!elementsData.suffix.hidden" class="lf-part-spacer"></div>
+		<div *ngIf="!elementsData.suffix.hidden" class="lf-part">
+			<input #suffix [type]="elementsData.suffix.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'" maxlength="4"
+			 size="4" [placeholder]="elementsData.suffix.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)" (keypress)="onKeyPress($event)"
+			 (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.suffix.disabled" aria-label="Suffix" style="width: 45px;">
+		</div>
+		<div *ngIf="!elementsData.ext.hidden">{{extText}}</div>
+		<div *ngIf="!elementsData.ext.hidden" class="lf-part">
+			<input #ext [type]="elementsData.ext.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'" maxlength="6"
+			 size="6" [placeholder]="elementsData.ext.placeholder" (change)="onChange($event)" (keypress)="onKeyPress($event)" (focus)="onFocus($event)"
+			 (blur)="onBlur($event)" [disabled]="elementsData.ext.disabled" aria-label="Ext" style="width: 60px;">
+		</div>
+	</div>
+</fieldset>

@@ -1,0 +1,6 @@
+﻿.ls-left-nav-info-panel {
+    height: 350px;
+    padding-top: 0.5em;
+    overflow-y: auto;
+    line-height: 1.2;
+}

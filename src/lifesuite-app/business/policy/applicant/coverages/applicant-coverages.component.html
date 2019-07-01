@@ -1,0 +1,14 @@
+﻿<lf-panel header="Coverages" i18n-header="@@policy.applicant.info.coverages" [toggleable]="true" panelType="primary"
+    class="label-appearance" stateId="panel_applicantCoverages"
+    [state]="componentsState.get('panel_applicantCoverages')" [initCollapsed]=true secureComponent>
+    <div class="row justify-content-end btn-padding">
+        <lf-button id="addCoverageButton" name="addCoverageButton" label="Add Coverage"
+            i18n-label="@@applicant.coverage.add" (onClick)="onAddCoverageClick($event)"
+            [actionType]="addCoverageActionType" secureComponent styleClass="btn btn-primary"></lf-button>
+    </div>
+    <div class="row" *ngFor="let coverage of applicant.Coverages_LazyLoad; let i=index">
+        <div class="col-12">
+            <ls-applicant-coverage [coverage]="coverage" [index]="i"></ls-applicant-coverage>
+        </div>
+    </div>
+</lf-panel>

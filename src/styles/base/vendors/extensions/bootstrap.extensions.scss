@@ -1,0 +1,25 @@
+// Include custom Bootstrap styles & classes here
+.card-block {
+    padding: 0.25rem;
+}
+
+.input-group-addon {
+    padding: 0.1rem 0.5rem;
+}
+
+/* Date Dropdown */
+ngb-datepicker.dropdown-menu {
+    font-size: inherit;
+}
+
+ngb-datepicker .custom-select {
+    font-size: 0.7rem;
+}
+
+ngb-datepicker .custom-select option {
+    font-size: 0.7rem;
+}
+
+.lf-modal-dialog-backdrop {
+    transition: opacity 0s;
+}

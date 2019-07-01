@@ -1,0 +1,4 @@
+<span *ngFor="let button of buttons">
+	<lf-button [label]="button.label" [disabled]="button.disabled" [hidden]="button.hidden" styleClass="btn-primary"
+	 (onClick)="onDialogButtonClick(button)"></lf-button>
+</span>

@@ -1,0 +1,8 @@
+<div class="lf-solid-bottom-border ">
+    <master-detail [gridOptions]="gridOptions" [buttons]="buttons" [title]="title" [showDetailAsPopup]="showDetailAsPopup"
+        secureComponent [disabled]="disabled"></master-detail>
+    <lf-form-input [control]="otherRiskTotal" label="Total"  i18n-label="@@policy.worksheet.debitcredit.total" labelPosition="left">
+        <lf-statictext #otherRiskTotal name="otherRiskTotal" [value]="applicantOtherRiskTotalPoints | lfDecimal:'1.0-0'"
+            secureComponent></lf-statictext>
+    </lf-form-input>
+</div>

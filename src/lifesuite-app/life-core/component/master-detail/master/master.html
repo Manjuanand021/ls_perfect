@@ -1,0 +1,22 @@
+﻿<div class="master">
+	<div class="d-flex justify-content-between">
+		<div class="lf-master-title">{{title}}</div>
+		<div class="lf-master-buttonbar">
+			<span *ngFor="let button of buttons">
+				<lf-button *ngIf="!button.dialog" [label]="button.label" [authorizationLevel]="button.authorizationLevel"
+				 [disabled]="disabled||button.disabled" styleClass="btn-primary" [ngClass]="button.buttonClass" (onClick)="onButtonClick(button)">
+				</lf-button>
+				<lf-button *ngIf="button.dialog" [label]="button.label" icon="fa-caret-down" iconPos="right" lfPopover
+				 [popoverParams]="button.dialog" [authorizationLevel]="button.authorizationLevel" [disabled]="disabled" styleClass="btn-primary"
+				 [ngClass]="button.buttonClass">
+				</lf-button>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<data-grid [ngStyle]="{width: '100%', height: gridOptions.height}" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)"
+		 (rowDoubleClicked)="onRowDoubleClicked($event)" (cellFocused)="onCellFocused($event)">
+		</data-grid>
+	</div>
+	<data-grid-status-bar [rowCount]="rowCount "></data-grid-status-bar>
+</div>

@@ -1,0 +1,16 @@
+<div class="lf-page-header" i18n="@@mywork.applicantpreview.label.applicantInformation">Applicant Information</div>
+<div class="row">
+	<div class="col-6">
+		<lf-form-input [control]="applicantList" label="Applicant" i18n-label="@@policy.applicant.info.applicant">
+			<div class="form-inline">
+				<!-- Use 'ngModelOption.standalone' to not add this control to NgForm to avoid saving data when applicant selection changes -->
+				<lf-select #applicantList class="mr-2" [(ngModel)]="selectedApplicantId" [ngModelOptions]="{standalone: true}" [items]="applicantListOptions"
+				 (change)="onApplicantChange()" [clearable]="false" style="width:200px" [actionType]="applicantDropdownActionType"
+				 secureComponent></lf-select>&nbsp;
+				<lf-button id="addApplicantButton" name="addApplicantButton" label="Add Applicant" i18n-label="@@policy.applicant.info.addapplicant"
+				 styleClass="btn btn-primary" (onClick)="onAddApplicantClick()" [actionType]="addButtonActionType" secureComponent></lf-button>
+			</div>
+		</lf-form-input>
+	</div>
+</div>
+<router-outlet></router-outlet>

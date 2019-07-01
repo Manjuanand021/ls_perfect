@@ -1,0 +1,16 @@
+<!-- 
+	This html is copied from @ng-select/ng-select/ng-dropdown-panel.component.
+-->
+
+<div *ngIf="headerTemplate" class="ng-dropdown-header">
+	<ng-container [ngTemplateOutlet]="headerTemplate"></ng-container>
+</div>
+<div #scroll class="ng-dropdown-panel-items scroll-host">
+	<div #padding [class.total-padding]="virtualScroll"></div>
+	<div #content [class.scrollable-content]="virtualScroll && items.length > 0">
+		<ng-content></ng-content>
+	</div>
+</div>
+<div *ngIf="footerTemplate" class="ng-dropdown-footer">
+	<ng-container [ngTemplateOutlet]="footerTemplate"></ng-container>
+</div>

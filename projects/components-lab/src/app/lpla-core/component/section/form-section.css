@@ -1,0 +1,9 @@
+/* form-section.css */
+
+.form-section-button {
+	width: 70px;
+	height: 35px;
+	margin: 0 15px;
+	color: #000;
+    padding: 0;
+}

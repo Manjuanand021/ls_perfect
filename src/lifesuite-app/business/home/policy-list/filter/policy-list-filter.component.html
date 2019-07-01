@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-3">
+        <lf-form-input [control]="userList" label="User" i18n-label="@@mywork.applicantscases.label.user">
+            <lf-select #userList name="userList" [(ngModel)]="filters.selectedUser" [items]="listData.userList | listItems:'CodeValue':'ExternalCode'"
+                style="width:200px" (change)="onUserChange($event)" [actionType]="filterDropdownActionType"
+                secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="teamList" label="Team" i18n-label="@@mywork.applicantscases.label.team">
+            <lf-select #teamList name="teamList" [(ngModel)]="filters.selectedTeam" [items]="listData.teamList | listItems:'CodeValue':'CodeId'"
+                style="width:200px" (change)="onTeamChange($event)" [actionType]="filterDropdownActionType"
+                secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input [control]="viewList" label="View" i18n-label="@@mywork.applicantscases.label.view">
+            <lf-select #viewList name="viewList" [(ngModel)]="filters.selectedView" [items]="listData.MyWorkView"
+                [clearable]="false" style="width:200px" (change)="onViewChange($event)" [actionType]="filterDropdownActionType"
+                secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <label i18n="@@mywork.statuscount.label.applicantstatuses">Applicant Statuses</label>
+    </div>
+    <div class="col-12 ls-status-filters">
+        <lf-split-infobutton *ngFor="let status of applicantStatusList; let index=index" [id]="status.statusType"
+            [name]="'policy_status_' + status.statusType" [label]="status.header" [model]="status.statusList"
+            [selectedMenuItemId]="filters.selectedRanges[index]" [selected]="status.statusType==filters.selectedStatusCount.statusType"
+            (onClick)="onStatusSelected($event)">
+        </lf-split-infobutton>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+/* TabView */
+
+.ui-tabview > .ui-tabview-nav > li {
+    margin: 0;
+}
+
+.ui-tabview.ui-tabview-top > .ui-tabview-nav li {
+    top: 0px;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-default {
+    background-color: $headerBgColor;
+}
+.ui-tabview > .ui-tabview-nav > .ui-state-active {
+    background-color: $contentBgColor;
+}
+
+.ui-tabview > .ui-tabview-nav > .ui-state-active > a,
+.ui-tabview > .ui-tabview-nav > .ui-state-active > .ui-tabview-close {
+    color: $stateDefaultTextColor;
+}
+
+/* Primary (first level) TabView */
+
+.ui-tabview.ui-tabview-primary > .ui-tabview-nav > li > a > .ui-tabview-title {
+    font-size: 0.75rem;
+}
+
+/* Secondary (second level) TabView */
+/*
+.ui-tabview.ui-tabview-secondary {
+	...
+}
+*/
+
+/* Tertiary (third level) TabView */
+/* .ui-tabview.ui-tabview-tertiary {
+	...
+}
+*/

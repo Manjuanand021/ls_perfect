@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+$theme-name: ls-custom;
+
+$body-bg: #f3e6d0;
+$body-bg-img: url('../../styles/images/bgimg.png');
+
+$primary-bg: #00467f;
+$secondary-bg: #4195d3;
+
+$grid-bg: $primary-bg;
+
+$primary-text-color: $primary-bg;
+
+$primary-btn-bg: #005daa;
+$primary-btn-border-color: #005daa;
+
+$primary-btn-disabled-bg: #c7c7c7;
+$primary-btn-disabled-border-color: darkgrey;
+$primary-btn-disabled-opacity: 0.7;
+
+$panel-primary-bg: #4195db;
+$panel-secondary-bg: #b9d8f1;
+$panel-tertiary-bg: #e1f0fb;
+
+$secondary-btn-bg: rgba(225, 225, 225, 0.5);
+$secondary-btn-border: 1px solid #aeaeae;
+
+$input-control-bg: #d8d8d8;
+$input-control-border: 1px solid #999;
+
+$form-body-color: $primary-text-color;
+$form-body-bg: #fff;
+$radio-label-text-shadow: 0 0 0 $primary-text-color;
+$formrow-bg-default: #fff;
+$formrow-gradient-color1: #fff;
+$formrow-gradient-color2: $input-control-bg;
+$help-toolkit-icon-hover: 0 0 0 10px rgba(0, 0, 0, 0.3);
+
+$navbar-default-bg-color1: darkorange;
+$navbar-default-bg-color2: orange;
+$navbar-default-color: #fff;
+$navbar-collapse-color: $secondary-bg;
+
+$panelmenu-header-bg-color1: #186ba0;
+$panelmenu-header-bg-color2: #b9d8f1;
+$panelmenu-content-bg-color: #f1f6fa;
+
+$left-nav-info-panel-bg: mintcream;
+
+$splash-message-color: $primary-text-color;
+
+$page-header-bg: #efefef;
+
+@import './ls-custom/theme_all.scss';
+@import '../base/base_all';

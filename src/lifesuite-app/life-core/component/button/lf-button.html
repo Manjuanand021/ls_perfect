@@ -1,0 +1,23 @@
+<button
+    #buttonElement
+    [type]="type"
+    [name]="name"
+    [title]="title"
+    [disabled]="disabled"
+    [hidden]="hidden"
+    [ngStyle]="style"
+    [class]="styleClass"
+    (click)="onButtonClick($event)"
+>
+    <!-- [id]="id" -->
+    <span
+        *ngIf="icon"
+        [ngClass]="{
+            'ui-button-icon-right': iconPos == 'right',
+            'ui-button-icon-left': iconPos != 'right',
+            'ui-clickable fa': true
+        }"
+        [class]="icon"
+    ></span>
+    <span [ngClass]="'ui-button-text ui-clickable'">{{ label || 'ui-btn' }}</span>
+</button>

@@ -1,0 +1,7 @@
+<div class="lf-page-header" i18n="@@policy.page.title.documents">Documents</div>
+<lf-routedTabView id="tabViewDocuments" tabViewType="secondary" [tabs]="tabsData$" [initialSelectedIndex]="initialSelectedIndex$"
+ controlClose="true" (onClose)="onTabClose($event)" (onChange)="onTabSelectionChange($event)">
+
+	<router-outlet></router-outlet>
+
+</lf-routedTabView>

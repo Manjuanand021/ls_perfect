@@ -1,0 +1,13 @@
+﻿@import '../../../../../../src/styles/base/helpers/variables';
+
+$splitter-offset-top: 71px;
+$splitter-top: $splitter-offset-top + $navbar-height;
+$splitter-height: calc(100vh - #{$splitter-top} - #{$offset-bottom});
+
+.tab-split-container {
+    height: $splitter-height;
+}
+
+.tab-no-split-container {
+    height: 100%;
+}

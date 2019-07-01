@@ -1,0 +1,17 @@
+<fieldset [disabled]="disabled" [hidden]="hidden" [class.disabled]="disabled">
+	<div class="lf-parts">
+		<div *ngIf="!elementsData.weightLb.hidden" class="lf-part">
+			<input #weightLb [type]="elementsData.weightLb.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="4" size="4" [placeholder]="elementsData.weightLb.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)"
+			 (keypress)="onKeyPress($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.weightLb.disabled"
+			 aria-label="Feet">
+		</div>
+		<div *ngIf="!elementsData.weightLb.hidden" class="lf-part-text">{{weightLbText}}</div>
+		<div *ngIf="!elementsData.weightKg.hidden" class="lf-part">
+			<input #weightKg [type]="elementsData.weightKg.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="3" size="3" [placeholder]="elementsData.weightKg.placeholder" (change)="onChange($event)" (keypress)="onKeyPress($event)"
+			 (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.weightKg.disabled" aria-label="Centimeters">
+		</div>
+		<div *ngIf="!elementsData.weightKg.hidden" class="lf-part-text">{{weightKgText}}</div>
+	</div>
+</fieldset>

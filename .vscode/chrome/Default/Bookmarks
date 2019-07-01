@@ -1,0 +1,48 @@
+{
+   "checksum": "bf91341ef5f4eb0126499514fd4d313d",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13182425761785925",
+            "id": "5",
+            "meta_info": {
+               "last_visited_desktop": "13189254975031908"
+            },
+            "name": "LifeSuite 10",
+            "type": "url",
+            "url": "http://localhost:4200/login"
+         }, {
+            "date_added": "13184538019129108",
+            "id": "7",
+            "meta_info": {
+               "last_visited_desktop": "13201079695438252"
+            },
+            "name": "LifeSuite 10",
+            "type": "url",
+            "url": "http://localhost:4200/"
+         } ],
+         "date_added": "13180442520427474",
+         "date_modified": "13184538019129108",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13180442520427488",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13180442520427491",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

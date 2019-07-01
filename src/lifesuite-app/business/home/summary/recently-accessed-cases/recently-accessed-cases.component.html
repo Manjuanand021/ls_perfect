@@ -1,0 +1,6 @@
+<lf-panel styleClass="panelRecentlyAccessed" header="Recently Accessed Cases" i18n-header="@@summary.paneltitle.recentcases"
+    [toggleable]="false" panelType="primary">
+    <data-grid style="width: 100%; height: 200px;" [gridOptions]="gridOptions" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClicked($event)">
+    </data-grid>
+    <data-grid-status-bar [rowCount]="rowCount"></data-grid-status-bar>
+</lf-panel>

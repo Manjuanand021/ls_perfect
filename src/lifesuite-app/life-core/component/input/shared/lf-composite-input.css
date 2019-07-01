@@ -1,0 +1,16 @@
+﻿.lf-parts {
+    display: flex;
+    align-items: center;
+}
+
+.lf-part-spacer {
+    width: 0.3em;
+}
+
+.lf-part-text {
+    margin: 0.3em 0.3em;
+    text-align: center;
+}
+
+.lf-part {
+}

@@ -1,0 +1,17 @@
+﻿<lf-panel [header]="panelHeader" [toggleable]="true" panelType="secondary" stateId="panel_applicantCoverage_{{index}}"
+    [state]="componentsState.get('panel_applicantCoverage_'+index)">
+    <dynamic-form [formFields]="formFields" [formData]="formData" [layoutConfig]="formLayoutConfig" [form]="rootForm"
+        [index]="index" secureComponent>
+    </dynamic-form>
+    <div class="row">
+        <div class="col-12 pb-1">
+            <benefit-list [coverage]="coverage" *ngIf="showBenefitSection"></benefit-list>
+        </div>
+        <div class="col-12 pb-1">
+            <beneficiary [coverage]="coverage" *ngIf="showBeneficiarySection"></beneficiary>
+        </div>
+        <div class="col-12 pb-1">
+            <funds-list [coverage]="coverage" *ngIf="showFundsSection"></funds-list>
+        </div>
+    </div>
+</lf-panel>

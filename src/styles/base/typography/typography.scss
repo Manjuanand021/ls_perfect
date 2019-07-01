@@ -1,0 +1,50 @@
+.lf-splash {
+    text-align: center;
+    margin: 10% 0 0 0;
+    box-sizing: border-box;
+
+    .lf-message {
+        font-size: $font-size-h1;
+        line-height: 36px;
+        /* text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px; */
+        color: $splash-message-color;
+    }
+
+    .fa-spinner {
+        text-align: center;
+        display: inline-block;
+        font-size: $font-size-extra-large;
+        margin-top: 50px;
+        color: $splash-message-color;
+    }
+}
+
+.lf-light-font-weight {
+    font-weight: lighter;
+    color: $primary-text-color;
+}
+
+.lf-page-header {
+    font-weight: bold;
+    font-size: $font-size-large;
+    color: $stateActiveBgColor;
+    padding: 0.25em 0.5em 0.5em 0.5em;
+    margin: -30px 5px 15px 5px;
+    background: $page-header-bg;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(200, 227, 247, 0.4);
+}
+
+.lf-page-subheader {
+    font-weight: bold;
+    font-size: $font-size-base;
+    color: $stateActiveBgColor;
+    padding: 0.5em;
+}
+
+.lf-grid-title {
+    padding: 0.9375rem 0 0.3125rem 0;
+    font-weight: bold;
+}
+.lf-font-weight-bold {
+    font-weight: 600 !important;
+}

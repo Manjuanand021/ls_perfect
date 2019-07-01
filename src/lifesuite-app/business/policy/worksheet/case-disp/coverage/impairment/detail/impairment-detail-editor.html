@@ -1,0 +1,20 @@
+<form #form="ngForm" role="form" class="form" autocomplete="off">
+	<div class="row">
+		<div class="col-6">
+			<lf-form-input [control]="impairmentRestrictionCode" label="Code" i18n-label="@@policy.worksheet.coverage.impairment.restrictionCode">
+				<lf-select #impairmentRestrictionCode name="impairmentRestrictionCode" [items]="resolvedData.listData.ImpairmentRestrictionCode | listItems:'value':'Id' | emptyItem"
+				 [(ngModel)]="data.ImpairmentRestrictionCode" (change)="onImpairmentChange($event)" secureComponent style="width:350px"
+				 container="dialog" required [disabled]="isRestrictionSelectionDisabled">
+				</lf-select>
+			</lf-form-input>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<lf-form-input [control]="impairmentText" label="Description" i18n-label="@@policy.worksheet.coverage.impairment.restrictionText">
+				<lf-inputtextarea #impairmentText name="impairmentText" [(ngModel)]="data.ImpairmentText" secureComponent rows="6"
+				 maxLength="500" [style]="{width: '100%'}"></lf-inputtextarea>
+			</lf-form-input>
+		</div>
+	</div>
+</form>

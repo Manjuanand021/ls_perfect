@@ -1,0 +1,60 @@
+<form #form="ngForm">
+    <br />
+    <label>InputNumber</label> <br />
+    <div id="view1" class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-1">
+                <label>Required</label>
+                <lf-select name="required" [items]="trueFalseList" [(ngModel)]="required" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Disabled</label>
+                <lf-select name="disabled" [items]="trueFalseList" [(ngModel)]="disabled" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Hidden</label>
+                <lf-select name="hidden" [items]="trueFalseList" [(ngModel)]="hidden" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>ReadOnly</label>
+                <lf-select name="readonly" [items]="trueFalseList" [(ngModel)]="readonly" [clearable]="false" style="width:100px;"></lf-select>
+            </div>
+            <div class="col-sm-1">
+                <label>Minimum</label> <input name="min" [(ngModel)]="minNumber" style="width:100px;" />
+            </div>
+            <div class="col-sm-1">
+                <label>Maximum</label> <input name="max" [(ngModel)]="maxNumber" style="width:100px;" />
+            </div>
+        </div>
+        <br />
+        <hr style="border-top: 1px solid" />
+        <div class="row">
+            <div class="col-sm-3">
+                <lf-form-input label="Sr InputNumber 1" [control]="newNumericField">
+                    <lf-inputnumber #newNumericField name="newNumericField" [required]="toBoolean(required)" [disabled]="toBoolean(disabled)"
+                        [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)" [max]="maxNumber" [min]="minNumber"
+                        [(ngModel)]="fields.newNumericField.value" [localeId]="localeId" secureComponent></lf-inputnumber>
+                </lf-form-input>
+                Locale:
+                <lf-select name="locales" [items]="locales" [(ngModel)]="localeId"></lf-select>
+            </div>
+            <div class="col-sm-3">
+                <lf-form-input label="Sr InputNumber 2" [control]="newNumericField2">
+                    <lf-inputnumber #newNumericField2 name="newNumericField2" [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [readonly]="toBoolean(readonly)"
+                        [max]="maxNumber" [min]="minNumber" [(ngModel)]="fields.newNumericField2.value" [localeId]="localeId2"></lf-inputnumber>
+                </lf-form-input>
+                Locale:
+                <lf-select name="locales2" [items]="locales" [(ngModel)]="localeId2"></lf-select>
+            </div>
+            <div class="col-sm-3">
+                <lf-form-input label="LPLA InputNumber" [control]="lplaNumericField">
+                    <lpla-inputnumber #lplaNumericField name="lplaNumericField" [required]="toBoolean(required)"
+                        [disabled]="toBoolean(disabled)" [hidden]="toBoolean(hidden)" [max]="maxNumber" [min]="minNumber"
+                        [(ngModel)]="fields.lplaNumericField.value" [fieldModel]="fields.lplaNumericField.model"></lpla-inputnumber>
+                </lf-form-input>
+            </div>
+        </div>
+        <br />
+    </div>
+</form>

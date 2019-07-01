@@ -1,0 +1,7 @@
+<textarea #textareaInput pInputText [value]="value||''" [name]="name" [title]="value||''" [disabled]="disabled"
+    [hidden]="hidden" [readonly]="readonly" [attr.rows]="rows" [attr.cols]="cols" [ngStyle]="style"
+    [attr.maxlength]="maxLength" (focus)="onFocus($event)" (blur)="onBlur($event)" (keydown)="onKeyDown($event)"
+    (keypress)="onKeyPress($event)" (input)="handleInputChange($event)" (paste)="handleInputChange($event)"
+    [ngClass]="class">
+</textarea>
+<!-- [attr.placeholder]="placeholder" [ngClass]="styleClass" [attr.size]="size" [attr.maxlength]="maxlength" [attr.tabindex]="tabindex"-->

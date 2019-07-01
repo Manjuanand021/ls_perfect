@@ -1,0 +1,15 @@
+.lf-master-title {
+    padding: 0.9375rem 0 0.3125rem 0;
+    font-weight: bold;
+}
+
+.lf-master-buttonbar {
+    padding: 0.625rem 0 0.3125rem 0;
+}
+
+.btn-primary {
+    width: 60px;
+    height: 30px;
+    margin: 0 0.625rem;
+    padding: 0;
+}

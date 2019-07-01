@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="caseNumber" i18n="@@policy.worksheet.debitcredit.case">Case #</label>
+            <div name="caseNumber">{{data.policy.PolicyNumber}}</div>
+        </div>
+    </div>
+    <div class="col-4">
+        <lf-form-input [control]="applicantList" label="Applicant" i18n-label="@@policy.worksheet.debitcredit.applicant">
+            <!-- Use 'ngModelOption.standalone' to not add this control to NgForm to avoid saving data when applicant selection changes -->
+            <lf-select #applicantList name="applicantList" [(ngModel)]="selectedApplicantId" [ngModelOptions]="{standalone: true}"
+                [items]="applicantListOptions" (change)="onApplicantChange($event)" [clearable]="false" style="width:200px"
+                [actionType]="applicantDropdownActionType" secureComponent></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="total" i18n="@@policy.worksheet.debitcredit.total">Total</label>
+            <div name="total">{{applicantTotalPoints | lfDecimal:'1.0-0'}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-11 col-xl-10">
+        <other-risks></other-risks>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-11 col-xl-10">
+        <system-generated></system-generated>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-11 col-xl-10">
+        <user-generated></user-generated>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-11 col-xl-10">
+        <coronary-tests></coronary-tests>
+    </div>
+</div>

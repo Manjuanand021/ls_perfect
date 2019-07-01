@@ -1,0 +1,14 @@
+<form #form="ngForm">
+    <br />
+    <label>Toaster</label>
+    <div class="row">
+        <div>
+            <toaster [(value)]="msgs"></toaster>
+            <lf-button id='buttonSucess' (click)="showSuccess()" label="Success" styleClass="ui-button-success"></lf-button>
+            <lf-button id='buttonInfo' (click)="showInfo()" label="Info" styleClass="ui-button-info"></lf-button>
+            <lf-button id='buttonWarning' (click)="showWarn()" label="Warn" styleClass="ui-button-warning"></lf-button>
+            <lf-button id='buttonError' (click)="showError()" label="Error" styleClass="ui-button-danger"></lf-button>
+            <lf-button id='buttonClearMessage' (click)="clearToaster()" icon="fa fa-close" label="Clear"></lf-button>
+        </div>
+    </div>
+</form>

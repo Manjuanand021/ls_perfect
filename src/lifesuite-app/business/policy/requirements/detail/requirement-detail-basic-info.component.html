@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-md-6">
+        <lf-form-input [control]="chkUseExistingEvidence" label="">
+            <lf-checkbox #chkUseExistingEvidence name="chkUseExistingEvidence" [(ngModel)]="data.AlwaysOrder" label="Do Not Use Existing Evidence" 
+            i18n-label="@@policy.requirement.detail.alwaysorder" valueType="BinaryString" secureComponent
+            ></lf-checkbox>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <lf-form-input [control]="requirement" label="Requirement" i18n-label="@@policy.requirement.detail.requirement">
+            <lf-select #requirement name="requirement" [items]="listData.RequirementCode | listItems: 'value':'Id'" 
+            [(ngModel)]="data.RequirementCode" secureComponent required disabled style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-md-3">
+        <lf-form-input [control]="applicant" label="Applicant" i18n-label="@@policy.requirement.detail.applicant">
+            <lf-select #applicant name="applicant" [items]="applicantList" [(ngModel)]="data.PolicyPersonId" secureComponent 
+            [clearable]="false" style="width:200px" [disabled]="controlDisabledMap.applicant"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2" *ngIf="isRequirementCodeMVR">
+        <lf-form-input [control]="dlNumber" label="Driver's License" i18n-label="@@policy.requirement.detail.dlnumber">
+            <lf-inputtext #dlNumber name="dlNumber" [disabled]="controlDisabledMap.dlNumber" [(ngModel)]="data.DLNumber" (blur)="onDLDataChange()" 
+            maxLength="20" secureComponent [style]="{ width: '150px' }" required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2" *ngIf="isRequirementCodeMVR">
+        <lf-form-input [control]="dlCountry" style="word-wrap: break-word" label="Driver's License Country" i18n-label="@@policy.requirement.detail.dlcountry"> 
+            <lf-select #dlCountry name="dlCountry" [items]="listData.CountryId | listItems: 'value':'Id' | emptyItem" [(ngModel)]="countryId" 
+            [disabled]="controlDisabledMap.dlState" secureComponent style="width:150px" required></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2" *ngIf="isRequirementCodeMVR">
+        <lf-form-input [control]="dlState" label="Driver's License State" i18n-label="@@policy.requirement.detail.dlstate">
+            <lf-select #dlState name="dlState" [items]="listData | stateListPicker: countryId | emptyItem | sortList" [(ngModel)]="data.DLState" 
+            (change)="onDLDataChange()" [disabled]="controlDisabledMap.dlState" secureComponent style="width:150px" required></lf-select>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <lf-form-input [control]="status" label="Status" i18n-label="@@policy.requirement.detail.status">
+            <lf-select #status name="status" [items]="listData.ClosedDisposition | listItems: 'value':'Id'" [(ngModel)]="reqStatus" 
+            [disabled]="controlDisabledMap.status" (change)="onStatusChange($event)" [clearable]="false" secureComponent style="width:100px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-md-3">
+        <lf-form-input [control]="orderedBy" label="Ordered By" i18n-label="@@policy.requirement.detail.orderedby">
+            <lf-select #orderedBy name="orderedBy" [items]="listData.OrderedBy | listItems: 'value':'value'" [(ngModel)]="data.OrderedBy" 
+            secureComponent (change)="onOrderByChange()" [disabled]="controlDisabledMap.orderedBy" style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2">
+        <lf-form-input [control]="orderedDate" label="Ordered Date" i18n-label="@@policy.requirement.detail.ordereddate">
+            <ls-inputdate #orderedDate name="orderedDate" [disabled]="controlDisabledMap.orderedDate" [(ngModel)]="data.OrderedDate" secureComponent></ls-inputdate>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2">
+        <lf-form-input [control]="orderedFrom" label="Ordered From" i18n-label="@@policy.requirement.detail.orderedfrom">
+            <lf-select #orderedFrom name="orderedFrom" [items]="listData.Provider | listItems: 'value':'value'" [(ngModel)]="data.Provider" 
+            secureComponent (change)="onOrderFromChange()" [disabled]="controlDisabledMap.orderedFrom" style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2" style="margin-top: 24px;" *ngIf="isMatchButtonAvailable">
+        <lf-button id="matchButton" name="matchButton" label="Match" i18n-label="@@policy.requirement.detail.match" (onClick)="onMatchClick()" 
+        secureComponent styleClass="btn btn-primary"></lf-button>
+    </div>
+    <div class="col-md-2" style="margin-top: 24px;" *ngIf="isUnmatchButtonAvailable">
+        <lf-button id="unMatchButton" name="unMatchButton" label="Unmatch" i18n-label="@@policy.requirement.detail.unmatch" 
+        (onClick)="onUnmatchClick()" secureComponent styleClass="btn btn-primary"></lf-button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3" [ngStyle]="{display: 'flex'}">
+            <lf-form-input [control]="followup" label="" style="margin-right: 15px; margin-top: 10px;">
+                <lf-checkbox #followup name="followup" [ngModel]="isFollowedUp" secureComponent (ngModelChange)="onIsFollowedUpChange($event)" 
+                binary="true" [disabled]="controlDisabledMap.followup"></lf-checkbox>
+            </lf-form-input>
+            
+            <lf-form-input [control]="followupDate" label="Follow Up Date" i18n-label="@@policy.requirement.detail.followupdate">
+                <ls-inputdate #followupDate name="followupDate" [(ngModel)]="data.FollowupDate" secureComponent 
+                [disabled]="!isFollowedUp || controlDisabledMap.followup"></ls-inputdate>
+            </lf-form-input>
+    </div>
+    <div class="col-md-3">
+        <lf-form-input [control]="followupTime" label="Follow Up Time" i18n-label="@@policy.requirement.detail.followuptime">
+            <ls-inputtime #followupTime name="followupTime" [(ngModel)]="data.FollowupDate" secureComponent 
+            [disabled]="!isFollowedUp || controlDisabledMap.followup"></ls-inputtime>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2">
+        <lf-form-input [control]="addedBy" label="Added By" i18n-label="@@policy.requirement.detail.addedby">
+            <lf-statictext #addedBy name="addedBy" [value]="addedByName" secureComponent></lf-statictext>
+        </lf-form-input>
+    </div>
+    <div class="col-md-2">
+        <lf-form-input [control]="accountCode" label="Account Code" i18n-label="@@policy.requirement.detail.accountcode">
+            <lf-select #accountCode name="accountCode" [items]="listData.AccountCode | listItems: 'externalCode':'Id' | emptyItem" 
+            [(ngModel)]="data.AccountCode" secureComponent [disabled]="controlDisabledMap.accountCode" style="width:200px"></lf-select>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <lf-form-input [control]="vendorInstruction" label="Vendor Special Instructions" i18n-label="@@policy.requirement.detail.vendorspecialinstructions">
+            <lf-inputtextarea #vendorInstruction name="vendorInstruction" [(ngModel)]="data.CreateComment" maxLength="1000" secureComponent 
+            rows="10" cols="40"></lf-inputtextarea>
+        </lf-form-input>
+    </div>
+    <div class="col-md-6">
+        <lf-form-input [control]="requirementComment" label="Requirement Comment" i18n-label="@@policy.requirement.detail.requirementcomment">
+            <lf-inputtextarea #requirementComment name="requirementComment" [(ngModel)]="data.RequirementComment" maxLength="1000" 
+            secureComponent rows="10" cols="40"></lf-inputtextarea>
+        </lf-form-input>
+    </div>
+</div>

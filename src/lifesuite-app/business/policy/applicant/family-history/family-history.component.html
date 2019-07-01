@@ -1,0 +1,9 @@
+﻿<lf-panel header="Family History" i18n-header="@@policy.applicant.familyHistory" [toggleable]="true" panelType="primary"
+    stateId="panel_familyHistory" [state]="componentsState.get('panel_familyHistory')" [initCollapsed]=true
+    secureComponent>
+    <div class="row">
+        <master-detail name="familyHistory" [gridOptions]="gridOptions" [buttons]="buttons" [title]="title"
+            [showDetailAsPopup]="showDetailAsPopup" secureComponent [disabled]="disabled" style="width: 100%;">
+        </master-detail>
+    </div>
+</lf-panel>

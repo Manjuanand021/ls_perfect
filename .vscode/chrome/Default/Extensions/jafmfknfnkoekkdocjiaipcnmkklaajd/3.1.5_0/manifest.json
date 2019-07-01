@@ -1,0 +1,35 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "Notifies JavaScript errors by icon in toolbar bar or notification popup",
+   "icons": {
+      "128": "img/error_128.png",
+      "16": "img/error_16.png",
+      "48": "img/error_48.png"
+   },
+   "incognito": "spanning",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDRhiOYOSDraMvGibhl/qi0BGYNBExiAuxO+KycUCFp9fgAQ2OOQSnl/aNh5JlBiQf5yMcJXLQ3KkWxctHDJezlOTj1qSHFqttXCMvfMj2cQ1BAJpRLBUp3uSWuGryPBEMv99sGMTpyy3IXyLLvjqGqpK8LOx6PEw8Mv1e4Zsc+0wIDAQAB",
+   "manifest_version": 2,
+   "name": "JavaScript Errors Notifier",
+   "options_page": "options.html",
+   "page_action": {
+      "default_icon": {
+         "19": "img/error_19_disabled.png",
+         "38": "img/error_38_disabled.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "permissions": [ "\u003Call_urls>", "tabs", "storage", "webRequest" ],
+   "short_name": "js_error",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.1.5",
+   "web_accessible_resources": [ "img/error_64.png", "img/error_38.png", "img/error_19.png", "popup.html", "options.html" ]
+}

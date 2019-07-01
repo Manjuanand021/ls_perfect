@@ -1,0 +1,22 @@
+.lf-secondary-btn {
+    border-radius: 1px;
+    background-color: $secondary-btn-bg;
+    border: $secondary-btn-border;
+}
+
+.alwaysOnTop {
+    z-index: 1000;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) 
+@include media-breakpoint-up(sm) {
+}
+*/
+
+/* Medium devices (desktops, 992px and up) 
+@include media-breakpoint-up(md) {
+}
+*/

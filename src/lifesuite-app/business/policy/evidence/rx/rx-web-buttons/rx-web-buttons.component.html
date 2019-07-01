@@ -1,0 +1,11 @@
+﻿<div class="pb-2">
+    <div class="ls-justify-content-center-layout">
+        <ng-container i18n="@@policy.rx.prescription.rxrules">Rx Rules</ng-container>
+    </div>
+    <div class="ls-justify-content-center-layout">
+        <lf-button id="webButton" label="Web" [disabled]="disableWebButton" i18n-label="@@policy.rx.button.web" (click)="onWebButtonClick()"
+            secureComponent styleClass="btn btn-primary"></lf-button>
+        <lf-button id="pdfButton" label="PDF" [disabled]="disablePDFButton" i18n-label="@@policy.rx.button.pdf" (click)="onPdfButtonClick()"
+            secureComponent styleClass="btn btn-primary"></lf-button>
+    </div>
+</div>

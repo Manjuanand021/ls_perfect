@@ -1,0 +1,69 @@
+﻿<div class="lf-page-subheader" i18n="@@policy.paramedical.detail.physicalmeasurements">Physical Measurements</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input label="Exam Company" i18n-label="@@policy.paramedical.detail.examcompany" [control]="examCompanyName">
+            <lf-inputtext #examCompanyName name="examCompanyName" [(ngModel)]="paramedical.ExamCompanyName" maxLength="50"
+                secureComponent></lf-inputtext>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input label="Height" i18n-label="@@policy.paramedical.detail.height" [control]="height">
+            <lf-inputheight #height name="height" [(ngModel)]="paramedical.HeightInches" secureComponent></lf-inputheight>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Weight" i18n-label="@@policy.paramedical.detail.weight" [control]="weightPounds">
+            <lf-inputweight #weightPounds name="weightPounds" [(ngModel)]="paramedical.WeightPounds" secureComponent></lf-inputweight>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Weight 1 Year Ago" i18n-label="@@policy.paramedical.detail.weight1yearago" [control]="weightLossGain">
+            <lf-inputweight #weightLossGain name="weightLossGain" [(ngModel)]="paramedical.WeightLossGain"
+                secureComponent></lf-inputweight>
+        </lf-form-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input label="Chest Inhale" i18n-label="@@policy.paramedical.detail.chestinhale" [control]="chestInhale">
+            <lf-inputnumber format="n0" [maxLength]="3" decimals="0" #chestInhale name="chestInhale" [(ngModel)]="paramedical.ChestInhale"
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Waist Size" i18n-label="@@policy.paramedical.detail.waistsize" [control]="waistSize">
+            <lf-inputnumber format="n0" [maxLength]="3" decimals="0" #waistSize name="waistSize" [(ngModel)]="paramedical.WaistSize"
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Chest Exhale" i18n-label="@@policy.paramedical.detail.chestexhale" [control]="chestExhale">
+            <lf-inputnumber format="n0" [maxLength]="3" decimals="0" #chestExhale name="chestExhale" [(ngModel)]="paramedical.ChestExhale"
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+</div>
+<hr />
+<div class="lf-page-subheader" i18n="@@policy.paramedical.detail.pulsebloodpressure">Pulse/Blood Pressure</div>
+<div class="row">
+    <div class="col-3">
+        <lf-form-input label="Pulse" i18n-label="@@policy.paramedical.detail.pulse" [control]="pulse">
+            <lf-inputnumber format="n0" [maxLength]="3" decimals="0" #pulse name="pulse" [(ngModel)]="paramedical.Pulse"
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Systolic" i18n-label="@@policy.paramedical.detail.systolic" [control]="systolic">
+            <lf-inputnumber format="n0" [maxLength]="3" decimals="0" #systolic name="systolic" [(ngModel)]="paramedical.Systolic"
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+    <div class="col-3">
+        <lf-form-input label="Diastolic" i18n-label="@@policy.paramedical.detail.diastolic" [control]="diastolic">
+            <lf-inputnumber format="n0" [maxLength]="3" decimals="0" #diastolic name="diastolic" [(ngModel)]="paramedical.Diastolic"
+                [allowNegative]="false" secureComponent></lf-inputnumber>
+        </lf-form-input>
+    </div>
+</div>

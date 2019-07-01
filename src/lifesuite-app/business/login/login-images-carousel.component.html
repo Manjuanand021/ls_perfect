@@ -1,0 +1,11 @@
+<ngb-carousel>
+	<ng-template *ngFor="let product of productsArray" ngbSlide>
+		<div class="ls-image-text-container">
+			<img class="ls-product-image" [src]="product.url">
+			<div class="col-lg-6">
+				<span class="ls-product-label" [innerHTML]="product.label"></span>
+				<p class="ls-product-desc" [innerHTML]="product.description"></p>
+			</div>
+		</div>
+	</ng-template>
+</ngb-carousel>

@@ -1,0 +1,14 @@
+<div class="row lf-solid-bottom-border pb-2">
+    <div class="col-8">
+        <master-detail [gridOptions]="gridOptions" [buttons]="buttons" [title]="title" [showDetailAsPopup]="showDetailAsPopup" secureComponent
+            [disabled]="disabled">
+        </master-detail>
+    </div>
+    <div class="col-4 d-flex justify-content-center align-items-end">
+        <lf-button id="openPolicyButton" label="Validate" i18n-label="@@policy.mib.submitted.codes.button.validate" *ngIf="isMIBEVTEnabled"
+            [disabled]="!isValidateButtonEnabled" (onClick)="onValidateCodesClick()" styleClass="btn btn-primary right-margin-sm"></lf-button>
+        <lf-button id="submitCodes" name="submitCodes" label="Submit Code" i18n-label="@@policy.mib.submitted.codes.button.submitcode"
+            [disabled]="!isSubmitCodesButtonEnabled" (onClick)="onSubmitCodesClick()" secureComponent styleClass="btn btn-primary ml-3"></lf-button>
+    </div>
+</div>
+<mib-submitted-codes [codes]="submittedMIBCodings"></mib-submitted-codes>

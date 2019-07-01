@@ -1,0 +1,12 @@
+.ls-note-alert-icon {
+    background: url('../../styles/images/form/toolValidate.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.ls-note-item-list .lf-item .lf-item-selected .ui-panel.ui-panel-secondary .ui-panel-content {
+    background-color: $item-selected-bg;
+}

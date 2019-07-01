@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-6">
+        <lf-form-input [control]="drugName" label="Drug Name" i18n-label="@@policy.rx.detail.effects.gridheader.drugname">
+            <lf-inputtext #drugName name="drugName" [(ngModel)]="data.DrugName" [maxLength]="200" (blur)="onDrugNameBlur()" secureComponent
+                required></lf-inputtext>
+        </lf-form-input>
+    </div>
+    <div class="col-6">
+        <lf-form-input [control]="debit" label="Debit/Credit" i18n-label="@@policy.medication.edit.points">
+            <lf-inputnumber #debit name="debit" [max]="1000" [min]="-999" [maxLength]="4" [(ngModel)]="data.Points" format="n0"
+                decimals="0" secureComponent required></lf-inputnumber>
+        </lf-form-input>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<lf-panel header="Agent" i18n-header="@@policy.case.agents.title" [toggleable]="true" panelType="secondary" stateId="panel_agent_{{index}}"
+ [state]="componentsState.get('panel_agent_'+index)" secureComponent>
+	<div [hidden]="!item.visible" [@fadeInOut]="item.visible">
+		<div class="itemContent" [class.invalid]="item.invalid">
+			<div class="agent">
+				<compose [model]="item" [componentType]="itemComponentType"></compose>
+			</div>
+		</div>
+	</div>
+</lf-panel>

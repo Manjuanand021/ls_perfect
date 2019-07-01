@@ -1,0 +1,41 @@
+{
+    "awesomeTypescriptLoaderOptions": {
+        "forkChecker": true,
+        "useCache": true,
+        "useWebpackText": true
+    },
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "es6",
+        "target": "es5",
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "skipDefaultLibCheck": true,
+        "noUnusedLocals": false,
+        "lib": ["es6", "dom"],
+        "types": ["jasmine", "node", "source-map", "selenium-webdriver", "uglify-js", "webpack"],
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/@ng-bootstrap/ng-bootstrap/datepicker/ngb-date",
+            "./node_modules/@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar",
+            "./node_modules/@ng-bootstrap/ng-bootstrap/timepicker/ngb-time",
+            "./node_modules/@ng-bootstrap/ng-bootstrap/popover/popover",
+            "./node_modules/@ng-bootstrap/ng-bootstrap/util/positioning"
+        ],
+        "paths": {
+            "life-core/*": ["lifesuite-app/life-core/*"],
+            "ls-core/*": ["lifesuite-app/ls-core/*"],
+            "business/*": ["lifesuite-app/business/*"],
+            "ui/*": ["lifesuite-app/ui/*"],
+            "shared/*": ["lifesuite-app/shared/*"],
+            "lab/*": ["../projects/components-lab/src/app/*"],
+            "lpla-core/*": ["../projects/components-lab/src/app/lpla-core/*"]
+        }
+    },
+    "exclude": ["bin", "wwwroot", "node_modules"],
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

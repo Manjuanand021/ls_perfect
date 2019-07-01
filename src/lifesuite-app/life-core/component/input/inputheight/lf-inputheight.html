@@ -1,0 +1,24 @@
+<fieldset [disabled]="disabled" [hidden]="hidden" [class.disabled]="disabled">
+	<div class="lf-parts">
+		<div class="lf-part">
+			<input #heightFt [type]="elementsData.heightFt.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="1" size="1" [placeholder]="elementsData.heightFt.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)"
+			 (keypress)="onKeyPress($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.heightFt.disabled"
+			 aria-label="Feet">
+		</div>
+		<div class="lf-part-text">{{heightFtText}}</div>
+		<div class="lf-part">
+			<input #heightInch [type]="elementsData.heightInch.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="2" size="2" [placeholder]="elementsData.heightInch.placeholder" (change)="onChange($event)" (keyup)="onKeyUp($event)"
+			 (keypress)="onKeyPress($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.heightInch.disabled"
+			 aria-label="Inches">
+		</div>
+		<div class="lf-part-text">{{heightInchText}}</div>
+		<div *ngIf="!elementsData.heightCm.hidden" class="lf-part">
+			<input #heightCm [type]="elementsData.heightCm.type" [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+			 maxlength="3" size="3" [placeholder]="elementsData.heightCm.placeholder" (change)="onChange($event)" (keypress)="onKeyPress($event)"
+			 (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="elementsData.heightCm.disabled" aria-label="Centimeters">
+		</div>
+		<div *ngIf="!elementsData.heightCm.hidden" class="lf-part-text">{{heightCmText}}</div>
+	</div>
+</fieldset>

@@ -1,0 +1,32 @@
+<div>
+    <b>Confirm Dialog</b>
+</div>
+<lf-button label="Confirm Dialog" (onClick)="showConfirmDialog()"></lf-button>
+<br>
+<br>
+
+<div>
+    <b>Modal Dialog</b>
+</div>
+<lf-button label="Modal Dialog" (onClick)="showModalDialog()"></lf-button>
+<br>
+<br>
+
+<div>
+    <b>Popover Dialog</b>
+</div>
+
+<div>NgbPopover</div>
+<ng-template #ngbPopoverContent>Ngb Template Popover Content</ng-template>
+<lf-button label="Ngb Popover" placement="top" [ngbPopover]="ngbPopoverContent" popoverTitle="Ngb Popover"></lf-button>
+
+<div>LfPopover</div>
+<lf-button label="Text Popover" icon="fa-caret-down" iconPos="right" lfPopover popover="Text Popover Content" popoverTitle="Text Popover"
+    placement="top"></lf-button>
+
+<ng-template #popoverContent>Template Popover Content</ng-template>
+<lf-button label="Template Popover" icon="fa-caret-down" iconPos="right" lfPopover [popover]="popoverContent" disabled popoverTitle="Template Popover"></lf-button>
+
+<div>LfPopover with Params</div>
+<lf-button label="Component-based Popover" icon="fa-caret-down" iconPos="right" lfPopover [popoverParams]="componentPopoverParams"></lf-button>
+<lf-button label="Text Popover with Params" icon="fa-caret-down" iconPos="right" lfPopover [popoverParams]="textPopoverParams"></lf-button>

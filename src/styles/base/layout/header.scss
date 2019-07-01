@@ -1,0 +1,8 @@
+div.lf-logo-image {
+    width: $navbar-logo-width;
+    height: $navbar-logo-height;
+    background: url('../../styles/images/UnderwritingPro.png') no-repeat;
+    background-size: $navbar-logo-width $navbar-logo-height;
+    transition: height 500ms ease;
+    -webkit-transition: height 500ms ease;
+}
