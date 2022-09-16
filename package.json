@@ -62,7 +62,7 @@
         "ag-grid-angular": "19.0.0",
         "ag-grid-community": "19.0.0",
         "angular-split": "1.0.0-rc.3",
-        "bootstrap": "4.0.0",
+        "bootstrap": "4.3.1",
         "card-validator": "4.1.1",
         "cldr-data": "31.0.2",
         "core-js": "2.5.4",
